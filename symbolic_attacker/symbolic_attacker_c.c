@@ -54,7 +54,7 @@ void __hv_assert(int a)
 {
 }
 
-int draw_from_knowledge_pool(Knowledge_Type kt)
+int draw_from_knowledge_pool(Knowledge_Type kt)  //[shuo] I have a concern about this function. This has a big fanout, right?
 {
 	int index = 7;//poirot_nondet();
 	__hv_assume(index < knowledge_length);
@@ -87,6 +87,10 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 	int code = -1;
 	int cookie = -1;
 	int returnValue = 400;
+
+	//shuo
+	int arg1;
+
 	Knowledge k;
 	User user = _nobody;
 	Location_Knowledge location = _no_where;
@@ -99,7 +103,12 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			scope = poirot_nondet();
 			user = poirot_nondet();
 			response_type = poirot_nondet();
-			returnValue = dialog_oauth(draw_from_knowledge_pool(_cookie_K), wwahost_state.current_state->app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
+
+			//shuo
+			arg1=draw_from_knowledge_pool(_cookie_K);
+			if (arg1==-1) break;
+
+			returnValue = dialog_oauth(arg1, wwahost_state.current_state->app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			//Add knowledge to bob
 			if (access_token != -1) 
@@ -126,7 +135,12 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 		case API_id_FBConnectServer_dialog_permissions_request:
 			scope = poirot_nondet();
 			response_type = poirot_nondet();
-			returnValue = dialog_permissions_request(poirot_nondet(), draw_from_knowledge_pool(_cookie_K), poirot_nondet(), poirot_nondet(), &location, &access_token, &code);
+
+			//shuo
+			arg1=draw_from_knowledge_pool(_cookie_K);
+			if (arg1==-1) break;
+
+			returnValue = dialog_permissions_request(poirot_nondet(), arg1, poirot_nondet(), poirot_nondet(), &location, &access_token, &code);
 			if (returnValue==400) return;
 			//Add knowledge to bob
 			if (access_token != -1) 
@@ -155,7 +169,13 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 //================Bob's behavior=============
 void call_an_API_on_foo_service_app_From_Bob(int API_id, RP_State *foo_state) {
     RP_Session testRPS;
-	testRPS = foo_service_API_authenticate(foo_state,draw_from_knowledge_pool(_access_token_K));
+
+	//shuo
+	int arg1;
+	arg1=draw_from_knowledge_pool(_access_token_K);
+	if (arg1==-1) return;
+
+	testRPS = foo_service_API_authenticate(foo_state,arg1);
 	if (testRPS.user_ID==_alice)
 	{
 		printf("Unexpected: Foo app signs in as Bob\n" );
@@ -220,6 +240,10 @@ void call_an_API_on_Id_From_Client(int API_id) {
 	Redirect_Domain redirect_domain = _no_domain;
 	Scope scope = _no_permission;
 	Response_Type response_type = _token; 
+
+	//shuo
+	int arg1,arg2;
+
 	switch (API_id) {
 		case API_id_FBConnectServer_dialog_oauth:
 			redirect_domain = poirot_nondet();
@@ -306,10 +330,17 @@ void call_an_API_on_Id_From_Client(int API_id) {
 			}
 			break;
 		case API_id_FBConnectServer_graph_facebook_com_me:
-			returnValue = graph_facebook_com_me_bob(draw_from_knowledge_pool(_access_token_K), &user);
+			//shuo
+			arg1=draw_from_knowledge_pool(_access_token_K);
+			if (arg1==-1) break;
+			returnValue = graph_facebook_com_me_bob(arg1, &user);
 			break;		
 		default: //API_id_FBConnectServer_graph_facebook_com_oauth_access_token
-			returnValue = graph_facebook_com_oauth_access_token_bob(poirot_nondet(), poirot_nondet(), draw_from_knowledge_pool(_app_secret_K), draw_from_knowledge_pool(_code_K), &access_token);
+			//shuo
+			arg1=draw_from_knowledge_pool(_app_secret_K);
+			arg2=draw_from_knowledge_pool(_code_K);
+			if (arg1==-1 || arg2==-1) break;
+			returnValue = graph_facebook_com_oauth_access_token_bob(poirot_nondet(), poirot_nondet(), arg1,arg2 , &access_token);
 			break;	
 	}
 }

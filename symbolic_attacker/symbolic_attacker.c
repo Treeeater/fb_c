@@ -41,7 +41,7 @@ RP_State foo_rp_state;
 WWAHost_State wwahost_state;
 App_Client_State foo_app_state, mal_app_state;
 Knowledge knowledge_base[MAX_KNOWLEDGE_LENGTH];
-Dev_Guide_State devGuideState;
+int actionNumber;
 int knowledge_length;
 int temp;
 
@@ -93,7 +93,7 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 	}*/
 	
 	//everything, first action case:
-	if (devGuideState.actionNumber==0){			//first action
+	if (actionNumber==0){			//first action
 		switch(caller){
 			case _caller_foo:
 				__hv_assume(callee_id == module_id_client_SDK);
@@ -101,21 +101,16 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 			case _caller_mal:
 				//don't assume anything for mal app
 				break;
-			case _caller_bob:
-				__hv_assume(1!=1);
-				break;
 			default:
+				return 0;
 				break;
 		}
 	}
 	
 	//authorization, last action case: last action should be made to IdP to get private data.
 	
-	if (devGuideState.actionNumber==MAX_STEPS-1){			//last action
+	if (actionNumber==MAX_STEPS-1){			//last action
 		switch(caller){
-			case _caller_foo:
-				__hv_assume(1!=1);		//the last action shouldn't be called by foo app
-				break;
 			case _caller_mal:
 				//if (callee_id != module_id_client_SDK && callee_id != module_id_IdP) return 0;			//the last action shouldn't be made to foo.
 				__hv_assume(callee_id == module_id_client_SDK || callee_id == module_id_IdP);
@@ -125,12 +120,13 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 				__hv_assume(callee_id == module_id_IdP);
 				break;
 			default:
+				return 0;
 				break;
 		}
 	}
 	//authentication, last action case: last action should be made to foo's server
 	/*
-	if (devGuideState.actionNumber==MAX_STEPS-1){
+	if (actionNumber==MAX_STEPS-1){
 		switch(caller){
 			case _caller_foo:
 				return 0;		//the last action shouldn't be called by foo app
@@ -183,19 +179,39 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 	Scope scope = _no_permission;
 	Response_Type response_type = _token; 
 	App_ID app_ID;
+
+	//shuo
+	int arg1;
+
 	switch (API_id) {
-		case API_id_FBConnectServer_dialog_oauth:
+		
+		case API_id_FBConnectServer_dialog_oauth:    //this case seems bad performance-wise.
+			/*
 			redirect_domain = poirot_nondet();
+			__hv_assume(redirect_domain == _bob_domain || redirect_domain == _foo_domain);
 			scope = poirot_nondet();
 			__hv_assume(scope == _basic || scope == _advanced);
 			user = poirot_nondet();
 			__hv_assume(user == _alice || user == _bob);
 			response_type = poirot_nondet();
-			__hv_assume(response_type == _token || user == _code);
-			returnValue = dialog_oauth(draw_from_knowledge_pool(_cookie_K), wwahost_state.current_state->app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
+			__hv_assume(response_type == _token || response_type == _code);
+			*/
+			//shuo
+			scope = (poirot_nondet()==0)?_basic:_advanced;
+			user = (poirot_nondet()==0)?_alice:_bob;
+			response_type = (poirot_nondet()==0) ?_token:_code;
+			redirect_domain = (poirot_nondet()==0)?_bob_domain:_foo_domain;
+
+			//shuo
+			arg1=draw_from_knowledge_pool(_cookie_K);
+			//if (arg1==-1) break;
+			
+			returnValue = dialog_oauth(arg1, wwahost_state.current_state->app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
+			
 			//Add knowledge to bob
-			if (access_token != -1) 
+			//shuo: for perf debugging  -- I don't understand why this block results in a huge perf difference. Aren't the statements basically nops?
+			/*if (access_token != -1) 
 			{
 				k.type = _access_token_K;
 				k.value = access_token;
@@ -206,26 +222,34 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 				k.type = _code_K;
 				k.value = code;
 				add_knowledge_to_bob(k);
-			}
+			}*/
+			//arg1=0;
+			k.type = 0;//_access_token_K;
 			break;
-		case API_id_FBConnectServer_login_php:
-			user = poirot_nondet();
-			__hv_assume(user == _alice || user == _bob);
-			returnValue = login_php(user, &location, &cookie, draw_from_knowledge_pool(_user_credentials_K));			//assuming bob cannot get alice's credentials.
+
+
+		/*case API_id_FBConnectServer_login_php:  //this case seems ok performance-wise.  //yuchen: this incurs a >2x time difference.
+			user = (poirot_nondet()==0)?_alice:_bob;
+			//user = poirot_nondet();
+			//__hv_assume(user==_alice||user==_bob);
+			//shuo
+			arg1=draw_from_knowledge_pool(_user_credentials_K);
+			if (arg1==-1) break;
+			returnValue = login_php(user, &location, &cookie, arg1);			//assuming bob cannot get alice's credentials.
 			if (returnValue==400) return;
 			k.type = _cookie_K;
 			k.value = cookie;
 			add_knowledge_to_bob(k);				//bob knows extra info.
-			break;
-		case API_id_FBConnectServer_dialog_permissions_request:
-			temp = 1;
-			scope = poirot_nondet();
-			__hv_assume(scope == _basic || scope == _advanced);
-			response_type = poirot_nondet();
-			__hv_assume(response_type == _token || user == _code);
-			app_ID = poirot_nondet();
-			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
-			returnValue = dialog_permissions_request(app_ID, draw_from_knowledge_pool(_cookie_K), scope, response_type, &location, &access_token, &code);
+			break;*/
+		/*case API_id_FBConnectServer_dialog_permissions_request:   //this case seems bad performance-wise.
+			scope = (poirot_nondet()==0)?_basic:_advanced;
+			response_type = (poirot_nondet()==0) ?_token:_code;
+			app_ID = (poirot_nondet()==0) ? _foo_app_ID:_mal_app_ID;
+
+			//shuo
+			arg1=draw_from_knowledge_pool(_cookie_K);
+			//if (arg1==-1) break;
+			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			//Add knowledge to bob
 			if (access_token != -1) 
@@ -240,10 +264,10 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 				k.value = code;
 				add_knowledge_to_bob(k);
 			}
-			break;
+			break;*/
 		//case API_id_FBConnectServer_graph_facebook_com_me:			//this is essentially the same as calling from client mal app
 			//returnValue = graph_facebook_com_me_bob(draw_from_knowledge_pool(_access_token_K), &user);
-			//break;		
+			//break;
 		default: //API_id_FBConnectServer_graph_facebook_com_oauth_access_token
 			//returnValue = graph_facebook_com_oauth_access_token_bob(poirot_nondet(), poirot_nondet(), draw_from_knowledge_pool(_app_secret_K), draw_from_knowledge_pool(_code_K), &access_token); 
 			//this is essentially the same as calling from client mal app
@@ -255,6 +279,10 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 void call_an_API_on_foo_service_app_From_Bob(int API_id) {
     RP_Session testRPS;
 	int access_token = draw_from_knowledge_pool(_access_token_K);
+
+	//shuo
+	if (access_token==-1) return;
+
 	testRPS = foo_service_API_authenticate(access_token);
 	if (testRPS.user_ID==_alice)
 	{
@@ -269,8 +297,11 @@ void call_an_API_on_client_SDK(int API_id) {
 	Scope scope;
 	switch (API_id) {
 	default:
+		//perf yuchen
+		/*redirect_domain = (poirot_nondet()==0)?_foo_domain:_bob_domain;
+		scope = (poirot_nondet()==0)?_basic:_advanced;*/
 		redirect_domain = poirot_nondet();
-		__hv_assume(redirect_domain == _foo_domain || scope == _bob_domain);
+		__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
 		scope = poirot_nondet();
 		__hv_assume(scope == _basic || scope == _advanced);
 		Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(redirect_domain, scope, _alice);
@@ -304,9 +335,21 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 	Redirect_Domain redirect_domain = _no_domain;
 	Scope scope = _no_permission;
 	Response_Type response_type = _token; 
+	//shuo
+	int arg1,arg2;
+
 	switch (API_id) {
 		case API_id_FBConnectServer_dialog_oauth:
+			
+			/*
+			scope = (poirot_nondet()==0)?_basic:_advanced;
+			user = (poirot_nondet()==0)?_alice:_bob;
+			response_type = (poirot_nondet()==0) ?_token:_code;
+			redirect_domain = (poirot_nondet()==0)?_bob_domain:_foo_domain;
+			app_ID = (poirot_nondet()==0)?_foo_app_ID:_mal_app_ID;
+			*/
 			redirect_domain = poirot_nondet();
+			__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
 			scope = poirot_nondet();
 			__hv_assume(scope == _basic || scope == _advanced);
 			user = poirot_nondet();
@@ -315,7 +358,10 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			__hv_assume(response_type == _token || response_type == _code);
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
-			returnValue = dialog_oauth(draw_from_knowledge_pool(_cookie_K), app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
+			//shuo
+			arg1=draw_from_knowledge_pool(_cookie_K);
+			//if (arg1==-1) break;
+			returnValue = dialog_oauth(arg1, app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			if (returnValue == 302 && location == _redirect_domain)
 			{
@@ -345,10 +391,14 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			scope = poirot_nondet();
 			__hv_assume(scope == _basic || scope == _advanced);
 			response_type = poirot_nondet();
-			__hv_assume(response_type == _token || user == _code);
+			__hv_assume(response_type == _token || response_type == _code);
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
-			returnValue = dialog_permissions_request(app_ID, (draw_from_knowledge_pool(_cookie_K)), scope, response_type, &location, &access_token, &code);
+
+			//shuo
+			arg1=draw_from_knowledge_pool(_cookie_K);
+			//if (arg1==-1) break;
+			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			if (returnValue == 302 && location == _redirect_domain)
 			{
@@ -368,16 +418,24 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			}
 			break;
 		case API_id_FBConnectServer_graph_facebook_com_me:
-			returnValue = graph_facebook_com_me_bob(draw_from_knowledge_pool(_access_token_K), &user);
+			arg1=draw_from_knowledge_pool(_access_token_K);
+			if (arg1==-1) break;
+			returnValue = graph_facebook_com_me_bob(arg1, &user);
 			break;
 		case API_id_FBConnectServer_graph_facebook_com_email:
-			returnValue = graph_facebook_com_email_bob(draw_from_knowledge_pool(_access_token_K), &user_email);
+			arg1=draw_from_knowledge_pool(_access_token_K);
+			if (arg1==-1) break;
+			returnValue = graph_facebook_com_email_bob(arg1, &user_email);
 			break;
 		default:
 			redirect_domain = poirot_nondet();
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
-			returnValue = graph_facebook_com_oauth_access_token_bob(redirect_domain, app_ID, draw_from_knowledge_pool(_app_secret_K), draw_from_knowledge_pool(_code_K), &access_token);
+			//shuo
+			arg1=draw_from_knowledge_pool(_app_secret_K);
+			arg2=draw_from_knowledge_pool(_code_K);
+			if (arg1==-1 || arg2==-1) break;
+			returnValue = graph_facebook_com_oauth_access_token_bob(redirect_domain, app_ID, arg1,arg2, &access_token);
 			break;	
 	}
 }
@@ -405,7 +463,7 @@ void mal_client_app_calls(){
 	callee_id=poirot_nondet();
 	//__hv_assume(callee_id!=module_id_client_SDK);						//assume module
 	API_id=poirot_nondet();
-	if (not_violating_client_dev_guide(_caller_mal,callee_id,API_id)&&not_violating_common_sense(_caller_mal,callee_id,API_id)) {
+	if (not_violating_client_dev_guide(_caller_mal,callee_id,API_id)&&not_violating_common_sense(_caller_mal,callee_id,API_id)) { //[shuo] MalApp's behavior shouldn't be constrained by anything.
 		update_dev_guide_status(_caller_mal,callee_id,API_id);	
 		switch (callee_id) {
 		case module_id_client_SDK:
@@ -425,14 +483,14 @@ void Bob_calls() {
 	int callee_id, API_id;
 	callee_id=poirot_nondet();
 	API_id=poirot_nondet();
-	if (not_violating_client_dev_guide(_caller_bob,callee_id,API_id)&&not_violating_common_sense(_caller_bob,callee_id,API_id)) {
+	if (not_violating_client_dev_guide(_caller_bob,callee_id,API_id)&&not_violating_common_sense(_caller_bob,callee_id,API_id)) {  //[shuo] Bob's behavior shouldn't be constrained by anything.
 		update_dev_guide_status(_caller_bob,callee_id,API_id);	
 		switch (callee_id) {
 		case module_id_IdP:
 			call_an_API_on_IdP_From_Bob(API_id);
 			break;
 		default:
-			call_an_API_on_foo_service_app_From_Bob(API_id);
+			//call_an_API_on_foo_service_app_From_Bob(API_id);  //[shuo] this is temporarily removed for performance debugging purpose
 			break;
 		}
 	}
@@ -442,8 +500,9 @@ void takeAction()
 {
 	switch(poirot_nondet()) {
 	case module_id_foo_client_app:
+		/*
 		wwahost_state.current_state = &foo_app_state;
-		foo_client_app_calls();
+		foo_client_app_calls();*/
 		break;
 	case module_id_mal_client_app:
 		//mal_app_state.app_ID = poirot_nondet();	 //bob can spoof this id.
@@ -454,9 +513,9 @@ void takeAction()
 		break;
 	default:// module_id_Bob:
 		Bob_calls();
-   		//break;
+   		break;
 	}
-	devGuideState.actionNumber++;
+	actionNumber++;
 }
 
 //initiate_knowledge()
@@ -490,7 +549,7 @@ int main()
 	Scope BScope[100];
 
 	//devGuideState init:
-	devGuideState.actionNumber = 0;
+	actionNumber = 0;
 
 	//RP state init:
 	
@@ -546,7 +605,7 @@ int main()
 	 //second, non-deterministically call APIs
 	takeAction();
 	takeAction();
-	takeAction();
+	takeAction();   
 	user_email = draw_from_knowledge_pool(_user_email_K);
 	__hv_assert(user_email != _alice_email);
 	return 0;

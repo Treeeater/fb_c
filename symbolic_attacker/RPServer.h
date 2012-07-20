@@ -2,6 +2,7 @@
 #include "bob.h"
 #include "FBConnectSDK.h"
 #include "FBConnectServer.h"
+#include "FBPHPSDK.h"
 
 extern RP_State foo_rp_state;
 

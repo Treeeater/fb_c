@@ -78,6 +78,7 @@
     <ClInclude Include="bob.h" />
     <ClInclude Include="FBConnectSDK.h" />
     <ClInclude Include="FBConnectServer.h" />
+    <ClInclude Include="FBPHPSDK.h" />
     <ClInclude Include="RPServer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="structure.h" />

@@ -1,0 +1,30 @@
+procedure havoc_assert(i:int);
+procedure havoc_assume(i:int);
+procedure __HAVOC_free(a:int);
+procedure __HAVOC_malloc(obj_size:int) returns (new:int);
+procedure __HAVOC_det_malloc(obj_size:int) returns (new:int);
+ procedure __HAVOC_memset_split_1(A:[int]int, p:int, c:int, n:int) returns (ret:[int]int);
+ procedure __HAVOC_memset_split_2(A:[int]int, p:int, c:int, n:int) returns (ret:[int]int);
+ procedure __HAVOC_memset_split_4(A:[int]int, p:int, c:int, n:int) returns (ret:[int]int);
+procedure nondet_choice() returns (x:int);
+procedure det_choice() returns (x:int);
+procedure _strdup(str:int) returns (new:int);
+procedure _xstrcasecmp(a0:int, a1:int) returns (ret:int);
+procedure _xstrcmp(a0:int, a1:int) returns (ret:int);
+procedure poirot_nondet() returns (ret:int);
+procedure  Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync($redirect_domain$1$9.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int, $scope$2$9.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int, $user$3$9.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int)
+procedure  add_knowledge_to_bob($k$1$20.36$add_knowledge_to_bob_.1:int)
+procedure  authenticate_user($access_token$1$9.33$authenticate_user_.1:int) returns ($result.authenticate_user$9.11$1$authenticate_user:int)
+procedure  authenticate_user2($code$1$24.34$authenticate_user2_.1:int) returns ($result.authenticate_user2$24.11$1$authenticate_user2:int)
+procedure  dialog_oauth($cookie$1$18.21$dialog_oauth_.1:int, $client_id$2$18.36$dialog_oauth_.1:int, $redirect_domain$3$18.63$dialog_oauth_.1:int, $scope$4$18.86$dialog_oauth_.1:int, $login_user$5$18.98$dialog_oauth_.1:int, $response_type$6$18.124$dialog_oauth_.1:int, $location$7$18.159$dialog_oauth_.1:int, $access_token$8$18.174$dialog_oauth_.1:int, $code$9$18.193$dialog_oauth_.1:int) returns ($result.dialog_oauth$18.4$1$dialog_oauth:int)
+procedure  dialog_permissions_request($client_id$1$165.38$dialog_permissions_request_.1:int, $cookie$2$165.53$dialog_permissions_request_.1:int, $scope$3$165.67$dialog_permissions_request_.1:int, $response_type$4$165.88$dialog_permissions_request_.1:int, $location$5$165.123$dialog_permissions_request_.1:int, $access_token$6$165.138$dialog_permissions_request_.1:int, $code$7$165.157$dialog_permissions_request_.1:int) returns ($result.dialog_permissions_request$165.4$1$dialog_permissions_request:int)
+procedure  draw_from_knowledge_pool($kt$1$6.44$draw_from_knowledge_pool_.1:int) returns ($result.draw_from_knowledge_pool$6.4$1$draw_from_knowledge_pool:int)
+procedure  graph_facebook_com_email($access_token$1$266.33$graph_facebook_com_email_.1:int, $user_email$2$266.59$graph_facebook_com_email_.1:int) returns ($result.graph_facebook_com_email$266.4$1$graph_facebook_com_email:int)
+procedure  graph_facebook_com_email_bob($access_token$1$53.37$graph_facebook_com_email_bob_.1:int, $user_email$2$53.63$graph_facebook_com_email_bob_.1:int) returns ($result.graph_facebook_com_email_bob$53.4$1$graph_facebook_com_email_bob:int)
+procedure  graph_facebook_com_me($access_token$1$251.30$graph_facebook_com_me_.1:int, $user_ID$2$251.50$graph_facebook_com_me_.1:int) returns ($result.graph_facebook_com_me$251.4$1$graph_facebook_com_me:int)
+procedure  graph_facebook_com_me_bob($access_token$1$39.34$graph_facebook_com_me_bob_.1:int, $user_ID$2$39.54$graph_facebook_com_me_bob_.1:int) returns ($result.graph_facebook_com_me_bob$39.4$1$graph_facebook_com_me_bob:int)
+procedure  graph_facebook_com_oauth_access_token($redirect_domain$1$295.58$graph_facebook_com_oauth_access_token_.1:int, $client_id$2$295.82$graph_facebook_com_oauth_access_token_.1:int, $app_secret$3$295.104$graph_facebook_com_oauth_access_token_.1:int, $code$4$295.120$graph_facebook_com_oauth_access_token_.1:int, $access_token$5$295.131$graph_facebook_com_oauth_access_token_.1:int) returns ($result.graph_facebook_com_oauth_access_token$295.4$1$graph_facebook_com_oauth_access_token:int)
+procedure  graph_facebook_com_oauth_access_token_bob($redirect_domain$1$26.62$graph_facebook_com_oauth_access_token_bob_.1:int, $client_id$2$26.86$graph_facebook_com_oauth_access_token_bob_.1:int, $app_secret$3$26.108$graph_facebook_com_oauth_access_token_bob_.1:int, $code$4$26.124$graph_facebook_com_oauth_access_token_bob_.1:int, $access_token$5$26.135$graph_facebook_com_oauth_access_token_bob_.1:int) returns ($result.graph_facebook_com_oauth_access_token_bob$26.4$1$graph_facebook_com_oauth_access_token_bob:int)
+procedure  login_php($login_user$1$130.19$login_php_.1:int, $location$2$130.51$login_php_.1:int, $cookie$3$130.66$login_php_.1:int, $uc$4$130.91$login_php_.1:int) returns ($result.login_php$130.4$1$login_php:int)
+procedure  registerApp()
+procedure {:inline 1} __havoc_heapglobal_init()

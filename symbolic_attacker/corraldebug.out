@@ -1,0 +1,22 @@
+Running transformation pass 1: Rewriting asserts
+Running transformation pass 2: Rewriting calls
+Running transformation pass 3: Pruning program
+Running transformation pass 4: SequentialInstrumentation
+Verifying program while tracking: {assertsPassed, alloc}
+Running transformation pass 5: Variable Slicing
+Running transformation pass 6: Some verification pass
+Verifying implementation main_SeqInstr
+  [0.2572827 s]  
+Correct
+0 counterexamples.
+Program has no bugs
+
+Boogie verification time: 0.2572827 s
+Time spent reading-writing programs: 0.4064466 s
+
+Time spent checking a program (1): 0.9190098 s
+Time spent checking a path (0): 0 s
+
+Number of procedures inlined: 1
+Number of variables tracked: 2
+Total Time: 2.0112099 s

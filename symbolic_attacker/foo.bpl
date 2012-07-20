@@ -1,4 +1,9 @@
-type name;
+procedure {:entrypoint} main() 
+{
+  var i: int;
+
+  call add_knowledge_to_bob(i);
+}type name;
 type byte;
 function OneByteToInt(byte) returns (int);
 function TwoBytesToInt(byte, byte) returns (int);
