@@ -2,21 +2,22 @@ Running transformation pass 1: Rewriting asserts
 Running transformation pass 2: Rewriting calls
 Running transformation pass 3: Pruning program
 Running transformation pass 4: SequentialInstrumentation
-Verifying program while tracking: {assertsPassed, alloc}
+Verifying program while tracking: {alloc, assertsPassed, Mem_T.INT4, Mem_T.app_ID_App_Client_State, Mem_T.current_state_WWAHost_State, wwahost_state, Mem_T.Location_Knowledge, Mem_T.cookie_WWAHost_State, Mem_T.access_token_App_Client_State, Mem_T.code_App_Client_State, Mem_T.app_owner_App_Client_State, access_token_k_base, access_token_k_base_length, code_k_base, code_k_base_length, cookie_k_base, cookie_k_base_length, email_k_base, email_k_base_length, Mem_T.User, Mem_T.session_ID_RP_Session, Mem_T.user_ID_RP_Session, Mem_T.session_length_RP_State, foo_rp_state, Mem_T.redirect_domain_Registered_App, Mem_T.cookie_length_FB_Server_State, server_state, Mem_T.cookie_value_Cookie, Mem_T.cookies_FB_Server_State, Mem_T.user_ID_Cookie, Mem_T.Scope, Mem_T.scope_Registered_App, Mem_T.token_value_Access_Token, Mem_T.token_length_FB_Server_State, Mem_T.code_value_Code, Mem_T.code_length_FB_Server_State, Mem_T.user_ID_Code, Mem_T.app_secret_Code, Mem_T.app_secret_Registered_App, Mem_T.app_ID_Code, Mem_T.app_ID_Registered_App, Mem_T.codes_FB_Server_State, Mem_T.user_ID_Access_Token, Mem_T.scope_Access_Token, Mem_T.tokens_FB_Server_State, Mem_T.scope_length_Registered_App, app_secret_k_base_length, app_secret_k_base, Mem_T.User_Email, actionNumber, Mem_T.rp_sessions_RP_State, Mem_T.app_length_FB_Server_State, foo_app_state, mal_app_state}
 Running transformation pass 5: Variable Slicing
 Running transformation pass 6: Some verification pass
 Verifying implementation main_SeqInstr
-  [0.2572827 s]  
-Correct
+  [5.852766 s]  
+ReachedBound
 0 counterexamples.
 Program has no bugs
+Reached recursion bound of 3
 
-Boogie verification time: 0.2572827 s
-Time spent reading-writing programs: 0.4064466 s
+Boogie verification time: 5.852766 s
+Time spent reading-writing programs: 0.773158 s
 
-Time spent checking a program (1): 0.9190098 s
+Time spent checking a program (1): 6.4586735 s
 Time spent checking a path (0): 0 s
 
-Number of procedures inlined: 1
-Number of variables tracked: 2
-Total Time: 2.0112099 s
+Number of procedures inlined: 362
+Number of variables tracked: 54
+Total Time: 8.0250195 s

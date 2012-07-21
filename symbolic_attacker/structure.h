@@ -137,15 +137,15 @@ typedef enum Location_Knowledge{
 } Location_Knowledge;
 
 typedef enum Knowledge_Type{
-	_nothing_K,
+	//_nothing_K,
 	_access_token_K,
 	_cookie_K,
 	_code_K,
-	_redirect_K,
-	_user_ID_K,
+	//_redirect_K,
+	//_user_ID_K,
 	_app_secret_K,
-	_permission_K,
-	_user_credentials_K,
+	//_permission_K,
+	//_user_credentials_K,
 	_user_email_K
 } Knowledge_Type;
 
@@ -177,8 +177,14 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 */
 //global var
 extern FB_Server_State server_state;
-extern Knowledge knowledge_base[];
-extern int knowledge_length;
-extern int temp;
-
+extern int cookie_k_base[];
+extern int cookie_k_base_length;
+extern int access_token_k_base[];
+extern int access_token_k_base_length;
+extern int code_k_base[];
+extern int code_k_base_length;
+extern int email_k_base[];
+extern int email_k_base_length;
+extern int app_secret_k_base[];
+extern int app_secret_k_base_length;
 #endif

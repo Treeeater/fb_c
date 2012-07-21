@@ -40,12 +40,21 @@ FB_Server_State server_state;
 RP_State foo_rp_state;
 WWAHost_State wwahost_state;
 App_Client_State foo_app_state, mal_app_state;
-Knowledge knowledge_base[MAX_KNOWLEDGE_LENGTH];
+//Knowledge knowledge_base[MAX_KNOWLEDGE_LENGTH];
 int actionNumber;
-int knowledge_length;
-int temp;
+//int knowledge_length;
 
+int cookie_k_base[100];
+int access_token_k_base[100];
+int code_k_base[100];
+int email_k_base[100];
+int app_secret_k_base[100];
 
+int cookie_k_base_length;
+int access_token_k_base_length;
+int code_k_base_length;
+int email_k_base_length;
+int app_secret_k_base_length;
 //Utility functions
 //==================
 
@@ -172,7 +181,7 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 	int code = -1;
 	int cookie = -1;
 	int returnValue = 400;
-	Knowledge k;
+	//Knowledge k;
 	User user = _nobody;
 	Location_Knowledge location = _no_where;
 	Redirect_Domain redirect_domain = _no_domain;
@@ -203,7 +212,7 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			redirect_domain = (poirot_nondet()==0)?_bob_domain:_foo_domain;
 
 			//shuo
-			arg1=draw_from_knowledge_pool(_cookie_K);
+			arg1=draw_cookie_from_knowledge_pool();
 			//if (arg1==-1) break;
 			
 			returnValue = dialog_oauth(arg1, wwahost_state.current_state->app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
@@ -211,60 +220,53 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			
 			//Add knowledge to bob
 			//shuo: for perf debugging  -- I don't understand why this block results in a huge perf difference. Aren't the statements basically nops?
-			/*if (access_token != -1) 
+			
+			if (access_token != -1) 
 			{
-				k.type = _access_token_K;
-				k.value = access_token;
-				add_knowledge_to_bob(k);
+				add_access_token_knowledge_to_bob(access_token);
 			}
 			if (code != -1) 
 			{
-				k.type = _code_K;
-				k.value = code;
-				add_knowledge_to_bob(k);
-			}*/
+				add_code_knowledge_to_bob(code);
+			}
 			//arg1=0;
-			k.type = 0;//_access_token_K;
+			//knowledge_base[0].type = 0;   //bad
+			//aaaa[knowledge_length]=0;   //good
+			//k.type = 0;//_access_token_K;    //bad
 			break;
 
 
-		/*case API_id_FBConnectServer_login_php:  //this case seems ok performance-wise.  //yuchen: this incurs a >2x time difference.
+		case API_id_FBConnectServer_login_php:  //this case seems ok performance-wise.  //yuchen: this incurs a >2x time difference.
 			user = (poirot_nondet()==0)?_alice:_bob;
 			//user = poirot_nondet();
 			//__hv_assume(user==_alice||user==_bob);
 			//shuo
-			arg1=draw_from_knowledge_pool(_user_credentials_K);
-			if (arg1==-1) break;
-			returnValue = login_php(user, &location, &cookie, arg1);			//assuming bob cannot get alice's credentials.
+			//arg1=draw_from_knowledge_pool(_user_credentials_K);
+			//if (arg1==-1) break;
+			returnValue = login_php(user, &location, &cookie, -1);			//assuming bob cannot get alice's credentials.
 			if (returnValue==400) return;
-			k.type = _cookie_K;
-			k.value = cookie;
-			add_knowledge_to_bob(k);				//bob knows extra info.
-			break;*/
-		/*case API_id_FBConnectServer_dialog_permissions_request:   //this case seems bad performance-wise.
+			add_cookie_knowledge_to_bob(cookie);				//bob knows extra info.
+			break;
+		case API_id_FBConnectServer_dialog_permissions_request:   //this case seems bad performance-wise.
 			scope = (poirot_nondet()==0)?_basic:_advanced;
 			response_type = (poirot_nondet()==0) ?_token:_code;
 			app_ID = (poirot_nondet()==0) ? _foo_app_ID:_mal_app_ID;
 
 			//shuo
-			arg1=draw_from_knowledge_pool(_cookie_K);
+			arg1=draw_cookie_from_knowledge_pool();
 			//if (arg1==-1) break;
 			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			//Add knowledge to bob
 			if (access_token != -1) 
 			{
-				k.type = _access_token_K;
-				k.value = access_token;
-				add_knowledge_to_bob(k);
+				add_access_token_knowledge_to_bob(access_token);
 			}
 			if (code != -1) 
 			{
-				k.type = _code_K;
-				k.value = code;
-				add_knowledge_to_bob(k);
+				add_code_knowledge_to_bob(code);
 			}
-			break;*/
+			break;
 		//case API_id_FBConnectServer_graph_facebook_com_me:			//this is essentially the same as calling from client mal app
 			//returnValue = graph_facebook_com_me_bob(draw_from_knowledge_pool(_access_token_K), &user);
 			//break;
@@ -278,7 +280,7 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 //================Bob's behavior=============
 void call_an_API_on_foo_service_app_From_Bob(int API_id) {
     RP_Session testRPS;
-	int access_token = draw_from_knowledge_pool(_access_token_K);
+	int access_token = draw_access_token_from_knowledge_pool();
 
 	//shuo
 	if (access_token==-1) return;
@@ -328,7 +330,6 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 	int code = -1;
 	int cookie = -1;
 	int returnValue = 400;
-	Knowledge k;
 	App_ID app_ID;
 	User user = _nobody;
 	Location_Knowledge location = _no_where;
@@ -359,7 +360,7 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
 			//shuo
-			arg1=draw_from_knowledge_pool(_cookie_K);
+			arg1=draw_cookie_from_knowledge_pool();
 			//if (arg1==-1) break;
 			returnValue = dialog_oauth(arg1, app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
@@ -367,27 +368,22 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			{
 				if (access_token != -1)
 				{
-					k.type = _access_token_K;
-					k.value = access_token;
-					add_knowledge_to_bob(k);
+					add_access_token_knowledge_to_bob(access_token);
 				}
 				if (code != -1)
 				{
-					k.type = _code_K;
-					k.value = code;
-					add_knowledge_to_bob(k);
+					add_code_knowledge_to_bob(code);
 				}
 			}
 			break;
 		case API_id_FBConnectServer_login_php:
 			user = poirot_nondet();
 			__hv_assume(user == _alice || user == _bob);
-			returnValue = login_php(user, &location, &cookie, _alice_credentials);				
+			returnValue = login_php(user, &location, &cookie, _bob_credentials);				
 			if (returnValue==400) return;
 			if (cookie != -1) wwahost_state.cookie = cookie;		//set client's cookie value locally. Note that cookies are cleared once you call authAsync func again.
 			break;		
 		case API_id_FBConnectServer_dialog_permissions_request:
-			temp = 1;
 			scope = poirot_nondet();
 			__hv_assume(scope == _basic || scope == _advanced);
 			response_type = poirot_nondet();
@@ -396,7 +392,7 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
 
 			//shuo
-			arg1=draw_from_knowledge_pool(_cookie_K);
+			arg1=draw_cookie_from_knowledge_pool();
 			//if (arg1==-1) break;
 			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
@@ -405,25 +401,21 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 				//if (wwahost_state.current_state->app_owner == _bob_own && access_token != -1) 
 				if (access_token!=-1)
 				{
-					k.type = _access_token_K;
-					k.value = access_token;
-					add_knowledge_to_bob(k);
+					add_access_token_knowledge_to_bob(access_token);
 				}
 				if (code!=-1)
 				{
-					k.type = _code_K;
-					k.value = code;
-					add_knowledge_to_bob(k);
+					add_code_knowledge_to_bob(code);
 				}
 			}
 			break;
 		case API_id_FBConnectServer_graph_facebook_com_me:
-			arg1=draw_from_knowledge_pool(_access_token_K);
+			arg1=draw_access_token_from_knowledge_pool();
 			if (arg1==-1) break;
 			returnValue = graph_facebook_com_me_bob(arg1, &user);
 			break;
 		case API_id_FBConnectServer_graph_facebook_com_email:
-			arg1=draw_from_knowledge_pool(_access_token_K);
+			arg1=draw_access_token_from_knowledge_pool();
 			if (arg1==-1) break;
 			returnValue = graph_facebook_com_email_bob(arg1, &user_email);
 			break;
@@ -432,8 +424,8 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
 			//shuo
-			arg1=draw_from_knowledge_pool(_app_secret_K);
-			arg2=draw_from_knowledge_pool(_code_K);
+			arg1=draw_app_secret_from_knowledge_pool();
+			arg2=draw_code_from_knowledge_pool();
 			if (arg1==-1 || arg2==-1) break;
 			returnValue = graph_facebook_com_oauth_access_token_bob(redirect_domain, app_ID, arg1,arg2, &access_token);
 			break;	
@@ -490,7 +482,7 @@ void Bob_calls() {
 			call_an_API_on_IdP_From_Bob(API_id);
 			break;
 		default:
-			//call_an_API_on_foo_service_app_From_Bob(API_id);  //[shuo] this is temporarily removed for performance debugging purpose
+			call_an_API_on_foo_service_app_From_Bob(API_id); 
 			break;
 		}
 	}
@@ -500,9 +492,8 @@ void takeAction()
 {
 	switch(poirot_nondet()) {
 	case module_id_foo_client_app:
-		/*
 		wwahost_state.current_state = &foo_app_state;
-		foo_client_app_calls();*/
+		foo_client_app_calls();
 		break;
 	case module_id_mal_client_app:
 		//mal_app_state.app_ID = poirot_nondet();	 //bob can spoof this id.
@@ -521,15 +512,14 @@ void takeAction()
 //initiate_knowledge()
 void initiate_knowledge()
 {
-	Knowledge k1,k2;
-	knowledge_length = 0;
+	cookie_k_base_length = 0;
+	access_token_k_base_length = 0;
+	code_k_base_length = 0;
+	email_k_base_length = 0;
+	app_secret_k_base_length = 0;
 	//attacker should know attacker's App secret
-	k1.type = _app_secret_K;
-	k1.value = _bob_secret;
-	add_knowledge_to_bob(k1);
-	k2.type = _user_credentials_K;
-	k2.value = _bob_credentials;
-	add_knowledge_to_bob(k2);
+	add_knowledge_to_bob(_app_secret_K,_bob_secret);
+	//add_knowledge_to_bob(_user_credentials_K,_bob_credentials);
 }
 
 //================main=============
@@ -566,7 +556,6 @@ int main()
 	server_state.codes = codes;
 	server_state.code_length = 0;
 
-	temp = 0;		//debug
 	//server_state.apps = (Registered_App *) malloc(sizeof(Registered_App)*2);
 	server_state.app_F.app_ID = _foo_app_ID;
 	server_state.app_B.app_ID = _mal_app_ID;
@@ -606,7 +595,10 @@ int main()
 	takeAction();
 	takeAction();
 	takeAction();   
-	user_email = draw_from_knowledge_pool(_user_email_K);
+	//takeAction();   
+	//takeAction();   
+	//takeAction();    
+	user_email = draw_email_from_knowledge_pool();
 	__hv_assert(user_email != _alice_email);
 	return 0;
 }

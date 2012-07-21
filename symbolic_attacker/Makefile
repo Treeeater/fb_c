@@ -1,5 +1,5 @@
-# DRIVER_SRC = symbolic_attacker.c
-DRIVER_SRC = empty_attacker.c
+DRIVER_SRC = symbolic_attacker.c
+#DRIVER_SRC = empty_attacker.c
 
 # We need to pass EspFe.dll as a plugin to the complier
 ANALYZE_OPT = /analyze:plugin $(POIROT_ROOT)\Poirot4C\havoc\EspFe.dll

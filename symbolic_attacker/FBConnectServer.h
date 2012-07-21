@@ -69,7 +69,7 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 	//__hv_assert(scope == _email);
 	if (app.scope[logged_in_user] < scope)
 	{
-		//permission is not enuf, we need to ask for more.
+		//permission is not enuf, we need to ask 4 more.
 		*location = _permissions_request;
 		return 302;
 		//if (dialog_permissions_request(server_state, client_state->machine_ID, app.app_ID, logged_in_user, scope)) return ret;
@@ -111,8 +111,8 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 	params:
 	api_key (same as client_id)
 	cancel_url (what if user failed to/canceled the login). This param is computed by FB server (appending redirect_uri with ?error_reason=user_denied... and then sent to the client)
-	next (what if the user succeeded in the login). This param is also computed by FB server (appending https://www.facebook.com/dialog/permissions.request with all useful information)
-	found no obvious behavior for other params, if this model is not accurate enough we can always dig deeper and try to figure out more.
+	next (what if the user succeeded in the login). This param is also computed by FB server (appending https://www.facebook.com/dialog/permissions.request with all useful in4mation)
+	found no obvious behavior 4 other params, if this model is not accurate enough we can always dig deeper and try to figure out more.
 
 	Response:
 	200 user login page.
@@ -124,7 +124,7 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 
 	response:
 	302 to https://www.facebook.com/dialog/permissions.request?_path=permissions.request&app_id=110710809029306&redirect_uri=https%3A%2F%2Fwww.soluto.com%2Fpcgenome%2Faccount%2Ffacebooklogin&display=page&response_type=code&perms=email&fbconnect=1&from_login=1&client_id=110710809029306
-	Create session cookie for logged in user. (cookie name = c_user)
+	Create session cookie 4 logged in user. (cookie name = c_user)
 */
 
 int login_php(User login_user, Location_Knowledge *location, int *cookie, User_Credentials uc)
@@ -293,7 +293,7 @@ traffic:
 */
 
 int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code, int *access_token)
-//exchange code for token
+//exchange code 4 token
 {
 	//Fetch the app
 	User logged_in_user = _nobody;
@@ -337,7 +337,7 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 
 	if (user_ID == _nobody) return 400;		//cannot find user
 
-	//Generate access token for this user
+	//Generate access token 4 this user
 
 	at.token_value = server_state.token_length;
 	at.user_ID = user_ID;
