@@ -78,13 +78,12 @@
     <ClInclude Include="bob.h" />
     <ClInclude Include="FBConnectSDK.h" />
     <ClInclude Include="FBConnectServer.h" />
-    <ClInclude Include="FBPHPSDK.h" />
     <ClInclude Include="RPServer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="structure.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="symbolic_attacker_c.c" />
+    <ClCompile Include="concrete_attacker.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

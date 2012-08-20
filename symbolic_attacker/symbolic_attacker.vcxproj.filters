@@ -36,12 +36,9 @@
     <ClInclude Include="bob.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FBPHPSDK.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="symbolic_attacker_c.c">
+    <ClCompile Include="concrete_attacker.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

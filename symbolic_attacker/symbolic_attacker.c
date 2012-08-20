@@ -27,23 +27,19 @@
 #define API_id_FBConnectServer_graph_facebook_com_me 4
 #define API_id_FBConnectServer_graph_facebook_com_email 5
 #define API_id_FBConnectServer_graph_facebook_com_oauth_access_token 6
-//note: for any API on the RP website, there is always a corresponding one on Bob.com
+
 #define API_id_RP_authenticate_user 6
 #define API_id_Bob_authenticate_user 7
 
-//select knowledge
-#define MAX_KNOWLEDGE_LENGTH 1000
-#define MAX_STEPS 3
 //global vars
 
 FB_Server_State server_state;
 RP_State foo_rp_state;
 WWAHost_State wwahost_state;
 App_Client_State foo_app_state, mal_app_state;
-//Knowledge knowledge_base[MAX_KNOWLEDGE_LENGTH];
 int actionNumber;
-//int knowledge_length;
 
+int MAX_STEPS = 0;
 int cookie_k_base[100];
 int access_token_k_base[100];
 int code_k_base[100];
@@ -58,48 +54,7 @@ int app_secret_k_base_length;
 //Utility functions
 //==================
 
-void check_and_assume(int a)
-{
-	__hv_assert(a);
-	__hv_assume(a);
-}
-
 int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
-	/*
-	switch (devGuideState.actionNumber)
-	{
-	case 0:
-		switch(caller){
-			case _caller_foo:
-				__hv_assume(callee_id == module_id_client_SDK);
-				break;
-			case _caller_mal:
-				//don't assume anything for mal app
-				break;
-			case _caller_bob:
-				__hv_assume(1!=1);
-				break;
-			default:
-				break;
-		};
-		break;
-	case 1:
-		switch(caller){
-			case _caller_foo:
-				__hv_assume(1!=1);		//the last action shouldn't be called by foo app
-				break;
-			case _caller_mal:
-				//if (callee_id != module_id_client_SDK && callee_id != module_id_IdP) return 0;			//the last action shouldn't be made to foo.
-				__hv_assume(callee_id == module_id_client_SDK || callee_id == module_id_IdP);
-				break;
-			case _caller_bob:
-				//if (callee_id != module_id_IdP) return 0;			//the last action should be made to idp.
-				__hv_assume(callee_id == module_id_IdP);
-				break;
-			default:
-				break;
-		}
-	}*/
 	
 	//everything, first action case:
 	if (actionNumber==0){			//first action
@@ -121,11 +76,11 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 	if (actionNumber==MAX_STEPS-1){			//last action
 		switch(caller){
 			case _caller_mal:
-				//if (callee_id != module_id_client_SDK && callee_id != module_id_IdP) return 0;			//the last action shouldn't be made to foo.
+				//the last action shouldn't be made to foo.
 				__hv_assume(callee_id == module_id_client_SDK || callee_id == module_id_IdP);
 				break;
 			case _caller_bob:
-				//if (callee_id != module_id_IdP) return 0;			//the last action should be made to idp.
+				//the last action should be made to idp.
 				__hv_assume(callee_id == module_id_IdP);
 				break;
 			default:
@@ -133,7 +88,7 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 				break;
 		}
 	}
-	//authentication, last action case: last action should be made to foo's server
+	//authentication, last action case: last action should be made to foo's server to authenticate as Alice
 	/*
 	if (actionNumber==MAX_STEPS-1){
 		switch(caller){
@@ -141,7 +96,7 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 				return 0;		//the last action shouldn't be called by foo app
 				break;
 			case _caller_mal:
-					if (callee_id == module_id_client_SDK || callee_id == module_id_IdP) return 0;			//the last action shouldn't be made to idp.
+				if (callee_id == module_id_client_SDK || callee_id == module_id_IdP) return 0;			//the last action shouldn't be made to idp.
 				break;
 			case _caller_bob:
 				if (callee_id == module_id_IdP) return 0;			//the last action shouldn't be made to idp.
@@ -194,17 +149,7 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 
 	switch (API_id) {
 		
-		case API_id_FBConnectServer_dialog_oauth:    //this case seems bad performance-wise.
-			/*
-			redirect_domain = poirot_nondet();
-			__hv_assume(redirect_domain == _bob_domain || redirect_domain == _foo_domain);
-			scope = poirot_nondet();
-			__hv_assume(scope == _basic || scope == _advanced);
-			user = poirot_nondet();
-			__hv_assume(user == _alice || user == _bob);
-			response_type = poirot_nondet();
-			__hv_assume(response_type == _token || response_type == _code);
-			*/
+		case API_id_FBConnectServer_dialog_oauth:    
 			//shuo
 			scope = (poirot_nondet()==0)?_basic:_advanced;
 			user = (poirot_nondet()==0)?_alice:_bob;
@@ -213,13 +158,11 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 
 			//shuo
 			arg1=draw_cookie_from_knowledge_pool();
-			//if (arg1==-1) break;
 			
 			returnValue = dialog_oauth(arg1, wwahost_state.current_state->app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			
 			//Add knowledge to bob
-			//shuo: for perf debugging  -- I don't understand why this block results in a huge perf difference. Aren't the statements basically nops?
 			
 			if (access_token != -1) 
 			{
@@ -229,32 +172,22 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			{
 				add_code_knowledge_to_bob(code);
 			}
-			//arg1=0;
-			//knowledge_base[0].type = 0;   //bad
-			//aaaa[knowledge_length]=0;   //good
-			//k.type = 0;//_access_token_K;    //bad
 			break;
 
 
-		case API_id_FBConnectServer_login_php:  //this case seems ok performance-wise.  //yuchen: this incurs a >2x time difference.
+		case API_id_FBConnectServer_login_php:
 			user = (poirot_nondet()==0)?_alice:_bob;
-			//user = poirot_nondet();
-			//__hv_assume(user==_alice||user==_bob);
-			//shuo
-			//arg1=draw_from_knowledge_pool(_user_credentials_K);
-			//if (arg1==-1) break;
 			returnValue = login_php(user, &location, &cookie, -1);			//assuming bob cannot get alice's credentials.
 			if (returnValue==400) return;
-			add_cookie_knowledge_to_bob(cookie);				//bob knows extra info.
+			add_cookie_knowledge_to_bob(cookie);				//bob gains extra info.
 			break;
-		case API_id_FBConnectServer_dialog_permissions_request:   //this case seems bad performance-wise.
+		case API_id_FBConnectServer_dialog_permissions_request:
 			scope = (poirot_nondet()==0)?_basic:_advanced;
 			response_type = (poirot_nondet()==0) ?_token:_code;
 			app_ID = (poirot_nondet()==0) ? _foo_app_ID:_mal_app_ID;
 
 			//shuo
 			arg1=draw_cookie_from_knowledge_pool();
-			//if (arg1==-1) break;
 			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			//Add knowledge to bob
@@ -289,7 +222,7 @@ void call_an_API_on_foo_service_app_From_Bob(int API_id) {
 	if (testRPS.user_ID==_alice)
 	{
 		printf("Unexpected: Foo app signed in as Alice from Bob's server\n" );
-		//__hv_assert(1!=1);
+		__hv_assert(1!=1);
 	}   
 }
 
@@ -299,14 +232,11 @@ void call_an_API_on_client_SDK(int API_id) {
 	Scope scope;
 	switch (API_id) {
 	default:
-		//perf yuchen
-		/*redirect_domain = (poirot_nondet()==0)?_foo_domain:_bob_domain;
-		scope = (poirot_nondet()==0)?_basic:_advanced;*/
 		redirect_domain = poirot_nondet();
 		__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
 		scope = poirot_nondet();
 		__hv_assume(scope == _basic || scope == _advanced);
-		Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(redirect_domain, scope, _alice);
+		Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(redirect_domain, scope, _alice);		//on client's device, alice should only input alice's credentials.
 			break;
 	}
 }
@@ -314,10 +244,10 @@ void call_an_API_on_client_SDK(int API_id) {
 void call_an_API_on_foo_service_app_From_Client(int API_id) {
     RP_Session testRPS;
 	testRPS = foo_service_API_authenticate(wwahost_state.current_state->access_token);
-	if (testRPS.user_ID==_bob && wwahost_state.current_state->app_ID == _foo_app_ID)				//session fixation?
+	if (testRPS.user_ID==_bob && wwahost_state.current_state->app_ID == _foo_app_ID)				//session fixation
 	{
 		printf("Unexpected: Foo app signs in as Bob\n" );
-		//__hv_assert(1 != 1);
+		//__hv_assert(1 != 1);																		//we currently don't detect this vulnerabilility
 	}   
 }
 
@@ -336,19 +266,10 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 	Redirect_Domain redirect_domain = _no_domain;
 	Scope scope = _no_permission;
 	Response_Type response_type = _token; 
-	//shuo
 	int arg1,arg2;
 
 	switch (API_id) {
 		case API_id_FBConnectServer_dialog_oauth:
-			
-			/*
-			scope = (poirot_nondet()==0)?_basic:_advanced;
-			user = (poirot_nondet()==0)?_alice:_bob;
-			response_type = (poirot_nondet()==0) ?_token:_code;
-			redirect_domain = (poirot_nondet()==0)?_bob_domain:_foo_domain;
-			app_ID = (poirot_nondet()==0)?_foo_app_ID:_mal_app_ID;
-			*/
 			redirect_domain = poirot_nondet();
 			__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
 			scope = poirot_nondet();
@@ -359,9 +280,7 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			__hv_assume(response_type == _token || response_type == _code);
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
-			//shuo
 			arg1=draw_cookie_from_knowledge_pool();
-			//if (arg1==-1) break;
 			returnValue = dialog_oauth(arg1, app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			if (returnValue == 302 && location == _redirect_domain)
@@ -390,15 +309,11 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			__hv_assume(response_type == _token || response_type == _code);
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
-
-			//shuo
 			arg1=draw_cookie_from_knowledge_pool();
-			//if (arg1==-1) break;
 			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			if (returnValue == 302 && location == _redirect_domain)
 			{
-				//if (wwahost_state.current_state->app_owner == _bob_own && access_token != -1) 
 				if (access_token!=-1)
 				{
 					add_access_token_knowledge_to_bob(access_token);
@@ -410,23 +325,22 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			}
 			break;
 		case API_id_FBConnectServer_graph_facebook_com_me:
+			//exchange token for UID
 			arg1=draw_access_token_from_knowledge_pool();
-			if (arg1==-1) break;
 			returnValue = graph_facebook_com_me_bob(arg1, &user);
 			break;
 		case API_id_FBConnectServer_graph_facebook_com_email:
+			//exchange token for email
 			arg1=draw_access_token_from_knowledge_pool();
-			if (arg1==-1) break;
 			returnValue = graph_facebook_com_email_bob(arg1, &user_email);
 			break;
 		default:
+			//exchange code for token
 			redirect_domain = poirot_nondet();
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
-			//shuo
 			arg1=draw_app_secret_from_knowledge_pool();
 			arg2=draw_code_from_knowledge_pool();
-			if (arg1==-1 || arg2==-1) break;
 			returnValue = graph_facebook_com_oauth_access_token_bob(redirect_domain, app_ID, arg1,arg2, &access_token);
 			break;	
 	}
@@ -441,10 +355,10 @@ void foo_client_app_calls()
 		update_dev_guide_status(_caller_foo,callee_id,API_id);	
 		switch (callee_id) {
 		case module_id_client_SDK:
-			call_an_API_on_client_SDK(API_id);
+			call_an_API_on_client_SDK(API_id);						//call authasync
 			break;
-		default:// module_id_Foo_service_app:
-			call_an_API_on_foo_service_app_From_Client(API_id);
+		default:
+			call_an_API_on_foo_service_app_From_Client(API_id);		//call RP's service API
 			break;
 		}
 	}
@@ -453,7 +367,6 @@ void foo_client_app_calls()
 void mal_client_app_calls(){
 	int callee_id, API_id;
 	callee_id=poirot_nondet();
-	//__hv_assume(callee_id!=module_id_client_SDK);						//assume module
 	API_id=poirot_nondet();
 	if (not_violating_client_dev_guide(_caller_mal,callee_id,API_id)&&not_violating_common_sense(_caller_mal,callee_id,API_id)) { //[shuo] MalApp's behavior shouldn't be constrained by anything.
 		update_dev_guide_status(_caller_mal,callee_id,API_id);	
@@ -475,7 +388,7 @@ void Bob_calls() {
 	int callee_id, API_id;
 	callee_id=poirot_nondet();
 	API_id=poirot_nondet();
-	if (not_violating_client_dev_guide(_caller_bob,callee_id,API_id)&&not_violating_common_sense(_caller_bob,callee_id,API_id)) {  //[shuo] Bob's behavior shouldn't be constrained by anything.
+	if (not_violating_common_sense(_caller_bob,callee_id,API_id)) {  //[shuo] Bob's behavior shouldn't be constrained by anything.
 		update_dev_guide_status(_caller_bob,callee_id,API_id);	
 		switch (callee_id) {
 		case module_id_IdP:
@@ -496,9 +409,12 @@ void takeAction()
 		foo_client_app_calls();
 		break;
 	case module_id_mal_client_app:
-		//mal_app_state.app_ID = poirot_nondet();	 //bob can spoof this id.
-		//__hv_assume(mal_app_state.app_ID == _mal_app_ID || mal_app_state.app_ID == _foo_app_ID);
-		mal_app_state.app_ID = _mal_app_ID;			//bob cannot spoof this id.
+	
+		mal_app_state.app_ID = poirot_nondet();	 //bob can spoof this id.
+		__hv_assume(mal_app_state.app_ID == _mal_app_ID || mal_app_state.app_ID == _foo_app_ID);
+		
+		//mal_app_state.app_ID = _mal_app_ID;			//bob cannot spoof this id.
+		
 		wwahost_state.current_state = &mal_app_state;
    		mal_client_app_calls();
 		break;
@@ -518,8 +434,8 @@ void initiate_knowledge()
 	email_k_base_length = 0;
 	app_secret_k_base_length = 0;
 	//attacker should know attacker's App secret
-	add_knowledge_to_bob(_app_secret_K,_bob_secret);
-	//add_knowledge_to_bob(_user_credentials_K,_bob_credentials);
+	add_app_secret_knowledge_to_bob(_bob_secret);
+	//add_knowledge_to_bob(_user_credentials_K,_bob_credentials);			//user credentials are not used right now. Assume Alice always enters Alice's credentials on Alice's devices and Bob vice versa.
 }
 
 //================main=============
@@ -556,7 +472,6 @@ int main()
 	server_state.codes = codes;
 	server_state.code_length = 0;
 
-	//server_state.apps = (Registered_App *) malloc(sizeof(Registered_App)*2);
 	server_state.app_F.app_ID = _foo_app_ID;
 	server_state.app_B.app_ID = _mal_app_ID;
 	server_state.app_F.app_secret = _foo_secret;
@@ -589,17 +504,17 @@ int main()
 	
 	//attacker should know some basic knowledge:
 	initiate_knowledge();
-
 	//symbolic execution
 	 //second, non-deterministically call APIs
+	MAX_STEPS = 5;
 	takeAction();
 	takeAction();
 	takeAction();   
-	//takeAction();   
-	//takeAction();   
+	takeAction();   
+	takeAction();   
 	//takeAction();    
-	user_email = draw_email_from_knowledge_pool();
-	__hv_assert(user_email != _alice_email);
+	//user_email = draw_email_from_knowledge_pool();
+	//__hv_assert(user_email != _alice_email);
 	return 0;
 }
 

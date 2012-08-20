@@ -6,6 +6,7 @@
 
 extern WWAHost_State wwahost_state;
 
+/*http://msdn.microsoft.com/en-us/library/windows/apps/br212067.aspx */
 void Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(Redirect_Domain redirect_domain, Scope scope, User user)
 {
 	Response_Type response_type = _token;
@@ -14,7 +15,7 @@ void Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsy
 	int cookie = -1;
 	Location_Knowledge location;
 	App_ID client_id = wwahost_state.current_state->app_ID;
-	int returnValue = dialog_oauth(cookie, client_id, redirect_domain, scope, user, response_type, &location, &access_token, &code);		//authenticate_async for FB should never append cookie the first time in a session.
+	int returnValue = dialog_oauth(cookie, client_id, redirect_domain, scope, user, response_type, &location, &access_token, &code);		//authenticate_async for FB should never append cookie the first time in a session, see remarks section of the API description page.
 	if (returnValue == 400) return;
 	if (returnValue == 302 && location == _login_php)
 	{

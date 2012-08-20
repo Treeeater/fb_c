@@ -561,6 +561,7 @@ var Res_PROBED:[int]int;
 
 //Global Declarations....
 
+var MAX_STEPS : int;
 var access_token_k_base : int;
 var access_token_k_base_length : int;
 var actionNumber : int;
@@ -580,10 +581,6 @@ var wwahost_state : int;
 
 
 procedure _vswprintf_c_l(a0:int, a1:int, a2:int, a3:int, a4:int) returns (ret:int);
-
-
-
-procedure add_knowledge_to_bob(a0:int, a1:int) returns (ret:int);
 
 
 
@@ -666,6 +663,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -678,12 +676,11 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$2$475.16$Bob_calls : int;
-var $callee_id$1$475.5$Bob_calls : int;
-var $result.not_violating_client_dev_guide$478.35$3$Bob_calls : int;
-var $result.not_violating_common_sense$478.93$4$Bob_calls : int;
-var $result.poirot_nondet$476.24$1$Bob_calls : int;
-var $result.poirot_nondet$477.21$2$Bob_calls : int;
+var $API_id$2$388.16$Bob_calls : int;
+var $callee_id$1$388.5$Bob_calls : int;
+var $result.not_violating_common_sense$391.31$3$Bob_calls : int;
+var $result.poirot_nondet$389.24$1$Bob_calls : int;
+var $result.poirot_nondet$390.21$2$Bob_calls : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -712,150 +709,127 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(489)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(402)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 489} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 402} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(489)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(402)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 489} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 402} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(475)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(388)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 475} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 388} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(475)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(388)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 475} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 388} true;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(476)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(389)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 476} true;
-call $result.poirot_nondet$476.24$1$Bob_calls := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 389} true;
+call $result.poirot_nondet$389.24$1$Bob_calls := poirot_nondet ();
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(476)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(389)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 476} true;
-$callee_id$1$475.5$Bob_calls := $result.poirot_nondet$476.24$1$Bob_calls ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 389} true;
+$callee_id$1$388.5$Bob_calls := $result.poirot_nondet$389.24$1$Bob_calls ;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(477)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(390)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 477} true;
-call $result.poirot_nondet$477.21$2$Bob_calls := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 390} true;
+call $result.poirot_nondet$390.21$2$Bob_calls := poirot_nondet ();
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(477)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(390)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 477} true;
-$API_id$2$475.16$Bob_calls := $result.poirot_nondet$477.21$2$Bob_calls ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 390} true;
+$API_id$2$388.16$Bob_calls := $result.poirot_nondet$390.21$2$Bob_calls ;
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(478)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(391)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 478} true;
-call $result.not_violating_client_dev_guide$478.35$3$Bob_calls := not_violating_client_dev_guide (2, $callee_id$1$475.5$Bob_calls, $API_id$2$475.16$Bob_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 391} true;
+call $result.not_violating_common_sense$391.31$3$Bob_calls := not_violating_common_sense (2, $callee_id$1$388.5$Bob_calls, $API_id$2$388.16$Bob_calls);
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(478)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(391)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 478} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 391} true;
 goto label_16_true , label_16_false ;
 
 
 label_16_true :
-assume ($result.not_violating_client_dev_guide$478.35$3$Bob_calls != 0);
+assume ($result.not_violating_common_sense$391.31$3$Bob_calls != 0);
 goto label_17;
 
 
 label_16_false :
-assume ($result.not_violating_client_dev_guide$478.35$3$Bob_calls == 0);
+assume ($result.not_violating_common_sense$391.31$3$Bob_calls == 0);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(478)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(392)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 478} true;
-call $result.not_violating_common_sense$478.93$4$Bob_calls := not_violating_common_sense (2, $callee_id$1$475.5$Bob_calls, $API_id$2$475.16$Bob_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 392} true;
+call update_dev_guide_status (2, $callee_id$1$388.5$Bob_calls, $API_id$2$388.16$Bob_calls);
 goto label_20;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(478)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(393)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 478} true;
-goto label_20_true , label_20_false ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 393} true;
+
+goto label_20_case_0, label_20_case_1;
 
 
-label_20_true :
-assume ($result.not_violating_common_sense$478.93$4$Bob_calls != 0);
+
+
+label_20_case_0 :
+assume(INT_NEQ($callee_id$1$388.5$Bob_calls, 7));
 goto label_21;
 
 
-label_20_false :
-assume ($result.not_violating_common_sense$478.93$4$Bob_calls == 0);
-goto label_1;
 
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(479)
-label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 479} true;
-call update_dev_guide_status (2, $callee_id$1$475.5$Bob_calls, $API_id$2$475.16$Bob_calls);
+label_20_case_1 :
+assume(INT_EQ($callee_id$1$388.5$Bob_calls, 7));
 goto label_24;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(480)
-label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 480} true;
-
-goto label_24_case_0, label_24_case_1;
-
-
-
-
-label_24_case_0 :
-assume(INT_NEQ($callee_id$1$475.5$Bob_calls, 7));
-goto label_25;
-
-
-
-label_24_case_1 :
-assume(INT_EQ($callee_id$1$475.5$Bob_calls, 7));
-goto label_28;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(485)
-label_25:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 485} true;
-call call_an_API_on_foo_service_app_From_Bob ($API_id$2$475.16$Bob_calls);
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(398)
+label_21:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 398} true;
+call call_an_API_on_foo_service_app_From_Bob ($API_id$2$388.16$Bob_calls);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(482)
-label_28:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 482} true;
-call call_an_API_on_IdP_From_Bob ($API_id$2$475.16$Bob_calls);
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(395)
+label_24:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 395} true;
+call call_an_API_on_IdP_From_Bob ($API_id$2$388.16$Bob_calls);
 goto label_1;
 
 }
 
 
 
-procedure  Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync($redirect_domain$1$9.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int, $scope$2$9.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int, $user$3$9.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int)
+procedure  Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync($redirect_domain$1$10.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int, $scope$2$10.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int, $user$3$10.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -930,6 +904,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -942,19 +917,19 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $client_id$9$16.8$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $cookie$7$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $redirect_domain$1$9.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $response_type$4$11.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $result.dialog_oauth$17.31$1$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $result.dialog_permissions_request$29.42$3$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $result.login_php$22.25$2$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $scope$2$9.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
-var $user$3$9.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $client_id$9$17.8$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $cookie$7$15.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $redirect_domain$1$10.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $response_type$4$12.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $result.dialog_oauth$18.31$1$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $result.dialog_permissions_request$30.42$3$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $result.login_php$23.25$2$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $scope$2$10.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
+var $user$3$10.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -980,320 +955,320 @@ var __havoc_dummy_return: int;
 
 start:
 
-call $access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := __HAVOC_malloc(4);
-call $code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := __HAVOC_malloc(4);
-call $cookie$7$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := __HAVOC_malloc(4);
-call $location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := __HAVOC_malloc(4);
-$redirect_domain$1$9.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $redirect_domain$1$9.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1;
-$scope$2$9.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $scope$2$9.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1;
-$user$3$9.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $user$3$9.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1;
+call $access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := __HAVOC_malloc(4);
+call $code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := __HAVOC_malloc(4);
+call $cookie$7$15.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := __HAVOC_malloc(4);
+call $location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := __HAVOC_malloc(4);
+$redirect_domain$1$10.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $redirect_domain$1$10.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1;
+$scope$2$10.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $scope$2$10.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1;
+$user$3$10.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $user$3$10.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(58)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(59)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 58} true;
-call __HAVOC_free($access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
-call __HAVOC_free($code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
-call __HAVOC_free($cookie$7$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
-call __HAVOC_free($location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 59} true;
+call __HAVOC_free($access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
+call __HAVOC_free($code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
+call __HAVOC_free($cookie$7$15.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
+call __HAVOC_free($location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(58)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(59)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 58} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 59} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(11)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(12)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 11} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 12} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(11)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(12)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 11} true;
-$response_type$4$11.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 12} true;
+$response_type$4$12.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := 0 ;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(12)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(13)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 12} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 13} true;
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(12)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(13)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 12} true;
-Mem_T.INT4 := Mem_T.INT4[$access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 13} true;
+Mem_T.INT4 := Mem_T.INT4[$access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := -1];
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(13)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(14)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 13} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 14} true;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(13)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(14)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 13} true;
-Mem_T.INT4 := Mem_T.INT4[$code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 14} true;
+Mem_T.INT4 := Mem_T.INT4[$code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := -1];
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(14)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(15)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 14} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 15} true;
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(14)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(15)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 14} true;
-Mem_T.INT4 := Mem_T.INT4[$cookie$7$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 15} true;
+Mem_T.INT4 := Mem_T.INT4[$cookie$7$15.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := -1];
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(15)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(16)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 15} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 16} true;
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(16)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(17)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 16} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 17} true;
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(16)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(17)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 16} true;
-$client_id$9$16.8$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)])] ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 17} true;
+$client_id$9$17.8$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)])] ;
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(17)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(18)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 17} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 18} true;
 goto label_15;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(17)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(18)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 17} true;
-call $result.dialog_oauth$17.31$1$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := dialog_oauth (Mem_T.INT4[$cookie$7$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], $client_id$9$16.8$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $redirect_domain$1$9.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $scope$2$9.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $user$3$9.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $response_type$4$11.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 18} true;
+call $result.dialog_oauth$18.31$1$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := dialog_oauth (Mem_T.INT4[$cookie$7$15.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], $client_id$9$17.8$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $redirect_domain$1$10.99$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $scope$2$10.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $user$3$10.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $response_type$4$12.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
 goto label_18;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(17)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(18)
 label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 17} true;
-$returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $result.dialog_oauth$17.31$1$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 18} true;
+$returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $result.dialog_oauth$18.31$1$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync ;
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(18)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(19)
 label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 18} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 19} true;
 goto label_19_true , label_19_false ;
 
 
 label_19_true :
-assume (INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
+assume (INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
 goto label_1;
 
 
 label_19_false :
-assume !(INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
+assume !(INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
 goto label_20;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(19)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(20)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 19} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 20} true;
 goto label_20_true , label_20_false ;
 
 
 label_20_true :
-assume (INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
+assume (INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
 goto label_22;
 
 
 label_20_false :
-assume !(INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
+assume !(INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
 goto label_21;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(26)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(27)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 26} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 27} true;
 goto label_21_true , label_21_false ;
 
 
 label_21_true :
-assume (INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
+assume (INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
 goto label_30;
 
 
 label_21_false :
-assume !(INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
+assume !(INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
 goto label_29;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(19)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(20)
 label_22:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 19} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 20} true;
 goto label_22_true , label_22_false ;
 
 
 label_22_true :
-assume (INT_EQ(Mem_T.Location_Knowledge[$location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 1));
+assume (INT_EQ(Mem_T.Location_Knowledge[$location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 1));
 goto label_23;
 
 
 label_22_false :
-assume !(INT_EQ(Mem_T.Location_Knowledge[$location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 1));
+assume !(INT_EQ(Mem_T.Location_Knowledge[$location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 1));
 goto label_21;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(22)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(23)
 label_23:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 22} true;
-call $result.login_php$22.25$2$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := login_php ($user$3$9.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $cookie$7$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 0);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 23} true;
+call $result.login_php$23.25$2$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := login_php ($user$3$10.134$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $cookie$7$15.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 0);
 goto label_26;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(22)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(23)
 label_26:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 22} true;
-$returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $result.login_php$22.25$2$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 23} true;
+$returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $result.login_php$23.25$2$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync ;
 goto label_27;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(23)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(24)
 label_27:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 23} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 24} true;
 goto label_27_true , label_27_false ;
 
 
 label_27_true :
-assume (INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
+assume (INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
 goto label_1;
 
 
 label_27_false :
-assume !(INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
+assume !(INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
 goto label_28;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(24)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(25)
 label_28:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 24} true;
-Mem_T.cookie_WWAHost_State := Mem_T.cookie_WWAHost_State[cookie_WWAHost_State(wwahost_state) := Mem_T.INT4[$cookie$7$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 25} true;
+Mem_T.cookie_WWAHost_State := Mem_T.cookie_WWAHost_State[cookie_WWAHost_State(wwahost_state) := Mem_T.INT4[$cookie$7$15.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]];
 goto label_21;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(32)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(33)
 label_29:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 32} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 33} true;
 goto label_29_true , label_29_false ;
 
 
 label_29_true :
-assume (INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
+assume (INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
 goto label_36;
 
 
 label_29_false :
-assume !(INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
+assume !(INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 302));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(26)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(27)
 label_30:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 26} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 27} true;
 goto label_30_true , label_30_false ;
 
 
 label_30_true :
-assume (INT_EQ(Mem_T.Location_Knowledge[$location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 2));
+assume (INT_EQ(Mem_T.Location_Knowledge[$location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 2));
 goto label_31;
 
 
 label_30_false :
-assume !(INT_EQ(Mem_T.Location_Knowledge[$location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 2));
+assume !(INT_EQ(Mem_T.Location_Knowledge[$location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 2));
 goto label_29;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(29)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(30)
 label_31:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 29} true;
-call $result.dialog_permissions_request$29.42$3$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := dialog_permissions_request ($client_id$9$16.8$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, Mem_T.cookie_WWAHost_State[cookie_WWAHost_State(wwahost_state)], $scope$2$9.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $response_type$4$11.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 30} true;
+call $result.dialog_permissions_request$30.42$3$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := dialog_permissions_request ($client_id$9$17.8$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, Mem_T.cookie_WWAHost_State[cookie_WWAHost_State(wwahost_state)], $scope$2$10.122$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $response_type$4$12.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, $code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync);
 goto label_34;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(29)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(30)
 label_34:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 29} true;
-$returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $result.dialog_permissions_request$29.42$3$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 30} true;
+$returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync := $result.dialog_permissions_request$30.42$3$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync ;
 goto label_35;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(30)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(31)
 label_35:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 30} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 31} true;
 goto label_35_true , label_35_false ;
 
 
 label_35_true :
-assume (INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
+assume (INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
 goto label_1;
 
 
 label_35_false :
-assume !(INT_EQ($returnValue$10$17.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
+assume !(INT_EQ($returnValue$10$18.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync, 400));
 goto label_29;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(32)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(33)
 label_36:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 32} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 33} true;
 goto label_36_true , label_36_false ;
 
 
 label_36_true :
-assume (INT_EQ(Mem_T.Location_Knowledge[$location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 3));
+assume (INT_EQ(Mem_T.Location_Knowledge[$location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 3));
 goto label_37;
 
 
 label_36_false :
-assume !(INT_EQ(Mem_T.Location_Knowledge[$location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 3));
+assume !(INT_EQ(Mem_T.Location_Knowledge[$location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 3));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(35)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(36)
 label_37:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 35} true;
-Mem_T.access_token_App_Client_State := Mem_T.access_token_App_Client_State[access_token_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)]) := Mem_T.INT4[$access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 36} true;
+Mem_T.access_token_App_Client_State := Mem_T.access_token_App_Client_State[access_token_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)]) := Mem_T.INT4[$access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]];
 goto label_38;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(36)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(37)
 label_38:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 36} true;
-Mem_T.code_App_Client_State := Mem_T.code_App_Client_State[code_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)]) := Mem_T.INT4[$code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 37} true;
+Mem_T.code_App_Client_State := Mem_T.code_App_Client_State[code_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)]) := Mem_T.INT4[$code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]];
 goto label_39;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(38)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(39)
 label_39:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 38} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 39} true;
 goto label_39_true , label_39_false ;
 
 
@@ -1307,9 +1282,9 @@ assume !(INT_EQ(Mem_T.app_owner_App_Client_State[app_owner_App_Client_State(Mem_
 goto label_40;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(42)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(43)
 label_40:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 42} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 43} true;
 goto label_40_true , label_40_false ;
 
 
@@ -1323,95 +1298,95 @@ assume !(INT_EQ(Mem_T.app_owner_App_Client_State[app_owner_App_Client_State(Mem_
 goto label_45;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(38)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(39)
 label_41:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 38} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 39} true;
 goto label_41_true , label_41_false ;
 
 
 label_41_true :
-assume (INT_NEQ(Mem_T.INT4[$access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], -1));
+assume (INT_NEQ(Mem_T.INT4[$access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], -1));
 goto label_42;
 
 
 label_41_false :
-assume !(INT_NEQ(Mem_T.INT4[$access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], -1));
+assume !(INT_NEQ(Mem_T.INT4[$access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], -1));
 goto label_40;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(40)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(41)
 label_42:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 40} true;
-call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 41} true;
+call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(47)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(48)
 label_45:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 47} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 48} true;
 goto label_45_true , label_45_false ;
 
 
 label_45_true :
-assume (INT_EQ(Mem_T.Location_Knowledge[$location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 2));
+assume (INT_EQ(Mem_T.Location_Knowledge[$location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 2));
 goto label_50;
 
 
 label_45_false :
-assume !(INT_EQ(Mem_T.Location_Knowledge[$location$8$15.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 2));
+assume !(INT_EQ(Mem_T.Location_Knowledge[$location$8$16.20$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], 2));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(42)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(43)
 label_46:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 42} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 43} true;
 goto label_46_true , label_46_false ;
 
 
 label_46_true :
-assume (INT_NEQ(Mem_T.INT4[$code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], -1));
+assume (INT_NEQ(Mem_T.INT4[$code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], -1));
 goto label_47;
 
 
 label_46_false :
-assume !(INT_NEQ(Mem_T.INT4[$code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], -1));
+assume !(INT_NEQ(Mem_T.INT4[$code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync], -1));
 goto label_45;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(44)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(45)
 label_47:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 44} true;
-call add_code_knowledge_to_bob (Mem_T.INT4[$code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 45} true;
+call add_code_knowledge_to_bob (Mem_T.INT4[$code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(49)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(50)
 label_50:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 49} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 50} true;
 goto label_50_true , label_50_false ;
 
 
 label_50_true :
-assume ($response_type$4$11.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync != 0);
+assume ($response_type$4$12.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync != 0);
 goto label_54;
 
 
 label_50_false :
-assume ($response_type$4$11.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync == 0);
+assume ($response_type$4$12.15$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync == 0);
 goto label_51;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(51)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(52)
 label_51:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 51} true;
-call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$5$12.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 52} true;
+call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$5$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h(54)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h(55)
 label_54:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectsdk.h"} {:sourceline 54} true;
-call add_code_knowledge_to_bob (Mem_T.INT4[$code$6$13.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectsdk.h"} {:sourceline 55} true;
+call add_code_knowledge_to_bob (Mem_T.INT4[$code$6$14.5$Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync]);
 goto label_1;
 
 }
@@ -1493,6 +1468,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -1649,6 +1625,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -1691,29 +1668,29 @@ $value$1$48.43$add_access_token_knowledge_to_bob := $value$1$48.43$add_access_to
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(52)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(52)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 52} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 52} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(52)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(52)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 52} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 52} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(50)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(50)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 50} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 50} true;
 Mem_T.INT4 := Mem_T.INT4[PLUS(access_token_k_base, 4, access_token_k_base_length) := $value$1$48.43$add_access_token_knowledge_to_bob];
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(51)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(51)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 51} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 51} true;
 access_token_k_base_length := PLUS(access_token_k_base_length, 1, 1) ;
 goto label_1;
 
@@ -1721,7 +1698,7 @@ goto label_1;
 
 
 
-procedure  add_app_secret_knowledge_to_bob($value$1$66.41$add_app_secret_knowledge_to_bob_.1:int)
+procedure  add_app_secret_knowledge_to_bob($value$1$67.41$add_app_secret_knowledge_to_bob_.1:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -1796,6 +1773,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -1808,7 +1786,7 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $value$1$66.41$add_app_secret_knowledge_to_bob : int;
+var $value$1$67.41$add_app_secret_knowledge_to_bob : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -1834,33 +1812,33 @@ var __havoc_dummy_return: int;
 
 start:
 
-$value$1$66.41$add_app_secret_knowledge_to_bob := $value$1$66.41$add_app_secret_knowledge_to_bob_.1;
+$value$1$67.41$add_app_secret_knowledge_to_bob := $value$1$67.41$add_app_secret_knowledge_to_bob_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(70)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(71)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 70} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 71} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(70)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(71)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 70} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 71} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(68)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(69)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 68} true;
-Mem_T.INT4 := Mem_T.INT4[PLUS(app_secret_k_base, 4, app_secret_k_base_length) := $value$1$66.41$add_app_secret_knowledge_to_bob];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 69} true;
+Mem_T.INT4 := Mem_T.INT4[PLUS(app_secret_k_base, 4, app_secret_k_base_length) := $value$1$67.41$add_app_secret_knowledge_to_bob];
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(69)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(70)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 69} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 70} true;
 app_secret_k_base_length := PLUS(app_secret_k_base_length, 1, 1) ;
 goto label_1;
 
@@ -1943,6 +1921,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -1985,29 +1964,29 @@ $value$1$54.35$add_code_knowledge_to_bob := $value$1$54.35$add_code_knowledge_to
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(58)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(58)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 58} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 58} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(58)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(58)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 58} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 58} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(56)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(56)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 56} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 56} true;
 Mem_T.INT4 := Mem_T.INT4[PLUS(code_k_base, 4, code_k_base_length) := $value$1$54.35$add_code_knowledge_to_bob];
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(57)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(57)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 57} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 57} true;
 code_k_base_length := PLUS(code_k_base_length, 1, 1) ;
 goto label_1;
 
@@ -2090,6 +2069,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -2132,29 +2112,29 @@ $value$1$42.37$add_cookie_knowledge_to_bob := $value$1$42.37$add_cookie_knowledg
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(46)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(46)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 46} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 46} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(46)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(46)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 46} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 46} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(44)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(44)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 44} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 44} true;
 Mem_T.INT4 := Mem_T.INT4[PLUS(cookie_k_base, 4, cookie_k_base_length) := $value$1$42.37$add_cookie_knowledge_to_bob];
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(45)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(45)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 45} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 45} true;
 cookie_k_base_length := PLUS(cookie_k_base_length, 1, 1) ;
 goto label_1;
 
@@ -2237,6 +2217,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -2279,29 +2260,37 @@ $value$1$60.36$add_email_knowledge_to_bob := $value$1$60.36$add_email_knowledge_
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(64)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(65)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 64} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 65} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(64)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(65)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 64} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 65} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(62)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(62)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 62} true;
-Mem_T.INT4 := Mem_T.INT4[PLUS(email_k_base, 4, email_k_base_length) := $value$1$60.36$add_email_knowledge_to_bob];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 62} true;
+//TAG: value != 1
+assert (INT_NEQ($value$1$60.36$add_email_knowledge_to_bob, 1));
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(63)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(63)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 63} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 63} true;
+Mem_T.INT4 := Mem_T.INT4[PLUS(email_k_base, 4, email_k_base_length) := $value$1$60.36$add_email_knowledge_to_bob];
+goto label_5;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(64)
+label_5:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 64} true;
 email_k_base_length := PLUS(email_k_base_length, 1, 1) ;
 goto label_1;
 
@@ -2309,7 +2298,7 @@ goto label_1;
 
 
 
-procedure  authenticate_user($access_token$1$9.33$authenticate_user_.1:int) returns ($result.authenticate_user$9.11$1$authenticate_user:int)
+procedure  authenticate_user($access_token$1$8.33$authenticate_user_.1:int) returns ($result.authenticate_user$8.11$1$authenticate_user:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -2384,6 +2373,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -2396,7 +2386,7 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$1$9.33$authenticate_user : int;
+var $access_token$1$8.33$authenticate_user : int;
 var $result.graph_facebook_com_me$15.26$2$authenticate_user : int;
 var $rps$2$11.12$authenticate_user : int;
 var $user_ID$3$12.6$authenticate_user : int;
@@ -2427,68 +2417,68 @@ start:
 
 call $rps$2$11.12$authenticate_user := __HAVOC_malloc(8);
 call $user_ID$3$12.6$authenticate_user := __HAVOC_malloc(4);
-$access_token$1$9.33$authenticate_user := $access_token$1$9.33$authenticate_user_.1;
+$access_token$1$8.33$authenticate_user := $access_token$1$8.33$authenticate_user_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(22)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(22)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 22} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 22} true;
 call __HAVOC_free($rps$2$11.12$authenticate_user);
 call __HAVOC_free($user_ID$3$12.6$authenticate_user);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(22)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(22)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 22} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 22} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(11)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(11)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 11} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 11} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(12)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(12)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 12} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 12} true;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(12)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(12)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 12} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 12} true;
 Mem_T.User := Mem_T.User[$user_ID$3$12.6$authenticate_user := 0];
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(13)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(13)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 13} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 13} true;
 Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($rps$2$11.12$authenticate_user) := -1];
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(14)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(14)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 14} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 14} true;
 Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($rps$2$11.12$authenticate_user) := 0];
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(15)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(15)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 15} true;
-call $result.graph_facebook_com_me$15.26$2$authenticate_user := graph_facebook_com_me ($access_token$1$9.33$authenticate_user, $user_ID$3$12.6$authenticate_user);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 15} true;
+call $result.graph_facebook_com_me$15.26$2$authenticate_user := graph_facebook_com_me ($access_token$1$8.33$authenticate_user, $user_ID$3$12.6$authenticate_user);
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(15)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(15)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 15} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 15} true;
 goto label_11_true , label_11_false ;
 
 
@@ -2502,30 +2492,30 @@ assume !(INT_EQ($result.graph_facebook_com_me$15.26$2$authenticate_user, 200));
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(21)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(21)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 21} true;
-$result.authenticate_user$9.11$1$authenticate_user := $rps$2$11.12$authenticate_user ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 21} true;
+$result.authenticate_user$8.11$1$authenticate_user := $rps$2$11.12$authenticate_user ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(17)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(17)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 17} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 17} true;
 Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($rps$2$11.12$authenticate_user) := Mem_T.session_length_RP_State[session_length_RP_State(foo_rp_state)]];
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(18)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(18)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 18} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 18} true;
 Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($rps$2$11.12$authenticate_user) := Mem_T.User[$user_ID$3$12.6$authenticate_user]];
 goto label_15;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(19)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(19)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 19} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 19} true;
 tempBoogie0 := PLUS(Mem_T.session_length_RP_State[session_length_RP_State(foo_rp_state)], 1, 1) ;
 Mem_T.session_length_RP_State := Mem_T.session_length_RP_State[session_length_RP_State(foo_rp_state) := tempBoogie0];
 goto label_12;
@@ -2609,6 +2599,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -2621,12 +2612,12 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$3$27.5$authenticate_user2 : int;
+var $access_token$3$28.5$authenticate_user2 : int;
 var $code$1$24.34$authenticate_user2 : int;
-var $result.graph_facebook_com_me$32.26$3$authenticate_user2 : int;
-var $result.graph_facebook_com_oauth_access_token$31.42$2$authenticate_user2 : int;
-var $rps$2$26.12$authenticate_user2 : int;
-var $user_ID$4$28.6$authenticate_user2 : int;
+var $result.graph_facebook_com_me$33.26$3$authenticate_user2 : int;
+var $result.graph_facebook_com_oauth_access_token$32.42$2$authenticate_user2 : int;
+var $rps$2$27.12$authenticate_user2 : int;
+var $user_ID$4$29.6$authenticate_user2 : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -2652,152 +2643,152 @@ var __havoc_dummy_return: int;
 
 start:
 
-call $access_token$3$27.5$authenticate_user2 := __HAVOC_malloc(4);
-call $rps$2$26.12$authenticate_user2 := __HAVOC_malloc(8);
-call $user_ID$4$28.6$authenticate_user2 := __HAVOC_malloc(4);
+call $access_token$3$28.5$authenticate_user2 := __HAVOC_malloc(4);
+call $rps$2$27.12$authenticate_user2 := __HAVOC_malloc(8);
+call $user_ID$4$29.6$authenticate_user2 := __HAVOC_malloc(4);
 $code$1$24.34$authenticate_user2 := $code$1$24.34$authenticate_user2_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(39)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(40)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 39} true;
-call __HAVOC_free($access_token$3$27.5$authenticate_user2);
-call __HAVOC_free($rps$2$26.12$authenticate_user2);
-call __HAVOC_free($user_ID$4$28.6$authenticate_user2);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 40} true;
+call __HAVOC_free($access_token$3$28.5$authenticate_user2);
+call __HAVOC_free($rps$2$27.12$authenticate_user2);
+call __HAVOC_free($user_ID$4$29.6$authenticate_user2);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(39)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(40)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 39} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 40} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(26)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(27)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 26} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 27} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(27)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(28)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 27} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 28} true;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(27)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(28)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 27} true;
-Mem_T.INT4 := Mem_T.INT4[$access_token$3$27.5$authenticate_user2 := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 28} true;
+Mem_T.INT4 := Mem_T.INT4[$access_token$3$28.5$authenticate_user2 := -1];
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(28)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(29)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 28} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 29} true;
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(28)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(29)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 28} true;
-Mem_T.User := Mem_T.User[$user_ID$4$28.6$authenticate_user2 := 0];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 29} true;
+Mem_T.User := Mem_T.User[$user_ID$4$29.6$authenticate_user2 := 0];
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(29)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(30)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 29} true;
-Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($rps$2$26.12$authenticate_user2) := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 30} true;
+Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($rps$2$27.12$authenticate_user2) := -1];
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(30)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(31)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 30} true;
-Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($rps$2$26.12$authenticate_user2) := 0];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 31} true;
+Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($rps$2$27.12$authenticate_user2) := 0];
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(31)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(32)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 31} true;
-call $result.graph_facebook_com_oauth_access_token$31.42$2$authenticate_user2 := graph_facebook_com_oauth_access_token (1, 0, 0, $code$1$24.34$authenticate_user2, $access_token$3$27.5$authenticate_user2);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 32} true;
+call $result.graph_facebook_com_oauth_access_token$32.42$2$authenticate_user2 := graph_facebook_com_oauth_access_token (1, 0, 0, $code$1$24.34$authenticate_user2, $access_token$3$28.5$authenticate_user2);
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(31)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(32)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 31} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 32} true;
 goto label_13_true , label_13_false ;
 
 
 label_13_true :
-assume (INT_EQ($result.graph_facebook_com_oauth_access_token$31.42$2$authenticate_user2, 400));
+assume (INT_EQ($result.graph_facebook_com_oauth_access_token$32.42$2$authenticate_user2, 400));
 goto label_17;
 
 
 label_13_false :
-assume !(INT_EQ($result.graph_facebook_com_oauth_access_token$31.42$2$authenticate_user2, 400));
+assume !(INT_EQ($result.graph_facebook_com_oauth_access_token$32.42$2$authenticate_user2, 400));
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(32)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(33)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 32} true;
-call $result.graph_facebook_com_me$32.26$3$authenticate_user2 := graph_facebook_com_me (Mem_T.INT4[$access_token$3$27.5$authenticate_user2], $user_ID$4$28.6$authenticate_user2);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 33} true;
+call $result.graph_facebook_com_me$33.26$3$authenticate_user2 := graph_facebook_com_me (Mem_T.INT4[$access_token$3$28.5$authenticate_user2], $user_ID$4$29.6$authenticate_user2);
 goto label_18;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(31)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(32)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 31} true;
-$result.authenticate_user2$24.11$1$authenticate_user2 := $rps$2$26.12$authenticate_user2 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 32} true;
+$result.authenticate_user2$24.11$1$authenticate_user2 := $rps$2$27.12$authenticate_user2 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(32)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(33)
 label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 32} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 33} true;
 goto label_18_true , label_18_false ;
 
 
 label_18_true :
-assume (INT_EQ($result.graph_facebook_com_me$32.26$3$authenticate_user2, 200));
+assume (INT_EQ($result.graph_facebook_com_me$33.26$3$authenticate_user2, 200));
 goto label_20;
 
 
 label_18_false :
-assume !(INT_EQ($result.graph_facebook_com_me$32.26$3$authenticate_user2, 200));
+assume !(INT_EQ($result.graph_facebook_com_me$33.26$3$authenticate_user2, 200));
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(38)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(39)
 label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 38} true;
-$result.authenticate_user2$24.11$1$authenticate_user2 := $rps$2$26.12$authenticate_user2 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 39} true;
+$result.authenticate_user2$24.11$1$authenticate_user2 := $rps$2$27.12$authenticate_user2 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(34)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(35)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 34} true;
-Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($rps$2$26.12$authenticate_user2) := Mem_T.session_length_RP_State[session_length_RP_State(foo_rp_state)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 35} true;
+Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($rps$2$27.12$authenticate_user2) := Mem_T.session_length_RP_State[session_length_RP_State(foo_rp_state)]];
 goto label_21;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(35)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(36)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 35} true;
-Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($rps$2$26.12$authenticate_user2) := Mem_T.User[$user_ID$4$28.6$authenticate_user2]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 36} true;
+Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($rps$2$27.12$authenticate_user2) := Mem_T.User[$user_ID$4$29.6$authenticate_user2]];
 goto label_22;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h(36)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h(37)
 label_22:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\rpserver.h"} {:sourceline 36} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\rpserver.h"} {:sourceline 37} true;
 tempBoogie0 := PLUS(Mem_T.session_length_RP_State[session_length_RP_State(foo_rp_state)], 1, 1) ;
 Mem_T.session_length_RP_State := Mem_T.session_length_RP_State[session_length_RP_State(foo_rp_state) := tempBoogie0];
 goto label_19;
@@ -2806,7 +2797,7 @@ goto label_19;
 
 
 
-procedure  call_an_API_on_IdP_From_Bob($API_id$1$179.37$call_an_API_on_IdP_From_Bob_.1:int)
+procedure  call_an_API_on_IdP_From_Bob($API_id$1$134.37$call_an_API_on_IdP_From_Bob_.1:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -2881,6 +2872,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -2893,28 +2885,28 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$1$179.37$call_an_API_on_IdP_From_Bob : int;
-var $access_token$2$180.5$call_an_API_on_IdP_From_Bob : int;
-var $app_ID$11$190.8$call_an_API_on_IdP_From_Bob : int;
-var $arg1$12$193.5$call_an_API_on_IdP_From_Bob : int;
-var $code$3$181.5$call_an_API_on_IdP_From_Bob : int;
-var $cookie$4$182.5$call_an_API_on_IdP_From_Bob : int;
-var $location$7$186.20$call_an_API_on_IdP_From_Bob : int;
-var $redirect_domain$8$187.17$call_an_API_on_IdP_From_Bob : int;
-var $response_type$10$189.15$call_an_API_on_IdP_From_Bob : int;
-var $result.dialog_oauth$218.29$10$call_an_API_on_IdP_From_Bob : int;
-var $result.dialog_permissions_request$258.43$21$call_an_API_on_IdP_From_Bob : int;
-var $result.draw_cookie_from_knowledge_pool$215.39$9$call_an_API_on_IdP_From_Bob : int;
-var $result.draw_cookie_from_knowledge_pool$256.39$20$call_an_API_on_IdP_From_Bob : int;
-var $result.login_php$246.26$13$call_an_API_on_IdP_From_Bob : int;
-var $result.poirot_nondet$209.25$1$call_an_API_on_IdP_From_Bob : int;
-var $result.poirot_nondet$210.24$3$call_an_API_on_IdP_From_Bob : int;
-var $result.poirot_nondet$211.33$5$call_an_API_on_IdP_From_Bob : int;
-var $result.poirot_nondet$212.35$7$call_an_API_on_IdP_From_Bob : int;
-var $result.poirot_nondet$240.24$11$call_an_API_on_IdP_From_Bob : int;
-var $result.poirot_nondet$251.25$14$call_an_API_on_IdP_From_Bob : int;
-var $result.poirot_nondet$252.33$16$call_an_API_on_IdP_From_Bob : int;
-var $result.poirot_nondet$253.26$18$call_an_API_on_IdP_From_Bob : int;
+var $API_id$1$134.37$call_an_API_on_IdP_From_Bob : int;
+var $access_token$2$135.5$call_an_API_on_IdP_From_Bob : int;
+var $app_ID$11$145.8$call_an_API_on_IdP_From_Bob : int;
+var $arg1$12$148.5$call_an_API_on_IdP_From_Bob : int;
+var $code$3$136.5$call_an_API_on_IdP_From_Bob : int;
+var $cookie$4$137.5$call_an_API_on_IdP_From_Bob : int;
+var $location$7$141.20$call_an_API_on_IdP_From_Bob : int;
+var $redirect_domain$8$142.17$call_an_API_on_IdP_From_Bob : int;
+var $response_type$10$144.15$call_an_API_on_IdP_From_Bob : int;
+var $result.dialog_oauth$162.29$10$call_an_API_on_IdP_From_Bob : int;
+var $result.dialog_permissions_request$191.43$21$call_an_API_on_IdP_From_Bob : int;
+var $result.draw_cookie_from_knowledge_pool$160.39$9$call_an_API_on_IdP_From_Bob : int;
+var $result.draw_cookie_from_knowledge_pool$190.39$20$call_an_API_on_IdP_From_Bob : int;
+var $result.login_php$180.26$13$call_an_API_on_IdP_From_Bob : int;
+var $result.poirot_nondet$154.25$1$call_an_API_on_IdP_From_Bob : int;
+var $result.poirot_nondet$155.24$3$call_an_API_on_IdP_From_Bob : int;
+var $result.poirot_nondet$156.33$5$call_an_API_on_IdP_From_Bob : int;
+var $result.poirot_nondet$157.35$7$call_an_API_on_IdP_From_Bob : int;
+var $result.poirot_nondet$179.24$11$call_an_API_on_IdP_From_Bob : int;
+var $result.poirot_nondet$185.25$14$call_an_API_on_IdP_From_Bob : int;
+var $result.poirot_nondet$186.33$16$call_an_API_on_IdP_From_Bob : int;
+var $result.poirot_nondet$187.26$18$call_an_API_on_IdP_From_Bob : int;
 var $result.question.12$ : int;
 var $result.question.15$ : int;
 var $result.question.17$ : int;
@@ -2923,9 +2915,9 @@ var $result.question.2$ : int;
 var $result.question.4$ : int;
 var $result.question.6$ : int;
 var $result.question.8$ : int;
-var $returnValue$5$183.5$call_an_API_on_IdP_From_Bob : int;
-var $scope$9$188.7$call_an_API_on_IdP_From_Bob : int;
-var $user$6$185.6$call_an_API_on_IdP_From_Bob : int;
+var $returnValue$5$138.5$call_an_API_on_IdP_From_Bob : int;
+var $scope$9$143.7$call_an_API_on_IdP_From_Bob : int;
+var $user$6$140.6$call_an_API_on_IdP_From_Bob : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -2951,163 +2943,163 @@ var __havoc_dummy_return: int;
 
 start:
 
-call $access_token$2$180.5$call_an_API_on_IdP_From_Bob := __HAVOC_malloc(4);
-call $code$3$181.5$call_an_API_on_IdP_From_Bob := __HAVOC_malloc(4);
-call $cookie$4$182.5$call_an_API_on_IdP_From_Bob := __HAVOC_malloc(4);
-call $location$7$186.20$call_an_API_on_IdP_From_Bob := __HAVOC_malloc(4);
-$API_id$1$179.37$call_an_API_on_IdP_From_Bob := $API_id$1$179.37$call_an_API_on_IdP_From_Bob_.1;
+call $access_token$2$135.5$call_an_API_on_IdP_From_Bob := __HAVOC_malloc(4);
+call $code$3$136.5$call_an_API_on_IdP_From_Bob := __HAVOC_malloc(4);
+call $cookie$4$137.5$call_an_API_on_IdP_From_Bob := __HAVOC_malloc(4);
+call $location$7$141.20$call_an_API_on_IdP_From_Bob := __HAVOC_malloc(4);
+$API_id$1$134.37$call_an_API_on_IdP_From_Bob := $API_id$1$134.37$call_an_API_on_IdP_From_Bob_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(278)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(211)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 278} true;
-call __HAVOC_free($access_token$2$180.5$call_an_API_on_IdP_From_Bob);
-call __HAVOC_free($code$3$181.5$call_an_API_on_IdP_From_Bob);
-call __HAVOC_free($cookie$4$182.5$call_an_API_on_IdP_From_Bob);
-call __HAVOC_free($location$7$186.20$call_an_API_on_IdP_From_Bob);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 211} true;
+call __HAVOC_free($access_token$2$135.5$call_an_API_on_IdP_From_Bob);
+call __HAVOC_free($code$3$136.5$call_an_API_on_IdP_From_Bob);
+call __HAVOC_free($cookie$4$137.5$call_an_API_on_IdP_From_Bob);
+call __HAVOC_free($location$7$141.20$call_an_API_on_IdP_From_Bob);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(278)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(211)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 278} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 211} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(180)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(135)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 180} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 135} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(180)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(135)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 180} true;
-Mem_T.INT4 := Mem_T.INT4[$access_token$2$180.5$call_an_API_on_IdP_From_Bob := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 135} true;
+Mem_T.INT4 := Mem_T.INT4[$access_token$2$135.5$call_an_API_on_IdP_From_Bob := -1];
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(181)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(136)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 181} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 136} true;
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(181)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(136)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 181} true;
-Mem_T.INT4 := Mem_T.INT4[$code$3$181.5$call_an_API_on_IdP_From_Bob := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 136} true;
+Mem_T.INT4 := Mem_T.INT4[$code$3$136.5$call_an_API_on_IdP_From_Bob := -1];
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(182)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(137)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 182} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 137} true;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(182)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(137)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 182} true;
-Mem_T.INT4 := Mem_T.INT4[$cookie$4$182.5$call_an_API_on_IdP_From_Bob := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 137} true;
+Mem_T.INT4 := Mem_T.INT4[$cookie$4$137.5$call_an_API_on_IdP_From_Bob := -1];
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(183)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(138)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 183} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 138} true;
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(183)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(138)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 183} true;
-$returnValue$5$183.5$call_an_API_on_IdP_From_Bob := 400 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 138} true;
+$returnValue$5$138.5$call_an_API_on_IdP_From_Bob := 400 ;
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(185)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(140)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 185} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 140} true;
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(185)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(140)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 185} true;
-$user$6$185.6$call_an_API_on_IdP_From_Bob := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 140} true;
+$user$6$140.6$call_an_API_on_IdP_From_Bob := 0 ;
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(186)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(141)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 186} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 141} true;
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(186)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(141)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 186} true;
-Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$7$186.20$call_an_API_on_IdP_From_Bob := 0];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 141} true;
+Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$7$141.20$call_an_API_on_IdP_From_Bob := 0];
 goto label_15;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(187)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(142)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 187} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 142} true;
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(187)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(142)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 187} true;
-$redirect_domain$8$187.17$call_an_API_on_IdP_From_Bob := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 142} true;
+$redirect_domain$8$142.17$call_an_API_on_IdP_From_Bob := 0 ;
 goto label_17;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(188)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(143)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 188} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 143} true;
 goto label_18;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(188)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(143)
 label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 188} true;
-$scope$9$188.7$call_an_API_on_IdP_From_Bob := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 143} true;
+$scope$9$143.7$call_an_API_on_IdP_From_Bob := 0 ;
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(189)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(144)
 label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 189} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 144} true;
 goto label_20;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(189)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(144)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 189} true;
-$response_type$10$189.15$call_an_API_on_IdP_From_Bob := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 144} true;
+$response_type$10$144.15$call_an_API_on_IdP_From_Bob := 0 ;
 goto label_21;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(190)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(145)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 190} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 145} true;
 goto label_22;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(193)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(148)
 label_22:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 193} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 148} true;
 goto label_23;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(195)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(150)
 label_23:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 195} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 150} true;
 
 goto label_23_case_0, label_23_case_1, label_23_case_2, label_23_case_3;
 
@@ -3115,603 +3107,603 @@ goto label_23_case_0, label_23_case_1, label_23_case_2, label_23_case_3;
 
 
 label_23_case_0 :
-assume(INT_NEQ($API_id$1$179.37$call_an_API_on_IdP_From_Bob, 1));
-assume(INT_NEQ($API_id$1$179.37$call_an_API_on_IdP_From_Bob, 2));
-assume(INT_NEQ($API_id$1$179.37$call_an_API_on_IdP_From_Bob, 3));
+assume(INT_NEQ($API_id$1$134.37$call_an_API_on_IdP_From_Bob, 1));
+assume(INT_NEQ($API_id$1$134.37$call_an_API_on_IdP_From_Bob, 2));
+assume(INT_NEQ($API_id$1$134.37$call_an_API_on_IdP_From_Bob, 3));
 goto label_1;
 
 
 
 label_23_case_1 :
-assume(INT_EQ($API_id$1$179.37$call_an_API_on_IdP_From_Bob, 1));
+assume(INT_EQ($API_id$1$134.37$call_an_API_on_IdP_From_Bob, 1));
 goto label_24;
 
 
 
 label_23_case_2 :
-assume(INT_EQ($API_id$1$179.37$call_an_API_on_IdP_From_Bob, 2));
+assume(INT_EQ($API_id$1$134.37$call_an_API_on_IdP_From_Bob, 2));
 goto label_27;
 
 
 
 label_23_case_3 :
-assume(INT_EQ($API_id$1$179.37$call_an_API_on_IdP_From_Bob, 3));
+assume(INT_EQ($API_id$1$134.37$call_an_API_on_IdP_From_Bob, 3));
 goto label_30;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(209)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(154)
 label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 209} true;
-call $result.poirot_nondet$209.25$1$call_an_API_on_IdP_From_Bob := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 154} true;
+call $result.poirot_nondet$154.25$1$call_an_API_on_IdP_From_Bob := poirot_nondet ();
 goto label_80;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(240)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(179)
 label_27:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 240} true;
-call $result.poirot_nondet$240.24$11$call_an_API_on_IdP_From_Bob := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 179} true;
+call $result.poirot_nondet$179.24$11$call_an_API_on_IdP_From_Bob := poirot_nondet ();
 goto label_68;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(251)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(185)
 label_30:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 251} true;
-call $result.poirot_nondet$251.25$14$call_an_API_on_IdP_From_Bob := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 185} true;
+call $result.poirot_nondet$185.25$14$call_an_API_on_IdP_From_Bob := poirot_nondet ();
 goto label_33;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(251)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(185)
 label_33:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 251} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 185} true;
 goto label_33_true , label_33_false ;
 
 
 label_33_true :
-assume ($result.poirot_nondet$251.25$14$call_an_API_on_IdP_From_Bob != 0);
+assume ($result.poirot_nondet$185.25$14$call_an_API_on_IdP_From_Bob != 0);
 goto label_35;
 
 
 label_33_false :
-assume ($result.poirot_nondet$251.25$14$call_an_API_on_IdP_From_Bob == 0);
+assume ($result.poirot_nondet$185.25$14$call_an_API_on_IdP_From_Bob == 0);
 goto label_34;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(251)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(185)
 label_34:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 251} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 185} true;
 $result.question.15$ := 1 ;
 goto label_36;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(251)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(185)
 label_35:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 251} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 185} true;
 $result.question.15$ := 2 ;
 goto label_36;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(251)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(185)
 label_36:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 251} true;
-$scope$9$188.7$call_an_API_on_IdP_From_Bob := $result.question.15$ ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 185} true;
+$scope$9$143.7$call_an_API_on_IdP_From_Bob := $result.question.15$ ;
 goto label_37;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(252)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(186)
 label_37:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 252} true;
-call $result.poirot_nondet$252.33$16$call_an_API_on_IdP_From_Bob := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 186} true;
+call $result.poirot_nondet$186.33$16$call_an_API_on_IdP_From_Bob := poirot_nondet ();
 goto label_40;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(252)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(186)
 label_40:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 252} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 186} true;
 goto label_40_true , label_40_false ;
 
 
 label_40_true :
-assume ($result.poirot_nondet$252.33$16$call_an_API_on_IdP_From_Bob != 0);
+assume ($result.poirot_nondet$186.33$16$call_an_API_on_IdP_From_Bob != 0);
 goto label_42;
 
 
 label_40_false :
-assume ($result.poirot_nondet$252.33$16$call_an_API_on_IdP_From_Bob == 0);
+assume ($result.poirot_nondet$186.33$16$call_an_API_on_IdP_From_Bob == 0);
 goto label_41;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(252)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(186)
 label_41:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 252} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 186} true;
 $result.question.17$ := 0 ;
 goto label_43;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(252)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(186)
 label_42:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 252} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 186} true;
 $result.question.17$ := 1 ;
 goto label_43;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(252)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(186)
 label_43:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 252} true;
-$response_type$10$189.15$call_an_API_on_IdP_From_Bob := $result.question.17$ ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 186} true;
+$response_type$10$144.15$call_an_API_on_IdP_From_Bob := $result.question.17$ ;
 goto label_44;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(253)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(187)
 label_44:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 253} true;
-call $result.poirot_nondet$253.26$18$call_an_API_on_IdP_From_Bob := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 187} true;
+call $result.poirot_nondet$187.26$18$call_an_API_on_IdP_From_Bob := poirot_nondet ();
 goto label_47;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(253)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(187)
 label_47:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 253} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 187} true;
 goto label_47_true , label_47_false ;
 
 
 label_47_true :
-assume ($result.poirot_nondet$253.26$18$call_an_API_on_IdP_From_Bob != 0);
+assume ($result.poirot_nondet$187.26$18$call_an_API_on_IdP_From_Bob != 0);
 goto label_49;
 
 
 label_47_false :
-assume ($result.poirot_nondet$253.26$18$call_an_API_on_IdP_From_Bob == 0);
+assume ($result.poirot_nondet$187.26$18$call_an_API_on_IdP_From_Bob == 0);
 goto label_48;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(253)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(187)
 label_48:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 253} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 187} true;
 $result.question.19$ := 0 ;
 goto label_50;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(253)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(187)
 label_49:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 253} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 187} true;
 $result.question.19$ := 1 ;
 goto label_50;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(253)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(187)
 label_50:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 253} true;
-$app_ID$11$190.8$call_an_API_on_IdP_From_Bob := $result.question.19$ ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 187} true;
+$app_ID$11$145.8$call_an_API_on_IdP_From_Bob := $result.question.19$ ;
 goto label_51;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(256)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(190)
 label_51:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 256} true;
-call $result.draw_cookie_from_knowledge_pool$256.39$20$call_an_API_on_IdP_From_Bob := draw_cookie_from_knowledge_pool ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 190} true;
+call $result.draw_cookie_from_knowledge_pool$190.39$20$call_an_API_on_IdP_From_Bob := draw_cookie_from_knowledge_pool ();
 goto label_54;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(256)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(190)
 label_54:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 256} true;
-$arg1$12$193.5$call_an_API_on_IdP_From_Bob := $result.draw_cookie_from_knowledge_pool$256.39$20$call_an_API_on_IdP_From_Bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 190} true;
+$arg1$12$148.5$call_an_API_on_IdP_From_Bob := $result.draw_cookie_from_knowledge_pool$190.39$20$call_an_API_on_IdP_From_Bob ;
 goto label_55;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(258)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(191)
 label_55:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 258} true;
-call $result.dialog_permissions_request$258.43$21$call_an_API_on_IdP_From_Bob := dialog_permissions_request ($app_ID$11$190.8$call_an_API_on_IdP_From_Bob, $arg1$12$193.5$call_an_API_on_IdP_From_Bob, $scope$9$188.7$call_an_API_on_IdP_From_Bob, $response_type$10$189.15$call_an_API_on_IdP_From_Bob, $location$7$186.20$call_an_API_on_IdP_From_Bob, $access_token$2$180.5$call_an_API_on_IdP_From_Bob, $code$3$181.5$call_an_API_on_IdP_From_Bob);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 191} true;
+call $result.dialog_permissions_request$191.43$21$call_an_API_on_IdP_From_Bob := dialog_permissions_request ($app_ID$11$145.8$call_an_API_on_IdP_From_Bob, $arg1$12$148.5$call_an_API_on_IdP_From_Bob, $scope$9$143.7$call_an_API_on_IdP_From_Bob, $response_type$10$144.15$call_an_API_on_IdP_From_Bob, $location$7$141.20$call_an_API_on_IdP_From_Bob, $access_token$2$135.5$call_an_API_on_IdP_From_Bob, $code$3$136.5$call_an_API_on_IdP_From_Bob);
 goto label_58;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(258)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(191)
 label_58:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 258} true;
-$returnValue$5$183.5$call_an_API_on_IdP_From_Bob := $result.dialog_permissions_request$258.43$21$call_an_API_on_IdP_From_Bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 191} true;
+$returnValue$5$138.5$call_an_API_on_IdP_From_Bob := $result.dialog_permissions_request$191.43$21$call_an_API_on_IdP_From_Bob ;
 goto label_59;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(259)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(192)
 label_59:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 259} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 192} true;
 goto label_59_true , label_59_false ;
 
 
 label_59_true :
-assume (INT_EQ($returnValue$5$183.5$call_an_API_on_IdP_From_Bob, 400));
+assume (INT_EQ($returnValue$5$138.5$call_an_API_on_IdP_From_Bob, 400));
 goto label_1;
 
 
 label_59_false :
-assume !(INT_EQ($returnValue$5$183.5$call_an_API_on_IdP_From_Bob, 400));
+assume !(INT_EQ($returnValue$5$138.5$call_an_API_on_IdP_From_Bob, 400));
 goto label_60;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(261)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(194)
 label_60:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 261} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 194} true;
 goto label_60_true , label_60_false ;
 
 
 label_60_true :
-assume (INT_NEQ(Mem_T.INT4[$access_token$2$180.5$call_an_API_on_IdP_From_Bob], -1));
+assume (INT_NEQ(Mem_T.INT4[$access_token$2$135.5$call_an_API_on_IdP_From_Bob], -1));
 goto label_62;
 
 
 label_60_false :
-assume !(INT_NEQ(Mem_T.INT4[$access_token$2$180.5$call_an_API_on_IdP_From_Bob], -1));
+assume !(INT_NEQ(Mem_T.INT4[$access_token$2$135.5$call_an_API_on_IdP_From_Bob], -1));
 goto label_61;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(265)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(198)
 label_61:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 265} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 198} true;
 goto label_61_true , label_61_false ;
 
 
 label_61_true :
-assume (INT_NEQ(Mem_T.INT4[$code$3$181.5$call_an_API_on_IdP_From_Bob], -1));
+assume (INT_NEQ(Mem_T.INT4[$code$3$136.5$call_an_API_on_IdP_From_Bob], -1));
 goto label_65;
 
 
 label_61_false :
-assume !(INT_NEQ(Mem_T.INT4[$code$3$181.5$call_an_API_on_IdP_From_Bob], -1));
+assume !(INT_NEQ(Mem_T.INT4[$code$3$136.5$call_an_API_on_IdP_From_Bob], -1));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(263)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(196)
 label_62:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 263} true;
-call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$2$180.5$call_an_API_on_IdP_From_Bob]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 196} true;
+call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$2$135.5$call_an_API_on_IdP_From_Bob]);
 goto label_61;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(267)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(200)
 label_65:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 267} true;
-call add_code_knowledge_to_bob (Mem_T.INT4[$code$3$181.5$call_an_API_on_IdP_From_Bob]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 200} true;
+call add_code_knowledge_to_bob (Mem_T.INT4[$code$3$136.5$call_an_API_on_IdP_From_Bob]);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(240)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(179)
 label_68:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 240} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 179} true;
 goto label_68_true , label_68_false ;
 
 
 label_68_true :
-assume ($result.poirot_nondet$240.24$11$call_an_API_on_IdP_From_Bob != 0);
+assume ($result.poirot_nondet$179.24$11$call_an_API_on_IdP_From_Bob != 0);
 goto label_70;
 
 
 label_68_false :
-assume ($result.poirot_nondet$240.24$11$call_an_API_on_IdP_From_Bob == 0);
+assume ($result.poirot_nondet$179.24$11$call_an_API_on_IdP_From_Bob == 0);
 goto label_69;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(240)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(179)
 label_69:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 240} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 179} true;
 $result.question.12$ := 1 ;
 goto label_71;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(240)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(179)
 label_70:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 240} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 179} true;
 $result.question.12$ := 2 ;
 goto label_71;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(240)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(179)
 label_71:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 240} true;
-$user$6$185.6$call_an_API_on_IdP_From_Bob := $result.question.12$ ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 179} true;
+$user$6$140.6$call_an_API_on_IdP_From_Bob := $result.question.12$ ;
 goto label_72;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(246)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(180)
 label_72:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 246} true;
-call $result.login_php$246.26$13$call_an_API_on_IdP_From_Bob := login_php ($user$6$185.6$call_an_API_on_IdP_From_Bob, $location$7$186.20$call_an_API_on_IdP_From_Bob, $cookie$4$182.5$call_an_API_on_IdP_From_Bob, -1);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 180} true;
+call $result.login_php$180.26$13$call_an_API_on_IdP_From_Bob := login_php ($user$6$140.6$call_an_API_on_IdP_From_Bob, $location$7$141.20$call_an_API_on_IdP_From_Bob, $cookie$4$137.5$call_an_API_on_IdP_From_Bob, -1);
 goto label_75;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(246)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(180)
 label_75:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 246} true;
-$returnValue$5$183.5$call_an_API_on_IdP_From_Bob := $result.login_php$246.26$13$call_an_API_on_IdP_From_Bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 180} true;
+$returnValue$5$138.5$call_an_API_on_IdP_From_Bob := $result.login_php$180.26$13$call_an_API_on_IdP_From_Bob ;
 goto label_76;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(247)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(181)
 label_76:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 247} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 181} true;
 goto label_76_true , label_76_false ;
 
 
 label_76_true :
-assume (INT_EQ($returnValue$5$183.5$call_an_API_on_IdP_From_Bob, 400));
+assume (INT_EQ($returnValue$5$138.5$call_an_API_on_IdP_From_Bob, 400));
 goto label_1;
 
 
 label_76_false :
-assume !(INT_EQ($returnValue$5$183.5$call_an_API_on_IdP_From_Bob, 400));
+assume !(INT_EQ($returnValue$5$138.5$call_an_API_on_IdP_From_Bob, 400));
 goto label_77;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(248)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(182)
 label_77:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 248} true;
-call add_cookie_knowledge_to_bob (Mem_T.INT4[$cookie$4$182.5$call_an_API_on_IdP_From_Bob]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 182} true;
+call add_cookie_knowledge_to_bob (Mem_T.INT4[$cookie$4$137.5$call_an_API_on_IdP_From_Bob]);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(209)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(154)
 label_80:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 209} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 154} true;
 goto label_80_true , label_80_false ;
 
 
 label_80_true :
-assume ($result.poirot_nondet$209.25$1$call_an_API_on_IdP_From_Bob != 0);
+assume ($result.poirot_nondet$154.25$1$call_an_API_on_IdP_From_Bob != 0);
 goto label_82;
 
 
 label_80_false :
-assume ($result.poirot_nondet$209.25$1$call_an_API_on_IdP_From_Bob == 0);
+assume ($result.poirot_nondet$154.25$1$call_an_API_on_IdP_From_Bob == 0);
 goto label_81;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(209)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(154)
 label_81:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 209} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 154} true;
 $result.question.2$ := 1 ;
 goto label_83;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(209)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(154)
 label_82:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 209} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 154} true;
 $result.question.2$ := 2 ;
 goto label_83;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(209)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(154)
 label_83:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 209} true;
-$scope$9$188.7$call_an_API_on_IdP_From_Bob := $result.question.2$ ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 154} true;
+$scope$9$143.7$call_an_API_on_IdP_From_Bob := $result.question.2$ ;
 goto label_84;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(210)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(155)
 label_84:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 210} true;
-call $result.poirot_nondet$210.24$3$call_an_API_on_IdP_From_Bob := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 155} true;
+call $result.poirot_nondet$155.24$3$call_an_API_on_IdP_From_Bob := poirot_nondet ();
 goto label_87;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(210)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(155)
 label_87:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 210} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 155} true;
 goto label_87_true , label_87_false ;
 
 
 label_87_true :
-assume ($result.poirot_nondet$210.24$3$call_an_API_on_IdP_From_Bob != 0);
+assume ($result.poirot_nondet$155.24$3$call_an_API_on_IdP_From_Bob != 0);
 goto label_89;
 
 
 label_87_false :
-assume ($result.poirot_nondet$210.24$3$call_an_API_on_IdP_From_Bob == 0);
+assume ($result.poirot_nondet$155.24$3$call_an_API_on_IdP_From_Bob == 0);
 goto label_88;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(210)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(155)
 label_88:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 210} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 155} true;
 $result.question.4$ := 1 ;
 goto label_90;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(210)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(155)
 label_89:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 210} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 155} true;
 $result.question.4$ := 2 ;
 goto label_90;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(210)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(155)
 label_90:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 210} true;
-$user$6$185.6$call_an_API_on_IdP_From_Bob := $result.question.4$ ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 155} true;
+$user$6$140.6$call_an_API_on_IdP_From_Bob := $result.question.4$ ;
 goto label_91;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(211)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(156)
 label_91:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 211} true;
-call $result.poirot_nondet$211.33$5$call_an_API_on_IdP_From_Bob := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 156} true;
+call $result.poirot_nondet$156.33$5$call_an_API_on_IdP_From_Bob := poirot_nondet ();
 goto label_94;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(211)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(156)
 label_94:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 211} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 156} true;
 goto label_94_true , label_94_false ;
 
 
 label_94_true :
-assume ($result.poirot_nondet$211.33$5$call_an_API_on_IdP_From_Bob != 0);
+assume ($result.poirot_nondet$156.33$5$call_an_API_on_IdP_From_Bob != 0);
 goto label_96;
 
 
 label_94_false :
-assume ($result.poirot_nondet$211.33$5$call_an_API_on_IdP_From_Bob == 0);
+assume ($result.poirot_nondet$156.33$5$call_an_API_on_IdP_From_Bob == 0);
 goto label_95;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(211)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(156)
 label_95:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 211} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 156} true;
 $result.question.6$ := 0 ;
 goto label_97;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(211)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(156)
 label_96:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 211} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 156} true;
 $result.question.6$ := 1 ;
 goto label_97;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(211)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(156)
 label_97:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 211} true;
-$response_type$10$189.15$call_an_API_on_IdP_From_Bob := $result.question.6$ ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 156} true;
+$response_type$10$144.15$call_an_API_on_IdP_From_Bob := $result.question.6$ ;
 goto label_98;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(212)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(157)
 label_98:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 212} true;
-call $result.poirot_nondet$212.35$7$call_an_API_on_IdP_From_Bob := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 157} true;
+call $result.poirot_nondet$157.35$7$call_an_API_on_IdP_From_Bob := poirot_nondet ();
 goto label_101;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(212)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(157)
 label_101:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 212} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 157} true;
 goto label_101_true , label_101_false ;
 
 
 label_101_true :
-assume ($result.poirot_nondet$212.35$7$call_an_API_on_IdP_From_Bob != 0);
+assume ($result.poirot_nondet$157.35$7$call_an_API_on_IdP_From_Bob != 0);
 goto label_103;
 
 
 label_101_false :
-assume ($result.poirot_nondet$212.35$7$call_an_API_on_IdP_From_Bob == 0);
+assume ($result.poirot_nondet$157.35$7$call_an_API_on_IdP_From_Bob == 0);
 goto label_102;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(212)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(157)
 label_102:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 212} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 157} true;
 $result.question.8$ := 2 ;
 goto label_104;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(212)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(157)
 label_103:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 212} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 157} true;
 $result.question.8$ := 1 ;
 goto label_104;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(212)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(157)
 label_104:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 212} true;
-$redirect_domain$8$187.17$call_an_API_on_IdP_From_Bob := $result.question.8$ ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 157} true;
+$redirect_domain$8$142.17$call_an_API_on_IdP_From_Bob := $result.question.8$ ;
 goto label_105;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(215)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(160)
 label_105:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 215} true;
-call $result.draw_cookie_from_knowledge_pool$215.39$9$call_an_API_on_IdP_From_Bob := draw_cookie_from_knowledge_pool ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 160} true;
+call $result.draw_cookie_from_knowledge_pool$160.39$9$call_an_API_on_IdP_From_Bob := draw_cookie_from_knowledge_pool ();
 goto label_108;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(215)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(160)
 label_108:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 215} true;
-$arg1$12$193.5$call_an_API_on_IdP_From_Bob := $result.draw_cookie_from_knowledge_pool$215.39$9$call_an_API_on_IdP_From_Bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 160} true;
+$arg1$12$148.5$call_an_API_on_IdP_From_Bob := $result.draw_cookie_from_knowledge_pool$160.39$9$call_an_API_on_IdP_From_Bob ;
 goto label_109;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(218)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(162)
 label_109:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 218} true;
-call $result.dialog_oauth$218.29$10$call_an_API_on_IdP_From_Bob := dialog_oauth ($arg1$12$193.5$call_an_API_on_IdP_From_Bob, Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)])], $redirect_domain$8$187.17$call_an_API_on_IdP_From_Bob, $scope$9$188.7$call_an_API_on_IdP_From_Bob, $user$6$185.6$call_an_API_on_IdP_From_Bob, $response_type$10$189.15$call_an_API_on_IdP_From_Bob, $location$7$186.20$call_an_API_on_IdP_From_Bob, $access_token$2$180.5$call_an_API_on_IdP_From_Bob, $code$3$181.5$call_an_API_on_IdP_From_Bob);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 162} true;
+call $result.dialog_oauth$162.29$10$call_an_API_on_IdP_From_Bob := dialog_oauth ($arg1$12$148.5$call_an_API_on_IdP_From_Bob, Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)])], $redirect_domain$8$142.17$call_an_API_on_IdP_From_Bob, $scope$9$143.7$call_an_API_on_IdP_From_Bob, $user$6$140.6$call_an_API_on_IdP_From_Bob, $response_type$10$144.15$call_an_API_on_IdP_From_Bob, $location$7$141.20$call_an_API_on_IdP_From_Bob, $access_token$2$135.5$call_an_API_on_IdP_From_Bob, $code$3$136.5$call_an_API_on_IdP_From_Bob);
 goto label_112;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(218)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(162)
 label_112:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 218} true;
-$returnValue$5$183.5$call_an_API_on_IdP_From_Bob := $result.dialog_oauth$218.29$10$call_an_API_on_IdP_From_Bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 162} true;
+$returnValue$5$138.5$call_an_API_on_IdP_From_Bob := $result.dialog_oauth$162.29$10$call_an_API_on_IdP_From_Bob ;
 goto label_113;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(219)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(163)
 label_113:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 219} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 163} true;
 goto label_113_true , label_113_false ;
 
 
 label_113_true :
-assume (INT_EQ($returnValue$5$183.5$call_an_API_on_IdP_From_Bob, 400));
+assume (INT_EQ($returnValue$5$138.5$call_an_API_on_IdP_From_Bob, 400));
 goto label_1;
 
 
 label_113_false :
-assume !(INT_EQ($returnValue$5$183.5$call_an_API_on_IdP_From_Bob, 400));
+assume !(INT_EQ($returnValue$5$138.5$call_an_API_on_IdP_From_Bob, 400));
 goto label_114;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(224)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(167)
 label_114:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 224} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 167} true;
 goto label_114_true , label_114_false ;
 
 
 label_114_true :
-assume (INT_NEQ(Mem_T.INT4[$access_token$2$180.5$call_an_API_on_IdP_From_Bob], -1));
+assume (INT_NEQ(Mem_T.INT4[$access_token$2$135.5$call_an_API_on_IdP_From_Bob], -1));
 goto label_116;
 
 
 label_114_false :
-assume !(INT_NEQ(Mem_T.INT4[$access_token$2$180.5$call_an_API_on_IdP_From_Bob], -1));
+assume !(INT_NEQ(Mem_T.INT4[$access_token$2$135.5$call_an_API_on_IdP_From_Bob], -1));
 goto label_115;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(228)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(171)
 label_115:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 228} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 171} true;
 goto label_115_true , label_115_false ;
 
 
 label_115_true :
-assume (INT_NEQ(Mem_T.INT4[$code$3$181.5$call_an_API_on_IdP_From_Bob], -1));
+assume (INT_NEQ(Mem_T.INT4[$code$3$136.5$call_an_API_on_IdP_From_Bob], -1));
 goto label_119;
 
 
 label_115_false :
-assume !(INT_NEQ(Mem_T.INT4[$code$3$181.5$call_an_API_on_IdP_From_Bob], -1));
+assume !(INT_NEQ(Mem_T.INT4[$code$3$136.5$call_an_API_on_IdP_From_Bob], -1));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(226)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(169)
 label_116:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 226} true;
-call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$2$180.5$call_an_API_on_IdP_From_Bob]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 169} true;
+call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$2$135.5$call_an_API_on_IdP_From_Bob]);
 goto label_115;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(230)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(173)
 label_119:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 230} true;
-call add_code_knowledge_to_bob (Mem_T.INT4[$code$3$181.5$call_an_API_on_IdP_From_Bob]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 173} true;
+call add_code_knowledge_to_bob (Mem_T.INT4[$code$3$136.5$call_an_API_on_IdP_From_Bob]);
 goto label_1;
 
 }
 
 
 
-procedure  call_an_API_on_IdP_From_Client($API_id$1$326.40$call_an_API_on_IdP_From_Client_.1:int)
+procedure  call_an_API_on_IdP_From_Client($API_id$1$256.40$call_an_API_on_IdP_From_Client_.1:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -3786,6 +3778,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -3798,43 +3791,43 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$1$326.40$call_an_API_on_IdP_From_Client : int;
-var $access_token$2$328.5$call_an_API_on_IdP_From_Client : int;
-var $app_ID$7$333.8$call_an_API_on_IdP_From_Client : int;
-var $arg1$13$340.5$call_an_API_on_IdP_From_Client : int;
-var $arg2$14$340.10$call_an_API_on_IdP_From_Client : int;
-var $code$4$330.5$call_an_API_on_IdP_From_Client : int;
-var $cookie$5$331.5$call_an_API_on_IdP_From_Client : int;
-var $location$9$335.20$call_an_API_on_IdP_From_Client : int;
-var $redirect_domain$10$336.17$call_an_API_on_IdP_From_Client : int;
-var $response_type$12$338.15$call_an_API_on_IdP_From_Client : int;
-var $result.dialog_oauth$365.29$7$call_an_API_on_IdP_From_Client : int;
-var $result.dialog_permissions_request$397.43$14$call_an_API_on_IdP_From_Client : int;
-var $result.draw_access_token_from_knowledge_pool$413.45$15$call_an_API_on_IdP_From_Client : int;
-var $result.draw_access_token_from_knowledge_pool$418.45$17$call_an_API_on_IdP_From_Client : int;
-var $result.draw_app_secret_from_knowledge_pool$427.43$21$call_an_API_on_IdP_From_Client : int;
-var $result.draw_code_from_knowledge_pool$428.37$22$call_an_API_on_IdP_From_Client : int;
-var $result.draw_cookie_from_knowledge_pool$363.39$6$call_an_API_on_IdP_From_Client : int;
-var $result.draw_cookie_from_knowledge_pool$395.39$13$call_an_API_on_IdP_From_Client : int;
-var $result.graph_facebook_com_email_bob$420.45$18$call_an_API_on_IdP_From_Client : int;
-var $result.graph_facebook_com_me_bob$415.42$16$call_an_API_on_IdP_From_Client : int;
-var $result.graph_facebook_com_oauth_access_token_bob$430.58$23$call_an_API_on_IdP_From_Client : int;
-var $result.login_php$382.26$9$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$352.34$1$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$354.24$2$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$356.23$3$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$358.32$4$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$360.25$5$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$380.23$8$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$387.24$10$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$389.32$11$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$391.25$12$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$423.34$19$call_an_API_on_IdP_From_Client : int;
-var $result.poirot_nondet$424.25$20$call_an_API_on_IdP_From_Client : int;
-var $returnValue$6$332.5$call_an_API_on_IdP_From_Client : int;
-var $scope$11$337.7$call_an_API_on_IdP_From_Client : int;
-var $user$8$334.6$call_an_API_on_IdP_From_Client : int;
-var $user_email$3$329.12$call_an_API_on_IdP_From_Client : int;
+var $API_id$1$256.40$call_an_API_on_IdP_From_Client : int;
+var $access_token$2$258.5$call_an_API_on_IdP_From_Client : int;
+var $app_ID$7$263.8$call_an_API_on_IdP_From_Client : int;
+var $arg1$13$269.5$call_an_API_on_IdP_From_Client : int;
+var $arg2$14$269.10$call_an_API_on_IdP_From_Client : int;
+var $code$4$260.5$call_an_API_on_IdP_From_Client : int;
+var $cookie$5$261.5$call_an_API_on_IdP_From_Client : int;
+var $location$9$265.20$call_an_API_on_IdP_From_Client : int;
+var $redirect_domain$10$266.17$call_an_API_on_IdP_From_Client : int;
+var $response_type$12$268.15$call_an_API_on_IdP_From_Client : int;
+var $result.dialog_oauth$284.29$7$call_an_API_on_IdP_From_Client : int;
+var $result.dialog_permissions_request$313.43$14$call_an_API_on_IdP_From_Client : int;
+var $result.draw_access_token_from_knowledge_pool$329.45$15$call_an_API_on_IdP_From_Client : int;
+var $result.draw_access_token_from_knowledge_pool$334.45$17$call_an_API_on_IdP_From_Client : int;
+var $result.draw_app_secret_from_knowledge_pool$342.43$21$call_an_API_on_IdP_From_Client : int;
+var $result.draw_code_from_knowledge_pool$343.37$22$call_an_API_on_IdP_From_Client : int;
+var $result.draw_cookie_from_knowledge_pool$283.39$6$call_an_API_on_IdP_From_Client : int;
+var $result.draw_cookie_from_knowledge_pool$312.39$13$call_an_API_on_IdP_From_Client : int;
+var $result.graph_facebook_com_email_bob$335.45$18$call_an_API_on_IdP_From_Client : int;
+var $result.graph_facebook_com_me_bob$330.42$16$call_an_API_on_IdP_From_Client : int;
+var $result.graph_facebook_com_oauth_access_token_bob$344.58$23$call_an_API_on_IdP_From_Client : int;
+var $result.login_php$301.26$9$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$273.34$1$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$275.24$2$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$277.23$3$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$279.32$4$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$281.25$5$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$299.23$8$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$306.24$10$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$308.32$11$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$310.25$12$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$339.34$19$call_an_API_on_IdP_From_Client : int;
+var $result.poirot_nondet$340.25$20$call_an_API_on_IdP_From_Client : int;
+var $returnValue$6$262.5$call_an_API_on_IdP_From_Client : int;
+var $scope$11$267.7$call_an_API_on_IdP_From_Client : int;
+var $user$8$264.6$call_an_API_on_IdP_From_Client : int;
+var $user_email$3$259.12$call_an_API_on_IdP_From_Client : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -3860,179 +3853,179 @@ var __havoc_dummy_return: int;
 
 start:
 
-call $access_token$2$328.5$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
-call $code$4$330.5$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
-call $cookie$5$331.5$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
-call $location$9$335.20$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
-call $user$8$334.6$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
-call $user_email$3$329.12$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
-$API_id$1$326.40$call_an_API_on_IdP_From_Client := $API_id$1$326.40$call_an_API_on_IdP_From_Client_.1;
+call $access_token$2$258.5$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
+call $code$4$260.5$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
+call $cookie$5$261.5$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
+call $location$9$265.20$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
+call $user$8$264.6$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
+call $user_email$3$259.12$call_an_API_on_IdP_From_Client := __HAVOC_malloc(4);
+$API_id$1$256.40$call_an_API_on_IdP_From_Client := $API_id$1$256.40$call_an_API_on_IdP_From_Client_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(433)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(347)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 433} true;
-call __HAVOC_free($access_token$2$328.5$call_an_API_on_IdP_From_Client);
-call __HAVOC_free($code$4$330.5$call_an_API_on_IdP_From_Client);
-call __HAVOC_free($cookie$5$331.5$call_an_API_on_IdP_From_Client);
-call __HAVOC_free($location$9$335.20$call_an_API_on_IdP_From_Client);
-call __HAVOC_free($user$8$334.6$call_an_API_on_IdP_From_Client);
-call __HAVOC_free($user_email$3$329.12$call_an_API_on_IdP_From_Client);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 347} true;
+call __HAVOC_free($access_token$2$258.5$call_an_API_on_IdP_From_Client);
+call __HAVOC_free($code$4$260.5$call_an_API_on_IdP_From_Client);
+call __HAVOC_free($cookie$5$261.5$call_an_API_on_IdP_From_Client);
+call __HAVOC_free($location$9$265.20$call_an_API_on_IdP_From_Client);
+call __HAVOC_free($user$8$264.6$call_an_API_on_IdP_From_Client);
+call __HAVOC_free($user_email$3$259.12$call_an_API_on_IdP_From_Client);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(433)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(347)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 433} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 347} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(328)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(258)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 328} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 258} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(328)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(258)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 328} true;
-Mem_T.INT4 := Mem_T.INT4[$access_token$2$328.5$call_an_API_on_IdP_From_Client := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 258} true;
+Mem_T.INT4 := Mem_T.INT4[$access_token$2$258.5$call_an_API_on_IdP_From_Client := -1];
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(329)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(259)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 329} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 259} true;
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(330)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(260)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 330} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 260} true;
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(330)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(260)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 330} true;
-Mem_T.INT4 := Mem_T.INT4[$code$4$330.5$call_an_API_on_IdP_From_Client := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 260} true;
+Mem_T.INT4 := Mem_T.INT4[$code$4$260.5$call_an_API_on_IdP_From_Client := -1];
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(331)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(261)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 331} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 261} true;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(331)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(261)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 331} true;
-Mem_T.INT4 := Mem_T.INT4[$cookie$5$331.5$call_an_API_on_IdP_From_Client := -1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 261} true;
+Mem_T.INT4 := Mem_T.INT4[$cookie$5$261.5$call_an_API_on_IdP_From_Client := -1];
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(332)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(262)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 332} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 262} true;
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(332)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(262)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 332} true;
-$returnValue$6$332.5$call_an_API_on_IdP_From_Client := 400 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 262} true;
+$returnValue$6$262.5$call_an_API_on_IdP_From_Client := 400 ;
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(333)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(263)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 333} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 263} true;
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(334)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(264)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 334} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 264} true;
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(334)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(264)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 334} true;
-Mem_T.User := Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client := 0];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 264} true;
+Mem_T.User := Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client := 0];
 goto label_15;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(335)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(265)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 335} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 265} true;
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(335)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(265)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 335} true;
-Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$9$335.20$call_an_API_on_IdP_From_Client := 0];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 265} true;
+Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$9$265.20$call_an_API_on_IdP_From_Client := 0];
 goto label_17;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(336)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(266)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 336} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 266} true;
 goto label_18;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(336)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(266)
 label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 336} true;
-$redirect_domain$10$336.17$call_an_API_on_IdP_From_Client := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 266} true;
+$redirect_domain$10$266.17$call_an_API_on_IdP_From_Client := 0 ;
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(337)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(267)
 label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 337} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 267} true;
 goto label_20;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(337)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(267)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 337} true;
-$scope$11$337.7$call_an_API_on_IdP_From_Client := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 267} true;
+$scope$11$267.7$call_an_API_on_IdP_From_Client := 0 ;
 goto label_21;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(338)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(268)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 338} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 268} true;
 goto label_22;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(338)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(268)
 label_22:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 338} true;
-$response_type$12$338.15$call_an_API_on_IdP_From_Client := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 268} true;
+$response_type$12$268.15$call_an_API_on_IdP_From_Client := 0 ;
 goto label_23;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(340)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(269)
 label_23:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 340} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 269} true;
 goto label_24;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(340)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(269)
 label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 340} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 269} true;
 goto label_25;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(342)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(271)
 label_25:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 342} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 271} true;
 
 goto label_25_case_0, label_25_case_1, label_25_case_2, label_25_case_3, label_25_case_4, label_25_case_5;
 
@@ -4040,741 +4033,677 @@ goto label_25_case_0, label_25_case_1, label_25_case_2, label_25_case_3, label_2
 
 
 label_25_case_0 :
-assume(INT_NEQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 1));
-assume(INT_NEQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 2));
-assume(INT_NEQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 3));
-assume(INT_NEQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 4));
-assume(INT_NEQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 5));
+assume(INT_NEQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 1));
+assume(INT_NEQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 2));
+assume(INT_NEQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 3));
+assume(INT_NEQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 4));
+assume(INT_NEQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 5));
 goto label_26;
 
 
 
 label_25_case_1 :
-assume(INT_EQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 1));
+assume(INT_EQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 1));
 goto label_29;
 
 
 
 label_25_case_2 :
-assume(INT_EQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 2));
+assume(INT_EQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 2));
 goto label_32;
 
 
 
 label_25_case_3 :
-assume(INT_EQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 3));
+assume(INT_EQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 3));
 goto label_35;
 
 
 
 label_25_case_4 :
-assume(INT_EQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 4));
+assume(INT_EQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 4));
 goto label_38;
 
 
 
 label_25_case_5 :
-assume(INT_EQ($API_id$1$326.40$call_an_API_on_IdP_From_Client, 5));
+assume(INT_EQ($API_id$1$256.40$call_an_API_on_IdP_From_Client, 5));
 goto label_41;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(423)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(339)
 label_26:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 423} true;
-call $result.poirot_nondet$423.34$19$call_an_API_on_IdP_From_Client := poirot_nondet ();
-goto label_137;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 339} true;
+call $result.poirot_nondet$339.34$19$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_135;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(352)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(273)
 label_29:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 352} true;
-call $result.poirot_nondet$352.34$1$call_an_API_on_IdP_From_Client := poirot_nondet ();
-goto label_96;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 273} true;
+call $result.poirot_nondet$273.34$1$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_94;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(380)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(299)
 label_32:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 380} true;
-call $result.poirot_nondet$380.23$8$call_an_API_on_IdP_From_Client := poirot_nondet ();
-goto label_87;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 299} true;
+call $result.poirot_nondet$299.23$8$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_85;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(387)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(306)
 label_35:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 387} true;
-call $result.poirot_nondet$387.24$10$call_an_API_on_IdP_From_Client := poirot_nondet ();
-goto label_56;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 306} true;
+call $result.poirot_nondet$306.24$10$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_54;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(413)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(329)
 label_38:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 413} true;
-call $result.draw_access_token_from_knowledge_pool$413.45$15$call_an_API_on_IdP_From_Client := draw_access_token_from_knowledge_pool ();
-goto label_50;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(418)
-label_41:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 418} true;
-call $result.draw_access_token_from_knowledge_pool$418.45$17$call_an_API_on_IdP_From_Client := draw_access_token_from_knowledge_pool ();
-goto label_44;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(418)
-label_44:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 418} true;
-$arg1$13$340.5$call_an_API_on_IdP_From_Client := $result.draw_access_token_from_knowledge_pool$418.45$17$call_an_API_on_IdP_From_Client ;
-goto label_45;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(419)
-label_45:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 419} true;
-goto label_45_true , label_45_false ;
-
-
-label_45_true :
-assume (INT_EQ($arg1$13$340.5$call_an_API_on_IdP_From_Client, -1));
-goto label_1;
-
-
-label_45_false :
-assume !(INT_EQ($arg1$13$340.5$call_an_API_on_IdP_From_Client, -1));
-goto label_46;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(420)
-label_46:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 420} true;
-call $result.graph_facebook_com_email_bob$420.45$18$call_an_API_on_IdP_From_Client := graph_facebook_com_email_bob ($arg1$13$340.5$call_an_API_on_IdP_From_Client, $user_email$3$329.12$call_an_API_on_IdP_From_Client);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 329} true;
+call $result.draw_access_token_from_knowledge_pool$329.45$15$call_an_API_on_IdP_From_Client := draw_access_token_from_knowledge_pool ();
 goto label_49;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(420)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(334)
+label_41:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 334} true;
+call $result.draw_access_token_from_knowledge_pool$334.45$17$call_an_API_on_IdP_From_Client := draw_access_token_from_knowledge_pool ();
+goto label_44;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(334)
+label_44:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 334} true;
+$arg1$13$269.5$call_an_API_on_IdP_From_Client := $result.draw_access_token_from_knowledge_pool$334.45$17$call_an_API_on_IdP_From_Client ;
+goto label_45;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(335)
+label_45:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 335} true;
+call $result.graph_facebook_com_email_bob$335.45$18$call_an_API_on_IdP_From_Client := graph_facebook_com_email_bob ($arg1$13$269.5$call_an_API_on_IdP_From_Client, $user_email$3$259.12$call_an_API_on_IdP_From_Client);
+goto label_48;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(335)
+label_48:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 335} true;
+$returnValue$6$262.5$call_an_API_on_IdP_From_Client := $result.graph_facebook_com_email_bob$335.45$18$call_an_API_on_IdP_From_Client ;
+goto label_1;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(329)
 label_49:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 420} true;
-$returnValue$6$332.5$call_an_API_on_IdP_From_Client := $result.graph_facebook_com_email_bob$420.45$18$call_an_API_on_IdP_From_Client ;
-goto label_1;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 329} true;
+$arg1$13$269.5$call_an_API_on_IdP_From_Client := $result.draw_access_token_from_knowledge_pool$329.45$15$call_an_API_on_IdP_From_Client ;
+goto label_50;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(413)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(330)
 label_50:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 413} true;
-$arg1$13$340.5$call_an_API_on_IdP_From_Client := $result.draw_access_token_from_knowledge_pool$413.45$15$call_an_API_on_IdP_From_Client ;
-goto label_51;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 330} true;
+call $result.graph_facebook_com_me_bob$330.42$16$call_an_API_on_IdP_From_Client := graph_facebook_com_me_bob ($arg1$13$269.5$call_an_API_on_IdP_From_Client, $user$8$264.6$call_an_API_on_IdP_From_Client);
+goto label_53;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(414)
-label_51:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 414} true;
-goto label_51_true , label_51_false ;
-
-
-label_51_true :
-assume (INT_EQ($arg1$13$340.5$call_an_API_on_IdP_From_Client, -1));
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(330)
+label_53:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 330} true;
+$returnValue$6$262.5$call_an_API_on_IdP_From_Client := $result.graph_facebook_com_me_bob$330.42$16$call_an_API_on_IdP_From_Client ;
 goto label_1;
 
 
-label_51_false :
-assume !(INT_EQ($arg1$13$340.5$call_an_API_on_IdP_From_Client, -1));
-goto label_52;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(415)
-label_52:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 415} true;
-call $result.graph_facebook_com_me_bob$415.42$16$call_an_API_on_IdP_From_Client := graph_facebook_com_me_bob ($arg1$13$340.5$call_an_API_on_IdP_From_Client, $user$8$334.6$call_an_API_on_IdP_From_Client);
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(306)
+label_54:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 306} true;
+$scope$11$267.7$call_an_API_on_IdP_From_Client := $result.poirot_nondet$306.24$10$call_an_API_on_IdP_From_Client ;
 goto label_55;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(415)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(307)
 label_55:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 415} true;
-$returnValue$6$332.5$call_an_API_on_IdP_From_Client := $result.graph_facebook_com_me_bob$415.42$16$call_an_API_on_IdP_From_Client ;
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(387)
-label_56:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 387} true;
-$scope$11$337.7$call_an_API_on_IdP_From_Client := $result.poirot_nondet$387.24$10$call_an_API_on_IdP_From_Client ;
-goto label_57;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(388)
-label_57:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 388} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 307} true;
 //TAG: scope == 1 || scope == 2
-assume ((INT_EQ($scope$11$337.7$call_an_API_on_IdP_From_Client, 1)) || (INT_EQ($scope$11$337.7$call_an_API_on_IdP_From_Client, 2)));
-goto label_58;
+assume ((INT_EQ($scope$11$267.7$call_an_API_on_IdP_From_Client, 1)) || (INT_EQ($scope$11$267.7$call_an_API_on_IdP_From_Client, 2)));
+goto label_56;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(389)
-label_58:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 389} true;
-call $result.poirot_nondet$389.32$11$call_an_API_on_IdP_From_Client := poirot_nondet ();
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(308)
+label_56:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 308} true;
+call $result.poirot_nondet$308.32$11$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_59;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(308)
+label_59:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 308} true;
+$response_type$12$268.15$call_an_API_on_IdP_From_Client := $result.poirot_nondet$308.32$11$call_an_API_on_IdP_From_Client ;
+goto label_60;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(309)
+label_60:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 309} true;
+//TAG: response_type == 0 || response_type == 1
+assume ((INT_EQ($response_type$12$268.15$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($response_type$12$268.15$call_an_API_on_IdP_From_Client, 1)));
 goto label_61;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(389)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(310)
 label_61:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 389} true;
-$response_type$12$338.15$call_an_API_on_IdP_From_Client := $result.poirot_nondet$389.32$11$call_an_API_on_IdP_From_Client ;
-goto label_62;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 310} true;
+call $result.poirot_nondet$310.25$12$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_64;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(390)
-label_62:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 390} true;
-//TAG: response_type == 0 || response_type == 1
-assume ((INT_EQ($response_type$12$338.15$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($response_type$12$338.15$call_an_API_on_IdP_From_Client, 1)));
-goto label_63;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(310)
+label_64:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 310} true;
+$app_ID$7$263.8$call_an_API_on_IdP_From_Client := $result.poirot_nondet$310.25$12$call_an_API_on_IdP_From_Client ;
+goto label_65;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(391)
-label_63:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 391} true;
-call $result.poirot_nondet$391.25$12$call_an_API_on_IdP_From_Client := poirot_nondet ();
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(311)
+label_65:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 311} true;
+//TAG: app_ID == 0 || app_ID == 1
+assume ((INT_EQ($app_ID$7$263.8$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($app_ID$7$263.8$call_an_API_on_IdP_From_Client, 1)));
 goto label_66;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(391)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(312)
 label_66:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 391} true;
-$app_ID$7$333.8$call_an_API_on_IdP_From_Client := $result.poirot_nondet$391.25$12$call_an_API_on_IdP_From_Client ;
-goto label_67;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 312} true;
+call $result.draw_cookie_from_knowledge_pool$312.39$13$call_an_API_on_IdP_From_Client := draw_cookie_from_knowledge_pool ();
+goto label_69;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(392)
-label_67:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 392} true;
-//TAG: app_ID == 0 || app_ID == 1
-assume ((INT_EQ($app_ID$7$333.8$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($app_ID$7$333.8$call_an_API_on_IdP_From_Client, 1)));
-goto label_68;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(312)
+label_69:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 312} true;
+$arg1$13$269.5$call_an_API_on_IdP_From_Client := $result.draw_cookie_from_knowledge_pool$312.39$13$call_an_API_on_IdP_From_Client ;
+goto label_70;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(395)
-label_68:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 395} true;
-call $result.draw_cookie_from_knowledge_pool$395.39$13$call_an_API_on_IdP_From_Client := draw_cookie_from_knowledge_pool ();
-goto label_71;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(313)
+label_70:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 313} true;
+call $result.dialog_permissions_request$313.43$14$call_an_API_on_IdP_From_Client := dialog_permissions_request ($app_ID$7$263.8$call_an_API_on_IdP_From_Client, $arg1$13$269.5$call_an_API_on_IdP_From_Client, $scope$11$267.7$call_an_API_on_IdP_From_Client, $response_type$12$268.15$call_an_API_on_IdP_From_Client, $location$9$265.20$call_an_API_on_IdP_From_Client, $access_token$2$258.5$call_an_API_on_IdP_From_Client, $code$4$260.5$call_an_API_on_IdP_From_Client);
+goto label_73;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(395)
-label_71:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 395} true;
-$arg1$13$340.5$call_an_API_on_IdP_From_Client := $result.draw_cookie_from_knowledge_pool$395.39$13$call_an_API_on_IdP_From_Client ;
-goto label_72;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(313)
+label_73:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 313} true;
+$returnValue$6$262.5$call_an_API_on_IdP_From_Client := $result.dialog_permissions_request$313.43$14$call_an_API_on_IdP_From_Client ;
+goto label_74;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(397)
-label_72:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 397} true;
-call $result.dialog_permissions_request$397.43$14$call_an_API_on_IdP_From_Client := dialog_permissions_request ($app_ID$7$333.8$call_an_API_on_IdP_From_Client, $arg1$13$340.5$call_an_API_on_IdP_From_Client, $scope$11$337.7$call_an_API_on_IdP_From_Client, $response_type$12$338.15$call_an_API_on_IdP_From_Client, $location$9$335.20$call_an_API_on_IdP_From_Client, $access_token$2$328.5$call_an_API_on_IdP_From_Client, $code$4$330.5$call_an_API_on_IdP_From_Client);
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(314)
+label_74:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 314} true;
+goto label_74_true , label_74_false ;
+
+
+label_74_true :
+assume (INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 400));
+goto label_1;
+
+
+label_74_false :
+assume !(INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 400));
 goto label_75;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(397)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(315)
 label_75:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 397} true;
-$returnValue$6$332.5$call_an_API_on_IdP_From_Client := $result.dialog_permissions_request$397.43$14$call_an_API_on_IdP_From_Client ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 315} true;
+goto label_75_true , label_75_false ;
+
+
+label_75_true :
+assume (INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 302));
 goto label_76;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(398)
+label_75_false :
+assume !(INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 302));
+goto label_1;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(315)
 label_76:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 398} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 315} true;
 goto label_76_true , label_76_false ;
 
 
 label_76_true :
-assume (INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 400));
-goto label_1;
-
-
-label_76_false :
-assume !(INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 400));
+assume (INT_EQ(Mem_T.Location_Knowledge[$location$9$265.20$call_an_API_on_IdP_From_Client], 3));
 goto label_77;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(399)
+label_76_false :
+assume !(INT_EQ(Mem_T.Location_Knowledge[$location$9$265.20$call_an_API_on_IdP_From_Client], 3));
+goto label_1;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(317)
 label_77:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 399} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 317} true;
 goto label_77_true , label_77_false ;
 
 
 label_77_true :
-assume (INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 302));
-goto label_78;
+assume (INT_NEQ(Mem_T.INT4[$access_token$2$258.5$call_an_API_on_IdP_From_Client], -1));
+goto label_79;
 
 
 label_77_false :
-assume !(INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 302));
-goto label_1;
+assume !(INT_NEQ(Mem_T.INT4[$access_token$2$258.5$call_an_API_on_IdP_From_Client], -1));
+goto label_78;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(399)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(321)
 label_78:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 399} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 321} true;
 goto label_78_true , label_78_false ;
 
 
 label_78_true :
-assume (INT_EQ(Mem_T.Location_Knowledge[$location$9$335.20$call_an_API_on_IdP_From_Client], 3));
-goto label_79;
+assume (INT_NEQ(Mem_T.INT4[$code$4$260.5$call_an_API_on_IdP_From_Client], -1));
+goto label_82;
 
 
 label_78_false :
-assume !(INT_EQ(Mem_T.Location_Knowledge[$location$9$335.20$call_an_API_on_IdP_From_Client], 3));
+assume !(INT_NEQ(Mem_T.INT4[$code$4$260.5$call_an_API_on_IdP_From_Client], -1));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(402)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(319)
 label_79:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 402} true;
-goto label_79_true , label_79_false ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 319} true;
+call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$2$258.5$call_an_API_on_IdP_From_Client]);
+goto label_78;
 
 
-label_79_true :
-assume (INT_NEQ(Mem_T.INT4[$access_token$2$328.5$call_an_API_on_IdP_From_Client], -1));
-goto label_81;
-
-
-label_79_false :
-assume !(INT_NEQ(Mem_T.INT4[$access_token$2$328.5$call_an_API_on_IdP_From_Client], -1));
-goto label_80;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(406)
-label_80:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 406} true;
-goto label_80_true , label_80_false ;
-
-
-label_80_true :
-assume (INT_NEQ(Mem_T.INT4[$code$4$330.5$call_an_API_on_IdP_From_Client], -1));
-goto label_84;
-
-
-label_80_false :
-assume !(INT_NEQ(Mem_T.INT4[$code$4$330.5$call_an_API_on_IdP_From_Client], -1));
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(323)
+label_82:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 323} true;
+call add_code_knowledge_to_bob (Mem_T.INT4[$code$4$260.5$call_an_API_on_IdP_From_Client]);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(404)
-label_81:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 404} true;
-call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$2$328.5$call_an_API_on_IdP_From_Client]);
-goto label_80;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(299)
+label_85:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 299} true;
+Mem_T.User := Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client := $result.poirot_nondet$299.23$8$call_an_API_on_IdP_From_Client];
+goto label_86;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(408)
-label_84:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 408} true;
-call add_code_knowledge_to_bob (Mem_T.INT4[$code$4$330.5$call_an_API_on_IdP_From_Client]);
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(380)
-label_87:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 380} true;
-Mem_T.User := Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client := $result.poirot_nondet$380.23$8$call_an_API_on_IdP_From_Client];
-goto label_88;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(381)
-label_88:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 381} true;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(300)
+label_86:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 300} true;
 //TAG: user == 1 || user == 2
-assume ((INT_EQ(Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client], 1)) || (INT_EQ(Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client], 2)));
-goto label_89;
+assume ((INT_EQ(Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client], 1)) || (INT_EQ(Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client], 2)));
+goto label_87;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(382)
-label_89:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 382} true;
-call $result.login_php$382.26$9$call_an_API_on_IdP_From_Client := login_php (Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client], $location$9$335.20$call_an_API_on_IdP_From_Client, $cookie$5$331.5$call_an_API_on_IdP_From_Client, 1);
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(301)
+label_87:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 301} true;
+call $result.login_php$301.26$9$call_an_API_on_IdP_From_Client := login_php (Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client], $location$9$265.20$call_an_API_on_IdP_From_Client, $cookie$5$261.5$call_an_API_on_IdP_From_Client, 1);
+goto label_90;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(301)
+label_90:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 301} true;
+$returnValue$6$262.5$call_an_API_on_IdP_From_Client := $result.login_php$301.26$9$call_an_API_on_IdP_From_Client ;
+goto label_91;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(302)
+label_91:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 302} true;
+goto label_91_true , label_91_false ;
+
+
+label_91_true :
+assume (INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 400));
+goto label_1;
+
+
+label_91_false :
+assume !(INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 400));
 goto label_92;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(382)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(303)
 label_92:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 382} true;
-$returnValue$6$332.5$call_an_API_on_IdP_From_Client := $result.login_php$382.26$9$call_an_API_on_IdP_From_Client ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 303} true;
+goto label_92_true , label_92_false ;
+
+
+label_92_true :
+assume (INT_NEQ(Mem_T.INT4[$cookie$5$261.5$call_an_API_on_IdP_From_Client], -1));
 goto label_93;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(383)
-label_93:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 383} true;
-goto label_93_true , label_93_false ;
-
-
-label_93_true :
-assume (INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 400));
+label_92_false :
+assume !(INT_NEQ(Mem_T.INT4[$cookie$5$261.5$call_an_API_on_IdP_From_Client], -1));
 goto label_1;
 
 
-label_93_false :
-assume !(INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 400));
-goto label_94;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(303)
+label_93:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 303} true;
+Mem_T.cookie_WWAHost_State := Mem_T.cookie_WWAHost_State[cookie_WWAHost_State(wwahost_state) := Mem_T.INT4[$cookie$5$261.5$call_an_API_on_IdP_From_Client]];
+goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(384)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(273)
 label_94:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 384} true;
-goto label_94_true , label_94_false ;
-
-
-label_94_true :
-assume (INT_NEQ(Mem_T.INT4[$cookie$5$331.5$call_an_API_on_IdP_From_Client], -1));
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 273} true;
+$redirect_domain$10$266.17$call_an_API_on_IdP_From_Client := $result.poirot_nondet$273.34$1$call_an_API_on_IdP_From_Client ;
 goto label_95;
 
 
-label_94_false :
-assume !(INT_NEQ(Mem_T.INT4[$cookie$5$331.5$call_an_API_on_IdP_From_Client], -1));
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(384)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(274)
 label_95:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 384} true;
-Mem_T.cookie_WWAHost_State := Mem_T.cookie_WWAHost_State[cookie_WWAHost_State(wwahost_state) := Mem_T.INT4[$cookie$5$331.5$call_an_API_on_IdP_From_Client]];
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(352)
-label_96:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 352} true;
-$redirect_domain$10$336.17$call_an_API_on_IdP_From_Client := $result.poirot_nondet$352.34$1$call_an_API_on_IdP_From_Client ;
-goto label_97;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(353)
-label_97:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 353} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 274} true;
 //TAG: redirect_domain == 1 || redirect_domain == 2
-assume ((INT_EQ($redirect_domain$10$336.17$call_an_API_on_IdP_From_Client, 1)) || (INT_EQ($redirect_domain$10$336.17$call_an_API_on_IdP_From_Client, 2)));
-goto label_98;
+assume ((INT_EQ($redirect_domain$10$266.17$call_an_API_on_IdP_From_Client, 1)) || (INT_EQ($redirect_domain$10$266.17$call_an_API_on_IdP_From_Client, 2)));
+goto label_96;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(354)
-label_98:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 354} true;
-call $result.poirot_nondet$354.24$2$call_an_API_on_IdP_From_Client := poirot_nondet ();
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(275)
+label_96:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 275} true;
+call $result.poirot_nondet$275.24$2$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_99;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(275)
+label_99:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 275} true;
+$scope$11$267.7$call_an_API_on_IdP_From_Client := $result.poirot_nondet$275.24$2$call_an_API_on_IdP_From_Client ;
+goto label_100;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(276)
+label_100:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 276} true;
+//TAG: scope == 1 || scope == 2
+assume ((INT_EQ($scope$11$267.7$call_an_API_on_IdP_From_Client, 1)) || (INT_EQ($scope$11$267.7$call_an_API_on_IdP_From_Client, 2)));
 goto label_101;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(354)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(277)
 label_101:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 354} true;
-$scope$11$337.7$call_an_API_on_IdP_From_Client := $result.poirot_nondet$354.24$2$call_an_API_on_IdP_From_Client ;
-goto label_102;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 277} true;
+call $result.poirot_nondet$277.23$3$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_104;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(355)
-label_102:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 355} true;
-//TAG: scope == 1 || scope == 2
-assume ((INT_EQ($scope$11$337.7$call_an_API_on_IdP_From_Client, 1)) || (INT_EQ($scope$11$337.7$call_an_API_on_IdP_From_Client, 2)));
-goto label_103;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(277)
+label_104:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 277} true;
+Mem_T.User := Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client := $result.poirot_nondet$277.23$3$call_an_API_on_IdP_From_Client];
+goto label_105;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(356)
-label_103:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 356} true;
-call $result.poirot_nondet$356.23$3$call_an_API_on_IdP_From_Client := poirot_nondet ();
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(278)
+label_105:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 278} true;
+//TAG: user == 1 || user == 2
+assume ((INT_EQ(Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client], 1)) || (INT_EQ(Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client], 2)));
 goto label_106;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(356)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(279)
 label_106:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 356} true;
-Mem_T.User := Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client := $result.poirot_nondet$356.23$3$call_an_API_on_IdP_From_Client];
-goto label_107;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 279} true;
+call $result.poirot_nondet$279.32$4$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_109;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(357)
-label_107:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 357} true;
-//TAG: user == 1 || user == 2
-assume ((INT_EQ(Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client], 1)) || (INT_EQ(Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client], 2)));
-goto label_108;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(279)
+label_109:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 279} true;
+$response_type$12$268.15$call_an_API_on_IdP_From_Client := $result.poirot_nondet$279.32$4$call_an_API_on_IdP_From_Client ;
+goto label_110;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(358)
-label_108:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 358} true;
-call $result.poirot_nondet$358.32$4$call_an_API_on_IdP_From_Client := poirot_nondet ();
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(280)
+label_110:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 280} true;
+//TAG: response_type == 0 || response_type == 1
+assume ((INT_EQ($response_type$12$268.15$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($response_type$12$268.15$call_an_API_on_IdP_From_Client, 1)));
 goto label_111;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(358)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(281)
 label_111:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 358} true;
-$response_type$12$338.15$call_an_API_on_IdP_From_Client := $result.poirot_nondet$358.32$4$call_an_API_on_IdP_From_Client ;
-goto label_112;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 281} true;
+call $result.poirot_nondet$281.25$5$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_114;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(359)
-label_112:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 359} true;
-//TAG: response_type == 0 || response_type == 1
-assume ((INT_EQ($response_type$12$338.15$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($response_type$12$338.15$call_an_API_on_IdP_From_Client, 1)));
-goto label_113;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(281)
+label_114:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 281} true;
+$app_ID$7$263.8$call_an_API_on_IdP_From_Client := $result.poirot_nondet$281.25$5$call_an_API_on_IdP_From_Client ;
+goto label_115;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(360)
-label_113:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 360} true;
-call $result.poirot_nondet$360.25$5$call_an_API_on_IdP_From_Client := poirot_nondet ();
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(282)
+label_115:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 282} true;
+//TAG: app_ID == 0 || app_ID == 1
+assume ((INT_EQ($app_ID$7$263.8$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($app_ID$7$263.8$call_an_API_on_IdP_From_Client, 1)));
 goto label_116;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(360)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(283)
 label_116:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 360} true;
-$app_ID$7$333.8$call_an_API_on_IdP_From_Client := $result.poirot_nondet$360.25$5$call_an_API_on_IdP_From_Client ;
-goto label_117;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 283} true;
+call $result.draw_cookie_from_knowledge_pool$283.39$6$call_an_API_on_IdP_From_Client := draw_cookie_from_knowledge_pool ();
+goto label_119;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(361)
-label_117:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 361} true;
-//TAG: app_ID == 0 || app_ID == 1
-assume ((INT_EQ($app_ID$7$333.8$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($app_ID$7$333.8$call_an_API_on_IdP_From_Client, 1)));
-goto label_118;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(283)
+label_119:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 283} true;
+$arg1$13$269.5$call_an_API_on_IdP_From_Client := $result.draw_cookie_from_knowledge_pool$283.39$6$call_an_API_on_IdP_From_Client ;
+goto label_120;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(363)
-label_118:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 363} true;
-call $result.draw_cookie_from_knowledge_pool$363.39$6$call_an_API_on_IdP_From_Client := draw_cookie_from_knowledge_pool ();
-goto label_121;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(284)
+label_120:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 284} true;
+call $result.dialog_oauth$284.29$7$call_an_API_on_IdP_From_Client := dialog_oauth ($arg1$13$269.5$call_an_API_on_IdP_From_Client, $app_ID$7$263.8$call_an_API_on_IdP_From_Client, $redirect_domain$10$266.17$call_an_API_on_IdP_From_Client, $scope$11$267.7$call_an_API_on_IdP_From_Client, Mem_T.User[$user$8$264.6$call_an_API_on_IdP_From_Client], $response_type$12$268.15$call_an_API_on_IdP_From_Client, $location$9$265.20$call_an_API_on_IdP_From_Client, $access_token$2$258.5$call_an_API_on_IdP_From_Client, $code$4$260.5$call_an_API_on_IdP_From_Client);
+goto label_123;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(363)
-label_121:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 363} true;
-$arg1$13$340.5$call_an_API_on_IdP_From_Client := $result.draw_cookie_from_knowledge_pool$363.39$6$call_an_API_on_IdP_From_Client ;
-goto label_122;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(284)
+label_123:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 284} true;
+$returnValue$6$262.5$call_an_API_on_IdP_From_Client := $result.dialog_oauth$284.29$7$call_an_API_on_IdP_From_Client ;
+goto label_124;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(365)
-label_122:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 365} true;
-call $result.dialog_oauth$365.29$7$call_an_API_on_IdP_From_Client := dialog_oauth ($arg1$13$340.5$call_an_API_on_IdP_From_Client, $app_ID$7$333.8$call_an_API_on_IdP_From_Client, $redirect_domain$10$336.17$call_an_API_on_IdP_From_Client, $scope$11$337.7$call_an_API_on_IdP_From_Client, Mem_T.User[$user$8$334.6$call_an_API_on_IdP_From_Client], $response_type$12$338.15$call_an_API_on_IdP_From_Client, $location$9$335.20$call_an_API_on_IdP_From_Client, $access_token$2$328.5$call_an_API_on_IdP_From_Client, $code$4$330.5$call_an_API_on_IdP_From_Client);
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(285)
+label_124:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 285} true;
+goto label_124_true , label_124_false ;
+
+
+label_124_true :
+assume (INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 400));
+goto label_1;
+
+
+label_124_false :
+assume !(INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 400));
 goto label_125;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(365)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(286)
 label_125:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 365} true;
-$returnValue$6$332.5$call_an_API_on_IdP_From_Client := $result.dialog_oauth$365.29$7$call_an_API_on_IdP_From_Client ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 286} true;
+goto label_125_true , label_125_false ;
+
+
+label_125_true :
+assume (INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 302));
 goto label_126;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(366)
+label_125_false :
+assume !(INT_EQ($returnValue$6$262.5$call_an_API_on_IdP_From_Client, 302));
+goto label_1;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(286)
 label_126:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 366} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 286} true;
 goto label_126_true , label_126_false ;
 
 
 label_126_true :
-assume (INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 400));
-goto label_1;
-
-
-label_126_false :
-assume !(INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 400));
+assume (INT_EQ(Mem_T.Location_Knowledge[$location$9$265.20$call_an_API_on_IdP_From_Client], 3));
 goto label_127;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(367)
+label_126_false :
+assume !(INT_EQ(Mem_T.Location_Knowledge[$location$9$265.20$call_an_API_on_IdP_From_Client], 3));
+goto label_1;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(288)
 label_127:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 367} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 288} true;
 goto label_127_true , label_127_false ;
 
 
 label_127_true :
-assume (INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 302));
-goto label_128;
+assume (INT_NEQ(Mem_T.INT4[$access_token$2$258.5$call_an_API_on_IdP_From_Client], -1));
+goto label_129;
 
 
 label_127_false :
-assume !(INT_EQ($returnValue$6$332.5$call_an_API_on_IdP_From_Client, 302));
-goto label_1;
+assume !(INT_NEQ(Mem_T.INT4[$access_token$2$258.5$call_an_API_on_IdP_From_Client], -1));
+goto label_128;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(367)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(292)
 label_128:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 367} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 292} true;
 goto label_128_true , label_128_false ;
 
 
 label_128_true :
-assume (INT_EQ(Mem_T.Location_Knowledge[$location$9$335.20$call_an_API_on_IdP_From_Client], 3));
-goto label_129;
+assume (INT_NEQ(Mem_T.INT4[$code$4$260.5$call_an_API_on_IdP_From_Client], -1));
+goto label_132;
 
 
 label_128_false :
-assume !(INT_EQ(Mem_T.Location_Knowledge[$location$9$335.20$call_an_API_on_IdP_From_Client], 3));
+assume !(INT_NEQ(Mem_T.INT4[$code$4$260.5$call_an_API_on_IdP_From_Client], -1));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(369)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(290)
 label_129:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 369} true;
-goto label_129_true , label_129_false ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 290} true;
+call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$2$258.5$call_an_API_on_IdP_From_Client]);
+goto label_128;
 
 
-label_129_true :
-assume (INT_NEQ(Mem_T.INT4[$access_token$2$328.5$call_an_API_on_IdP_From_Client], -1));
-goto label_131;
-
-
-label_129_false :
-assume !(INT_NEQ(Mem_T.INT4[$access_token$2$328.5$call_an_API_on_IdP_From_Client], -1));
-goto label_130;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(373)
-label_130:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 373} true;
-goto label_130_true , label_130_false ;
-
-
-label_130_true :
-assume (INT_NEQ(Mem_T.INT4[$code$4$330.5$call_an_API_on_IdP_From_Client], -1));
-goto label_134;
-
-
-label_130_false :
-assume !(INT_NEQ(Mem_T.INT4[$code$4$330.5$call_an_API_on_IdP_From_Client], -1));
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(294)
+label_132:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 294} true;
+call add_code_knowledge_to_bob (Mem_T.INT4[$code$4$260.5$call_an_API_on_IdP_From_Client]);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(371)
-label_131:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 371} true;
-call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$2$328.5$call_an_API_on_IdP_From_Client]);
-goto label_130;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(339)
+label_135:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 339} true;
+$redirect_domain$10$266.17$call_an_API_on_IdP_From_Client := $result.poirot_nondet$339.34$19$call_an_API_on_IdP_From_Client ;
+goto label_136;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(375)
-label_134:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 375} true;
-call add_code_knowledge_to_bob (Mem_T.INT4[$code$4$330.5$call_an_API_on_IdP_From_Client]);
-goto label_1;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(340)
+label_136:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 340} true;
+call $result.poirot_nondet$340.25$20$call_an_API_on_IdP_From_Client := poirot_nondet ();
+goto label_139;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(423)
-label_137:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 423} true;
-$redirect_domain$10$336.17$call_an_API_on_IdP_From_Client := $result.poirot_nondet$423.34$19$call_an_API_on_IdP_From_Client ;
-goto label_138;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(340)
+label_139:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 340} true;
+$app_ID$7$263.8$call_an_API_on_IdP_From_Client := $result.poirot_nondet$340.25$20$call_an_API_on_IdP_From_Client ;
+goto label_140;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(424)
-label_138:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 424} true;
-call $result.poirot_nondet$424.25$20$call_an_API_on_IdP_From_Client := poirot_nondet ();
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(341)
+label_140:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 341} true;
+//TAG: app_ID == 0 || app_ID == 1
+assume ((INT_EQ($app_ID$7$263.8$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($app_ID$7$263.8$call_an_API_on_IdP_From_Client, 1)));
 goto label_141;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(424)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(342)
 label_141:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 424} true;
-$app_ID$7$333.8$call_an_API_on_IdP_From_Client := $result.poirot_nondet$424.25$20$call_an_API_on_IdP_From_Client ;
-goto label_142;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 342} true;
+call $result.draw_app_secret_from_knowledge_pool$342.43$21$call_an_API_on_IdP_From_Client := draw_app_secret_from_knowledge_pool ();
+goto label_144;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(425)
-label_142:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 425} true;
-//TAG: app_ID == 0 || app_ID == 1
-assume ((INT_EQ($app_ID$7$333.8$call_an_API_on_IdP_From_Client, 0)) || (INT_EQ($app_ID$7$333.8$call_an_API_on_IdP_From_Client, 1)));
-goto label_143;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(342)
+label_144:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 342} true;
+$arg1$13$269.5$call_an_API_on_IdP_From_Client := $result.draw_app_secret_from_knowledge_pool$342.43$21$call_an_API_on_IdP_From_Client ;
+goto label_145;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(427)
-label_143:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 427} true;
-call $result.draw_app_secret_from_knowledge_pool$427.43$21$call_an_API_on_IdP_From_Client := draw_app_secret_from_knowledge_pool ();
-goto label_146;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(343)
+label_145:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 343} true;
+call $result.draw_code_from_knowledge_pool$343.37$22$call_an_API_on_IdP_From_Client := draw_code_from_knowledge_pool ();
+goto label_148;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(427)
-label_146:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 427} true;
-$arg1$13$340.5$call_an_API_on_IdP_From_Client := $result.draw_app_secret_from_knowledge_pool$427.43$21$call_an_API_on_IdP_From_Client ;
-goto label_147;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(343)
+label_148:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 343} true;
+$arg2$14$269.10$call_an_API_on_IdP_From_Client := $result.draw_code_from_knowledge_pool$343.37$22$call_an_API_on_IdP_From_Client ;
+goto label_149;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(428)
-label_147:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 428} true;
-call $result.draw_code_from_knowledge_pool$428.37$22$call_an_API_on_IdP_From_Client := draw_code_from_knowledge_pool ();
-goto label_150;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(428)
-label_150:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 428} true;
-$arg2$14$340.10$call_an_API_on_IdP_From_Client := $result.draw_code_from_knowledge_pool$428.37$22$call_an_API_on_IdP_From_Client ;
-goto label_151;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(429)
-label_151:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 429} true;
-goto label_151_true , label_151_false ;
-
-
-label_151_true :
-assume (INT_EQ($arg1$13$340.5$call_an_API_on_IdP_From_Client, -1));
-goto label_1;
-
-
-label_151_false :
-assume !(INT_EQ($arg1$13$340.5$call_an_API_on_IdP_From_Client, -1));
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(344)
+label_149:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 344} true;
+call $result.graph_facebook_com_oauth_access_token_bob$344.58$23$call_an_API_on_IdP_From_Client := graph_facebook_com_oauth_access_token_bob ($redirect_domain$10$266.17$call_an_API_on_IdP_From_Client, $app_ID$7$263.8$call_an_API_on_IdP_From_Client, $arg1$13$269.5$call_an_API_on_IdP_From_Client, $arg2$14$269.10$call_an_API_on_IdP_From_Client, $access_token$2$258.5$call_an_API_on_IdP_From_Client);
 goto label_152;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(429)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(344)
 label_152:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 429} true;
-goto label_152_true , label_152_false ;
-
-
-label_152_true :
-assume (INT_EQ($arg2$14$340.10$call_an_API_on_IdP_From_Client, -1));
-goto label_1;
-
-
-label_152_false :
-assume !(INT_EQ($arg2$14$340.10$call_an_API_on_IdP_From_Client, -1));
-goto label_153;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(430)
-label_153:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 430} true;
-call $result.graph_facebook_com_oauth_access_token_bob$430.58$23$call_an_API_on_IdP_From_Client := graph_facebook_com_oauth_access_token_bob ($redirect_domain$10$336.17$call_an_API_on_IdP_From_Client, $app_ID$7$333.8$call_an_API_on_IdP_From_Client, $arg1$13$340.5$call_an_API_on_IdP_From_Client, $arg2$14$340.10$call_an_API_on_IdP_From_Client, $access_token$2$328.5$call_an_API_on_IdP_From_Client);
-goto label_156;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(430)
-label_156:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 430} true;
-$returnValue$6$332.5$call_an_API_on_IdP_From_Client := $result.graph_facebook_com_oauth_access_token_bob$430.58$23$call_an_API_on_IdP_From_Client ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 344} true;
+$returnValue$6$262.5$call_an_API_on_IdP_From_Client := $result.graph_facebook_com_oauth_access_token_bob$344.58$23$call_an_API_on_IdP_From_Client ;
 goto label_1;
 
 }
 
 
 
-procedure  call_an_API_on_client_SDK($API_id$1$297.35$call_an_API_on_client_SDK_.1:int)
+procedure  call_an_API_on_client_SDK($API_id$1$230.35$call_an_API_on_client_SDK_.1:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -4849,6 +4778,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -4861,11 +4791,11 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$1$297.35$call_an_API_on_client_SDK : int;
-var $redirect_domain$2$298.17$call_an_API_on_client_SDK : int;
-var $result.poirot_nondet$305.33$1$call_an_API_on_client_SDK : int;
-var $result.poirot_nondet$307.23$2$call_an_API_on_client_SDK : int;
-var $scope$3$299.7$call_an_API_on_client_SDK : int;
+var $API_id$1$230.35$call_an_API_on_client_SDK : int;
+var $redirect_domain$2$231.17$call_an_API_on_client_SDK : int;
+var $result.poirot_nondet$235.33$1$call_an_API_on_client_SDK : int;
+var $result.poirot_nondet$237.23$2$call_an_API_on_client_SDK : int;
+var $scope$3$232.7$call_an_API_on_client_SDK : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -4891,38 +4821,38 @@ var __havoc_dummy_return: int;
 
 start:
 
-$API_id$1$297.35$call_an_API_on_client_SDK := $API_id$1$297.35$call_an_API_on_client_SDK_.1;
+$API_id$1$230.35$call_an_API_on_client_SDK := $API_id$1$230.35$call_an_API_on_client_SDK_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(312)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(242)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 312} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 242} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(312)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(242)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 312} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 242} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(298)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(231)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 298} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 231} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(299)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(232)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 299} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 232} true;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(300)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(233)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 300} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 233} true;
 
 goto label_5_case_0;
 
@@ -4933,61 +4863,61 @@ label_5_case_0 :
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(305)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(235)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 305} true;
-call $result.poirot_nondet$305.33$1$call_an_API_on_client_SDK := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 235} true;
+call $result.poirot_nondet$235.33$1$call_an_API_on_client_SDK := poirot_nondet ();
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(305)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(235)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 305} true;
-$redirect_domain$2$298.17$call_an_API_on_client_SDK := $result.poirot_nondet$305.33$1$call_an_API_on_client_SDK ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 235} true;
+$redirect_domain$2$231.17$call_an_API_on_client_SDK := $result.poirot_nondet$235.33$1$call_an_API_on_client_SDK ;
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(306)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(236)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 306} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 236} true;
 //TAG: redirect_domain == 1 || redirect_domain == 2
-assume ((INT_EQ($redirect_domain$2$298.17$call_an_API_on_client_SDK, 1)) || (INT_EQ($redirect_domain$2$298.17$call_an_API_on_client_SDK, 2)));
+assume ((INT_EQ($redirect_domain$2$231.17$call_an_API_on_client_SDK, 1)) || (INT_EQ($redirect_domain$2$231.17$call_an_API_on_client_SDK, 2)));
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(307)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(237)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 307} true;
-call $result.poirot_nondet$307.23$2$call_an_API_on_client_SDK := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 237} true;
+call $result.poirot_nondet$237.23$2$call_an_API_on_client_SDK := poirot_nondet ();
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(307)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(237)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 307} true;
-$scope$3$299.7$call_an_API_on_client_SDK := $result.poirot_nondet$307.23$2$call_an_API_on_client_SDK ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 237} true;
+$scope$3$232.7$call_an_API_on_client_SDK := $result.poirot_nondet$237.23$2$call_an_API_on_client_SDK ;
 goto label_15;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(308)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(238)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 308} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 238} true;
 //TAG: scope == 1 || scope == 2
-assume ((INT_EQ($scope$3$299.7$call_an_API_on_client_SDK, 1)) || (INT_EQ($scope$3$299.7$call_an_API_on_client_SDK, 2)));
+assume ((INT_EQ($scope$3$232.7$call_an_API_on_client_SDK, 1)) || (INT_EQ($scope$3$232.7$call_an_API_on_client_SDK, 2)));
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(309)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(239)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 309} true;
-call Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync ($redirect_domain$2$298.17$call_an_API_on_client_SDK, $scope$3$299.7$call_an_API_on_client_SDK, 1);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 239} true;
+call Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync ($redirect_domain$2$231.17$call_an_API_on_client_SDK, $scope$3$232.7$call_an_API_on_client_SDK, 1);
 goto label_1;
 
 }
 
 
 
-procedure  call_an_API_on_foo_service_app_From_Bob($API_id$1$281.49$call_an_API_on_foo_service_app_From_Bob_.1:int)
+procedure  call_an_API_on_foo_service_app_From_Bob($API_id$1$214.49$call_an_API_on_foo_service_app_From_Bob_.1:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -5062,6 +4992,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -5074,13 +5005,13 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$1$281.49$call_an_API_on_foo_service_app_From_Bob : int;
-var $access_token$3$283.5$call_an_API_on_foo_service_app_From_Bob : int;
+var $API_id$1$214.49$call_an_API_on_foo_service_app_From_Bob : int;
+var $access_token$3$216.5$call_an_API_on_foo_service_app_From_Bob : int;
 var $printf.arg.1$4$ : int;
-var $result.draw_access_token_from_knowledge_pool$283.57$1$call_an_API_on_foo_service_app_From_Bob : int;
-var $result.foo_service_API_authenticate$288.39$2$call_an_API_on_foo_service_app_From_Bob : int;
-var $result.printf$291.8$3$call_an_API_on_foo_service_app_From_Bob : int;
-var $testRPS$2$282.15$call_an_API_on_foo_service_app_From_Bob : int;
+var $result.draw_access_token_from_knowledge_pool$216.57$1$call_an_API_on_foo_service_app_From_Bob : int;
+var $result.foo_service_API_authenticate$221.39$2$call_an_API_on_foo_service_app_From_Bob : int;
+var $result.printf$224.8$3$call_an_API_on_foo_service_app_From_Bob : int;
+var $testRPS$2$215.15$call_an_API_on_foo_service_app_From_Bob : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -5106,120 +5037,128 @@ var __havoc_dummy_return: int;
 
 start:
 
-call $result.foo_service_API_authenticate$288.39$2$call_an_API_on_foo_service_app_From_Bob := __HAVOC_malloc(8);
-call $testRPS$2$282.15$call_an_API_on_foo_service_app_From_Bob := __HAVOC_malloc(8);
-$API_id$1$281.49$call_an_API_on_foo_service_app_From_Bob := $API_id$1$281.49$call_an_API_on_foo_service_app_From_Bob_.1;
+call $result.foo_service_API_authenticate$221.39$2$call_an_API_on_foo_service_app_From_Bob := __HAVOC_malloc(8);
+call $testRPS$2$215.15$call_an_API_on_foo_service_app_From_Bob := __HAVOC_malloc(8);
+$API_id$1$214.49$call_an_API_on_foo_service_app_From_Bob := $API_id$1$214.49$call_an_API_on_foo_service_app_From_Bob_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(294)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(227)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 294} true;
-call __HAVOC_free($result.foo_service_API_authenticate$288.39$2$call_an_API_on_foo_service_app_From_Bob);
-call __HAVOC_free($testRPS$2$282.15$call_an_API_on_foo_service_app_From_Bob);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 227} true;
+call __HAVOC_free($result.foo_service_API_authenticate$221.39$2$call_an_API_on_foo_service_app_From_Bob);
+call __HAVOC_free($testRPS$2$215.15$call_an_API_on_foo_service_app_From_Bob);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(294)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(227)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 294} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 227} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(282)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(215)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 282} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 215} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(283)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(216)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 283} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 216} true;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(283)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(216)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 283} true;
-call $result.draw_access_token_from_knowledge_pool$283.57$1$call_an_API_on_foo_service_app_From_Bob := draw_access_token_from_knowledge_pool ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 216} true;
+call $result.draw_access_token_from_knowledge_pool$216.57$1$call_an_API_on_foo_service_app_From_Bob := draw_access_token_from_knowledge_pool ();
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(283)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(216)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 283} true;
-$access_token$3$283.5$call_an_API_on_foo_service_app_From_Bob := $result.draw_access_token_from_knowledge_pool$283.57$1$call_an_API_on_foo_service_app_From_Bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 216} true;
+$access_token$3$216.5$call_an_API_on_foo_service_app_From_Bob := $result.draw_access_token_from_knowledge_pool$216.57$1$call_an_API_on_foo_service_app_From_Bob ;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(286)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(219)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 286} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 219} true;
 goto label_9_true , label_9_false ;
 
 
 label_9_true :
-assume (INT_EQ($access_token$3$283.5$call_an_API_on_foo_service_app_From_Bob, -1));
+assume (INT_EQ($access_token$3$216.5$call_an_API_on_foo_service_app_From_Bob, -1));
 goto label_1;
 
 
 label_9_false :
-assume !(INT_EQ($access_token$3$283.5$call_an_API_on_foo_service_app_From_Bob, -1));
+assume !(INT_EQ($access_token$3$216.5$call_an_API_on_foo_service_app_From_Bob, -1));
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(288)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(221)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 288} true;
-call $result.foo_service_API_authenticate$288.39$2$call_an_API_on_foo_service_app_From_Bob := foo_service_API_authenticate ($access_token$3$283.5$call_an_API_on_foo_service_app_From_Bob);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 221} true;
+call $result.foo_service_API_authenticate$221.39$2$call_an_API_on_foo_service_app_From_Bob := foo_service_API_authenticate ($access_token$3$216.5$call_an_API_on_foo_service_app_From_Bob);
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(288)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(221)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 288} true;
-Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($testRPS$2$282.15$call_an_API_on_foo_service_app_From_Bob) := Mem_T.session_ID_RP_Session[session_ID_RP_Session($result.foo_service_API_authenticate$288.39$2$call_an_API_on_foo_service_app_From_Bob)]];
-Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$282.15$call_an_API_on_foo_service_app_From_Bob) := Mem_T.user_ID_RP_Session[user_ID_RP_Session($result.foo_service_API_authenticate$288.39$2$call_an_API_on_foo_service_app_From_Bob)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 221} true;
+Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($testRPS$2$215.15$call_an_API_on_foo_service_app_From_Bob) := Mem_T.session_ID_RP_Session[session_ID_RP_Session($result.foo_service_API_authenticate$221.39$2$call_an_API_on_foo_service_app_From_Bob)]];
+Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$215.15$call_an_API_on_foo_service_app_From_Bob) := Mem_T.user_ID_RP_Session[user_ID_RP_Session($result.foo_service_API_authenticate$221.39$2$call_an_API_on_foo_service_app_From_Bob)]];
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(289)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(222)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 289} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 222} true;
 goto label_14_true , label_14_false ;
 
 
 label_14_true :
-assume (INT_EQ(Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$282.15$call_an_API_on_foo_service_app_From_Bob)], 1));
+assume (INT_EQ(Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$215.15$call_an_API_on_foo_service_app_From_Bob)], 1));
 goto label_15;
 
 
 label_14_false :
-assume !(INT_EQ(Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$282.15$call_an_API_on_foo_service_app_From_Bob)], 1));
+assume !(INT_EQ(Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$215.15$call_an_API_on_foo_service_app_From_Bob)], 1));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(291)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(224)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 291} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 224} true;
 call havoc_stringTemp := __HAVOC_malloc(1);
 $printf.arg.1$4$ := havoc_stringTemp ;
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(291)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(224)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 291} true;
-havoc $result.printf$291.8$3$call_an_API_on_foo_service_app_From_Bob;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 224} true;
+havoc $result.printf$224.8$3$call_an_API_on_foo_service_app_From_Bob;
 // skip printf
+goto label_19;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(225)
+label_19:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 225} true;
+//TAG: 1 != 1
+assert (INT_NEQ(1, 1));
 goto label_1;
 
 }
 
 
 
-procedure  call_an_API_on_foo_service_app_From_Client($API_id$1$314.52$call_an_API_on_foo_service_app_From_Client_.1:int)
+procedure  call_an_API_on_foo_service_app_From_Client($API_id$1$244.52$call_an_API_on_foo_service_app_From_Client_.1:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -5294,6 +5233,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -5306,11 +5246,11 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$1$314.52$call_an_API_on_foo_service_app_From_Client : int;
+var $API_id$1$244.52$call_an_API_on_foo_service_app_From_Client : int;
 var $printf.arg.1$3$ : int;
-var $result.foo_service_API_authenticate$316.39$1$call_an_API_on_foo_service_app_From_Client : int;
-var $result.printf$319.8$2$call_an_API_on_foo_service_app_From_Client : int;
-var $testRPS$2$315.15$call_an_API_on_foo_service_app_From_Client : int;
+var $result.foo_service_API_authenticate$246.39$1$call_an_API_on_foo_service_app_From_Client : int;
+var $result.printf$249.8$2$call_an_API_on_foo_service_app_From_Client : int;
+var $testRPS$2$245.15$call_an_API_on_foo_service_app_From_Client : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -5336,67 +5276,67 @@ var __havoc_dummy_return: int;
 
 start:
 
-call $result.foo_service_API_authenticate$316.39$1$call_an_API_on_foo_service_app_From_Client := __HAVOC_malloc(8);
-call $testRPS$2$315.15$call_an_API_on_foo_service_app_From_Client := __HAVOC_malloc(8);
-$API_id$1$314.52$call_an_API_on_foo_service_app_From_Client := $API_id$1$314.52$call_an_API_on_foo_service_app_From_Client_.1;
+call $result.foo_service_API_authenticate$246.39$1$call_an_API_on_foo_service_app_From_Client := __HAVOC_malloc(8);
+call $testRPS$2$245.15$call_an_API_on_foo_service_app_From_Client := __HAVOC_malloc(8);
+$API_id$1$244.52$call_an_API_on_foo_service_app_From_Client := $API_id$1$244.52$call_an_API_on_foo_service_app_From_Client_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(322)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(252)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 322} true;
-call __HAVOC_free($result.foo_service_API_authenticate$316.39$1$call_an_API_on_foo_service_app_From_Client);
-call __HAVOC_free($testRPS$2$315.15$call_an_API_on_foo_service_app_From_Client);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 252} true;
+call __HAVOC_free($result.foo_service_API_authenticate$246.39$1$call_an_API_on_foo_service_app_From_Client);
+call __HAVOC_free($testRPS$2$245.15$call_an_API_on_foo_service_app_From_Client);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(322)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(252)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 322} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 252} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(315)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(245)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 315} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 245} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(316)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(246)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 316} true;
-call $result.foo_service_API_authenticate$316.39$1$call_an_API_on_foo_service_app_From_Client := foo_service_API_authenticate (Mem_T.access_token_App_Client_State[access_token_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)])]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 246} true;
+call $result.foo_service_API_authenticate$246.39$1$call_an_API_on_foo_service_app_From_Client := foo_service_API_authenticate (Mem_T.access_token_App_Client_State[access_token_App_Client_State(Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state)])]);
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(316)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(246)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 316} true;
-Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($testRPS$2$315.15$call_an_API_on_foo_service_app_From_Client) := Mem_T.session_ID_RP_Session[session_ID_RP_Session($result.foo_service_API_authenticate$316.39$1$call_an_API_on_foo_service_app_From_Client)]];
-Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$315.15$call_an_API_on_foo_service_app_From_Client) := Mem_T.user_ID_RP_Session[user_ID_RP_Session($result.foo_service_API_authenticate$316.39$1$call_an_API_on_foo_service_app_From_Client)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 246} true;
+Mem_T.session_ID_RP_Session := Mem_T.session_ID_RP_Session[session_ID_RP_Session($testRPS$2$245.15$call_an_API_on_foo_service_app_From_Client) := Mem_T.session_ID_RP_Session[session_ID_RP_Session($result.foo_service_API_authenticate$246.39$1$call_an_API_on_foo_service_app_From_Client)]];
+Mem_T.user_ID_RP_Session := Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$245.15$call_an_API_on_foo_service_app_From_Client) := Mem_T.user_ID_RP_Session[user_ID_RP_Session($result.foo_service_API_authenticate$246.39$1$call_an_API_on_foo_service_app_From_Client)]];
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(317)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(247)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 317} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 247} true;
 goto label_8_true , label_8_false ;
 
 
 label_8_true :
-assume (INT_EQ(Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$315.15$call_an_API_on_foo_service_app_From_Client)], 2));
+assume (INT_EQ(Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$245.15$call_an_API_on_foo_service_app_From_Client)], 2));
 goto label_9;
 
 
 label_8_false :
-assume !(INT_EQ(Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$315.15$call_an_API_on_foo_service_app_From_Client)], 2));
+assume !(INT_EQ(Mem_T.user_ID_RP_Session[user_ID_RP_Session($testRPS$2$245.15$call_an_API_on_foo_service_app_From_Client)], 2));
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(317)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(247)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 317} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 247} true;
 goto label_9_true , label_9_false ;
 
 
@@ -5410,168 +5350,19 @@ assume (Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(Mem_T.current_stat
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(319)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(249)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 319} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 249} true;
 call havoc_stringTemp := __HAVOC_malloc(1);
 $printf.arg.1$3$ := havoc_stringTemp ;
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(319)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(249)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 319} true;
-havoc $result.printf$319.8$2$call_an_API_on_foo_service_app_From_Client;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 249} true;
+havoc $result.printf$249.8$2$call_an_API_on_foo_service_app_From_Client;
 // skip printf
-goto label_1;
-
-}
-
-
-
-procedure  check_and_assume($a$1$61.26$check_and_assume_.1:int)
-
-
-modifies Res_KERNEL_SOURCE;
-
-modifies Res_PROBED;
-
-
-modifies Mem_T.A0INT4;
-modifies Mem_T.A100Access_Token;
-modifies Mem_T.A100Code;
-modifies Mem_T.A100Cookie;
-modifies Mem_T.A100RP_Session;
-modifies Mem_T.A100Scope;
-modifies Mem_T.A37CHAR;
-modifies Mem_T.A58CHAR;
-modifies Mem_T.App_ID;
-modifies Mem_T.App_Owner;
-modifies Mem_T.App_Secret;
-modifies Mem_T.Caller;
-modifies Mem_T.INT4;
-modifies Mem_T.Location_Knowledge;
-modifies Mem_T.PAccess_Token;
-modifies Mem_T.PApp_Client_State;
-modifies Mem_T.PCHAR;
-modifies Mem_T.PCode;
-modifies Mem_T.PCookie;
-modifies Mem_T.PINT4;
-modifies Mem_T.PLocation_Knowledge;
-modifies Mem_T.PPUINT2;
-modifies Mem_T.PPlocaleinfo_struct;
-modifies Mem_T.PRP_Session;
-modifies Mem_T.PScope;
-modifies Mem_T.PUINT2;
-modifies Mem_T.PUser;
-modifies Mem_T.PUser_Email;
-modifies Mem_T.Plocaleinfo_struct;
-modifies Mem_T.Redirect_Domain;
-modifies Mem_T.Response_Type;
-modifies Mem_T.Scope;
-modifies Mem_T.UINT4;
-modifies Mem_T.User;
-modifies Mem_T.User_Credentials;
-modifies Mem_T.User_Email;
-modifies Mem_T.access_token_App_Client_State;
-modifies Mem_T.app_ID_App_Client_State;
-modifies Mem_T.app_ID_Code;
-modifies Mem_T.app_ID_Registered_App;
-modifies Mem_T.app_length_FB_Server_State;
-modifies Mem_T.app_owner_App_Client_State;
-modifies Mem_T.app_secret_Code;
-modifies Mem_T.app_secret_Registered_App;
-modifies Mem_T.code_App_Client_State;
-modifies Mem_T.code_length_FB_Server_State;
-modifies Mem_T.code_value_Code;
-modifies Mem_T.codes_FB_Server_State;
-modifies Mem_T.cookie_WWAHost_State;
-modifies Mem_T.cookie_length_FB_Server_State;
-modifies Mem_T.cookie_value_Cookie;
-modifies Mem_T.cookies_FB_Server_State;
-modifies Mem_T.current_state_WWAHost_State;
-modifies Mem_T.redirect_domain_Registered_App;
-modifies Mem_T.rp_sessions_RP_State;
-modifies Mem_T.scope_Access_Token;
-modifies Mem_T.scope_Registered_App;
-modifies Mem_T.scope_length_Registered_App;
-modifies Mem_T.session_ID_RP_Session;
-modifies Mem_T.session_length_RP_State;
-modifies Mem_T.token_length_FB_Server_State;
-modifies Mem_T.token_value_Access_Token;
-modifies Mem_T.tokens_FB_Server_State;
-modifies Mem_T.user_ID_Access_Token;
-modifies Mem_T.user_ID_Code;
-modifies Mem_T.user_ID_Cookie;
-modifies Mem_T.user_ID_RP_Session;
-modifies access_token_k_base_length;
-modifies actionNumber;
-modifies app_secret_k_base_length;
-modifies code_k_base_length;
-modifies cookie_k_base_length;
-modifies email_k_base_length;
-modifies foo_rp_state;
-modifies server_state;
-modifies wwahost_state;
-{
-var havoc_stringTemp:int;
-var condVal:int;
-var $a$1$61.26$check_and_assume : int;
-var tempBoogie0:int;
-var tempBoogie1:int;
-var tempBoogie2:int;
-var tempBoogie3:int;
-var tempBoogie4:int;
-var tempBoogie5:int;
-var tempBoogie6:int;
-var tempBoogie7:int;
-var tempBoogie8:int;
-var tempBoogie9:int;
-var tempBoogie10:int;
-var tempBoogie11:int;
-var tempBoogie12:int;
-var tempBoogie13:int;
-var tempBoogie14:int;
-var tempBoogie15:int;
-var tempBoogie16:int;
-var tempBoogie17:int;
-var tempBoogie18:int;
-var tempBoogie19:int;
-var __havoc_dummy_return: int;
-
-
-start:
-
-$a$1$61.26$check_and_assume := $a$1$61.26$check_and_assume_.1;
-goto label_3;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(65)
-label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 65} true;
-return;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(65)
-label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 65} true;
-assume false;
-return;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(63)
-label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 63} true;
-//TAG: a
-assert ($a$1$61.26$check_and_assume != 0);
-goto label_4;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(64)
-label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 64} true;
-//TAG: a
-assume ($a$1$61.26$check_and_assume != 0);
 goto label_1;
 
 }
@@ -5653,6 +5444,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -5793,9 +5585,9 @@ $code$9$18.193$dialog_oauth := $code$9$18.193$dialog_oauth_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(105)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(101)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 105} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 101} true;
 call __HAVOC_free($app$16$28.16$dialog_oauth);
 call __HAVOC_free($at$11$23.14$dialog_oauth);
 call __HAVOC_free($c$12$24.6$dialog_oauth);
@@ -5803,79 +5595,79 @@ call __HAVOC_free($result.question.2$);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(105)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(101)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 105} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 101} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(22)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(22)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 22} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 22} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(22)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(22)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 22} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 22} true;
 $logged_in_user$10$22.6$dialog_oauth := 0 ;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(23)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(23)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 23} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 23} true;
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(24)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(24)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 24} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 24} true;
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(25)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(25)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 25} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 25} true;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(26)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(26)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 26} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 26} true;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(26)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(26)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 26} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 26} true;
 $i$14$26.5$dialog_oauth := 0 ;
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(27)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(27)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 27} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 27} true;
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(27)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(27)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 27} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 27} true;
 $found$15$27.5$dialog_oauth := 0 ;
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(28)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(28)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 28} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 28} true;
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(29)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(29)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 29} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 29} true;
 goto label_13_true , label_13_false ;
 
 
@@ -5889,16 +5681,16 @@ assume ($client_id$2$18.36$dialog_oauth == 0);
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(30)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(30)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 30} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 30} true;
 $found$15$27.5$dialog_oauth := 1 ;
 goto label_51;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(29)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(29)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 29} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 29} true;
 goto label_15_true , label_15_false ;
 
 
@@ -5912,9 +5704,9 @@ assume !(INT_EQ($client_id$2$18.36$dialog_oauth, 1));
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(33)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(33)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 33} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 33} true;
 goto label_16_true , label_16_false ;
 
 
@@ -5928,16 +5720,16 @@ assume ($found$15$27.5$dialog_oauth == 0);
 goto label_17;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(36)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(36)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 36} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 36} true;
 $result.dialog_oauth$18.4$1$dialog_oauth := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(41)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(41)
 label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 41} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 41} true;
 goto label_18_true , label_18_false ;
 
 
@@ -5951,9 +5743,9 @@ assume !(INT_NEQ(Mem_T.redirect_domain_Registered_App[redirect_domain_Registered
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(47)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(47)
 label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 47} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 47} true;
 goto label_19_true , label_19_false ;
 
 
@@ -5967,9 +5759,9 @@ assume !(INT_NEQ($cookie$1$18.21$dialog_oauth, -1));
 goto label_22;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(41)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(41)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 41} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 41} true;
 goto label_20_true , label_20_false ;
 
 
@@ -5983,16 +5775,16 @@ assume !(INT_NEQ($redirect_domain$3$18.63$dialog_oauth, 3));
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(43)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(43)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 43} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 43} true;
 $result.dialog_oauth$18.4$1$dialog_oauth := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(60)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(60)
 label_22:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 60} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 60} true;
 goto label_22_true , label_22_false ;
 
 
@@ -6006,16 +5798,16 @@ assume ($logged_in_user$10$22.6$dialog_oauth == 0);
 goto label_28;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(50)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(50)
 label_23:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 50} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 50} true;
 $i$14$26.5$dialog_oauth := 0 ;
 goto label_24;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(51)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(51)
 label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 51} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 51} true;
 // loop entry initialization...
 ___LOOP_24_alloc := alloc;
 ___LOOP_24_Mem_T.A0INT4:=Mem_T.A0INT4;
@@ -6110,9 +5902,9 @@ assume !(INT_LT($i$14$26.5$dialog_oauth, Mem_T.cookie_length_FB_Server_State[coo
 goto label_22;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(53)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(53)
 label_25:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 53} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 53} true;
 goto label_25_true , label_25_false ;
 
 
@@ -6126,37 +5918,37 @@ assume !(INT_EQ(Mem_T.cookie_value_Cookie[cookie_value_Cookie(PLUS(Mem_T.cookies
 goto label_26;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(51)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(51)
 label_26:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 51} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 51} true;
 $i$14$26.5$dialog_oauth := PLUS($i$14$26.5$dialog_oauth, 1, 1) ;
 goto label_24_head;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(55)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(55)
 label_27:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 55} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 55} true;
 $logged_in_user$10$22.6$dialog_oauth := Mem_T.user_ID_Cookie[user_ID_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, $i$14$26.5$dialog_oauth))] ;
 goto label_22;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(62)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(62)
 label_28:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 62} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 62} true;
 Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$7$18.159$dialog_oauth := 1];
 goto label_50;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(67)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(67)
 label_29:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 67} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 67} true;
 $user_scope$13$25.7$dialog_oauth := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App($app$16$28.16$dialog_oauth)], 4, $logged_in_user$10$22.6$dialog_oauth)] ;
 goto label_30;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(70)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(68)
 label_30:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 70} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 68} true;
 goto label_30_true , label_30_false ;
 
 
@@ -6170,9 +5962,9 @@ assume !(INT_LT(Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App
 goto label_31;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(79)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(76)
 label_31:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 79} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 76} true;
 goto label_31_true , label_31_false ;
 
 
@@ -6186,30 +5978,30 @@ assume ($response_type$6$18.124$dialog_oauth == 0);
 goto label_34;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(73)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(71)
 label_32:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 73} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 71} true;
 Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$7$18.159$dialog_oauth := 2];
 goto label_33;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(74)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(72)
 label_33:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 74} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 72} true;
 $result.dialog_oauth$18.4$1$dialog_oauth := 302 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(81)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(78)
 label_34:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 81} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 78} true;
 Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token($at$11$23.14$dialog_oauth) := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]];
 goto label_45;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(90)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(86)
 label_35:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 90} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 86} true;
 goto label_35_true , label_35_false ;
 
 
@@ -6223,44 +6015,44 @@ assume !(INT_EQ($response_type$6$18.124$dialog_oauth, 1));
 goto label_36;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(103)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(99)
 label_36:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 103} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 99} true;
 Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$7$18.159$dialog_oauth := 3];
 goto label_44;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(92)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(88)
 label_37:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 92} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 88} true;
 Mem_T.code_value_Code := Mem_T.code_value_Code[code_value_Code($c$12$24.6$dialog_oauth) := Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)]];
 goto label_38;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(93)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(89)
 label_38:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 93} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 89} true;
 Mem_T.user_ID_Code := Mem_T.user_ID_Code[user_ID_Code($c$12$24.6$dialog_oauth) := $logged_in_user$10$22.6$dialog_oauth];
 goto label_39;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(94)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(90)
 label_39:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 94} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 90} true;
 Mem_T.app_secret_Code := Mem_T.app_secret_Code[app_secret_Code($c$12$24.6$dialog_oauth) := Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$16$28.16$dialog_oauth)]];
 goto label_40;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(95)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(91)
 label_40:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 95} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 91} true;
 Mem_T.app_ID_Code := Mem_T.app_ID_Code[app_ID_Code($c$12$24.6$dialog_oauth) := Mem_T.app_ID_Registered_App[app_ID_Registered_App($app$16$28.16$dialog_oauth)]];
 goto label_41;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(96)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(92)
 label_41:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 96} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 92} true;
 Mem_T.code_value_Code := Mem_T.code_value_Code[code_value_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.code_value_Code[code_value_Code($c$12$24.6$dialog_oauth)]];
 Mem_T.user_ID_Code := Mem_T.user_ID_Code[user_ID_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Code[user_ID_Code($c$12$24.6$dialog_oauth)]];
 Mem_T.app_secret_Code := Mem_T.app_secret_Code[app_secret_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.app_secret_Code[app_secret_Code($c$12$24.6$dialog_oauth)]];
@@ -6268,76 +6060,76 @@ Mem_T.app_ID_Code := Mem_T.app_ID_Code[app_ID_Code(PLUS(Mem_T.codes_FB_Server_St
 goto label_42;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(97)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(93)
 label_42:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 97} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 93} true;
 tempBoogie0 := PLUS(Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)], 1, 1) ;
 Mem_T.code_length_FB_Server_State := Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state) := tempBoogie0];
 goto label_43;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(100)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(96)
 label_43:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 100} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 96} true;
 Mem_T.INT4 := Mem_T.INT4[$code$9$18.193$dialog_oauth := Mem_T.code_value_Code[code_value_Code($c$12$24.6$dialog_oauth)]];
 goto label_36;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(104)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(100)
 label_44:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 104} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 100} true;
 $result.dialog_oauth$18.4$1$dialog_oauth := 302 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(82)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(79)
 label_45:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 82} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 79} true;
 Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$11$23.14$dialog_oauth) := $logged_in_user$10$22.6$dialog_oauth];
 goto label_46;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(83)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(80)
 label_46:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 83} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 80} true;
 Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token($at$11$23.14$dialog_oauth) := $scope$4$18.86$dialog_oauth];
 goto label_47;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(84)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(81)
 label_47:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 84} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 81} true;
 Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.token_value_Access_Token[token_value_Access_Token($at$11$23.14$dialog_oauth)]];
 Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$11$23.14$dialog_oauth)]];
 Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.scope_Access_Token[scope_Access_Token($at$11$23.14$dialog_oauth)]];
 goto label_48;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(85)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(82)
 label_48:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 85} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 82} true;
 tempBoogie0 := PLUS(Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)], 1, 1) ;
 Mem_T.token_length_FB_Server_State := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state) := tempBoogie0];
 goto label_49;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(88)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(84)
 label_49:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 88} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 84} true;
 Mem_T.INT4 := Mem_T.INT4[$access_token$8$18.174$dialog_oauth := Mem_T.token_value_Access_Token[token_value_Access_Token($at$11$23.14$dialog_oauth)]];
 goto label_36;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(63)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(63)
 label_50:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 63} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 63} true;
 $result.dialog_oauth$18.4$1$dialog_oauth := 302 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(31)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(31)
 label_51:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 31} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 31} true;
 goto label_51_true , label_51_false ;
 
 
@@ -6351,9 +6143,9 @@ assume ($client_id$2$18.36$dialog_oauth == 0);
 goto label_52;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(31)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(31)
 label_52:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 31} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 31} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$) := Mem_T.app_ID_Registered_App[app_ID_Registered_App(app_F_FB_Server_State(server_state))]];
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$) := Mem_T.app_secret_Registered_App[app_secret_Registered_App(app_F_FB_Server_State(server_state))]];
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App(app_F_FB_Server_State(server_state))]];
@@ -6362,9 +6154,9 @@ Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_len
 goto label_54;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(31)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(31)
 label_53:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 31} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 31} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$) := Mem_T.app_ID_Registered_App[app_ID_Registered_App(app_B_FB_Server_State(server_state))]];
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$) := Mem_T.app_secret_Registered_App[app_secret_Registered_App(app_B_FB_Server_State(server_state))]];
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App(app_B_FB_Server_State(server_state))]];
@@ -6373,9 +6165,9 @@ Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_len
 goto label_54;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(31)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(31)
 label_54:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 31} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 31} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($app$16$28.16$dialog_oauth) := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$)]];
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$16$28.16$dialog_oauth) := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$)]];
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$16$28.16$dialog_oauth) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$)]];
@@ -6387,7 +6179,7 @@ goto label_16;
 
 
 
-procedure  dialog_permissions_request($client_id$1$165.38$dialog_permissions_request_.1:int, $cookie$2$165.53$dialog_permissions_request_.1:int, $scope$3$165.67$dialog_permissions_request_.1:int, $response_type$4$165.88$dialog_permissions_request_.1:int, $location$5$165.123$dialog_permissions_request_.1:int, $access_token$6$165.138$dialog_permissions_request_.1:int, $code$7$165.157$dialog_permissions_request_.1:int) returns ($result.dialog_permissions_request$165.4$1$dialog_permissions_request:int)
+procedure  dialog_permissions_request($client_id$1$158.38$dialog_permissions_request_.1:int, $cookie$2$158.53$dialog_permissions_request_.1:int, $scope$3$158.67$dialog_permissions_request_.1:int, $response_type$4$158.88$dialog_permissions_request_.1:int, $location$5$158.123$dialog_permissions_request_.1:int, $access_token$6$158.138$dialog_permissions_request_.1:int, $code$7$158.157$dialog_permissions_request_.1:int) returns ($result.dialog_permissions_request$158.4$1$dialog_permissions_request:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -6462,6 +6254,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -6474,20 +6267,20 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$6$165.138$dialog_permissions_request : int;
-var $app$8$167.16$dialog_permissions_request : int;
-var $at$9$168.14$dialog_permissions_request : int;
-var $c$10$169.6$dialog_permissions_request : int;
-var $client_id$1$165.38$dialog_permissions_request : int;
-var $code$7$165.157$dialog_permissions_request : int;
-var $cookie$2$165.53$dialog_permissions_request : int;
-var $found$12$171.5$dialog_permissions_request : int;
-var $i$11$170.5$dialog_permissions_request : int;
-var $location$5$165.123$dialog_permissions_request : int;
-var $logged_in_user$13$172.6$dialog_permissions_request : int;
-var $response_type$4$165.88$dialog_permissions_request : int;
+var $access_token$6$158.138$dialog_permissions_request : int;
+var $app$8$160.16$dialog_permissions_request : int;
+var $at$9$161.14$dialog_permissions_request : int;
+var $c$10$162.6$dialog_permissions_request : int;
+var $client_id$1$158.38$dialog_permissions_request : int;
+var $code$7$158.157$dialog_permissions_request : int;
+var $cookie$2$158.53$dialog_permissions_request : int;
+var $found$12$164.5$dialog_permissions_request : int;
+var $i$11$163.5$dialog_permissions_request : int;
+var $location$5$158.123$dialog_permissions_request : int;
+var $logged_in_user$13$165.6$dialog_permissions_request : int;
+var $response_type$4$158.88$dialog_permissions_request : int;
 var $result.question.2$ : int;
-var $scope$3$165.67$dialog_permissions_request : int;
+var $scope$3$158.67$dialog_permissions_request : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -6583,166 +6376,166 @@ var ___LOOP_18_Res_PROBED:[int]int;
 
 start:
 
-call $app$8$167.16$dialog_permissions_request := __HAVOC_malloc(20);
-call $at$9$168.14$dialog_permissions_request := __HAVOC_malloc(12);
-call $c$10$169.6$dialog_permissions_request := __HAVOC_malloc(16);
+call $app$8$160.16$dialog_permissions_request := __HAVOC_malloc(20);
+call $at$9$161.14$dialog_permissions_request := __HAVOC_malloc(12);
+call $c$10$162.6$dialog_permissions_request := __HAVOC_malloc(16);
 call $result.question.2$ := __HAVOC_malloc(20);
-$client_id$1$165.38$dialog_permissions_request := $client_id$1$165.38$dialog_permissions_request_.1;
-$cookie$2$165.53$dialog_permissions_request := $cookie$2$165.53$dialog_permissions_request_.1;
-$scope$3$165.67$dialog_permissions_request := $scope$3$165.67$dialog_permissions_request_.1;
-$response_type$4$165.88$dialog_permissions_request := $response_type$4$165.88$dialog_permissions_request_.1;
-$location$5$165.123$dialog_permissions_request := $location$5$165.123$dialog_permissions_request_.1;
-$access_token$6$165.138$dialog_permissions_request := $access_token$6$165.138$dialog_permissions_request_.1;
-$code$7$165.157$dialog_permissions_request := $code$7$165.157$dialog_permissions_request_.1;
+$client_id$1$158.38$dialog_permissions_request := $client_id$1$158.38$dialog_permissions_request_.1;
+$cookie$2$158.53$dialog_permissions_request := $cookie$2$158.53$dialog_permissions_request_.1;
+$scope$3$158.67$dialog_permissions_request := $scope$3$158.67$dialog_permissions_request_.1;
+$response_type$4$158.88$dialog_permissions_request := $response_type$4$158.88$dialog_permissions_request_.1;
+$location$5$158.123$dialog_permissions_request := $location$5$158.123$dialog_permissions_request_.1;
+$access_token$6$158.138$dialog_permissions_request := $access_token$6$158.138$dialog_permissions_request_.1;
+$code$7$158.157$dialog_permissions_request := $code$7$158.157$dialog_permissions_request_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(241)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(233)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 241} true;
-call __HAVOC_free($app$8$167.16$dialog_permissions_request);
-call __HAVOC_free($at$9$168.14$dialog_permissions_request);
-call __HAVOC_free($c$10$169.6$dialog_permissions_request);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 233} true;
+call __HAVOC_free($app$8$160.16$dialog_permissions_request);
+call __HAVOC_free($at$9$161.14$dialog_permissions_request);
+call __HAVOC_free($c$10$162.6$dialog_permissions_request);
 call __HAVOC_free($result.question.2$);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(241)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(233)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 241} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 233} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(167)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(160)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 167} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 160} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(168)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(161)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 168} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 161} true;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(169)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(162)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 169} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 162} true;
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(170)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(163)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 170} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 163} true;
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(170)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(163)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 170} true;
-$i$11$170.5$dialog_permissions_request := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 163} true;
+$i$11$163.5$dialog_permissions_request := 0 ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(171)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(164)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 171} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 164} true;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(171)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(164)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 171} true;
-$found$12$171.5$dialog_permissions_request := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 164} true;
+$found$12$164.5$dialog_permissions_request := 0 ;
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(172)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(165)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 172} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 165} true;
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(172)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(165)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 172} true;
-$logged_in_user$13$172.6$dialog_permissions_request := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 165} true;
+$logged_in_user$13$165.6$dialog_permissions_request := 0 ;
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(174)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(167)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 174} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 167} true;
 goto label_12_true , label_12_false ;
 
 
 label_12_true :
-assume ($client_id$1$165.38$dialog_permissions_request != 0);
+assume ($client_id$1$158.38$dialog_permissions_request != 0);
 goto label_14;
 
 
 label_12_false :
-assume ($client_id$1$165.38$dialog_permissions_request == 0);
+assume ($client_id$1$158.38$dialog_permissions_request == 0);
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(175)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(168)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 175} true;
-$found$12$171.5$dialog_permissions_request := 1 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 168} true;
+$found$12$164.5$dialog_permissions_request := 1 ;
 goto label_49;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(174)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(167)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 174} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 167} true;
 goto label_14_true , label_14_false ;
 
 
 label_14_true :
-assume (INT_EQ($client_id$1$165.38$dialog_permissions_request, 1));
+assume (INT_EQ($client_id$1$158.38$dialog_permissions_request, 1));
 goto label_13;
 
 
 label_14_false :
-assume !(INT_EQ($client_id$1$165.38$dialog_permissions_request, 1));
+assume !(INT_EQ($client_id$1$158.38$dialog_permissions_request, 1));
 goto label_15;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(178)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(171)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 178} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 171} true;
 goto label_15_true , label_15_false ;
 
 
 label_15_true :
-assume ($found$12$171.5$dialog_permissions_request != 0);
+assume ($found$12$164.5$dialog_permissions_request != 0);
 goto label_17;
 
 
 label_15_false :
-assume ($found$12$171.5$dialog_permissions_request == 0);
+assume ($found$12$164.5$dialog_permissions_request == 0);
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(178)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(171)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 178} true;
-$result.dialog_permissions_request$165.4$1$dialog_permissions_request := 400 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 171} true;
+$result.dialog_permissions_request$158.4$1$dialog_permissions_request := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(180)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(173)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 180} true;
-$i$11$170.5$dialog_permissions_request := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 173} true;
+$i$11$163.5$dialog_permissions_request := 0 ;
 goto label_18;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(181)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(174)
 label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 181} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 174} true;
 // loop entry initialization...
 ___LOOP_18_alloc := alloc;
 ___LOOP_18_Mem_T.A0INT4:=Mem_T.A0INT4;
@@ -6828,323 +6621,323 @@ goto label_18_true , label_18_false ;
 
 
 label_18_true :
-assume (INT_LT($i$11$170.5$dialog_permissions_request, Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)]));
+assume (INT_LT($i$11$163.5$dialog_permissions_request, Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)]));
 goto label_20;
 
 
 label_18_false :
-assume !(INT_LT($i$11$170.5$dialog_permissions_request, Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)]));
+assume !(INT_LT($i$11$163.5$dialog_permissions_request, Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)]));
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(189)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(182)
 label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 189} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 182} true;
 goto label_19_true , label_19_false ;
 
 
 label_19_true :
-assume ($logged_in_user$13$172.6$dialog_permissions_request != 0);
+assume ($logged_in_user$13$165.6$dialog_permissions_request != 0);
 goto label_24;
 
 
 label_19_false :
-assume ($logged_in_user$13$172.6$dialog_permissions_request == 0);
+assume ($logged_in_user$13$165.6$dialog_permissions_request == 0);
 goto label_23;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(183)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(176)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 183} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 176} true;
 goto label_20_true , label_20_false ;
 
 
 label_20_true :
-assume (INT_EQ(Mem_T.cookie_value_Cookie[cookie_value_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, $i$11$170.5$dialog_permissions_request))], $cookie$2$165.53$dialog_permissions_request));
+assume (INT_EQ(Mem_T.cookie_value_Cookie[cookie_value_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, $i$11$163.5$dialog_permissions_request))], $cookie$2$158.53$dialog_permissions_request));
 goto label_22;
 
 
 label_20_false :
-assume !(INT_EQ(Mem_T.cookie_value_Cookie[cookie_value_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, $i$11$170.5$dialog_permissions_request))], $cookie$2$165.53$dialog_permissions_request));
+assume !(INT_EQ(Mem_T.cookie_value_Cookie[cookie_value_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, $i$11$163.5$dialog_permissions_request))], $cookie$2$158.53$dialog_permissions_request));
 goto label_21;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(181)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(174)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 181} true;
-$i$11$170.5$dialog_permissions_request := PLUS($i$11$170.5$dialog_permissions_request, 1, 1) ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 174} true;
+$i$11$163.5$dialog_permissions_request := PLUS($i$11$163.5$dialog_permissions_request, 1, 1) ;
 goto label_18_head;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(185)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(178)
 label_22:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 185} true;
-$logged_in_user$13$172.6$dialog_permissions_request := Mem_T.user_ID_Cookie[user_ID_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, $i$11$170.5$dialog_permissions_request))] ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 178} true;
+$logged_in_user$13$165.6$dialog_permissions_request := Mem_T.user_ID_Cookie[user_ID_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, $i$11$163.5$dialog_permissions_request))] ;
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(191)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(184)
 label_23:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 191} true;
-Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$5$165.123$dialog_permissions_request := 1];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 184} true;
+Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$5$158.123$dialog_permissions_request := 1];
 goto label_48;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(199)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(192)
 label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 199} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 192} true;
 goto label_24_true , label_24_false ;
 
 
 label_24_true :
-assume (INT_EQ($logged_in_user$13$172.6$dialog_permissions_request, 1));
+assume (INT_EQ($logged_in_user$13$165.6$dialog_permissions_request, 1));
 goto label_26;
 
 
 label_24_false :
-assume !(INT_EQ($logged_in_user$13$172.6$dialog_permissions_request, 1));
+assume !(INT_EQ($logged_in_user$13$165.6$dialog_permissions_request, 1));
 goto label_25;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(205)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(198)
 label_25:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 205} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 198} true;
 goto label_25_true , label_25_false ;
 
 
 label_25_true :
-assume ($client_id$1$165.38$dialog_permissions_request != 0);
+assume ($client_id$1$158.38$dialog_permissions_request != 0);
 goto label_29;
 
 
 label_25_false :
-assume ($client_id$1$165.38$dialog_permissions_request == 0);
+assume ($client_id$1$158.38$dialog_permissions_request == 0);
 goto label_28;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(200)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(193)
 label_26:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 200} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 193} true;
 goto label_26_true , label_26_false ;
 
 
 label_26_true :
-assume (INT_EQ($client_id$1$165.38$dialog_permissions_request, 1));
+assume (INT_EQ($client_id$1$158.38$dialog_permissions_request, 1));
 goto label_27;
 
 
 label_26_false :
-assume !(INT_EQ($client_id$1$165.38$dialog_permissions_request, 1));
+assume !(INT_EQ($client_id$1$158.38$dialog_permissions_request, 1));
 goto label_25;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(201)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(194)
 label_27:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 201} true;
-$result.dialog_permissions_request$165.4$1$dialog_permissions_request := 400 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 194} true;
+$result.dialog_permissions_request$158.4$1$dialog_permissions_request := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(207)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(200)
 label_28:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 207} true;
-Mem_T.Scope := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App(app_F_FB_Server_State(server_state))], 4, $logged_in_user$13$172.6$dialog_permissions_request) := $scope$3$165.67$dialog_permissions_request];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 200} true;
+Mem_T.Scope := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App(app_F_FB_Server_State(server_state))], 4, $logged_in_user$13$165.6$dialog_permissions_request) := $scope$3$158.67$dialog_permissions_request];
 goto label_30;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(209)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(202)
 label_29:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 209} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 202} true;
 goto label_29_true , label_29_false ;
 
 
 label_29_true :
-assume (INT_EQ($client_id$1$165.38$dialog_permissions_request, 1));
+assume (INT_EQ($client_id$1$158.38$dialog_permissions_request, 1));
 goto label_31;
 
 
 label_29_false :
-assume !(INT_EQ($client_id$1$165.38$dialog_permissions_request, 1));
+assume !(INT_EQ($client_id$1$158.38$dialog_permissions_request, 1));
 goto label_30;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(215)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(208)
 label_30:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 215} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 208} true;
 goto label_30_true , label_30_false ;
 
 
 label_30_true :
-assume ($response_type$4$165.88$dialog_permissions_request != 0);
+assume ($response_type$4$158.88$dialog_permissions_request != 0);
 goto label_33;
 
 
 label_30_false :
-assume ($response_type$4$165.88$dialog_permissions_request == 0);
+assume ($response_type$4$158.88$dialog_permissions_request == 0);
 goto label_32;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(211)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(204)
 label_31:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 211} true;
-Mem_T.Scope := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App(app_B_FB_Server_State(server_state))], 4, $logged_in_user$13$172.6$dialog_permissions_request) := $scope$3$165.67$dialog_permissions_request];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 204} true;
+Mem_T.Scope := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App(app_B_FB_Server_State(server_state))], 4, $logged_in_user$13$165.6$dialog_permissions_request) := $scope$3$158.67$dialog_permissions_request];
 goto label_30;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(217)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(210)
 label_32:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 217} true;
-Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token($at$9$168.14$dialog_permissions_request) := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 210} true;
+Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token($at$9$161.14$dialog_permissions_request) := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]];
 goto label_43;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(226)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(218)
 label_33:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 226} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 218} true;
 goto label_33_true , label_33_false ;
 
 
 label_33_true :
-assume (INT_EQ($response_type$4$165.88$dialog_permissions_request, 1));
+assume (INT_EQ($response_type$4$158.88$dialog_permissions_request, 1));
 goto label_35;
 
 
 label_33_false :
-assume !(INT_EQ($response_type$4$165.88$dialog_permissions_request, 1));
+assume !(INT_EQ($response_type$4$158.88$dialog_permissions_request, 1));
 goto label_34;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(239)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(231)
 label_34:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 239} true;
-Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$5$165.123$dialog_permissions_request := 3];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 231} true;
+Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$5$158.123$dialog_permissions_request := 3];
 goto label_42;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(228)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(220)
 label_35:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 228} true;
-Mem_T.code_value_Code := Mem_T.code_value_Code[code_value_Code($c$10$169.6$dialog_permissions_request) := Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 220} true;
+Mem_T.code_value_Code := Mem_T.code_value_Code[code_value_Code($c$10$162.6$dialog_permissions_request) := Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)]];
 goto label_36;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(229)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(221)
 label_36:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 229} true;
-Mem_T.user_ID_Code := Mem_T.user_ID_Code[user_ID_Code($c$10$169.6$dialog_permissions_request) := $logged_in_user$13$172.6$dialog_permissions_request];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 221} true;
+Mem_T.user_ID_Code := Mem_T.user_ID_Code[user_ID_Code($c$10$162.6$dialog_permissions_request) := $logged_in_user$13$165.6$dialog_permissions_request];
 goto label_37;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(230)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(222)
 label_37:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 230} true;
-Mem_T.app_secret_Code := Mem_T.app_secret_Code[app_secret_Code($c$10$169.6$dialog_permissions_request) := Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$8$167.16$dialog_permissions_request)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 222} true;
+Mem_T.app_secret_Code := Mem_T.app_secret_Code[app_secret_Code($c$10$162.6$dialog_permissions_request) := Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$8$160.16$dialog_permissions_request)]];
 goto label_38;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(231)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(223)
 label_38:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 231} true;
-Mem_T.app_ID_Code := Mem_T.app_ID_Code[app_ID_Code($c$10$169.6$dialog_permissions_request) := Mem_T.app_ID_Registered_App[app_ID_Registered_App($app$8$167.16$dialog_permissions_request)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 223} true;
+Mem_T.app_ID_Code := Mem_T.app_ID_Code[app_ID_Code($c$10$162.6$dialog_permissions_request) := Mem_T.app_ID_Registered_App[app_ID_Registered_App($app$8$160.16$dialog_permissions_request)]];
 goto label_39;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(232)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(224)
 label_39:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 232} true;
-Mem_T.code_value_Code := Mem_T.code_value_Code[code_value_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.code_value_Code[code_value_Code($c$10$169.6$dialog_permissions_request)]];
-Mem_T.user_ID_Code := Mem_T.user_ID_Code[user_ID_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Code[user_ID_Code($c$10$169.6$dialog_permissions_request)]];
-Mem_T.app_secret_Code := Mem_T.app_secret_Code[app_secret_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.app_secret_Code[app_secret_Code($c$10$169.6$dialog_permissions_request)]];
-Mem_T.app_ID_Code := Mem_T.app_ID_Code[app_ID_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.app_ID_Code[app_ID_Code($c$10$169.6$dialog_permissions_request)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 224} true;
+Mem_T.code_value_Code := Mem_T.code_value_Code[code_value_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.code_value_Code[code_value_Code($c$10$162.6$dialog_permissions_request)]];
+Mem_T.user_ID_Code := Mem_T.user_ID_Code[user_ID_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Code[user_ID_Code($c$10$162.6$dialog_permissions_request)]];
+Mem_T.app_secret_Code := Mem_T.app_secret_Code[app_secret_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.app_secret_Code[app_secret_Code($c$10$162.6$dialog_permissions_request)]];
+Mem_T.app_ID_Code := Mem_T.app_ID_Code[app_ID_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)])) := Mem_T.app_ID_Code[app_ID_Code($c$10$162.6$dialog_permissions_request)]];
 goto label_40;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(233)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(225)
 label_40:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 233} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 225} true;
 tempBoogie0 := PLUS(Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)], 1, 1) ;
 Mem_T.code_length_FB_Server_State := Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state) := tempBoogie0];
 goto label_41;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(236)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(228)
 label_41:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 236} true;
-Mem_T.INT4 := Mem_T.INT4[$code$7$165.157$dialog_permissions_request := Mem_T.code_value_Code[code_value_Code($c$10$169.6$dialog_permissions_request)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 228} true;
+Mem_T.INT4 := Mem_T.INT4[$code$7$158.157$dialog_permissions_request := Mem_T.code_value_Code[code_value_Code($c$10$162.6$dialog_permissions_request)]];
 goto label_34;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(240)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(232)
 label_42:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 240} true;
-$result.dialog_permissions_request$165.4$1$dialog_permissions_request := 302 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 232} true;
+$result.dialog_permissions_request$158.4$1$dialog_permissions_request := 302 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(218)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(211)
 label_43:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 218} true;
-Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$9$168.14$dialog_permissions_request) := $logged_in_user$13$172.6$dialog_permissions_request];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 211} true;
+Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$9$161.14$dialog_permissions_request) := $logged_in_user$13$165.6$dialog_permissions_request];
 goto label_44;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(219)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(212)
 label_44:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 219} true;
-Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token($at$9$168.14$dialog_permissions_request) := $scope$3$165.67$dialog_permissions_request];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 212} true;
+Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token($at$9$161.14$dialog_permissions_request) := $scope$3$158.67$dialog_permissions_request];
 goto label_45;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(220)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(213)
 label_45:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 220} true;
-Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.token_value_Access_Token[token_value_Access_Token($at$9$168.14$dialog_permissions_request)]];
-Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$9$168.14$dialog_permissions_request)]];
-Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.scope_Access_Token[scope_Access_Token($at$9$168.14$dialog_permissions_request)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 213} true;
+Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.token_value_Access_Token[token_value_Access_Token($at$9$161.14$dialog_permissions_request)]];
+Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$9$161.14$dialog_permissions_request)]];
+Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.scope_Access_Token[scope_Access_Token($at$9$161.14$dialog_permissions_request)]];
 goto label_46;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(221)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(214)
 label_46:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 221} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 214} true;
 tempBoogie0 := PLUS(Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)], 1, 1) ;
 Mem_T.token_length_FB_Server_State := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state) := tempBoogie0];
 goto label_47;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(224)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(216)
 label_47:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 224} true;
-Mem_T.INT4 := Mem_T.INT4[$access_token$6$165.138$dialog_permissions_request := Mem_T.token_value_Access_Token[token_value_Access_Token($at$9$168.14$dialog_permissions_request)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 216} true;
+Mem_T.INT4 := Mem_T.INT4[$access_token$6$158.138$dialog_permissions_request := Mem_T.token_value_Access_Token[token_value_Access_Token($at$9$161.14$dialog_permissions_request)]];
 goto label_34;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(192)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(185)
 label_48:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 192} true;
-$result.dialog_permissions_request$165.4$1$dialog_permissions_request := 302 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 185} true;
+$result.dialog_permissions_request$158.4$1$dialog_permissions_request := 302 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(176)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(169)
 label_49:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 176} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 169} true;
 goto label_49_true , label_49_false ;
 
 
 label_49_true :
-assume ($client_id$1$165.38$dialog_permissions_request != 0);
+assume ($client_id$1$158.38$dialog_permissions_request != 0);
 goto label_51;
 
 
 label_49_false :
-assume ($client_id$1$165.38$dialog_permissions_request == 0);
+assume ($client_id$1$158.38$dialog_permissions_request == 0);
 goto label_50;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(176)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(169)
 label_50:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 176} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 169} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$) := Mem_T.app_ID_Registered_App[app_ID_Registered_App(app_F_FB_Server_State(server_state))]];
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$) := Mem_T.app_secret_Registered_App[app_secret_Registered_App(app_F_FB_Server_State(server_state))]];
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App(app_F_FB_Server_State(server_state))]];
@@ -7153,9 +6946,9 @@ Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_len
 goto label_52;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(176)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(169)
 label_51:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 176} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 169} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$) := Mem_T.app_ID_Registered_App[app_ID_Registered_App(app_B_FB_Server_State(server_state))]];
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$) := Mem_T.app_secret_Registered_App[app_secret_Registered_App(app_B_FB_Server_State(server_state))]];
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App(app_B_FB_Server_State(server_state))]];
@@ -7164,14 +6957,14 @@ Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_len
 goto label_52;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(176)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(169)
 label_52:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 176} true;
-Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($app$8$167.16$dialog_permissions_request) := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$)]];
-Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$8$167.16$dialog_permissions_request) := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$)]];
-Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$8$167.16$dialog_permissions_request) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$)]];
-Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App($app$8$167.16$dialog_permissions_request) := Mem_T.scope_Registered_App[scope_Registered_App($result.question.2$)]];
-Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_length_Registered_App($app$8$167.16$dialog_permissions_request) := Mem_T.scope_length_Registered_App[scope_length_Registered_App($result.question.2$)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 169} true;
+Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($app$8$160.16$dialog_permissions_request) := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$)]];
+Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$8$160.16$dialog_permissions_request) := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$)]];
+Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$8$160.16$dialog_permissions_request) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$)]];
+Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App($app$8$160.16$dialog_permissions_request) := Mem_T.scope_Registered_App[scope_Registered_App($result.question.2$)]];
+Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_length_Registered_App($app$8$160.16$dialog_permissions_request) := Mem_T.scope_length_Registered_App[scope_length_Registered_App($result.question.2$)]];
 goto label_15;
 
 }
@@ -7253,6 +7046,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -7295,50 +7089,50 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(19)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(19)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 19} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 19} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(19)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(19)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 19} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 19} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(16)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(16)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 16} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 16} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(16)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(16)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 16} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 16} true;
 call $result.poirot_nondet$16.26$2$draw_access_token_from_knowledge_pool := poirot_nondet ();
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(16)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(16)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 16} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 16} true;
 $index$1$16.5$draw_access_token_from_knowledge_pool := $result.poirot_nondet$16.26$2$draw_access_token_from_knowledge_pool ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(17)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(17)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 17} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 17} true;
 //TAG: index >= 0 && index < access_token_k_base_length
 assume ((INT_GEQ($index$1$16.5$draw_access_token_from_knowledge_pool, 0)) && (INT_LT($index$1$16.5$draw_access_token_from_knowledge_pool, access_token_k_base_length)));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(18)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(18)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 18} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 18} true;
 $result.draw_access_token_from_knowledge_pool$14.4$1$draw_access_token_from_knowledge_pool := Mem_T.INT4[PLUS(access_token_k_base, 4, $index$1$16.5$draw_access_token_from_knowledge_pool)] ;
 goto label_1;
 
@@ -7421,6 +7215,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -7463,50 +7258,50 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(40)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(40)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 40} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 40} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(40)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(40)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 40} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 40} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(37)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(37)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 37} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 37} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(37)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(37)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 37} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 37} true;
 call $result.poirot_nondet$37.26$2$draw_app_secret_from_knowledge_pool := poirot_nondet ();
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(37)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(37)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 37} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 37} true;
 $index$1$37.5$draw_app_secret_from_knowledge_pool := $result.poirot_nondet$37.26$2$draw_app_secret_from_knowledge_pool ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(38)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(38)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 38} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 38} true;
 //TAG: index >= 0 && index < app_secret_k_base_length
 assume ((INT_GEQ($index$1$37.5$draw_app_secret_from_knowledge_pool, 0)) && (INT_LT($index$1$37.5$draw_app_secret_from_knowledge_pool, app_secret_k_base_length)));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(39)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(39)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 39} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 39} true;
 $result.draw_app_secret_from_knowledge_pool$35.4$1$draw_app_secret_from_knowledge_pool := Mem_T.INT4[PLUS(app_secret_k_base, 4, $index$1$37.5$draw_app_secret_from_knowledge_pool)] ;
 goto label_1;
 
@@ -7589,6 +7384,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -7631,50 +7427,50 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(26)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(26)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 26} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 26} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(26)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(26)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 26} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 26} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(23)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(23)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 23} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 23} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(23)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(23)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 23} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 23} true;
 call $result.poirot_nondet$23.26$2$draw_code_from_knowledge_pool := poirot_nondet ();
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(23)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(23)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 23} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 23} true;
 $index$1$23.5$draw_code_from_knowledge_pool := $result.poirot_nondet$23.26$2$draw_code_from_knowledge_pool ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(24)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(24)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 24} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 24} true;
 //TAG: index >= 0 && index < code_k_base_length
 assume ((INT_GEQ($index$1$23.5$draw_code_from_knowledge_pool, 0)) && (INT_LT($index$1$23.5$draw_code_from_knowledge_pool, code_k_base_length)));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(25)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(25)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 25} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 25} true;
 $result.draw_code_from_knowledge_pool$21.4$1$draw_code_from_knowledge_pool := Mem_T.INT4[PLUS(code_k_base, 4, $index$1$23.5$draw_code_from_knowledge_pool)] ;
 goto label_1;
 
@@ -7757,6 +7553,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -7799,50 +7596,50 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(12)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(12)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 12} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 12} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(12)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(12)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 12} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 12} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(8)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(8)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 8} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 8} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(8)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(8)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 8} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 8} true;
 call $result.poirot_nondet$8.26$2$draw_cookie_from_knowledge_pool := poirot_nondet ();
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(8)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(8)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 8} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 8} true;
 $index$1$8.5$draw_cookie_from_knowledge_pool := $result.poirot_nondet$8.26$2$draw_cookie_from_knowledge_pool ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(10)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(10)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 10} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 10} true;
 //TAG: index >= 0 && index < cookie_k_base_length
 assume ((INT_GEQ($index$1$8.5$draw_cookie_from_knowledge_pool, 0)) && (INT_LT($index$1$8.5$draw_cookie_from_knowledge_pool, cookie_k_base_length)));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(11)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(11)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 11} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 11} true;
 $result.draw_cookie_from_knowledge_pool$6.4$1$draw_cookie_from_knowledge_pool := Mem_T.INT4[PLUS(cookie_k_base, 4, $index$1$8.5$draw_cookie_from_knowledge_pool)] ;
 goto label_1;
 
@@ -7925,6 +7722,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -7967,50 +7765,50 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(33)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(33)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 33} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 33} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(33)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(33)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 33} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 33} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(30)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(30)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 30} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 30} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(30)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(30)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 30} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 30} true;
 call $result.poirot_nondet$30.26$2$draw_email_from_knowledge_pool := poirot_nondet ();
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(30)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(30)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 30} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 30} true;
 $index$1$30.5$draw_email_from_knowledge_pool := $result.poirot_nondet$30.26$2$draw_email_from_knowledge_pool ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(31)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(31)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 31} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 31} true;
 //TAG: index >= 0 && index < email_k_base_length
 assume ((INT_GEQ($index$1$30.5$draw_email_from_knowledge_pool, 0)) && (INT_LT($index$1$30.5$draw_email_from_knowledge_pool, email_k_base_length)));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(32)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(32)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 32} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 32} true;
 $result.draw_email_from_knowledge_pool$28.4$1$draw_email_from_knowledge_pool := Mem_T.INT4[PLUS(email_k_base, 4, $index$1$30.5$draw_email_from_knowledge_pool)] ;
 goto label_1;
 
@@ -8093,6 +7891,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -8105,12 +7904,12 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$2$437.16$foo_client_app_calls : int;
-var $callee_id$1$437.5$foo_client_app_calls : int;
-var $result.not_violating_client_dev_guide$440.35$3$foo_client_app_calls : int;
-var $result.not_violating_common_sense$440.93$4$foo_client_app_calls : int;
-var $result.poirot_nondet$438.24$1$foo_client_app_calls : int;
-var $result.poirot_nondet$439.21$2$foo_client_app_calls : int;
+var $API_id$2$351.16$foo_client_app_calls : int;
+var $callee_id$1$351.5$foo_client_app_calls : int;
+var $result.not_violating_client_dev_guide$354.35$3$foo_client_app_calls : int;
+var $result.not_violating_common_sense$354.93$4$foo_client_app_calls : int;
+var $result.poirot_nondet$352.24$1$foo_client_app_calls : int;
+var $result.poirot_nondet$353.21$2$foo_client_app_calls : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -8139,115 +7938,115 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(451)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(365)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 451} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 365} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(451)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(365)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 451} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 365} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(437)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(351)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 437} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 351} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(437)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(351)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 437} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 351} true;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(438)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(352)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 438} true;
-call $result.poirot_nondet$438.24$1$foo_client_app_calls := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 352} true;
+call $result.poirot_nondet$352.24$1$foo_client_app_calls := poirot_nondet ();
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(438)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(352)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 438} true;
-$callee_id$1$437.5$foo_client_app_calls := $result.poirot_nondet$438.24$1$foo_client_app_calls ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 352} true;
+$callee_id$1$351.5$foo_client_app_calls := $result.poirot_nondet$352.24$1$foo_client_app_calls ;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(439)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(353)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 439} true;
-call $result.poirot_nondet$439.21$2$foo_client_app_calls := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 353} true;
+call $result.poirot_nondet$353.21$2$foo_client_app_calls := poirot_nondet ();
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(439)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(353)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 439} true;
-$API_id$2$437.16$foo_client_app_calls := $result.poirot_nondet$439.21$2$foo_client_app_calls ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 353} true;
+$API_id$2$351.16$foo_client_app_calls := $result.poirot_nondet$353.21$2$foo_client_app_calls ;
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(440)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(354)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 440} true;
-call $result.not_violating_client_dev_guide$440.35$3$foo_client_app_calls := not_violating_client_dev_guide (0, $callee_id$1$437.5$foo_client_app_calls, $API_id$2$437.16$foo_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 354} true;
+call $result.not_violating_client_dev_guide$354.35$3$foo_client_app_calls := not_violating_client_dev_guide (0, $callee_id$1$351.5$foo_client_app_calls, $API_id$2$351.16$foo_client_app_calls);
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(440)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(354)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 440} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 354} true;
 goto label_16_true , label_16_false ;
 
 
 label_16_true :
-assume ($result.not_violating_client_dev_guide$440.35$3$foo_client_app_calls != 0);
+assume ($result.not_violating_client_dev_guide$354.35$3$foo_client_app_calls != 0);
 goto label_17;
 
 
 label_16_false :
-assume ($result.not_violating_client_dev_guide$440.35$3$foo_client_app_calls == 0);
+assume ($result.not_violating_client_dev_guide$354.35$3$foo_client_app_calls == 0);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(440)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(354)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 440} true;
-call $result.not_violating_common_sense$440.93$4$foo_client_app_calls := not_violating_common_sense (0, $callee_id$1$437.5$foo_client_app_calls, $API_id$2$437.16$foo_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 354} true;
+call $result.not_violating_common_sense$354.93$4$foo_client_app_calls := not_violating_common_sense (0, $callee_id$1$351.5$foo_client_app_calls, $API_id$2$351.16$foo_client_app_calls);
 goto label_20;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(440)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(354)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 440} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 354} true;
 goto label_20_true , label_20_false ;
 
 
 label_20_true :
-assume ($result.not_violating_common_sense$440.93$4$foo_client_app_calls != 0);
+assume ($result.not_violating_common_sense$354.93$4$foo_client_app_calls != 0);
 goto label_21;
 
 
 label_20_false :
-assume ($result.not_violating_common_sense$440.93$4$foo_client_app_calls == 0);
+assume ($result.not_violating_common_sense$354.93$4$foo_client_app_calls == 0);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(441)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(355)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 441} true;
-call update_dev_guide_status (0, $callee_id$1$437.5$foo_client_app_calls, $API_id$2$437.16$foo_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 355} true;
+call update_dev_guide_status (0, $callee_id$1$351.5$foo_client_app_calls, $API_id$2$351.16$foo_client_app_calls);
 goto label_24;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(442)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(356)
 label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 442} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 356} true;
 
 goto label_24_case_0, label_24_case_1;
 
@@ -8255,34 +8054,34 @@ goto label_24_case_0, label_24_case_1;
 
 
 label_24_case_0 :
-assume(INT_NEQ($callee_id$1$437.5$foo_client_app_calls, 4));
+assume(INT_NEQ($callee_id$1$351.5$foo_client_app_calls, 4));
 goto label_25;
 
 
 
 label_24_case_1 :
-assume(INT_EQ($callee_id$1$437.5$foo_client_app_calls, 4));
+assume(INT_EQ($callee_id$1$351.5$foo_client_app_calls, 4));
 goto label_28;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(447)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(361)
 label_25:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 447} true;
-call call_an_API_on_foo_service_app_From_Client ($API_id$2$437.16$foo_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 361} true;
+call call_an_API_on_foo_service_app_From_Client ($API_id$2$351.16$foo_client_app_calls);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(444)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(358)
 label_28:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 444} true;
-call call_an_API_on_client_SDK ($API_id$2$437.16$foo_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 358} true;
+call call_an_API_on_client_SDK ($API_id$2$351.16$foo_client_app_calls);
 goto label_1;
 
 }
 
 
 
-procedure  foo_service_API_authenticate($access_token$1$167.44$foo_service_API_authenticate_.1:int) returns ($result.foo_service_API_authenticate$167.11$1$foo_service_API_authenticate:int)
+procedure  foo_service_API_authenticate($access_token$1$122.44$foo_service_API_authenticate_.1:int) returns ($result.foo_service_API_authenticate$122.11$1$foo_service_API_authenticate:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -8357,6 +8156,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -8369,8 +8169,8 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$1$167.44$foo_service_API_authenticate : int;
-var $result.authenticate_user$176.25$2$foo_service_API_authenticate : int;
+var $access_token$1$122.44$foo_service_API_authenticate : int;
+var $result.authenticate_user$131.25$2$foo_service_API_authenticate : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -8396,43 +8196,43 @@ var __havoc_dummy_return: int;
 
 start:
 
-call $result.authenticate_user$176.25$2$foo_service_API_authenticate := __HAVOC_malloc(8);
-$access_token$1$167.44$foo_service_API_authenticate := $access_token$1$167.44$foo_service_API_authenticate_.1;
+call $result.authenticate_user$131.25$2$foo_service_API_authenticate := __HAVOC_malloc(8);
+$access_token$1$122.44$foo_service_API_authenticate := $access_token$1$122.44$foo_service_API_authenticate_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(177)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(132)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 177} true;
-call __HAVOC_free($result.authenticate_user$176.25$2$foo_service_API_authenticate);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 132} true;
+call __HAVOC_free($result.authenticate_user$131.25$2$foo_service_API_authenticate);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(177)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(132)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 177} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 132} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(176)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(131)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 176} true;
-call $result.authenticate_user$176.25$2$foo_service_API_authenticate := authenticate_user ($access_token$1$167.44$foo_service_API_authenticate);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 131} true;
+call $result.authenticate_user$131.25$2$foo_service_API_authenticate := authenticate_user ($access_token$1$122.44$foo_service_API_authenticate);
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(176)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(131)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 176} true;
-$result.foo_service_API_authenticate$167.11$1$foo_service_API_authenticate := $result.authenticate_user$176.25$2$foo_service_API_authenticate ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 131} true;
+$result.foo_service_API_authenticate$122.11$1$foo_service_API_authenticate := $result.authenticate_user$131.25$2$foo_service_API_authenticate ;
 goto label_1;
 
 }
 
 
 
-procedure  graph_facebook_com_email($access_token$1$266.33$graph_facebook_com_email_.1:int, $user_email$2$266.59$graph_facebook_com_email_.1:int) returns ($result.graph_facebook_com_email$266.4$1$graph_facebook_com_email:int)
+procedure  graph_facebook_com_email($access_token$1$251.33$graph_facebook_com_email_.1:int, $user_email$2$251.59$graph_facebook_com_email_.1:int) returns ($result.graph_facebook_com_email$251.4$1$graph_facebook_com_email:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -8507,6 +8307,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -8519,11 +8320,10 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$1$266.33$graph_facebook_com_email : int;
-var $found$5$270.5$graph_facebook_com_email : int;
-var $i$4$269.5$graph_facebook_com_email : int;
-var $user_ID$3$268.6$graph_facebook_com_email : int;
-var $user_email$2$266.59$graph_facebook_com_email : int;
+var $access_token$1$251.33$graph_facebook_com_email : int;
+var $i$3$253.5$graph_facebook_com_email : int;
+var $result.poirot_nondet$253.22$2$graph_facebook_com_email : int;
+var $user_email$2$251.59$graph_facebook_com_email : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -8545,367 +8345,113 @@ var tempBoogie17:int;
 var tempBoogie18:int;
 var tempBoogie19:int;
 var __havoc_dummy_return: int;
-var ___LOOP_8_alloc:int;
-var ___LOOP_8_Mem_T.A0INT4:[int]int;
-var ___LOOP_8_Mem_T.A100Access_Token:[int]int;
-var ___LOOP_8_Mem_T.A100Code:[int]int;
-var ___LOOP_8_Mem_T.A100Cookie:[int]int;
-var ___LOOP_8_Mem_T.A100RP_Session:[int]int;
-var ___LOOP_8_Mem_T.A100Scope:[int]int;
-var ___LOOP_8_Mem_T.A37CHAR:[int]int;
-var ___LOOP_8_Mem_T.A58CHAR:[int]int;
-var ___LOOP_8_Mem_T.App_ID:[int]int;
-var ___LOOP_8_Mem_T.App_Owner:[int]int;
-var ___LOOP_8_Mem_T.App_Secret:[int]int;
-var ___LOOP_8_Mem_T.Caller:[int]int;
-var ___LOOP_8_Mem_T.INT4:[int]int;
-var ___LOOP_8_Mem_T.Location_Knowledge:[int]int;
-var ___LOOP_8_Mem_T.PAccess_Token:[int]int;
-var ___LOOP_8_Mem_T.PApp_Client_State:[int]int;
-var ___LOOP_8_Mem_T.PCHAR:[int]int;
-var ___LOOP_8_Mem_T.PCode:[int]int;
-var ___LOOP_8_Mem_T.PCookie:[int]int;
-var ___LOOP_8_Mem_T.PINT4:[int]int;
-var ___LOOP_8_Mem_T.PLocation_Knowledge:[int]int;
-var ___LOOP_8_Mem_T.PPUINT2:[int]int;
-var ___LOOP_8_Mem_T.PPlocaleinfo_struct:[int]int;
-var ___LOOP_8_Mem_T.PRP_Session:[int]int;
-var ___LOOP_8_Mem_T.PScope:[int]int;
-var ___LOOP_8_Mem_T.PUINT2:[int]int;
-var ___LOOP_8_Mem_T.PUser:[int]int;
-var ___LOOP_8_Mem_T.PUser_Email:[int]int;
-var ___LOOP_8_Mem_T.Plocaleinfo_struct:[int]int;
-var ___LOOP_8_Mem_T.Redirect_Domain:[int]int;
-var ___LOOP_8_Mem_T.Response_Type:[int]int;
-var ___LOOP_8_Mem_T.Scope:[int]int;
-var ___LOOP_8_Mem_T.UINT4:[int]int;
-var ___LOOP_8_Mem_T.User:[int]int;
-var ___LOOP_8_Mem_T.User_Credentials:[int]int;
-var ___LOOP_8_Mem_T.User_Email:[int]int;
-var ___LOOP_8_Mem_T.access_token_App_Client_State:[int]int;
-var ___LOOP_8_Mem_T.app_ID_App_Client_State:[int]int;
-var ___LOOP_8_Mem_T.app_ID_Code:[int]int;
-var ___LOOP_8_Mem_T.app_ID_Registered_App:[int]int;
-var ___LOOP_8_Mem_T.app_length_FB_Server_State:[int]int;
-var ___LOOP_8_Mem_T.app_owner_App_Client_State:[int]int;
-var ___LOOP_8_Mem_T.app_secret_Code:[int]int;
-var ___LOOP_8_Mem_T.app_secret_Registered_App:[int]int;
-var ___LOOP_8_Mem_T.code_App_Client_State:[int]int;
-var ___LOOP_8_Mem_T.code_length_FB_Server_State:[int]int;
-var ___LOOP_8_Mem_T.code_value_Code:[int]int;
-var ___LOOP_8_Mem_T.codes_FB_Server_State:[int]int;
-var ___LOOP_8_Mem_T.cookie_WWAHost_State:[int]int;
-var ___LOOP_8_Mem_T.cookie_length_FB_Server_State:[int]int;
-var ___LOOP_8_Mem_T.cookie_value_Cookie:[int]int;
-var ___LOOP_8_Mem_T.cookies_FB_Server_State:[int]int;
-var ___LOOP_8_Mem_T.current_state_WWAHost_State:[int]int;
-var ___LOOP_8_Mem_T.redirect_domain_Registered_App:[int]int;
-var ___LOOP_8_Mem_T.rp_sessions_RP_State:[int]int;
-var ___LOOP_8_Mem_T.scope_Access_Token:[int]int;
-var ___LOOP_8_Mem_T.scope_Registered_App:[int]int;
-var ___LOOP_8_Mem_T.scope_length_Registered_App:[int]int;
-var ___LOOP_8_Mem_T.session_ID_RP_Session:[int]int;
-var ___LOOP_8_Mem_T.session_length_RP_State:[int]int;
-var ___LOOP_8_Mem_T.token_length_FB_Server_State:[int]int;
-var ___LOOP_8_Mem_T.token_value_Access_Token:[int]int;
-var ___LOOP_8_Mem_T.tokens_FB_Server_State:[int]int;
-var ___LOOP_8_Mem_T.user_ID_Access_Token:[int]int;
-var ___LOOP_8_Mem_T.user_ID_Code:[int]int;
-var ___LOOP_8_Mem_T.user_ID_Cookie:[int]int;
-var ___LOOP_8_Mem_T.user_ID_RP_Session:[int]int;
-var ___LOOP_8_Res_KERNEL_SOURCE:[int]int;
-var ___LOOP_8_Res_PROBED:[int]int;
 
 
 start:
 
-$access_token$1$266.33$graph_facebook_com_email := $access_token$1$266.33$graph_facebook_com_email_.1;
-$user_email$2$266.59$graph_facebook_com_email := $user_email$2$266.59$graph_facebook_com_email_.1;
+$access_token$1$251.33$graph_facebook_com_email := $access_token$1$251.33$graph_facebook_com_email_.1;
+$user_email$2$251.59$graph_facebook_com_email := $user_email$2$251.59$graph_facebook_com_email_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(285)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(258)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 285} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 258} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(285)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(258)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 285} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 258} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(268)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(253)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 268} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 253} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(269)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(253)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 269} true;
-goto label_5;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(269)
-label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 269} true;
-$i$4$269.5$graph_facebook_com_email := 0 ;
-goto label_6;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(270)
-label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 270} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 253} true;
+call $result.poirot_nondet$253.22$2$graph_facebook_com_email := poirot_nondet ();
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(270)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(253)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 270} true;
-$found$5$270.5$graph_facebook_com_email := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 253} true;
+$i$3$253.5$graph_facebook_com_email := $result.poirot_nondet$253.22$2$graph_facebook_com_email ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(271)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(254)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 271} true;
-// loop entry initialization...
-___LOOP_8_alloc := alloc;
-___LOOP_8_Mem_T.A0INT4:=Mem_T.A0INT4;
-___LOOP_8_Mem_T.A100Access_Token:=Mem_T.A100Access_Token;
-___LOOP_8_Mem_T.A100Code:=Mem_T.A100Code;
-___LOOP_8_Mem_T.A100Cookie:=Mem_T.A100Cookie;
-___LOOP_8_Mem_T.A100RP_Session:=Mem_T.A100RP_Session;
-___LOOP_8_Mem_T.A100Scope:=Mem_T.A100Scope;
-___LOOP_8_Mem_T.A37CHAR:=Mem_T.A37CHAR;
-___LOOP_8_Mem_T.A58CHAR:=Mem_T.A58CHAR;
-___LOOP_8_Mem_T.App_ID:=Mem_T.App_ID;
-___LOOP_8_Mem_T.App_Owner:=Mem_T.App_Owner;
-___LOOP_8_Mem_T.App_Secret:=Mem_T.App_Secret;
-___LOOP_8_Mem_T.Caller:=Mem_T.Caller;
-___LOOP_8_Mem_T.INT4:=Mem_T.INT4;
-___LOOP_8_Mem_T.Location_Knowledge:=Mem_T.Location_Knowledge;
-___LOOP_8_Mem_T.PAccess_Token:=Mem_T.PAccess_Token;
-___LOOP_8_Mem_T.PApp_Client_State:=Mem_T.PApp_Client_State;
-___LOOP_8_Mem_T.PCHAR:=Mem_T.PCHAR;
-___LOOP_8_Mem_T.PCode:=Mem_T.PCode;
-___LOOP_8_Mem_T.PCookie:=Mem_T.PCookie;
-___LOOP_8_Mem_T.PINT4:=Mem_T.PINT4;
-___LOOP_8_Mem_T.PLocation_Knowledge:=Mem_T.PLocation_Knowledge;
-___LOOP_8_Mem_T.PPUINT2:=Mem_T.PPUINT2;
-___LOOP_8_Mem_T.PPlocaleinfo_struct:=Mem_T.PPlocaleinfo_struct;
-___LOOP_8_Mem_T.PRP_Session:=Mem_T.PRP_Session;
-___LOOP_8_Mem_T.PScope:=Mem_T.PScope;
-___LOOP_8_Mem_T.PUINT2:=Mem_T.PUINT2;
-___LOOP_8_Mem_T.PUser:=Mem_T.PUser;
-___LOOP_8_Mem_T.PUser_Email:=Mem_T.PUser_Email;
-___LOOP_8_Mem_T.Plocaleinfo_struct:=Mem_T.Plocaleinfo_struct;
-___LOOP_8_Mem_T.Redirect_Domain:=Mem_T.Redirect_Domain;
-___LOOP_8_Mem_T.Response_Type:=Mem_T.Response_Type;
-___LOOP_8_Mem_T.Scope:=Mem_T.Scope;
-___LOOP_8_Mem_T.UINT4:=Mem_T.UINT4;
-___LOOP_8_Mem_T.User:=Mem_T.User;
-___LOOP_8_Mem_T.User_Credentials:=Mem_T.User_Credentials;
-___LOOP_8_Mem_T.User_Email:=Mem_T.User_Email;
-___LOOP_8_Mem_T.access_token_App_Client_State:=Mem_T.access_token_App_Client_State;
-___LOOP_8_Mem_T.app_ID_App_Client_State:=Mem_T.app_ID_App_Client_State;
-___LOOP_8_Mem_T.app_ID_Code:=Mem_T.app_ID_Code;
-___LOOP_8_Mem_T.app_ID_Registered_App:=Mem_T.app_ID_Registered_App;
-___LOOP_8_Mem_T.app_length_FB_Server_State:=Mem_T.app_length_FB_Server_State;
-___LOOP_8_Mem_T.app_owner_App_Client_State:=Mem_T.app_owner_App_Client_State;
-___LOOP_8_Mem_T.app_secret_Code:=Mem_T.app_secret_Code;
-___LOOP_8_Mem_T.app_secret_Registered_App:=Mem_T.app_secret_Registered_App;
-___LOOP_8_Mem_T.code_App_Client_State:=Mem_T.code_App_Client_State;
-___LOOP_8_Mem_T.code_length_FB_Server_State:=Mem_T.code_length_FB_Server_State;
-___LOOP_8_Mem_T.code_value_Code:=Mem_T.code_value_Code;
-___LOOP_8_Mem_T.codes_FB_Server_State:=Mem_T.codes_FB_Server_State;
-___LOOP_8_Mem_T.cookie_WWAHost_State:=Mem_T.cookie_WWAHost_State;
-___LOOP_8_Mem_T.cookie_length_FB_Server_State:=Mem_T.cookie_length_FB_Server_State;
-___LOOP_8_Mem_T.cookie_value_Cookie:=Mem_T.cookie_value_Cookie;
-___LOOP_8_Mem_T.cookies_FB_Server_State:=Mem_T.cookies_FB_Server_State;
-___LOOP_8_Mem_T.current_state_WWAHost_State:=Mem_T.current_state_WWAHost_State;
-___LOOP_8_Mem_T.redirect_domain_Registered_App:=Mem_T.redirect_domain_Registered_App;
-___LOOP_8_Mem_T.rp_sessions_RP_State:=Mem_T.rp_sessions_RP_State;
-___LOOP_8_Mem_T.scope_Access_Token:=Mem_T.scope_Access_Token;
-___LOOP_8_Mem_T.scope_Registered_App:=Mem_T.scope_Registered_App;
-___LOOP_8_Mem_T.scope_length_Registered_App:=Mem_T.scope_length_Registered_App;
-___LOOP_8_Mem_T.session_ID_RP_Session:=Mem_T.session_ID_RP_Session;
-___LOOP_8_Mem_T.session_length_RP_State:=Mem_T.session_length_RP_State;
-___LOOP_8_Mem_T.token_length_FB_Server_State:=Mem_T.token_length_FB_Server_State;
-___LOOP_8_Mem_T.token_value_Access_Token:=Mem_T.token_value_Access_Token;
-___LOOP_8_Mem_T.tokens_FB_Server_State:=Mem_T.tokens_FB_Server_State;
-___LOOP_8_Mem_T.user_ID_Access_Token:=Mem_T.user_ID_Access_Token;
-___LOOP_8_Mem_T.user_ID_Code:=Mem_T.user_ID_Code;
-___LOOP_8_Mem_T.user_ID_Cookie:=Mem_T.user_ID_Cookie;
-___LOOP_8_Mem_T.user_ID_RP_Session:=Mem_T.user_ID_RP_Session;
-___LOOP_8_Res_KERNEL_SOURCE := Res_KERNEL_SOURCE;
-___LOOP_8_Res_PROBED := Res_PROBED;
-goto label_8_head;
-
-
-label_8_head:
-// loop head assertions...
-
-
-
-// end loop head assertions
-
-goto label_8_true , label_8_false ;
-
-
-label_8_true :
-assume (INT_LT($i$4$269.5$graph_facebook_com_email, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]));
-goto label_10;
-
-
-label_8_false :
-assume !(INT_LT($i$4$269.5$graph_facebook_com_email, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]));
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 254} true;
+//TAG: i >= 0 && i < server_state.token_length && access_token == ((server_state.tokens)[i]).token_value
+assume (((INT_GEQ($i$3$253.5$graph_facebook_com_email, 0)) && (INT_LT($i$3$253.5$graph_facebook_com_email, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]))) && (INT_EQ($access_token$1$251.33$graph_facebook_com_email, Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$253.5$graph_facebook_com_email))])));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(281)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(255)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 281} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 255} true;
 goto label_9_true , label_9_false ;
 
 
 label_9_true :
-assume ($found$5$270.5$graph_facebook_com_email != 0);
-goto label_17;
+assume (INT_EQ(Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$253.5$graph_facebook_com_email))], 1));
+goto label_11;
 
 
 label_9_false :
-assume ($found$5$270.5$graph_facebook_com_email == 0);
-goto label_16;
+assume !(INT_EQ(Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$253.5$graph_facebook_com_email))], 1));
+goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(273)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(256)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 273} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 256} true;
 goto label_10_true , label_10_false ;
 
 
 label_10_true :
-assume (INT_EQ($access_token$1$266.33$graph_facebook_com_email, Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$4$269.5$graph_facebook_com_email))]));
-goto label_12;
-
-
-label_10_false :
-assume !(INT_EQ($access_token$1$266.33$graph_facebook_com_email, Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$4$269.5$graph_facebook_com_email))]));
-goto label_11;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(271)
-label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 271} true;
-$i$4$269.5$graph_facebook_com_email := PLUS($i$4$269.5$graph_facebook_com_email, 1, 1) ;
-goto label_8_head;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(275)
-label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 275} true;
-goto label_12_true , label_12_false ;
-
-
-label_12_true :
-assume (INT_LT(Mem_T.scope_Access_Token[scope_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$4$269.5$graph_facebook_com_email))], 2));
-goto label_14;
-
-
-label_12_false :
-assume !(INT_LT(Mem_T.scope_Access_Token[scope_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$4$269.5$graph_facebook_com_email))], 2));
+assume (INT_EQ(Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$253.5$graph_facebook_com_email))], 2));
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(276)
+label_10_false :
+assume !(INT_EQ(Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$253.5$graph_facebook_com_email))], 2));
+goto label_12;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(255)
+label_11:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 255} true;
+Mem_T.User_Email := Mem_T.User_Email[$user_email$2$251.59$graph_facebook_com_email := 1];
+goto label_10;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(257)
+label_12:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 257} true;
+$result.graph_facebook_com_email$251.4$1$graph_facebook_com_email := 200 ;
+goto label_1;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(256)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 276} true;
-$user_ID$3$268.6$graph_facebook_com_email := Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$4$269.5$graph_facebook_com_email))] ;
-goto label_15;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(275)
-label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 275} true;
-$result.graph_facebook_com_email$266.4$1$graph_facebook_com_email := 400 ;
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(277)
-label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 277} true;
-$found$5$270.5$graph_facebook_com_email := 1 ;
-goto label_9;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(281)
-label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 281} true;
-$result.graph_facebook_com_email$266.4$1$graph_facebook_com_email := 400 ;
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(282)
-label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 282} true;
-goto label_17_true , label_17_false ;
-
-
-label_17_true :
-assume (INT_EQ($user_ID$3$268.6$graph_facebook_com_email, 1));
-goto label_19;
-
-
-label_17_false :
-assume !(INT_EQ($user_ID$3$268.6$graph_facebook_com_email, 1));
-goto label_18;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(283)
-label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 283} true;
-goto label_18_true , label_18_false ;
-
-
-label_18_true :
-assume (INT_EQ($user_ID$3$268.6$graph_facebook_com_email, 2));
-goto label_21;
-
-
-label_18_false :
-assume !(INT_EQ($user_ID$3$268.6$graph_facebook_com_email, 2));
-goto label_20;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(282)
-label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 282} true;
-Mem_T.User_Email := Mem_T.User_Email[$user_email$2$266.59$graph_facebook_com_email := 1];
-goto label_18;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(284)
-label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 284} true;
-$result.graph_facebook_com_email$266.4$1$graph_facebook_com_email := 200 ;
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(283)
-label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 283} true;
-Mem_T.User_Email := Mem_T.User_Email[$user_email$2$266.59$graph_facebook_com_email := 2];
-goto label_20;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 256} true;
+Mem_T.User_Email := Mem_T.User_Email[$user_email$2$251.59$graph_facebook_com_email := 2];
+goto label_12;
 
 }
 
 
 
-procedure  graph_facebook_com_email_bob($access_token$1$93.37$graph_facebook_com_email_bob_.1:int, $user_email$2$93.63$graph_facebook_com_email_bob_.1:int) returns ($result.graph_facebook_com_email_bob$93.4$1$graph_facebook_com_email_bob:int)
+procedure  graph_facebook_com_email_bob($access_token$1$94.37$graph_facebook_com_email_bob_.1:int, $user_email$2$94.63$graph_facebook_com_email_bob_.1:int) returns ($result.graph_facebook_com_email_bob$94.4$1$graph_facebook_com_email_bob:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -8980,6 +8526,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -8992,10 +8539,10 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$1$93.37$graph_facebook_com_email_bob : int;
-var $http_response$3$95.5$graph_facebook_com_email_bob : int;
-var $result.graph_facebook_com_email$96.41$2$graph_facebook_com_email_bob : int;
-var $user_email$2$93.63$graph_facebook_com_email_bob : int;
+var $access_token$1$94.37$graph_facebook_com_email_bob : int;
+var $http_response$3$96.5$graph_facebook_com_email_bob : int;
+var $result.graph_facebook_com_email$97.41$2$graph_facebook_com_email_bob : int;
+var $user_email$2$94.63$graph_facebook_com_email_bob : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -9021,78 +8568,78 @@ var __havoc_dummy_return: int;
 
 start:
 
-$access_token$1$93.37$graph_facebook_com_email_bob := $access_token$1$93.37$graph_facebook_com_email_bob_.1;
-$user_email$2$93.63$graph_facebook_com_email_bob := $user_email$2$93.63$graph_facebook_com_email_bob_.1;
+$access_token$1$94.37$graph_facebook_com_email_bob := $access_token$1$94.37$graph_facebook_com_email_bob_.1;
+$user_email$2$94.63$graph_facebook_com_email_bob := $user_email$2$94.63$graph_facebook_com_email_bob_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(102)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(103)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 102} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 103} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(102)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(103)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 102} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 103} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(95)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(96)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 95} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 96} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(96)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(97)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 96} true;
-call $result.graph_facebook_com_email$96.41$2$graph_facebook_com_email_bob := graph_facebook_com_email ($access_token$1$93.37$graph_facebook_com_email_bob, $user_email$2$93.63$graph_facebook_com_email_bob);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 97} true;
+call $result.graph_facebook_com_email$97.41$2$graph_facebook_com_email_bob := graph_facebook_com_email ($access_token$1$94.37$graph_facebook_com_email_bob, $user_email$2$94.63$graph_facebook_com_email_bob);
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(96)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(97)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 96} true;
-$http_response$3$95.5$graph_facebook_com_email_bob := $result.graph_facebook_com_email$96.41$2$graph_facebook_com_email_bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 97} true;
+$http_response$3$96.5$graph_facebook_com_email_bob := $result.graph_facebook_com_email$97.41$2$graph_facebook_com_email_bob ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(97)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(98)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 97} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 98} true;
 goto label_8_true , label_8_false ;
 
 
 label_8_true :
-assume (INT_NEQ($http_response$3$95.5$graph_facebook_com_email_bob, 400));
+assume (INT_NEQ($http_response$3$96.5$graph_facebook_com_email_bob, 400));
 goto label_10;
 
 
 label_8_false :
-assume !(INT_NEQ($http_response$3$95.5$graph_facebook_com_email_bob, 400));
+assume !(INT_NEQ($http_response$3$96.5$graph_facebook_com_email_bob, 400));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(101)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(102)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 101} true;
-$result.graph_facebook_com_email_bob$93.4$1$graph_facebook_com_email_bob := $http_response$3$95.5$graph_facebook_com_email_bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 102} true;
+$result.graph_facebook_com_email_bob$94.4$1$graph_facebook_com_email_bob := $http_response$3$96.5$graph_facebook_com_email_bob ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(99)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(100)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 99} true;
-call add_email_knowledge_to_bob (Mem_T.User_Email[$user_email$2$93.63$graph_facebook_com_email_bob]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 100} true;
+call add_email_knowledge_to_bob (Mem_T.User_Email[$user_email$2$94.63$graph_facebook_com_email_bob]);
 goto label_9;
 
 }
 
 
 
-procedure  graph_facebook_com_me($access_token$1$251.30$graph_facebook_com_me_.1:int, $user_ID$2$251.50$graph_facebook_com_me_.1:int) returns ($result.graph_facebook_com_me$251.4$1$graph_facebook_com_me:int)
+procedure  graph_facebook_com_me($access_token$1$243.30$graph_facebook_com_me_.1:int, $user_ID$2$243.50$graph_facebook_com_me_.1:int) returns ($result.graph_facebook_com_me$243.4$1$graph_facebook_com_me:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -9167,6 +8714,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -9179,9 +8727,10 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$1$251.30$graph_facebook_com_me : int;
-var $i$3$253.5$graph_facebook_com_me : int;
-var $user_ID$2$251.50$graph_facebook_com_me : int;
+var $access_token$1$243.30$graph_facebook_com_me : int;
+var $i$3$245.5$graph_facebook_com_me : int;
+var $result.poirot_nondet$245.22$2$graph_facebook_com_me : int;
+var $user_ID$2$243.50$graph_facebook_com_me : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -9203,256 +8752,74 @@ var tempBoogie17:int;
 var tempBoogie18:int;
 var tempBoogie19:int;
 var __havoc_dummy_return: int;
-var ___LOOP_5_alloc:int;
-var ___LOOP_5_Mem_T.A0INT4:[int]int;
-var ___LOOP_5_Mem_T.A100Access_Token:[int]int;
-var ___LOOP_5_Mem_T.A100Code:[int]int;
-var ___LOOP_5_Mem_T.A100Cookie:[int]int;
-var ___LOOP_5_Mem_T.A100RP_Session:[int]int;
-var ___LOOP_5_Mem_T.A100Scope:[int]int;
-var ___LOOP_5_Mem_T.A37CHAR:[int]int;
-var ___LOOP_5_Mem_T.A58CHAR:[int]int;
-var ___LOOP_5_Mem_T.App_ID:[int]int;
-var ___LOOP_5_Mem_T.App_Owner:[int]int;
-var ___LOOP_5_Mem_T.App_Secret:[int]int;
-var ___LOOP_5_Mem_T.Caller:[int]int;
-var ___LOOP_5_Mem_T.INT4:[int]int;
-var ___LOOP_5_Mem_T.Location_Knowledge:[int]int;
-var ___LOOP_5_Mem_T.PAccess_Token:[int]int;
-var ___LOOP_5_Mem_T.PApp_Client_State:[int]int;
-var ___LOOP_5_Mem_T.PCHAR:[int]int;
-var ___LOOP_5_Mem_T.PCode:[int]int;
-var ___LOOP_5_Mem_T.PCookie:[int]int;
-var ___LOOP_5_Mem_T.PINT4:[int]int;
-var ___LOOP_5_Mem_T.PLocation_Knowledge:[int]int;
-var ___LOOP_5_Mem_T.PPUINT2:[int]int;
-var ___LOOP_5_Mem_T.PPlocaleinfo_struct:[int]int;
-var ___LOOP_5_Mem_T.PRP_Session:[int]int;
-var ___LOOP_5_Mem_T.PScope:[int]int;
-var ___LOOP_5_Mem_T.PUINT2:[int]int;
-var ___LOOP_5_Mem_T.PUser:[int]int;
-var ___LOOP_5_Mem_T.PUser_Email:[int]int;
-var ___LOOP_5_Mem_T.Plocaleinfo_struct:[int]int;
-var ___LOOP_5_Mem_T.Redirect_Domain:[int]int;
-var ___LOOP_5_Mem_T.Response_Type:[int]int;
-var ___LOOP_5_Mem_T.Scope:[int]int;
-var ___LOOP_5_Mem_T.UINT4:[int]int;
-var ___LOOP_5_Mem_T.User:[int]int;
-var ___LOOP_5_Mem_T.User_Credentials:[int]int;
-var ___LOOP_5_Mem_T.User_Email:[int]int;
-var ___LOOP_5_Mem_T.access_token_App_Client_State:[int]int;
-var ___LOOP_5_Mem_T.app_ID_App_Client_State:[int]int;
-var ___LOOP_5_Mem_T.app_ID_Code:[int]int;
-var ___LOOP_5_Mem_T.app_ID_Registered_App:[int]int;
-var ___LOOP_5_Mem_T.app_length_FB_Server_State:[int]int;
-var ___LOOP_5_Mem_T.app_owner_App_Client_State:[int]int;
-var ___LOOP_5_Mem_T.app_secret_Code:[int]int;
-var ___LOOP_5_Mem_T.app_secret_Registered_App:[int]int;
-var ___LOOP_5_Mem_T.code_App_Client_State:[int]int;
-var ___LOOP_5_Mem_T.code_length_FB_Server_State:[int]int;
-var ___LOOP_5_Mem_T.code_value_Code:[int]int;
-var ___LOOP_5_Mem_T.codes_FB_Server_State:[int]int;
-var ___LOOP_5_Mem_T.cookie_WWAHost_State:[int]int;
-var ___LOOP_5_Mem_T.cookie_length_FB_Server_State:[int]int;
-var ___LOOP_5_Mem_T.cookie_value_Cookie:[int]int;
-var ___LOOP_5_Mem_T.cookies_FB_Server_State:[int]int;
-var ___LOOP_5_Mem_T.current_state_WWAHost_State:[int]int;
-var ___LOOP_5_Mem_T.redirect_domain_Registered_App:[int]int;
-var ___LOOP_5_Mem_T.rp_sessions_RP_State:[int]int;
-var ___LOOP_5_Mem_T.scope_Access_Token:[int]int;
-var ___LOOP_5_Mem_T.scope_Registered_App:[int]int;
-var ___LOOP_5_Mem_T.scope_length_Registered_App:[int]int;
-var ___LOOP_5_Mem_T.session_ID_RP_Session:[int]int;
-var ___LOOP_5_Mem_T.session_length_RP_State:[int]int;
-var ___LOOP_5_Mem_T.token_length_FB_Server_State:[int]int;
-var ___LOOP_5_Mem_T.token_value_Access_Token:[int]int;
-var ___LOOP_5_Mem_T.tokens_FB_Server_State:[int]int;
-var ___LOOP_5_Mem_T.user_ID_Access_Token:[int]int;
-var ___LOOP_5_Mem_T.user_ID_Code:[int]int;
-var ___LOOP_5_Mem_T.user_ID_Cookie:[int]int;
-var ___LOOP_5_Mem_T.user_ID_RP_Session:[int]int;
-var ___LOOP_5_Res_KERNEL_SOURCE:[int]int;
-var ___LOOP_5_Res_PROBED:[int]int;
 
 
 start:
 
-$access_token$1$251.30$graph_facebook_com_me := $access_token$1$251.30$graph_facebook_com_me_.1;
-$user_ID$2$251.50$graph_facebook_com_me := $user_ID$2$251.50$graph_facebook_com_me_.1;
+$access_token$1$243.30$graph_facebook_com_me := $access_token$1$243.30$graph_facebook_com_me_.1;
+$user_ID$2$243.50$graph_facebook_com_me := $user_ID$2$243.50$graph_facebook_com_me_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(264)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(249)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 264} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 249} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(264)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(249)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 264} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 249} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(253)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(245)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 253} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 245} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(253)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(245)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 253} true;
-$i$3$253.5$graph_facebook_com_me := 0 ;
-goto label_5;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(254)
-label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 254} true;
-// loop entry initialization...
-___LOOP_5_alloc := alloc;
-___LOOP_5_Mem_T.A0INT4:=Mem_T.A0INT4;
-___LOOP_5_Mem_T.A100Access_Token:=Mem_T.A100Access_Token;
-___LOOP_5_Mem_T.A100Code:=Mem_T.A100Code;
-___LOOP_5_Mem_T.A100Cookie:=Mem_T.A100Cookie;
-___LOOP_5_Mem_T.A100RP_Session:=Mem_T.A100RP_Session;
-___LOOP_5_Mem_T.A100Scope:=Mem_T.A100Scope;
-___LOOP_5_Mem_T.A37CHAR:=Mem_T.A37CHAR;
-___LOOP_5_Mem_T.A58CHAR:=Mem_T.A58CHAR;
-___LOOP_5_Mem_T.App_ID:=Mem_T.App_ID;
-___LOOP_5_Mem_T.App_Owner:=Mem_T.App_Owner;
-___LOOP_5_Mem_T.App_Secret:=Mem_T.App_Secret;
-___LOOP_5_Mem_T.Caller:=Mem_T.Caller;
-___LOOP_5_Mem_T.INT4:=Mem_T.INT4;
-___LOOP_5_Mem_T.Location_Knowledge:=Mem_T.Location_Knowledge;
-___LOOP_5_Mem_T.PAccess_Token:=Mem_T.PAccess_Token;
-___LOOP_5_Mem_T.PApp_Client_State:=Mem_T.PApp_Client_State;
-___LOOP_5_Mem_T.PCHAR:=Mem_T.PCHAR;
-___LOOP_5_Mem_T.PCode:=Mem_T.PCode;
-___LOOP_5_Mem_T.PCookie:=Mem_T.PCookie;
-___LOOP_5_Mem_T.PINT4:=Mem_T.PINT4;
-___LOOP_5_Mem_T.PLocation_Knowledge:=Mem_T.PLocation_Knowledge;
-___LOOP_5_Mem_T.PPUINT2:=Mem_T.PPUINT2;
-___LOOP_5_Mem_T.PPlocaleinfo_struct:=Mem_T.PPlocaleinfo_struct;
-___LOOP_5_Mem_T.PRP_Session:=Mem_T.PRP_Session;
-___LOOP_5_Mem_T.PScope:=Mem_T.PScope;
-___LOOP_5_Mem_T.PUINT2:=Mem_T.PUINT2;
-___LOOP_5_Mem_T.PUser:=Mem_T.PUser;
-___LOOP_5_Mem_T.PUser_Email:=Mem_T.PUser_Email;
-___LOOP_5_Mem_T.Plocaleinfo_struct:=Mem_T.Plocaleinfo_struct;
-___LOOP_5_Mem_T.Redirect_Domain:=Mem_T.Redirect_Domain;
-___LOOP_5_Mem_T.Response_Type:=Mem_T.Response_Type;
-___LOOP_5_Mem_T.Scope:=Mem_T.Scope;
-___LOOP_5_Mem_T.UINT4:=Mem_T.UINT4;
-___LOOP_5_Mem_T.User:=Mem_T.User;
-___LOOP_5_Mem_T.User_Credentials:=Mem_T.User_Credentials;
-___LOOP_5_Mem_T.User_Email:=Mem_T.User_Email;
-___LOOP_5_Mem_T.access_token_App_Client_State:=Mem_T.access_token_App_Client_State;
-___LOOP_5_Mem_T.app_ID_App_Client_State:=Mem_T.app_ID_App_Client_State;
-___LOOP_5_Mem_T.app_ID_Code:=Mem_T.app_ID_Code;
-___LOOP_5_Mem_T.app_ID_Registered_App:=Mem_T.app_ID_Registered_App;
-___LOOP_5_Mem_T.app_length_FB_Server_State:=Mem_T.app_length_FB_Server_State;
-___LOOP_5_Mem_T.app_owner_App_Client_State:=Mem_T.app_owner_App_Client_State;
-___LOOP_5_Mem_T.app_secret_Code:=Mem_T.app_secret_Code;
-___LOOP_5_Mem_T.app_secret_Registered_App:=Mem_T.app_secret_Registered_App;
-___LOOP_5_Mem_T.code_App_Client_State:=Mem_T.code_App_Client_State;
-___LOOP_5_Mem_T.code_length_FB_Server_State:=Mem_T.code_length_FB_Server_State;
-___LOOP_5_Mem_T.code_value_Code:=Mem_T.code_value_Code;
-___LOOP_5_Mem_T.codes_FB_Server_State:=Mem_T.codes_FB_Server_State;
-___LOOP_5_Mem_T.cookie_WWAHost_State:=Mem_T.cookie_WWAHost_State;
-___LOOP_5_Mem_T.cookie_length_FB_Server_State:=Mem_T.cookie_length_FB_Server_State;
-___LOOP_5_Mem_T.cookie_value_Cookie:=Mem_T.cookie_value_Cookie;
-___LOOP_5_Mem_T.cookies_FB_Server_State:=Mem_T.cookies_FB_Server_State;
-___LOOP_5_Mem_T.current_state_WWAHost_State:=Mem_T.current_state_WWAHost_State;
-___LOOP_5_Mem_T.redirect_domain_Registered_App:=Mem_T.redirect_domain_Registered_App;
-___LOOP_5_Mem_T.rp_sessions_RP_State:=Mem_T.rp_sessions_RP_State;
-___LOOP_5_Mem_T.scope_Access_Token:=Mem_T.scope_Access_Token;
-___LOOP_5_Mem_T.scope_Registered_App:=Mem_T.scope_Registered_App;
-___LOOP_5_Mem_T.scope_length_Registered_App:=Mem_T.scope_length_Registered_App;
-___LOOP_5_Mem_T.session_ID_RP_Session:=Mem_T.session_ID_RP_Session;
-___LOOP_5_Mem_T.session_length_RP_State:=Mem_T.session_length_RP_State;
-___LOOP_5_Mem_T.token_length_FB_Server_State:=Mem_T.token_length_FB_Server_State;
-___LOOP_5_Mem_T.token_value_Access_Token:=Mem_T.token_value_Access_Token;
-___LOOP_5_Mem_T.tokens_FB_Server_State:=Mem_T.tokens_FB_Server_State;
-___LOOP_5_Mem_T.user_ID_Access_Token:=Mem_T.user_ID_Access_Token;
-___LOOP_5_Mem_T.user_ID_Code:=Mem_T.user_ID_Code;
-___LOOP_5_Mem_T.user_ID_Cookie:=Mem_T.user_ID_Cookie;
-___LOOP_5_Mem_T.user_ID_RP_Session:=Mem_T.user_ID_RP_Session;
-___LOOP_5_Res_KERNEL_SOURCE := Res_KERNEL_SOURCE;
-___LOOP_5_Res_PROBED := Res_PROBED;
-goto label_5_head;
-
-
-label_5_head:
-// loop head assertions...
-
-
-
-// end loop head assertions
-
-goto label_5_true , label_5_false ;
-
-
-label_5_true :
-assume (INT_LT($i$3$253.5$graph_facebook_com_me, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]));
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 245} true;
+call $result.poirot_nondet$245.22$2$graph_facebook_com_me := poirot_nondet ();
 goto label_7;
 
 
-label_5_false :
-assume !(INT_LT($i$3$253.5$graph_facebook_com_me, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]));
-goto label_6;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(263)
-label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 263} true;
-$result.graph_facebook_com_me$251.4$1$graph_facebook_com_me := 400 ;
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(256)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(245)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 256} true;
-goto label_7_true , label_7_false ;
-
-
-label_7_true :
-assume (INT_EQ($access_token$1$251.30$graph_facebook_com_me, Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$253.5$graph_facebook_com_me))]));
-goto label_9;
-
-
-label_7_false :
-assume !(INT_EQ($access_token$1$251.30$graph_facebook_com_me, Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$253.5$graph_facebook_com_me))]));
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 245} true;
+$i$3$245.5$graph_facebook_com_me := $result.poirot_nondet$245.22$2$graph_facebook_com_me ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(254)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(246)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 254} true;
-$i$3$253.5$graph_facebook_com_me := PLUS($i$3$253.5$graph_facebook_com_me, 1, 1) ;
-goto label_5_head;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 246} true;
+//TAG: i >= 0 && i < server_state.token_length && access_token == ((server_state.tokens)[i]).token_value
+assume (((INT_GEQ($i$3$245.5$graph_facebook_com_me, 0)) && (INT_LT($i$3$245.5$graph_facebook_com_me, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]))) && (INT_EQ($access_token$1$243.30$graph_facebook_com_me, Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$245.5$graph_facebook_com_me))])));
+goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(258)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(247)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 258} true;
-Mem_T.User := Mem_T.User[$user_ID$2$251.50$graph_facebook_com_me := Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$253.5$graph_facebook_com_me))]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 247} true;
+Mem_T.User := Mem_T.User[$user_ID$2$243.50$graph_facebook_com_me := Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, $i$3$245.5$graph_facebook_com_me))]];
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(260)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(248)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 260} true;
-$result.graph_facebook_com_me$251.4$1$graph_facebook_com_me := 200 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 248} true;
+$result.graph_facebook_com_me$243.4$1$graph_facebook_com_me := 200 ;
 goto label_1;
 
 }
 
 
 
-procedure  graph_facebook_com_me_bob($access_token$1$82.34$graph_facebook_com_me_bob_.1:int, $user_ID$2$82.54$graph_facebook_com_me_bob_.1:int) returns ($result.graph_facebook_com_me_bob$82.4$1$graph_facebook_com_me_bob:int)
+procedure  graph_facebook_com_me_bob($access_token$1$83.34$graph_facebook_com_me_bob_.1:int, $user_ID$2$83.54$graph_facebook_com_me_bob_.1:int) returns ($result.graph_facebook_com_me_bob$83.4$1$graph_facebook_com_me_bob:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -9527,6 +8894,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -9539,10 +8907,10 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$1$82.34$graph_facebook_com_me_bob : int;
-var $http_response$3$84.5$graph_facebook_com_me_bob : int;
-var $result.graph_facebook_com_me$85.38$2$graph_facebook_com_me_bob : int;
-var $user_ID$2$82.54$graph_facebook_com_me_bob : int;
+var $access_token$1$83.34$graph_facebook_com_me_bob : int;
+var $http_response$3$85.5$graph_facebook_com_me_bob : int;
+var $result.graph_facebook_com_me$86.38$2$graph_facebook_com_me_bob : int;
+var $user_ID$2$83.54$graph_facebook_com_me_bob : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -9568,71 +8936,71 @@ var __havoc_dummy_return: int;
 
 start:
 
-$access_token$1$82.34$graph_facebook_com_me_bob := $access_token$1$82.34$graph_facebook_com_me_bob_.1;
-$user_ID$2$82.54$graph_facebook_com_me_bob := $user_ID$2$82.54$graph_facebook_com_me_bob_.1;
+$access_token$1$83.34$graph_facebook_com_me_bob := $access_token$1$83.34$graph_facebook_com_me_bob_.1;
+$user_ID$2$83.54$graph_facebook_com_me_bob := $user_ID$2$83.54$graph_facebook_com_me_bob_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(91)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(92)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 91} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 92} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(91)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(92)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 91} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 92} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(84)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(85)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 84} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 85} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(85)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(86)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 85} true;
-call $result.graph_facebook_com_me$85.38$2$graph_facebook_com_me_bob := graph_facebook_com_me ($access_token$1$82.34$graph_facebook_com_me_bob, $user_ID$2$82.54$graph_facebook_com_me_bob);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 86} true;
+call $result.graph_facebook_com_me$86.38$2$graph_facebook_com_me_bob := graph_facebook_com_me ($access_token$1$83.34$graph_facebook_com_me_bob, $user_ID$2$83.54$graph_facebook_com_me_bob);
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(85)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(86)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 85} true;
-$http_response$3$84.5$graph_facebook_com_me_bob := $result.graph_facebook_com_me$85.38$2$graph_facebook_com_me_bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 86} true;
+$http_response$3$85.5$graph_facebook_com_me_bob := $result.graph_facebook_com_me$86.38$2$graph_facebook_com_me_bob ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(86)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(87)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 86} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 87} true;
 goto label_8_true , label_8_false ;
 
 
 label_8_true :
-assume (INT_NEQ($http_response$3$84.5$graph_facebook_com_me_bob, 400));
+assume (INT_NEQ($http_response$3$85.5$graph_facebook_com_me_bob, 400));
 goto label_9;
 
 
 label_8_false :
-assume !(INT_NEQ($http_response$3$84.5$graph_facebook_com_me_bob, 400));
+assume !(INT_NEQ($http_response$3$85.5$graph_facebook_com_me_bob, 400));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(90)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(91)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 90} true;
-$result.graph_facebook_com_me_bob$82.4$1$graph_facebook_com_me_bob := $http_response$3$84.5$graph_facebook_com_me_bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 91} true;
+$result.graph_facebook_com_me_bob$83.4$1$graph_facebook_com_me_bob := $http_response$3$85.5$graph_facebook_com_me_bob ;
 goto label_1;
 
 }
 
 
 
-procedure  graph_facebook_com_oauth_access_token($redirect_domain$1$295.58$graph_facebook_com_oauth_access_token_.1:int, $client_id$2$295.82$graph_facebook_com_oauth_access_token_.1:int, $app_secret$3$295.104$graph_facebook_com_oauth_access_token_.1:int, $code$4$295.120$graph_facebook_com_oauth_access_token_.1:int, $access_token$5$295.131$graph_facebook_com_oauth_access_token_.1:int) returns ($result.graph_facebook_com_oauth_access_token$295.4$1$graph_facebook_com_oauth_access_token:int)
+procedure  graph_facebook_com_oauth_access_token($redirect_domain$1$268.58$graph_facebook_com_oauth_access_token_.1:int, $client_id$2$268.82$graph_facebook_com_oauth_access_token_.1:int, $app_secret$3$268.104$graph_facebook_com_oauth_access_token_.1:int, $code$4$268.120$graph_facebook_com_oauth_access_token_.1:int, $access_token$5$268.131$graph_facebook_com_oauth_access_token_.1:int) returns ($result.graph_facebook_com_oauth_access_token$268.4$1$graph_facebook_com_oauth_access_token:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -9707,6 +9075,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -9719,18 +9088,19 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$5$295.131$graph_facebook_com_oauth_access_token : int;
-var $app$10$303.16$graph_facebook_com_oauth_access_token : int;
-var $app_secret$3$295.104$graph_facebook_com_oauth_access_token : int;
-var $at$7$300.14$graph_facebook_com_oauth_access_token : int;
-var $client_id$2$295.82$graph_facebook_com_oauth_access_token : int;
-var $code$4$295.120$graph_facebook_com_oauth_access_token : int;
-var $found$9$302.5$graph_facebook_com_oauth_access_token : int;
-var $i$8$301.5$graph_facebook_com_oauth_access_token : int;
-var $logged_in_user$6$299.6$graph_facebook_com_oauth_access_token : int;
-var $redirect_domain$1$295.58$graph_facebook_com_oauth_access_token : int;
+var $access_token$5$268.131$graph_facebook_com_oauth_access_token : int;
+var $app$10$276.16$graph_facebook_com_oauth_access_token : int;
+var $app_secret$3$268.104$graph_facebook_com_oauth_access_token : int;
+var $at$7$273.14$graph_facebook_com_oauth_access_token : int;
+var $client_id$2$268.82$graph_facebook_com_oauth_access_token : int;
+var $code$4$268.120$graph_facebook_com_oauth_access_token : int;
+var $found$9$275.5$graph_facebook_com_oauth_access_token : int;
+var $i$8$274.5$graph_facebook_com_oauth_access_token : int;
+var $logged_in_user$6$272.6$graph_facebook_com_oauth_access_token : int;
+var $redirect_domain$1$268.58$graph_facebook_com_oauth_access_token : int;
+var $result.poirot_nondet$302.18$3$graph_facebook_com_oauth_access_token : int;
 var $result.question.2$ : int;
-var $user_ID$11$304.6$graph_facebook_com_oauth_access_token : int;
+var $user_ID$11$277.6$graph_facebook_com_oauth_access_token : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -9752,557 +9122,382 @@ var tempBoogie17:int;
 var tempBoogie18:int;
 var tempBoogie19:int;
 var __havoc_dummy_return: int;
-var ___LOOP_24_alloc:int;
-var ___LOOP_24_Mem_T.A0INT4:[int]int;
-var ___LOOP_24_Mem_T.A100Access_Token:[int]int;
-var ___LOOP_24_Mem_T.A100Code:[int]int;
-var ___LOOP_24_Mem_T.A100Cookie:[int]int;
-var ___LOOP_24_Mem_T.A100RP_Session:[int]int;
-var ___LOOP_24_Mem_T.A100Scope:[int]int;
-var ___LOOP_24_Mem_T.A37CHAR:[int]int;
-var ___LOOP_24_Mem_T.A58CHAR:[int]int;
-var ___LOOP_24_Mem_T.App_ID:[int]int;
-var ___LOOP_24_Mem_T.App_Owner:[int]int;
-var ___LOOP_24_Mem_T.App_Secret:[int]int;
-var ___LOOP_24_Mem_T.Caller:[int]int;
-var ___LOOP_24_Mem_T.INT4:[int]int;
-var ___LOOP_24_Mem_T.Location_Knowledge:[int]int;
-var ___LOOP_24_Mem_T.PAccess_Token:[int]int;
-var ___LOOP_24_Mem_T.PApp_Client_State:[int]int;
-var ___LOOP_24_Mem_T.PCHAR:[int]int;
-var ___LOOP_24_Mem_T.PCode:[int]int;
-var ___LOOP_24_Mem_T.PCookie:[int]int;
-var ___LOOP_24_Mem_T.PINT4:[int]int;
-var ___LOOP_24_Mem_T.PLocation_Knowledge:[int]int;
-var ___LOOP_24_Mem_T.PPUINT2:[int]int;
-var ___LOOP_24_Mem_T.PPlocaleinfo_struct:[int]int;
-var ___LOOP_24_Mem_T.PRP_Session:[int]int;
-var ___LOOP_24_Mem_T.PScope:[int]int;
-var ___LOOP_24_Mem_T.PUINT2:[int]int;
-var ___LOOP_24_Mem_T.PUser:[int]int;
-var ___LOOP_24_Mem_T.PUser_Email:[int]int;
-var ___LOOP_24_Mem_T.Plocaleinfo_struct:[int]int;
-var ___LOOP_24_Mem_T.Redirect_Domain:[int]int;
-var ___LOOP_24_Mem_T.Response_Type:[int]int;
-var ___LOOP_24_Mem_T.Scope:[int]int;
-var ___LOOP_24_Mem_T.UINT4:[int]int;
-var ___LOOP_24_Mem_T.User:[int]int;
-var ___LOOP_24_Mem_T.User_Credentials:[int]int;
-var ___LOOP_24_Mem_T.User_Email:[int]int;
-var ___LOOP_24_Mem_T.access_token_App_Client_State:[int]int;
-var ___LOOP_24_Mem_T.app_ID_App_Client_State:[int]int;
-var ___LOOP_24_Mem_T.app_ID_Code:[int]int;
-var ___LOOP_24_Mem_T.app_ID_Registered_App:[int]int;
-var ___LOOP_24_Mem_T.app_length_FB_Server_State:[int]int;
-var ___LOOP_24_Mem_T.app_owner_App_Client_State:[int]int;
-var ___LOOP_24_Mem_T.app_secret_Code:[int]int;
-var ___LOOP_24_Mem_T.app_secret_Registered_App:[int]int;
-var ___LOOP_24_Mem_T.code_App_Client_State:[int]int;
-var ___LOOP_24_Mem_T.code_length_FB_Server_State:[int]int;
-var ___LOOP_24_Mem_T.code_value_Code:[int]int;
-var ___LOOP_24_Mem_T.codes_FB_Server_State:[int]int;
-var ___LOOP_24_Mem_T.cookie_WWAHost_State:[int]int;
-var ___LOOP_24_Mem_T.cookie_length_FB_Server_State:[int]int;
-var ___LOOP_24_Mem_T.cookie_value_Cookie:[int]int;
-var ___LOOP_24_Mem_T.cookies_FB_Server_State:[int]int;
-var ___LOOP_24_Mem_T.current_state_WWAHost_State:[int]int;
-var ___LOOP_24_Mem_T.redirect_domain_Registered_App:[int]int;
-var ___LOOP_24_Mem_T.rp_sessions_RP_State:[int]int;
-var ___LOOP_24_Mem_T.scope_Access_Token:[int]int;
-var ___LOOP_24_Mem_T.scope_Registered_App:[int]int;
-var ___LOOP_24_Mem_T.scope_length_Registered_App:[int]int;
-var ___LOOP_24_Mem_T.session_ID_RP_Session:[int]int;
-var ___LOOP_24_Mem_T.session_length_RP_State:[int]int;
-var ___LOOP_24_Mem_T.token_length_FB_Server_State:[int]int;
-var ___LOOP_24_Mem_T.token_value_Access_Token:[int]int;
-var ___LOOP_24_Mem_T.tokens_FB_Server_State:[int]int;
-var ___LOOP_24_Mem_T.user_ID_Access_Token:[int]int;
-var ___LOOP_24_Mem_T.user_ID_Code:[int]int;
-var ___LOOP_24_Mem_T.user_ID_Cookie:[int]int;
-var ___LOOP_24_Mem_T.user_ID_RP_Session:[int]int;
-var ___LOOP_24_Res_KERNEL_SOURCE:[int]int;
-var ___LOOP_24_Res_PROBED:[int]int;
 
 
 start:
 
-call $app$10$303.16$graph_facebook_com_oauth_access_token := __HAVOC_malloc(20);
-call $at$7$300.14$graph_facebook_com_oauth_access_token := __HAVOC_malloc(12);
+call $app$10$276.16$graph_facebook_com_oauth_access_token := __HAVOC_malloc(20);
+call $at$7$273.14$graph_facebook_com_oauth_access_token := __HAVOC_malloc(12);
 call $result.question.2$ := __HAVOC_malloc(20);
-$redirect_domain$1$295.58$graph_facebook_com_oauth_access_token := $redirect_domain$1$295.58$graph_facebook_com_oauth_access_token_.1;
-$client_id$2$295.82$graph_facebook_com_oauth_access_token := $client_id$2$295.82$graph_facebook_com_oauth_access_token_.1;
-$app_secret$3$295.104$graph_facebook_com_oauth_access_token := $app_secret$3$295.104$graph_facebook_com_oauth_access_token_.1;
-$code$4$295.120$graph_facebook_com_oauth_access_token := $code$4$295.120$graph_facebook_com_oauth_access_token_.1;
-$access_token$5$295.131$graph_facebook_com_oauth_access_token := $access_token$5$295.131$graph_facebook_com_oauth_access_token_.1;
+$redirect_domain$1$268.58$graph_facebook_com_oauth_access_token := $redirect_domain$1$268.58$graph_facebook_com_oauth_access_token_.1;
+$client_id$2$268.82$graph_facebook_com_oauth_access_token := $client_id$2$268.82$graph_facebook_com_oauth_access_token_.1;
+$app_secret$3$268.104$graph_facebook_com_oauth_access_token := $app_secret$3$268.104$graph_facebook_com_oauth_access_token_.1;
+$code$4$268.120$graph_facebook_com_oauth_access_token := $code$4$268.120$graph_facebook_com_oauth_access_token_.1;
+$access_token$5$268.131$graph_facebook_com_oauth_access_token := $access_token$5$268.131$graph_facebook_com_oauth_access_token_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(351)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(319)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 351} true;
-call __HAVOC_free($app$10$303.16$graph_facebook_com_oauth_access_token);
-call __HAVOC_free($at$7$300.14$graph_facebook_com_oauth_access_token);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 319} true;
+call __HAVOC_free($app$10$276.16$graph_facebook_com_oauth_access_token);
+call __HAVOC_free($at$7$273.14$graph_facebook_com_oauth_access_token);
 call __HAVOC_free($result.question.2$);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(351)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(319)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 351} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 319} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(299)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(272)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 299} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 272} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(299)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(272)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 299} true;
-$logged_in_user$6$299.6$graph_facebook_com_oauth_access_token := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 272} true;
+$logged_in_user$6$272.6$graph_facebook_com_oauth_access_token := 0 ;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(300)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(273)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 300} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 273} true;
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(301)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(274)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 301} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 274} true;
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(301)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(274)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 301} true;
-$i$8$301.5$graph_facebook_com_oauth_access_token := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 274} true;
+$i$8$274.5$graph_facebook_com_oauth_access_token := 0 ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(302)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(275)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 302} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 275} true;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(302)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(275)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 302} true;
-$found$9$302.5$graph_facebook_com_oauth_access_token := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 275} true;
+$found$9$275.5$graph_facebook_com_oauth_access_token := 0 ;
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(303)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(276)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 303} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 276} true;
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(304)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(277)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 304} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 277} true;
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(304)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(277)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 304} true;
-$user_ID$11$304.6$graph_facebook_com_oauth_access_token := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 277} true;
+$user_ID$11$277.6$graph_facebook_com_oauth_access_token := 0 ;
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(305)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(278)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 305} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 278} true;
 goto label_13_true , label_13_false ;
 
 
 label_13_true :
-assume ($client_id$2$295.82$graph_facebook_com_oauth_access_token != 0);
+assume ($client_id$2$268.82$graph_facebook_com_oauth_access_token != 0);
 goto label_15;
 
 
 label_13_false :
-assume ($client_id$2$295.82$graph_facebook_com_oauth_access_token == 0);
+assume ($client_id$2$268.82$graph_facebook_com_oauth_access_token == 0);
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(306)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(279)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 306} true;
-$found$9$302.5$graph_facebook_com_oauth_access_token := 1 ;
-goto label_37;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 279} true;
+$found$9$275.5$graph_facebook_com_oauth_access_token := 1 ;
+goto label_38;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(305)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(278)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 305} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 278} true;
 goto label_15_true , label_15_false ;
 
 
 label_15_true :
-assume (INT_EQ($client_id$2$295.82$graph_facebook_com_oauth_access_token, 1));
+assume (INT_EQ($client_id$2$268.82$graph_facebook_com_oauth_access_token, 1));
 goto label_14;
 
 
 label_15_false :
-assume !(INT_EQ($client_id$2$295.82$graph_facebook_com_oauth_access_token, 1));
+assume !(INT_EQ($client_id$2$268.82$graph_facebook_com_oauth_access_token, 1));
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(309)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(282)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 309} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 282} true;
 goto label_16_true , label_16_false ;
 
 
 label_16_true :
-assume ($found$9$302.5$graph_facebook_com_oauth_access_token != 0);
+assume ($found$9$275.5$graph_facebook_com_oauth_access_token != 0);
 goto label_18;
 
 
 label_16_false :
-assume ($found$9$302.5$graph_facebook_com_oauth_access_token == 0);
+assume ($found$9$275.5$graph_facebook_com_oauth_access_token == 0);
 goto label_17;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(312)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(285)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 312} true;
-$result.graph_facebook_com_oauth_access_token$295.4$1$graph_facebook_com_oauth_access_token := 400 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 285} true;
+$result.graph_facebook_com_oauth_access_token$268.4$1$graph_facebook_com_oauth_access_token := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(317)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(290)
 label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 317} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 290} true;
 goto label_18_true , label_18_false ;
 
 
 label_18_true :
-assume (INT_NEQ(Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token)], $redirect_domain$1$295.58$graph_facebook_com_oauth_access_token));
+assume (INT_NEQ(Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token)], $redirect_domain$1$268.58$graph_facebook_com_oauth_access_token));
 goto label_20;
 
 
 label_18_false :
-assume !(INT_NEQ(Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token)], $redirect_domain$1$295.58$graph_facebook_com_oauth_access_token));
+assume !(INT_NEQ(Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token)], $redirect_domain$1$268.58$graph_facebook_com_oauth_access_token));
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(323)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(296)
 label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 323} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 296} true;
 goto label_19_true , label_19_false ;
 
 
 label_19_true :
-assume (INT_NEQ(Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token)], $app_secret$3$295.104$graph_facebook_com_oauth_access_token));
-goto label_23;
+assume (INT_NEQ(Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token)], $app_secret$3$268.104$graph_facebook_com_oauth_access_token));
+goto label_25;
 
 
 label_19_false :
-assume !(INT_NEQ(Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token)], $app_secret$3$295.104$graph_facebook_com_oauth_access_token));
+assume !(INT_NEQ(Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token)], $app_secret$3$268.104$graph_facebook_com_oauth_access_token));
 goto label_22;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(317)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(290)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 317} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 290} true;
 goto label_20_true , label_20_false ;
 
 
 label_20_true :
-assume (INT_NEQ($redirect_domain$1$295.58$graph_facebook_com_oauth_access_token, 3));
+assume (INT_NEQ($redirect_domain$1$268.58$graph_facebook_com_oauth_access_token, 3));
 goto label_21;
 
 
 label_20_false :
-assume !(INT_NEQ($redirect_domain$1$295.58$graph_facebook_com_oauth_access_token, 3));
+assume !(INT_NEQ($redirect_domain$1$268.58$graph_facebook_com_oauth_access_token, 3));
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(319)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(292)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 319} true;
-$result.graph_facebook_com_oauth_access_token$295.4$1$graph_facebook_com_oauth_access_token := 400 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 292} true;
+$result.graph_facebook_com_oauth_access_token$268.4$1$graph_facebook_com_oauth_access_token := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(329)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(302)
 label_22:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 329} true;
-$i$8$301.5$graph_facebook_com_oauth_access_token := 0 ;
-goto label_24;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(325)
-label_23:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 325} true;
-$result.graph_facebook_com_oauth_access_token$295.4$1$graph_facebook_com_oauth_access_token := 400 ;
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(329)
-label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 329} true;
-// loop entry initialization...
-___LOOP_24_alloc := alloc;
-___LOOP_24_Mem_T.A0INT4:=Mem_T.A0INT4;
-___LOOP_24_Mem_T.A100Access_Token:=Mem_T.A100Access_Token;
-___LOOP_24_Mem_T.A100Code:=Mem_T.A100Code;
-___LOOP_24_Mem_T.A100Cookie:=Mem_T.A100Cookie;
-___LOOP_24_Mem_T.A100RP_Session:=Mem_T.A100RP_Session;
-___LOOP_24_Mem_T.A100Scope:=Mem_T.A100Scope;
-___LOOP_24_Mem_T.A37CHAR:=Mem_T.A37CHAR;
-___LOOP_24_Mem_T.A58CHAR:=Mem_T.A58CHAR;
-___LOOP_24_Mem_T.App_ID:=Mem_T.App_ID;
-___LOOP_24_Mem_T.App_Owner:=Mem_T.App_Owner;
-___LOOP_24_Mem_T.App_Secret:=Mem_T.App_Secret;
-___LOOP_24_Mem_T.Caller:=Mem_T.Caller;
-___LOOP_24_Mem_T.INT4:=Mem_T.INT4;
-___LOOP_24_Mem_T.Location_Knowledge:=Mem_T.Location_Knowledge;
-___LOOP_24_Mem_T.PAccess_Token:=Mem_T.PAccess_Token;
-___LOOP_24_Mem_T.PApp_Client_State:=Mem_T.PApp_Client_State;
-___LOOP_24_Mem_T.PCHAR:=Mem_T.PCHAR;
-___LOOP_24_Mem_T.PCode:=Mem_T.PCode;
-___LOOP_24_Mem_T.PCookie:=Mem_T.PCookie;
-___LOOP_24_Mem_T.PINT4:=Mem_T.PINT4;
-___LOOP_24_Mem_T.PLocation_Knowledge:=Mem_T.PLocation_Knowledge;
-___LOOP_24_Mem_T.PPUINT2:=Mem_T.PPUINT2;
-___LOOP_24_Mem_T.PPlocaleinfo_struct:=Mem_T.PPlocaleinfo_struct;
-___LOOP_24_Mem_T.PRP_Session:=Mem_T.PRP_Session;
-___LOOP_24_Mem_T.PScope:=Mem_T.PScope;
-___LOOP_24_Mem_T.PUINT2:=Mem_T.PUINT2;
-___LOOP_24_Mem_T.PUser:=Mem_T.PUser;
-___LOOP_24_Mem_T.PUser_Email:=Mem_T.PUser_Email;
-___LOOP_24_Mem_T.Plocaleinfo_struct:=Mem_T.Plocaleinfo_struct;
-___LOOP_24_Mem_T.Redirect_Domain:=Mem_T.Redirect_Domain;
-___LOOP_24_Mem_T.Response_Type:=Mem_T.Response_Type;
-___LOOP_24_Mem_T.Scope:=Mem_T.Scope;
-___LOOP_24_Mem_T.UINT4:=Mem_T.UINT4;
-___LOOP_24_Mem_T.User:=Mem_T.User;
-___LOOP_24_Mem_T.User_Credentials:=Mem_T.User_Credentials;
-___LOOP_24_Mem_T.User_Email:=Mem_T.User_Email;
-___LOOP_24_Mem_T.access_token_App_Client_State:=Mem_T.access_token_App_Client_State;
-___LOOP_24_Mem_T.app_ID_App_Client_State:=Mem_T.app_ID_App_Client_State;
-___LOOP_24_Mem_T.app_ID_Code:=Mem_T.app_ID_Code;
-___LOOP_24_Mem_T.app_ID_Registered_App:=Mem_T.app_ID_Registered_App;
-___LOOP_24_Mem_T.app_length_FB_Server_State:=Mem_T.app_length_FB_Server_State;
-___LOOP_24_Mem_T.app_owner_App_Client_State:=Mem_T.app_owner_App_Client_State;
-___LOOP_24_Mem_T.app_secret_Code:=Mem_T.app_secret_Code;
-___LOOP_24_Mem_T.app_secret_Registered_App:=Mem_T.app_secret_Registered_App;
-___LOOP_24_Mem_T.code_App_Client_State:=Mem_T.code_App_Client_State;
-___LOOP_24_Mem_T.code_length_FB_Server_State:=Mem_T.code_length_FB_Server_State;
-___LOOP_24_Mem_T.code_value_Code:=Mem_T.code_value_Code;
-___LOOP_24_Mem_T.codes_FB_Server_State:=Mem_T.codes_FB_Server_State;
-___LOOP_24_Mem_T.cookie_WWAHost_State:=Mem_T.cookie_WWAHost_State;
-___LOOP_24_Mem_T.cookie_length_FB_Server_State:=Mem_T.cookie_length_FB_Server_State;
-___LOOP_24_Mem_T.cookie_value_Cookie:=Mem_T.cookie_value_Cookie;
-___LOOP_24_Mem_T.cookies_FB_Server_State:=Mem_T.cookies_FB_Server_State;
-___LOOP_24_Mem_T.current_state_WWAHost_State:=Mem_T.current_state_WWAHost_State;
-___LOOP_24_Mem_T.redirect_domain_Registered_App:=Mem_T.redirect_domain_Registered_App;
-___LOOP_24_Mem_T.rp_sessions_RP_State:=Mem_T.rp_sessions_RP_State;
-___LOOP_24_Mem_T.scope_Access_Token:=Mem_T.scope_Access_Token;
-___LOOP_24_Mem_T.scope_Registered_App:=Mem_T.scope_Registered_App;
-___LOOP_24_Mem_T.scope_length_Registered_App:=Mem_T.scope_length_Registered_App;
-___LOOP_24_Mem_T.session_ID_RP_Session:=Mem_T.session_ID_RP_Session;
-___LOOP_24_Mem_T.session_length_RP_State:=Mem_T.session_length_RP_State;
-___LOOP_24_Mem_T.token_length_FB_Server_State:=Mem_T.token_length_FB_Server_State;
-___LOOP_24_Mem_T.token_value_Access_Token:=Mem_T.token_value_Access_Token;
-___LOOP_24_Mem_T.tokens_FB_Server_State:=Mem_T.tokens_FB_Server_State;
-___LOOP_24_Mem_T.user_ID_Access_Token:=Mem_T.user_ID_Access_Token;
-___LOOP_24_Mem_T.user_ID_Code:=Mem_T.user_ID_Code;
-___LOOP_24_Mem_T.user_ID_Cookie:=Mem_T.user_ID_Cookie;
-___LOOP_24_Mem_T.user_ID_RP_Session:=Mem_T.user_ID_RP_Session;
-___LOOP_24_Res_KERNEL_SOURCE := Res_KERNEL_SOURCE;
-___LOOP_24_Res_PROBED := Res_PROBED;
-goto label_24_head;
-
-
-label_24_head:
-// loop head assertions...
-
-
-
-// end loop head assertions
-
-goto label_24_true , label_24_false ;
-
-
-label_24_true :
-assume (INT_LT($i$8$301.5$graph_facebook_com_oauth_access_token, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)]));
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 302} true;
+call $result.poirot_nondet$302.18$3$graph_facebook_com_oauth_access_token := poirot_nondet ();
 goto label_26;
 
 
-label_24_false :
-assume !(INT_LT($i$8$301.5$graph_facebook_com_oauth_access_token, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)]));
-goto label_25;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(338)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(298)
 label_25:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 338} true;
-goto label_25_true , label_25_false ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 298} true;
+$result.graph_facebook_com_oauth_access_token$268.4$1$graph_facebook_com_oauth_access_token := 400 ;
+goto label_1;
 
 
-label_25_true :
-assume ($user_ID$11$304.6$graph_facebook_com_oauth_access_token != 0);
-goto label_30;
-
-
-label_25_false :
-assume ($user_ID$11$304.6$graph_facebook_com_oauth_access_token == 0);
-goto label_29;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(331)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(302)
 label_26:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 331} true;
-goto label_26_true , label_26_false ;
-
-
-label_26_true :
-assume (INT_EQ(Mem_T.code_value_Code[code_value_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, $i$8$301.5$graph_facebook_com_oauth_access_token))], $code$4$295.120$graph_facebook_com_oauth_access_token));
-goto label_28;
-
-
-label_26_false :
-assume !(INT_EQ(Mem_T.code_value_Code[code_value_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, $i$8$301.5$graph_facebook_com_oauth_access_token))], $code$4$295.120$graph_facebook_com_oauth_access_token));
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 302} true;
+$i$8$274.5$graph_facebook_com_oauth_access_token := $result.poirot_nondet$302.18$3$graph_facebook_com_oauth_access_token ;
 goto label_27;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(329)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(303)
 label_27:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 329} true;
-$i$8$301.5$graph_facebook_com_oauth_access_token := PLUS($i$8$301.5$graph_facebook_com_oauth_access_token, 1, 1) ;
-goto label_24_head;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 303} true;
+//TAG: i >= 0 && i < server_state.code_length && code == ((server_state.codes)[i]).code_value
+assume (((INT_GEQ($i$8$274.5$graph_facebook_com_oauth_access_token, 0)) && (INT_LT($i$8$274.5$graph_facebook_com_oauth_access_token, Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state)]))) && (INT_EQ($code$4$268.120$graph_facebook_com_oauth_access_token, Mem_T.code_value_Code[code_value_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, $i$8$274.5$graph_facebook_com_oauth_access_token))])));
+goto label_28;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(333)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(304)
 label_28:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 333} true;
-$user_ID$11$304.6$graph_facebook_com_oauth_access_token := Mem_T.user_ID_Code[user_ID_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, $i$8$301.5$graph_facebook_com_oauth_access_token))] ;
-goto label_25;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 304} true;
+$user_ID$11$277.6$graph_facebook_com_oauth_access_token := Mem_T.user_ID_Code[user_ID_Code(PLUS(Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state)], 16, $i$8$274.5$graph_facebook_com_oauth_access_token))] ;
+goto label_29;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(338)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(306)
 label_29:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 338} true;
-$result.graph_facebook_com_oauth_access_token$295.4$1$graph_facebook_com_oauth_access_token := 400 ;
-goto label_1;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 306} true;
+goto label_29_true , label_29_false ;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(342)
-label_30:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 342} true;
-Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token($at$7$300.14$graph_facebook_com_oauth_access_token) := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]];
+label_29_true :
+assume ($user_ID$11$277.6$graph_facebook_com_oauth_access_token != 0);
 goto label_31;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(343)
-label_31:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 343} true;
-Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$7$300.14$graph_facebook_com_oauth_access_token) := $user_ID$11$304.6$graph_facebook_com_oauth_access_token];
-goto label_32;
+label_29_false :
+assume ($user_ID$11$277.6$graph_facebook_com_oauth_access_token == 0);
+goto label_30;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(344)
-label_32:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 344} true;
-Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token($at$7$300.14$graph_facebook_com_oauth_access_token) := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token)], 4, $user_ID$11$304.6$graph_facebook_com_oauth_access_token)]];
-goto label_33;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(345)
-label_33:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 345} true;
-Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.token_value_Access_Token[token_value_Access_Token($at$7$300.14$graph_facebook_com_oauth_access_token)]];
-Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$7$300.14$graph_facebook_com_oauth_access_token)]];
-Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.scope_Access_Token[scope_Access_Token($at$7$300.14$graph_facebook_com_oauth_access_token)]];
-goto label_34;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(346)
-label_34:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 346} true;
-tempBoogie0 := PLUS(Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)], 1, 1) ;
-Mem_T.token_length_FB_Server_State := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state) := tempBoogie0];
-goto label_35;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(348)
-label_35:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 348} true;
-Mem_T.INT4 := Mem_T.INT4[$access_token$5$295.131$graph_facebook_com_oauth_access_token := Mem_T.token_value_Access_Token[token_value_Access_Token($at$7$300.14$graph_facebook_com_oauth_access_token)]];
-goto label_36;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(350)
-label_36:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 350} true;
-$result.graph_facebook_com_oauth_access_token$295.4$1$graph_facebook_com_oauth_access_token := 200 ;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(306)
+label_30:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 306} true;
+$result.graph_facebook_com_oauth_access_token$268.4$1$graph_facebook_com_oauth_access_token := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(307)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(310)
+label_31:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 310} true;
+Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token($at$7$273.14$graph_facebook_com_oauth_access_token) := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)]];
+goto label_32;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(311)
+label_32:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 311} true;
+Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$7$273.14$graph_facebook_com_oauth_access_token) := $user_ID$11$277.6$graph_facebook_com_oauth_access_token];
+goto label_33;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(312)
+label_33:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 312} true;
+Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token($at$7$273.14$graph_facebook_com_oauth_access_token) := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token)], 4, $user_ID$11$277.6$graph_facebook_com_oauth_access_token)]];
+goto label_34;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(313)
+label_34:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 313} true;
+Mem_T.token_value_Access_Token := Mem_T.token_value_Access_Token[token_value_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.token_value_Access_Token[token_value_Access_Token($at$7$273.14$graph_facebook_com_oauth_access_token)]];
+Mem_T.user_ID_Access_Token := Mem_T.user_ID_Access_Token[user_ID_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Access_Token[user_ID_Access_Token($at$7$273.14$graph_facebook_com_oauth_access_token)]];
+Mem_T.scope_Access_Token := Mem_T.scope_Access_Token[scope_Access_Token(PLUS(Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state)], 12, Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)])) := Mem_T.scope_Access_Token[scope_Access_Token($at$7$273.14$graph_facebook_com_oauth_access_token)]];
+goto label_35;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(314)
+label_35:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 314} true;
+tempBoogie0 := PLUS(Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state)], 1, 1) ;
+Mem_T.token_length_FB_Server_State := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state) := tempBoogie0];
+goto label_36;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(316)
+label_36:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 316} true;
+Mem_T.INT4 := Mem_T.INT4[$access_token$5$268.131$graph_facebook_com_oauth_access_token := Mem_T.token_value_Access_Token[token_value_Access_Token($at$7$273.14$graph_facebook_com_oauth_access_token)]];
+goto label_37;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(318)
 label_37:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 307} true;
-goto label_37_true , label_37_false ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 318} true;
+$result.graph_facebook_com_oauth_access_token$268.4$1$graph_facebook_com_oauth_access_token := 200 ;
+goto label_1;
 
 
-label_37_true :
-assume ($client_id$2$295.82$graph_facebook_com_oauth_access_token != 0);
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(280)
+label_38:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 280} true;
+goto label_38_true , label_38_false ;
+
+
+label_38_true :
+assume ($client_id$2$268.82$graph_facebook_com_oauth_access_token != 0);
+goto label_40;
+
+
+label_38_false :
+assume ($client_id$2$268.82$graph_facebook_com_oauth_access_token == 0);
 goto label_39;
 
 
-label_37_false :
-assume ($client_id$2$295.82$graph_facebook_com_oauth_access_token == 0);
-goto label_38;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(307)
-label_38:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 307} true;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(280)
+label_39:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 280} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$) := Mem_T.app_ID_Registered_App[app_ID_Registered_App(app_F_FB_Server_State(server_state))]];
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$) := Mem_T.app_secret_Registered_App[app_secret_Registered_App(app_F_FB_Server_State(server_state))]];
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App(app_F_FB_Server_State(server_state))]];
 Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App($result.question.2$) := Mem_T.scope_Registered_App[scope_Registered_App(app_F_FB_Server_State(server_state))]];
 Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_length_Registered_App($result.question.2$) := Mem_T.scope_length_Registered_App[scope_length_Registered_App(app_F_FB_Server_State(server_state))]];
-goto label_40;
+goto label_41;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(307)
-label_39:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 307} true;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(280)
+label_40:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 280} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$) := Mem_T.app_ID_Registered_App[app_ID_Registered_App(app_B_FB_Server_State(server_state))]];
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$) := Mem_T.app_secret_Registered_App[app_secret_Registered_App(app_B_FB_Server_State(server_state))]];
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App(app_B_FB_Server_State(server_state))]];
 Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App($result.question.2$) := Mem_T.scope_Registered_App[scope_Registered_App(app_B_FB_Server_State(server_state))]];
 Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_length_Registered_App($result.question.2$) := Mem_T.scope_length_Registered_App[scope_length_Registered_App(app_B_FB_Server_State(server_state))]];
-goto label_40;
+goto label_41;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(307)
-label_40:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 307} true;
-Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token) := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$)]];
-Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token) := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$)]];
-Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$)]];
-Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token) := Mem_T.scope_Registered_App[scope_Registered_App($result.question.2$)]];
-Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_length_Registered_App($app$10$303.16$graph_facebook_com_oauth_access_token) := Mem_T.scope_length_Registered_App[scope_length_Registered_App($result.question.2$)]];
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(280)
+label_41:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 280} true;
+Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token) := Mem_T.app_ID_Registered_App[app_ID_Registered_App($result.question.2$)]];
+Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token) := Mem_T.app_secret_Registered_App[app_secret_Registered_App($result.question.2$)]];
+Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token) := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App($result.question.2$)]];
+Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token) := Mem_T.scope_Registered_App[scope_Registered_App($result.question.2$)]];
+Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_length_Registered_App($app$10$276.16$graph_facebook_com_oauth_access_token) := Mem_T.scope_length_Registered_App[scope_length_Registered_App($result.question.2$)]];
 goto label_16;
 
 }
 
 
 
-procedure  graph_facebook_com_oauth_access_token_bob($redirect_domain$1$72.62$graph_facebook_com_oauth_access_token_bob_.1:int, $client_id$2$72.86$graph_facebook_com_oauth_access_token_bob_.1:int, $app_secret$3$72.108$graph_facebook_com_oauth_access_token_bob_.1:int, $code$4$72.124$graph_facebook_com_oauth_access_token_bob_.1:int, $access_token$5$72.135$graph_facebook_com_oauth_access_token_bob_.1:int) returns ($result.graph_facebook_com_oauth_access_token_bob$72.4$1$graph_facebook_com_oauth_access_token_bob:int)
+procedure  graph_facebook_com_oauth_access_token_bob($redirect_domain$1$73.62$graph_facebook_com_oauth_access_token_bob_.1:int, $client_id$2$73.86$graph_facebook_com_oauth_access_token_bob_.1:int, $app_secret$3$73.108$graph_facebook_com_oauth_access_token_bob_.1:int, $code$4$73.124$graph_facebook_com_oauth_access_token_bob_.1:int, $access_token$5$73.135$graph_facebook_com_oauth_access_token_bob_.1:int) returns ($result.graph_facebook_com_oauth_access_token_bob$73.4$1$graph_facebook_com_oauth_access_token_bob:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -10377,6 +9572,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -10389,13 +9585,13 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $access_token$5$72.135$graph_facebook_com_oauth_access_token_bob : int;
-var $app_secret$3$72.108$graph_facebook_com_oauth_access_token_bob : int;
-var $client_id$2$72.86$graph_facebook_com_oauth_access_token_bob : int;
-var $code$4$72.124$graph_facebook_com_oauth_access_token_bob : int;
-var $http_response$6$74.5$graph_facebook_com_oauth_access_token_bob : int;
-var $redirect_domain$1$72.62$graph_facebook_com_oauth_access_token_bob : int;
-var $result.graph_facebook_com_oauth_access_token$74.58$2$graph_facebook_com_oauth_access_token_bob : int;
+var $access_token$5$73.135$graph_facebook_com_oauth_access_token_bob : int;
+var $app_secret$3$73.108$graph_facebook_com_oauth_access_token_bob : int;
+var $client_id$2$73.86$graph_facebook_com_oauth_access_token_bob : int;
+var $code$4$73.124$graph_facebook_com_oauth_access_token_bob : int;
+var $http_response$6$75.5$graph_facebook_com_oauth_access_token_bob : int;
+var $redirect_domain$1$73.62$graph_facebook_com_oauth_access_token_bob : int;
+var $result.graph_facebook_com_oauth_access_token$75.58$2$graph_facebook_com_oauth_access_token_bob : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -10421,74 +9617,74 @@ var __havoc_dummy_return: int;
 
 start:
 
-$redirect_domain$1$72.62$graph_facebook_com_oauth_access_token_bob := $redirect_domain$1$72.62$graph_facebook_com_oauth_access_token_bob_.1;
-$client_id$2$72.86$graph_facebook_com_oauth_access_token_bob := $client_id$2$72.86$graph_facebook_com_oauth_access_token_bob_.1;
-$app_secret$3$72.108$graph_facebook_com_oauth_access_token_bob := $app_secret$3$72.108$graph_facebook_com_oauth_access_token_bob_.1;
-$code$4$72.124$graph_facebook_com_oauth_access_token_bob := $code$4$72.124$graph_facebook_com_oauth_access_token_bob_.1;
-$access_token$5$72.135$graph_facebook_com_oauth_access_token_bob := $access_token$5$72.135$graph_facebook_com_oauth_access_token_bob_.1;
+$redirect_domain$1$73.62$graph_facebook_com_oauth_access_token_bob := $redirect_domain$1$73.62$graph_facebook_com_oauth_access_token_bob_.1;
+$client_id$2$73.86$graph_facebook_com_oauth_access_token_bob := $client_id$2$73.86$graph_facebook_com_oauth_access_token_bob_.1;
+$app_secret$3$73.108$graph_facebook_com_oauth_access_token_bob := $app_secret$3$73.108$graph_facebook_com_oauth_access_token_bob_.1;
+$code$4$73.124$graph_facebook_com_oauth_access_token_bob := $code$4$73.124$graph_facebook_com_oauth_access_token_bob_.1;
+$access_token$5$73.135$graph_facebook_com_oauth_access_token_bob := $access_token$5$73.135$graph_facebook_com_oauth_access_token_bob_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(80)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(81)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 80} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 81} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(80)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(81)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 80} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 81} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(74)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(75)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 74} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 75} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(74)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(75)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 74} true;
-call $result.graph_facebook_com_oauth_access_token$74.58$2$graph_facebook_com_oauth_access_token_bob := graph_facebook_com_oauth_access_token ($redirect_domain$1$72.62$graph_facebook_com_oauth_access_token_bob, $client_id$2$72.86$graph_facebook_com_oauth_access_token_bob, $app_secret$3$72.108$graph_facebook_com_oauth_access_token_bob, $code$4$72.124$graph_facebook_com_oauth_access_token_bob, $access_token$5$72.135$graph_facebook_com_oauth_access_token_bob);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 75} true;
+call $result.graph_facebook_com_oauth_access_token$75.58$2$graph_facebook_com_oauth_access_token_bob := graph_facebook_com_oauth_access_token ($redirect_domain$1$73.62$graph_facebook_com_oauth_access_token_bob, $client_id$2$73.86$graph_facebook_com_oauth_access_token_bob, $app_secret$3$73.108$graph_facebook_com_oauth_access_token_bob, $code$4$73.124$graph_facebook_com_oauth_access_token_bob, $access_token$5$73.135$graph_facebook_com_oauth_access_token_bob);
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(74)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(75)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 74} true;
-$http_response$6$74.5$graph_facebook_com_oauth_access_token_bob := $result.graph_facebook_com_oauth_access_token$74.58$2$graph_facebook_com_oauth_access_token_bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 75} true;
+$http_response$6$75.5$graph_facebook_com_oauth_access_token_bob := $result.graph_facebook_com_oauth_access_token$75.58$2$graph_facebook_com_oauth_access_token_bob ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(75)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(76)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 75} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 76} true;
 goto label_8_true , label_8_false ;
 
 
 label_8_true :
-assume (INT_NEQ($http_response$6$74.5$graph_facebook_com_oauth_access_token_bob, 400));
+assume (INT_NEQ($http_response$6$75.5$graph_facebook_com_oauth_access_token_bob, 400));
 goto label_10;
 
 
 label_8_false :
-assume !(INT_NEQ($http_response$6$74.5$graph_facebook_com_oauth_access_token_bob, 400));
+assume !(INT_NEQ($http_response$6$75.5$graph_facebook_com_oauth_access_token_bob, 400));
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(79)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(80)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 79} true;
-$result.graph_facebook_com_oauth_access_token_bob$72.4$1$graph_facebook_com_oauth_access_token_bob := $http_response$6$74.5$graph_facebook_com_oauth_access_token_bob ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 80} true;
+$result.graph_facebook_com_oauth_access_token_bob$73.4$1$graph_facebook_com_oauth_access_token_bob := $http_response$6$75.5$graph_facebook_com_oauth_access_token_bob ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h(77)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h(78)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\bob.h"} {:sourceline 77} true;
-call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$5$72.135$graph_facebook_com_oauth_access_token_bob]);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\bob.h"} {:sourceline 78} true;
+call add_access_token_knowledge_to_bob (Mem_T.INT4[$access_token$5$73.135$graph_facebook_com_oauth_access_token_bob]);
 goto label_9;
 
 }
@@ -10570,6 +9766,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -10582,7 +9779,6 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $result.add_knowledge_to_bob$521.21$1$initiate_knowledge : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -10611,65 +9807,65 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(523)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(439)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 523} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 439} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(523)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(439)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 523} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 439} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(515)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(431)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 515} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 431} true;
 cookie_k_base_length := 0 ;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(516)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(432)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 516} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 432} true;
 access_token_k_base_length := 0 ;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(517)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(433)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 517} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 433} true;
 code_k_base_length := 0 ;
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(518)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(434)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 518} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 434} true;
 email_k_base_length := 0 ;
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(519)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(435)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 519} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 435} true;
 app_secret_k_base_length := 0 ;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(521)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(437)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 521} true;
-call $result.add_knowledge_to_bob$521.21$1$initiate_knowledge := add_knowledge_to_bob (3, 1);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 437} true;
+call add_app_secret_knowledge_to_bob (1);
 goto label_1;
 
 }
 
 
 
-procedure  login_php($login_user$1$130.19$login_php_.1:int, $location$2$130.51$login_php_.1:int, $cookie$3$130.66$login_php_.1:int, $uc$4$130.91$login_php_.1:int) returns ($result.login_php$130.4$1$login_php:int)
+procedure  login_php($login_user$1$126.19$login_php_.1:int, $location$2$126.51$login_php_.1:int, $cookie$3$126.66$login_php_.1:int, $uc$4$126.91$login_php_.1:int) returns ($result.login_php$126.4$1$login_php:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -10744,6 +9940,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -10756,11 +9953,11 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $c$5$132.8$login_php : int;
-var $cookie$3$130.66$login_php : int;
-var $location$2$130.51$login_php : int;
-var $login_user$1$130.19$login_php : int;
-var $uc$4$130.91$login_php : int;
+var $c$5$128.8$login_php : int;
+var $cookie$3$126.66$login_php : int;
+var $location$2$126.51$login_php : int;
+var $login_user$1$126.19$login_php : int;
+var $uc$4$126.91$login_php : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -10786,167 +9983,167 @@ var __havoc_dummy_return: int;
 
 start:
 
-call $c$5$132.8$login_php := __HAVOC_malloc(8);
-$login_user$1$130.19$login_php := $login_user$1$130.19$login_php_.1;
-$location$2$130.51$login_php := $location$2$130.51$login_php_.1;
-$cookie$3$130.66$login_php := $cookie$3$130.66$login_php_.1;
-$uc$4$130.91$login_php := $uc$4$130.91$login_php_.1;
+call $c$5$128.8$login_php := __HAVOC_malloc(8);
+$login_user$1$126.19$login_php := $login_user$1$126.19$login_php_.1;
+$location$2$126.51$login_php := $location$2$126.51$login_php_.1;
+$cookie$3$126.66$login_php := $cookie$3$126.66$login_php_.1;
+$uc$4$126.91$login_php := $uc$4$126.91$login_php_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(150)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(143)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 150} true;
-call __HAVOC_free($c$5$132.8$login_php);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 143} true;
+call __HAVOC_free($c$5$128.8$login_php);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(150)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(143)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 150} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 143} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(132)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(128)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 132} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 128} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(140)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(133)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 140} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 133} true;
 goto label_4_true , label_4_false ;
 
 
 label_4_true :
-assume (INT_EQ($login_user$1$130.19$login_php, 1));
+assume (INT_EQ($login_user$1$126.19$login_php, 1));
 goto label_6;
 
 
 label_4_false :
-assume !(INT_EQ($login_user$1$130.19$login_php, 1));
+assume !(INT_EQ($login_user$1$126.19$login_php, 1));
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(141)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(134)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 141} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 134} true;
 goto label_5_true , label_5_false ;
 
 
 label_5_true :
-assume (INT_EQ($login_user$1$130.19$login_php, 2));
+assume (INT_EQ($login_user$1$126.19$login_php, 2));
 goto label_9;
 
 
 label_5_false :
-assume !(INT_EQ($login_user$1$130.19$login_php, 2));
+assume !(INT_EQ($login_user$1$126.19$login_php, 2));
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(140)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(133)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 140} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 133} true;
 goto label_6_true , label_6_false ;
 
 
 label_6_true :
-assume ($uc$4$130.91$login_php != 0);
+assume ($uc$4$126.91$login_php != 0);
 goto label_7;
 
 
 label_6_false :
-assume ($uc$4$130.91$login_php == 0);
+assume ($uc$4$126.91$login_php == 0);
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(140)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(133)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 140} true;
-$result.login_php$130.4$1$login_php := 400 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 133} true;
+$result.login_php$126.4$1$login_php := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(142)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(135)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 142} true;
-Mem_T.cookie_value_Cookie := Mem_T.cookie_value_Cookie[cookie_value_Cookie($c$5$132.8$login_php) := Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 135} true;
+Mem_T.cookie_value_Cookie := Mem_T.cookie_value_Cookie[cookie_value_Cookie($c$5$128.8$login_php) := Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)]];
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(141)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(134)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 141} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 134} true;
 goto label_9_true , label_9_false ;
 
 
 label_9_true :
-assume (INT_NEQ($uc$4$130.91$login_php, 1));
+assume (INT_NEQ($uc$4$126.91$login_php, 1));
 goto label_10;
 
 
 label_9_false :
-assume !(INT_NEQ($uc$4$130.91$login_php, 1));
+assume !(INT_NEQ($uc$4$126.91$login_php, 1));
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(141)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(134)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 141} true;
-$result.login_php$130.4$1$login_php := 400 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 134} true;
+$result.login_php$126.4$1$login_php := 400 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(143)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(136)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 143} true;
-Mem_T.user_ID_Cookie := Mem_T.user_ID_Cookie[user_ID_Cookie($c$5$132.8$login_php) := $login_user$1$130.19$login_php];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 136} true;
+Mem_T.user_ID_Cookie := Mem_T.user_ID_Cookie[user_ID_Cookie($c$5$128.8$login_php) := $login_user$1$126.19$login_php];
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(144)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(137)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 144} true;
-Mem_T.cookie_value_Cookie := Mem_T.cookie_value_Cookie[cookie_value_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)])) := Mem_T.cookie_value_Cookie[cookie_value_Cookie($c$5$132.8$login_php)]];
-Mem_T.user_ID_Cookie := Mem_T.user_ID_Cookie[user_ID_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Cookie[user_ID_Cookie($c$5$132.8$login_php)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 137} true;
+Mem_T.cookie_value_Cookie := Mem_T.cookie_value_Cookie[cookie_value_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)])) := Mem_T.cookie_value_Cookie[cookie_value_Cookie($c$5$128.8$login_php)]];
+Mem_T.user_ID_Cookie := Mem_T.user_ID_Cookie[user_ID_Cookie(PLUS(Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state)], 8, Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)])) := Mem_T.user_ID_Cookie[user_ID_Cookie($c$5$128.8$login_php)]];
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(145)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(138)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 145} true;
-Mem_T.INT4 := Mem_T.INT4[$cookie$3$130.66$login_php := Mem_T.cookie_value_Cookie[cookie_value_Cookie($c$5$132.8$login_php)]];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 138} true;
+Mem_T.INT4 := Mem_T.INT4[$cookie$3$126.66$login_php := Mem_T.cookie_value_Cookie[cookie_value_Cookie($c$5$128.8$login_php)]];
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(146)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(139)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 146} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 139} true;
 tempBoogie0 := PLUS(Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state)], 1, 1) ;
 Mem_T.cookie_length_FB_Server_State := Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state) := tempBoogie0];
 goto label_15;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(148)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(141)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 148} true;
-Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$2$130.51$login_php := 2];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 141} true;
+Mem_T.Location_Knowledge := Mem_T.Location_Knowledge[$location$2$126.51$login_php := 2];
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(149)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h(142)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 149} true;
-$result.login_php$130.4$1$login_php := 302 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\fbconnectserver.h"} {:sourceline 142} true;
+$result.login_php$126.4$1$login_php := 302 ;
 goto label_1;
 
 }
 
 
 
-procedure  main() returns ($result.main$528.4$1$main:int)
+procedure  main() returns ($result.main$444.4$1$main:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -11021,6 +10218,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -11033,14 +10231,13 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $BScope$7$539.7$main : int;
-var $FScope$6$538.7$main : int;
-var $ats$2$534.14$main : int;
-var $codes$5$537.6$main : int;
-var $cookies$4$536.8$main : int;
-var $result.draw_email_from_knowledge_pool$601.44$2$main : int;
-var $rps$3$535.12$main : int;
-var $user_email$1$533.12$main : int;
+var $BScope$7$455.7$main : int;
+var $FScope$6$454.7$main : int;
+var $ats$2$450.14$main : int;
+var $codes$5$453.6$main : int;
+var $cookies$4$452.8$main : int;
+var $rps$3$451.12$main : int;
+var $user_email$1$449.12$main : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -11068,368 +10265,367 @@ start:
 
 assume INT_LT(0,alloc);
 call __havoc_heapglobal_init();
-call $BScope$7$539.7$main := __HAVOC_malloc(400);
-call $FScope$6$538.7$main := __HAVOC_malloc(400);
-call $ats$2$534.14$main := __HAVOC_malloc(1200);
-call $codes$5$537.6$main := __HAVOC_malloc(1600);
-call $cookies$4$536.8$main := __HAVOC_malloc(800);
-call $rps$3$535.12$main := __HAVOC_malloc(800);
+call $BScope$7$455.7$main := __HAVOC_malloc(400);
+call $FScope$6$454.7$main := __HAVOC_malloc(400);
+call $ats$2$450.14$main := __HAVOC_malloc(1200);
+call $codes$5$453.6$main := __HAVOC_malloc(1600);
+call $cookies$4$452.8$main := __HAVOC_malloc(800);
+call $rps$3$451.12$main := __HAVOC_malloc(800);
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(604)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(519)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 604} true;
-call __HAVOC_free($BScope$7$539.7$main);
-call __HAVOC_free($FScope$6$538.7$main);
-call __HAVOC_free($ats$2$534.14$main);
-call __HAVOC_free($codes$5$537.6$main);
-call __HAVOC_free($cookies$4$536.8$main);
-call __HAVOC_free($rps$3$535.12$main);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 519} true;
+call __HAVOC_free($BScope$7$455.7$main);
+call __HAVOC_free($FScope$6$454.7$main);
+call __HAVOC_free($ats$2$450.14$main);
+call __HAVOC_free($codes$5$453.6$main);
+call __HAVOC_free($cookies$4$452.8$main);
+call __HAVOC_free($rps$3$451.12$main);
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(604)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(519)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 604} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 519} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(533)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(449)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 533} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 449} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(533)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(449)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 533} true;
-$user_email$1$533.12$main := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 449} true;
+$user_email$1$449.12$main := 0 ;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(534)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(450)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 534} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 450} true;
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(535)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(451)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 535} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 451} true;
 goto label_7;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(536)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(452)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 536} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 452} true;
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(537)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(453)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 537} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 453} true;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(538)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(454)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 538} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 454} true;
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(539)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(455)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 539} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 455} true;
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(542)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(458)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 542} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 458} true;
 actionNumber := 0 ;
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(546)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(462)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 546} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 462} true;
 Mem_T.session_length_RP_State := Mem_T.session_length_RP_State[session_length_RP_State(foo_rp_state) := 0];
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(547)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(463)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 547} true;
-Mem_T.rp_sessions_RP_State := Mem_T.rp_sessions_RP_State[rp_sessions_RP_State(foo_rp_state) := $rps$3$535.12$main];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 463} true;
+Mem_T.rp_sessions_RP_State := Mem_T.rp_sessions_RP_State[rp_sessions_RP_State(foo_rp_state) := $rps$3$451.12$main];
 goto label_14;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(550)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(466)
 label_14:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 550} true;
-Mem_T.cookies_FB_Server_State := Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state) := $cookies$4$536.8$main];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 466} true;
+Mem_T.cookies_FB_Server_State := Mem_T.cookies_FB_Server_State[cookies_FB_Server_State(server_state) := $cookies$4$452.8$main];
 goto label_15;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(551)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(467)
 label_15:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 551} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 467} true;
 Mem_T.cookie_length_FB_Server_State := Mem_T.cookie_length_FB_Server_State[cookie_length_FB_Server_State(server_state) := 0];
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(553)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(469)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 553} true;
-Mem_T.tokens_FB_Server_State := Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state) := $ats$2$534.14$main];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 469} true;
+Mem_T.tokens_FB_Server_State := Mem_T.tokens_FB_Server_State[tokens_FB_Server_State(server_state) := $ats$2$450.14$main];
 goto label_17;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(554)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(470)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 554} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 470} true;
 Mem_T.token_length_FB_Server_State := Mem_T.token_length_FB_Server_State[token_length_FB_Server_State(server_state) := 0];
 goto label_18;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(556)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(472)
 label_18:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 556} true;
-Mem_T.codes_FB_Server_State := Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state) := $codes$5$537.6$main];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 472} true;
+Mem_T.codes_FB_Server_State := Mem_T.codes_FB_Server_State[codes_FB_Server_State(server_state) := $codes$5$453.6$main];
 goto label_19;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(557)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(473)
 label_19:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 557} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 473} true;
 Mem_T.code_length_FB_Server_State := Mem_T.code_length_FB_Server_State[code_length_FB_Server_State(server_state) := 0];
 goto label_20;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(560)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(475)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 560} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 475} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App(app_F_FB_Server_State(server_state)) := 0];
 goto label_21;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(561)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(476)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 561} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 476} true;
 Mem_T.app_ID_Registered_App := Mem_T.app_ID_Registered_App[app_ID_Registered_App(app_B_FB_Server_State(server_state)) := 1];
 goto label_22;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(562)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(477)
 label_22:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 562} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 477} true;
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App(app_F_FB_Server_State(server_state)) := 0];
 goto label_23;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(563)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(478)
 label_23:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 563} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 478} true;
 Mem_T.app_secret_Registered_App := Mem_T.app_secret_Registered_App[app_secret_Registered_App(app_B_FB_Server_State(server_state)) := 1];
 goto label_24;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(564)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(479)
 label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 564} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 479} true;
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App(app_F_FB_Server_State(server_state)) := 1];
 goto label_25;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(565)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(480)
 label_25:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 565} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 480} true;
 Mem_T.redirect_domain_Registered_App := Mem_T.redirect_domain_Registered_App[redirect_domain_Registered_App(app_B_FB_Server_State(server_state)) := 2];
 goto label_26;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(566)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(481)
 label_26:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 566} true;
-Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App(app_F_FB_Server_State(server_state)) := $FScope$6$538.7$main];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 481} true;
+Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App(app_F_FB_Server_State(server_state)) := $FScope$6$454.7$main];
 goto label_27;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(567)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(482)
 label_27:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 567} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 482} true;
 Mem_T.Scope := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App(app_F_FB_Server_State(server_state))], 4, 1) := 0];
 goto label_28;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(568)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(483)
 label_28:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 568} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 483} true;
 Mem_T.Scope := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App(app_F_FB_Server_State(server_state))], 4, 2) := 0];
 goto label_29;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(569)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(484)
 label_29:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 569} true;
-Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App(app_B_FB_Server_State(server_state)) := $BScope$7$539.7$main];
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 484} true;
+Mem_T.scope_Registered_App := Mem_T.scope_Registered_App[scope_Registered_App(app_B_FB_Server_State(server_state)) := $BScope$7$455.7$main];
 goto label_30;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(570)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(485)
 label_30:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 570} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 485} true;
 Mem_T.Scope := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App(app_B_FB_Server_State(server_state))], 4, 1) := 0];
 goto label_31;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(571)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(486)
 label_31:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 571} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 486} true;
 Mem_T.Scope := Mem_T.Scope[PLUS(Mem_T.scope_Registered_App[scope_Registered_App(app_B_FB_Server_State(server_state))], 4, 2) := 0];
 goto label_32;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(572)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(487)
 label_32:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 572} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 487} true;
 Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_length_Registered_App(app_F_FB_Server_State(server_state)) := 0];
 goto label_33;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(573)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(488)
 label_33:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 573} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 488} true;
 Mem_T.scope_length_Registered_App := Mem_T.scope_length_Registered_App[scope_length_Registered_App(app_B_FB_Server_State(server_state)) := 0];
 goto label_34;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(574)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(489)
 label_34:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 574} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 489} true;
 Mem_T.app_length_FB_Server_State := Mem_T.app_length_FB_Server_State[app_length_FB_Server_State(server_state) := 2];
 goto label_35;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(577)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(492)
 label_35:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 577} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 492} true;
 Mem_T.app_owner_App_Client_State := Mem_T.app_owner_App_Client_State[app_owner_App_Client_State(foo_app_state) := 0];
 goto label_36;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(578)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(493)
 label_36:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 578} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 493} true;
 Mem_T.app_ID_App_Client_State := Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(foo_app_state) := 0];
 goto label_37;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(579)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(494)
 label_37:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 579} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 494} true;
 Mem_T.access_token_App_Client_State := Mem_T.access_token_App_Client_State[access_token_App_Client_State(foo_app_state) := -1];
 goto label_38;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(580)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(495)
 label_38:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 580} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 495} true;
 Mem_T.code_App_Client_State := Mem_T.code_App_Client_State[code_App_Client_State(foo_app_state) := -1];
 goto label_39;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(582)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(497)
 label_39:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 582} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 497} true;
 Mem_T.app_owner_App_Client_State := Mem_T.app_owner_App_Client_State[app_owner_App_Client_State(mal_app_state) := 1];
 goto label_40;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(583)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(498)
 label_40:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 583} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 498} true;
 Mem_T.access_token_App_Client_State := Mem_T.access_token_App_Client_State[access_token_App_Client_State(mal_app_state) := -1];
 goto label_41;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(584)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(499)
 label_41:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 584} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 499} true;
 Mem_T.code_App_Client_State := Mem_T.code_App_Client_State[code_App_Client_State(mal_app_state) := -1];
 goto label_42;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(587)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(502)
 label_42:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 587} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 502} true;
 Mem_T.cookie_WWAHost_State := Mem_T.cookie_WWAHost_State[cookie_WWAHost_State(wwahost_state) := -1];
 goto label_43;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(588)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(503)
 label_43:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 588} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 503} true;
 Mem_T.current_state_WWAHost_State := Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state) := mal_app_state];
 goto label_44;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(591)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(506)
 label_44:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 591} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 506} true;
 call initiate_knowledge ();
 goto label_47;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(595)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(509)
 label_47:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 595} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 509} true;
+MAX_STEPS := 5 ;
+goto label_48;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(510)
+label_48:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 510} true;
 call takeAction ();
-goto label_50;
+goto label_51;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(596)
-label_50:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 596} true;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(511)
+label_51:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 511} true;
 call takeAction ();
-goto label_53;
+goto label_54;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(597)
-label_53:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 597} true;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(512)
+label_54:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 512} true;
 call takeAction ();
-goto label_56;
+goto label_57;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(601)
-label_56:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 601} true;
-call $result.draw_email_from_knowledge_pool$601.44$2$main := draw_email_from_knowledge_pool ();
-goto label_59;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(601)
-label_59:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 601} true;
-$user_email$1$533.12$main := $result.draw_email_from_knowledge_pool$601.44$2$main ;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(513)
+label_57:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 513} true;
+call takeAction ();
 goto label_60;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(602)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(514)
 label_60:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 602} true;
-//TAG: user_email != 1
-assert (INT_NEQ($user_email$1$533.12$main, 1));
-goto label_61;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 514} true;
+call takeAction ();
+goto label_63;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(603)
-label_61:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 603} true;
-$result.main$528.4$1$main := 0 ;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(518)
+label_63:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 518} true;
+$result.main$444.4$1$main := 0 ;
 goto label_1;
 
 }
@@ -11511,6 +10707,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -11523,12 +10720,12 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$2$454.16$mal_client_app_calls : int;
-var $callee_id$1$454.5$mal_client_app_calls : int;
-var $result.not_violating_client_dev_guide$458.35$3$mal_client_app_calls : int;
-var $result.not_violating_common_sense$458.93$4$mal_client_app_calls : int;
-var $result.poirot_nondet$455.24$1$mal_client_app_calls : int;
-var $result.poirot_nondet$457.21$2$mal_client_app_calls : int;
+var $API_id$2$368.16$mal_client_app_calls : int;
+var $callee_id$1$368.5$mal_client_app_calls : int;
+var $result.not_violating_client_dev_guide$371.35$3$mal_client_app_calls : int;
+var $result.not_violating_common_sense$371.93$4$mal_client_app_calls : int;
+var $result.poirot_nondet$369.24$1$mal_client_app_calls : int;
+var $result.poirot_nondet$370.21$2$mal_client_app_calls : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -11557,115 +10754,115 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(472)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(385)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 472} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 385} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(472)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(385)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 472} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 385} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(454)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(368)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 454} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 368} true;
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(454)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(368)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 454} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 368} true;
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(455)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(369)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 455} true;
-call $result.poirot_nondet$455.24$1$mal_client_app_calls := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 369} true;
+call $result.poirot_nondet$369.24$1$mal_client_app_calls := poirot_nondet ();
 goto label_8;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(455)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(369)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 455} true;
-$callee_id$1$454.5$mal_client_app_calls := $result.poirot_nondet$455.24$1$mal_client_app_calls ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 369} true;
+$callee_id$1$368.5$mal_client_app_calls := $result.poirot_nondet$369.24$1$mal_client_app_calls ;
 goto label_9;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(457)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(370)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 457} true;
-call $result.poirot_nondet$457.21$2$mal_client_app_calls := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 370} true;
+call $result.poirot_nondet$370.21$2$mal_client_app_calls := poirot_nondet ();
 goto label_12;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(457)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(370)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 457} true;
-$API_id$2$454.16$mal_client_app_calls := $result.poirot_nondet$457.21$2$mal_client_app_calls ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 370} true;
+$API_id$2$368.16$mal_client_app_calls := $result.poirot_nondet$370.21$2$mal_client_app_calls ;
 goto label_13;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(458)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(371)
 label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 458} true;
-call $result.not_violating_client_dev_guide$458.35$3$mal_client_app_calls := not_violating_client_dev_guide (1, $callee_id$1$454.5$mal_client_app_calls, $API_id$2$454.16$mal_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 371} true;
+call $result.not_violating_client_dev_guide$371.35$3$mal_client_app_calls := not_violating_client_dev_guide (1, $callee_id$1$368.5$mal_client_app_calls, $API_id$2$368.16$mal_client_app_calls);
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(458)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(371)
 label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 458} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 371} true;
 goto label_16_true , label_16_false ;
 
 
 label_16_true :
-assume ($result.not_violating_client_dev_guide$458.35$3$mal_client_app_calls != 0);
+assume ($result.not_violating_client_dev_guide$371.35$3$mal_client_app_calls != 0);
 goto label_17;
 
 
 label_16_false :
-assume ($result.not_violating_client_dev_guide$458.35$3$mal_client_app_calls == 0);
+assume ($result.not_violating_client_dev_guide$371.35$3$mal_client_app_calls == 0);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(458)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(371)
 label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 458} true;
-call $result.not_violating_common_sense$458.93$4$mal_client_app_calls := not_violating_common_sense (1, $callee_id$1$454.5$mal_client_app_calls, $API_id$2$454.16$mal_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 371} true;
+call $result.not_violating_common_sense$371.93$4$mal_client_app_calls := not_violating_common_sense (1, $callee_id$1$368.5$mal_client_app_calls, $API_id$2$368.16$mal_client_app_calls);
 goto label_20;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(458)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(371)
 label_20:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 458} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 371} true;
 goto label_20_true , label_20_false ;
 
 
 label_20_true :
-assume ($result.not_violating_common_sense$458.93$4$mal_client_app_calls != 0);
+assume ($result.not_violating_common_sense$371.93$4$mal_client_app_calls != 0);
 goto label_21;
 
 
 label_20_false :
-assume ($result.not_violating_common_sense$458.93$4$mal_client_app_calls == 0);
+assume ($result.not_violating_common_sense$371.93$4$mal_client_app_calls == 0);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(459)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(372)
 label_21:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 459} true;
-call update_dev_guide_status (1, $callee_id$1$454.5$mal_client_app_calls, $API_id$2$454.16$mal_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 372} true;
+call update_dev_guide_status (1, $callee_id$1$368.5$mal_client_app_calls, $API_id$2$368.16$mal_client_app_calls);
 goto label_24;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(460)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(373)
 label_24:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 460} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 373} true;
 
 goto label_24_case_0, label_24_case_1, label_24_case_2;
 
@@ -11673,48 +10870,48 @@ goto label_24_case_0, label_24_case_1, label_24_case_2;
 
 
 label_24_case_0 :
-assume(INT_NEQ($callee_id$1$454.5$mal_client_app_calls, 4));
-assume(INT_NEQ($callee_id$1$454.5$mal_client_app_calls, 7));
+assume(INT_NEQ($callee_id$1$368.5$mal_client_app_calls, 4));
+assume(INT_NEQ($callee_id$1$368.5$mal_client_app_calls, 7));
 goto label_25;
 
 
 
 label_24_case_1 :
-assume(INT_EQ($callee_id$1$454.5$mal_client_app_calls, 4));
+assume(INT_EQ($callee_id$1$368.5$mal_client_app_calls, 4));
 goto label_28;
 
 
 
 label_24_case_2 :
-assume(INT_EQ($callee_id$1$454.5$mal_client_app_calls, 7));
+assume(INT_EQ($callee_id$1$368.5$mal_client_app_calls, 7));
 goto label_31;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(468)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(381)
 label_25:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 468} true;
-call call_an_API_on_foo_service_app_From_Client ($API_id$2$454.16$mal_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 381} true;
+call call_an_API_on_foo_service_app_From_Client ($API_id$2$368.16$mal_client_app_calls);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(462)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(375)
 label_28:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 462} true;
-call call_an_API_on_client_SDK ($API_id$2$454.16$mal_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 375} true;
+call call_an_API_on_client_SDK ($API_id$2$368.16$mal_client_app_calls);
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(465)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(378)
 label_31:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 465} true;
-call call_an_API_on_IdP_From_Client ($API_id$2$454.16$mal_client_app_calls);
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 378} true;
+call call_an_API_on_IdP_From_Client ($API_id$2$368.16$mal_client_app_calls);
 goto label_1;
 
 }
 
 
 
-procedure  not_violating_client_dev_guide($caller$1$157.42$not_violating_client_dev_guide_.1:int, $callee_id$2$157.54$not_violating_client_dev_guide_.1:int, $API_id$3$157.68$not_violating_client_dev_guide_.1:int) returns ($result.not_violating_client_dev_guide$157.4$1$not_violating_client_dev_guide:int)
+procedure  not_violating_client_dev_guide($caller$1$112.42$not_violating_client_dev_guide_.1:int, $callee_id$2$112.54$not_violating_client_dev_guide_.1:int, $API_id$3$112.68$not_violating_client_dev_guide_.1:int) returns ($result.not_violating_client_dev_guide$112.4$1$not_violating_client_dev_guide:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -11789,6 +10986,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -11801,9 +10999,9 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$3$157.68$not_violating_client_dev_guide : int;
-var $callee_id$2$157.54$not_violating_client_dev_guide : int;
-var $caller$1$157.42$not_violating_client_dev_guide : int;
+var $API_id$3$112.68$not_violating_client_dev_guide : int;
+var $callee_id$2$112.54$not_violating_client_dev_guide : int;
+var $caller$1$112.42$not_violating_client_dev_guide : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -11829,36 +11027,36 @@ var __havoc_dummy_return: int;
 
 start:
 
-$caller$1$157.42$not_violating_client_dev_guide := $caller$1$157.42$not_violating_client_dev_guide_.1;
-$callee_id$2$157.54$not_violating_client_dev_guide := $callee_id$2$157.54$not_violating_client_dev_guide_.1;
-$API_id$3$157.68$not_violating_client_dev_guide := $API_id$3$157.68$not_violating_client_dev_guide_.1;
+$caller$1$112.42$not_violating_client_dev_guide := $caller$1$112.42$not_violating_client_dev_guide_.1;
+$callee_id$2$112.54$not_violating_client_dev_guide := $callee_id$2$112.54$not_violating_client_dev_guide_.1;
+$API_id$3$112.68$not_violating_client_dev_guide := $API_id$3$112.68$not_violating_client_dev_guide_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(159)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(114)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 159} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 114} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(159)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(114)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 159} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 114} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(158)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(113)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 158} true;
-$result.not_violating_client_dev_guide$157.4$1$not_violating_client_dev_guide := 1 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 113} true;
+$result.not_violating_client_dev_guide$112.4$1$not_violating_client_dev_guide := 1 ;
 goto label_1;
 
 }
 
 
 
-procedure  not_violating_common_sense($caller$1$67.38$not_violating_common_sense_.1:int, $callee_id$2$67.50$not_violating_common_sense_.1:int, $API_id$3$67.64$not_violating_common_sense_.1:int) returns ($result.not_violating_common_sense$67.4$1$not_violating_common_sense:int)
+procedure  not_violating_common_sense($caller$1$57.38$not_violating_common_sense_.1:int, $callee_id$2$57.50$not_violating_common_sense_.1:int, $API_id$3$57.64$not_violating_common_sense_.1:int) returns ($result.not_violating_common_sense$57.4$1$not_violating_common_sense:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -11933,6 +11131,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -11945,9 +11144,9 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$3$67.64$not_violating_common_sense : int;
-var $callee_id$2$67.50$not_violating_common_sense : int;
-var $caller$1$67.38$not_violating_common_sense : int;
+var $API_id$3$57.64$not_violating_common_sense : int;
+var $callee_id$2$57.50$not_violating_common_sense : int;
+var $caller$1$57.38$not_violating_common_sense : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -11973,28 +11172,28 @@ var __havoc_dummy_return: int;
 
 start:
 
-$caller$1$67.38$not_violating_common_sense := $caller$1$67.38$not_violating_common_sense_.1;
-$callee_id$2$67.50$not_violating_common_sense := $callee_id$2$67.50$not_violating_common_sense_.1;
-$API_id$3$67.64$not_violating_common_sense := $API_id$3$67.64$not_violating_common_sense_.1;
+$caller$1$57.38$not_violating_common_sense := $caller$1$57.38$not_violating_common_sense_.1;
+$callee_id$2$57.50$not_violating_common_sense := $callee_id$2$57.50$not_violating_common_sense_.1;
+$API_id$3$57.64$not_violating_common_sense := $API_id$3$57.64$not_violating_common_sense_.1;
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(155)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(110)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 155} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 110} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(155)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(110)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 155} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 110} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(105)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(60)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 105} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 60} true;
 goto label_3_true , label_3_false ;
 
 
@@ -12008,9 +11207,9 @@ assume (actionNumber == 0);
 goto label_4;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(106)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(61)
 label_4:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 106} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 61} true;
 
 goto label_4_case_0, label_4_case_1, label_4_case_2;
 
@@ -12018,49 +11217,49 @@ goto label_4_case_0, label_4_case_1, label_4_case_2;
 
 
 label_4_case_0 :
-assume(INT_NEQ($caller$1$67.38$not_violating_common_sense, 0));
-assume(INT_NEQ($caller$1$67.38$not_violating_common_sense, 1));
+assume(INT_NEQ($caller$1$57.38$not_violating_common_sense, 0));
+assume(INT_NEQ($caller$1$57.38$not_violating_common_sense, 1));
 goto label_11;
 
 
 
 label_4_case_1 :
-assume(INT_EQ($caller$1$67.38$not_violating_common_sense, 0));
+assume(INT_EQ($caller$1$57.38$not_violating_common_sense, 0));
 goto label_12;
 
 
 
 label_4_case_2 :
-assume(INT_EQ($caller$1$67.38$not_violating_common_sense, 1));
+assume(INT_EQ($caller$1$57.38$not_violating_common_sense, 1));
 goto label_5;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(121)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(76)
 label_5:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 121} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 76} true;
 goto label_5_true , label_5_false ;
 
 
 label_5_true :
-assume (INT_EQ(actionNumber, 2));
+assume (INT_EQ(actionNumber, MINUS_BOTH_PTR_OR_BOTH_INT( MAX_STEPS, 1, 1)));
 goto label_7;
 
 
 label_5_false :
-assume !(INT_EQ(actionNumber, 2));
+assume !(INT_EQ(actionNumber, MINUS_BOTH_PTR_OR_BOTH_INT( MAX_STEPS, 1, 1)));
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(154)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(109)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 154} true;
-$result.not_violating_common_sense$67.4$1$not_violating_common_sense := 1 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 109} true;
+$result.not_violating_common_sense$57.4$1$not_violating_common_sense := 1 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(122)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(77)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 122} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 77} true;
 
 goto label_7_case_0, label_7_case_1, label_7_case_2;
 
@@ -12068,190 +11267,59 @@ goto label_7_case_0, label_7_case_1, label_7_case_2;
 
 
 label_7_case_0 :
-assume(INT_NEQ($caller$1$67.38$not_violating_common_sense, 1));
-assume(INT_NEQ($caller$1$67.38$not_violating_common_sense, 2));
+assume(INT_NEQ($caller$1$57.38$not_violating_common_sense, 1));
+assume(INT_NEQ($caller$1$57.38$not_violating_common_sense, 2));
 goto label_8;
 
 
 
 label_7_case_1 :
-assume(INT_EQ($caller$1$67.38$not_violating_common_sense, 1));
+assume(INT_EQ($caller$1$57.38$not_violating_common_sense, 1));
 goto label_9;
 
 
 
 label_7_case_2 :
-assume(INT_EQ($caller$1$67.38$not_violating_common_sense, 2));
+assume(INT_EQ($caller$1$57.38$not_violating_common_sense, 2));
 goto label_10;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(132)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(87)
 label_8:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 132} true;
-$result.not_violating_common_sense$67.4$1$not_violating_common_sense := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 87} true;
+$result.not_violating_common_sense$57.4$1$not_violating_common_sense := 0 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(125)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(80)
 label_9:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 125} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 80} true;
 //TAG: callee_id == 4 || callee_id == 7
-assume ((INT_EQ($callee_id$2$67.50$not_violating_common_sense, 4)) || (INT_EQ($callee_id$2$67.50$not_violating_common_sense, 7)));
+assume ((INT_EQ($callee_id$2$57.50$not_violating_common_sense, 4)) || (INT_EQ($callee_id$2$57.50$not_violating_common_sense, 7)));
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(129)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(84)
 label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 129} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 84} true;
 //TAG: callee_id == 7
-assume (INT_EQ($callee_id$2$67.50$not_violating_common_sense, 7));
+assume (INT_EQ($callee_id$2$57.50$not_violating_common_sense, 7));
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(114)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(69)
 label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 114} true;
-$result.not_violating_common_sense$67.4$1$not_violating_common_sense := 0 ;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 69} true;
+$result.not_violating_common_sense$57.4$1$not_violating_common_sense := 0 ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(108)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(63)
 label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 108} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 63} true;
 //TAG: callee_id == 4
-assume (INT_EQ($callee_id$2$67.50$not_violating_common_sense, 4));
+assume (INT_EQ($callee_id$2$57.50$not_violating_common_sense, 4));
 goto label_5;
-
-}
-
-
-
-procedure  registerApp()
-
-
-modifies Res_KERNEL_SOURCE;
-
-modifies Res_PROBED;
-
-
-modifies Mem_T.A0INT4;
-modifies Mem_T.A100Access_Token;
-modifies Mem_T.A100Code;
-modifies Mem_T.A100Cookie;
-modifies Mem_T.A100RP_Session;
-modifies Mem_T.A100Scope;
-modifies Mem_T.A37CHAR;
-modifies Mem_T.A58CHAR;
-modifies Mem_T.App_ID;
-modifies Mem_T.App_Owner;
-modifies Mem_T.App_Secret;
-modifies Mem_T.Caller;
-modifies Mem_T.INT4;
-modifies Mem_T.Location_Knowledge;
-modifies Mem_T.PAccess_Token;
-modifies Mem_T.PApp_Client_State;
-modifies Mem_T.PCHAR;
-modifies Mem_T.PCode;
-modifies Mem_T.PCookie;
-modifies Mem_T.PINT4;
-modifies Mem_T.PLocation_Knowledge;
-modifies Mem_T.PPUINT2;
-modifies Mem_T.PPlocaleinfo_struct;
-modifies Mem_T.PRP_Session;
-modifies Mem_T.PScope;
-modifies Mem_T.PUINT2;
-modifies Mem_T.PUser;
-modifies Mem_T.PUser_Email;
-modifies Mem_T.Plocaleinfo_struct;
-modifies Mem_T.Redirect_Domain;
-modifies Mem_T.Response_Type;
-modifies Mem_T.Scope;
-modifies Mem_T.UINT4;
-modifies Mem_T.User;
-modifies Mem_T.User_Credentials;
-modifies Mem_T.User_Email;
-modifies Mem_T.access_token_App_Client_State;
-modifies Mem_T.app_ID_App_Client_State;
-modifies Mem_T.app_ID_Code;
-modifies Mem_T.app_ID_Registered_App;
-modifies Mem_T.app_length_FB_Server_State;
-modifies Mem_T.app_owner_App_Client_State;
-modifies Mem_T.app_secret_Code;
-modifies Mem_T.app_secret_Registered_App;
-modifies Mem_T.code_App_Client_State;
-modifies Mem_T.code_length_FB_Server_State;
-modifies Mem_T.code_value_Code;
-modifies Mem_T.codes_FB_Server_State;
-modifies Mem_T.cookie_WWAHost_State;
-modifies Mem_T.cookie_length_FB_Server_State;
-modifies Mem_T.cookie_value_Cookie;
-modifies Mem_T.cookies_FB_Server_State;
-modifies Mem_T.current_state_WWAHost_State;
-modifies Mem_T.redirect_domain_Registered_App;
-modifies Mem_T.rp_sessions_RP_State;
-modifies Mem_T.scope_Access_Token;
-modifies Mem_T.scope_Registered_App;
-modifies Mem_T.scope_length_Registered_App;
-modifies Mem_T.session_ID_RP_Session;
-modifies Mem_T.session_length_RP_State;
-modifies Mem_T.token_length_FB_Server_State;
-modifies Mem_T.token_value_Access_Token;
-modifies Mem_T.tokens_FB_Server_State;
-modifies Mem_T.user_ID_Access_Token;
-modifies Mem_T.user_ID_Code;
-modifies Mem_T.user_ID_Cookie;
-modifies Mem_T.user_ID_RP_Session;
-modifies access_token_k_base_length;
-modifies actionNumber;
-modifies app_secret_k_base_length;
-modifies code_k_base_length;
-modifies cookie_k_base_length;
-modifies email_k_base_length;
-modifies foo_rp_state;
-modifies server_state;
-modifies wwahost_state;
-{
-var havoc_stringTemp:int;
-var condVal:int;
-var tempBoogie0:int;
-var tempBoogie1:int;
-var tempBoogie2:int;
-var tempBoogie3:int;
-var tempBoogie4:int;
-var tempBoogie5:int;
-var tempBoogie6:int;
-var tempBoogie7:int;
-var tempBoogie8:int;
-var tempBoogie9:int;
-var tempBoogie10:int;
-var tempBoogie11:int;
-var tempBoogie12:int;
-var tempBoogie13:int;
-var tempBoogie14:int;
-var tempBoogie15:int;
-var tempBoogie16:int;
-var tempBoogie17:int;
-var tempBoogie18:int;
-var tempBoogie19:int;
-var __havoc_dummy_return: int;
-
-
-start:
-
-goto label_1;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(356)
-label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 356} true;
-return;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h(356)
-label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\fbconnectserver.h"} {:sourceline 356} true;
-assume false;
-return;
 
 }
 
@@ -12332,6 +11400,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -12344,7 +11413,8 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $result.poirot_nondet$493.21$1$takeAction : int;
+var $result.poirot_nondet$406.21$1$takeAction : int;
+var $result.poirot_nondet$413.38$2$takeAction : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -12373,29 +11443,29 @@ start:
 goto label_3;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(510)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(426)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 510} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 426} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(510)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(426)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 510} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 426} true;
 assume false;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(493)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(406)
 label_3:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 493} true;
-call $result.poirot_nondet$493.21$1$takeAction := poirot_nondet ();
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 406} true;
+call $result.poirot_nondet$406.21$1$takeAction := poirot_nondet ();
 goto label_6;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(493)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(406)
 label_6:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 493} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 406} true;
 
 goto label_6_case_0, label_6_case_1, label_6_case_2;
 
@@ -12403,76 +11473,91 @@ goto label_6_case_0, label_6_case_1, label_6_case_2;
 
 
 label_6_case_0 :
-assume(INT_NEQ($result.poirot_nondet$493.21$1$takeAction, 0));
-assume(INT_NEQ($result.poirot_nondet$493.21$1$takeAction, 1));
+assume(INT_NEQ($result.poirot_nondet$406.21$1$takeAction, 0));
+assume(INT_NEQ($result.poirot_nondet$406.21$1$takeAction, 1));
 goto label_7;
 
 
 
 label_6_case_1 :
-assume(INT_EQ($result.poirot_nondet$493.21$1$takeAction, 0));
+assume(INT_EQ($result.poirot_nondet$406.21$1$takeAction, 0));
 goto label_10;
 
 
 
 label_6_case_2 :
-assume(INT_EQ($result.poirot_nondet$493.21$1$takeAction, 1));
+assume(INT_EQ($result.poirot_nondet$406.21$1$takeAction, 1));
 goto label_11;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(506)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(422)
 label_7:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 506} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 422} true;
 call Bob_calls ();
+goto label_20;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(408)
+label_10:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 408} true;
+Mem_T.current_state_WWAHost_State := Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state) := foo_app_state];
+goto label_21;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(413)
+label_11:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 413} true;
+call $result.poirot_nondet$413.38$2$takeAction := poirot_nondet ();
+goto label_14;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(413)
+label_14:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 413} true;
+Mem_T.app_ID_App_Client_State := Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(mal_app_state) := $result.poirot_nondet$413.38$2$takeAction];
+goto label_15;
+
+
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(414)
+label_15:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 414} true;
+//TAG: mal_app_state.app_ID == 1 || mal_app_state.app_ID == 0
+assume ((INT_EQ(Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(mal_app_state)], 1)) || (INT_EQ(Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(mal_app_state)], 0)));
 goto label_16;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(495)
-label_10:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 495} true;
-Mem_T.current_state_WWAHost_State := Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state) := foo_app_state];
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(418)
+label_16:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 418} true;
+Mem_T.current_state_WWAHost_State := Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state) := mal_app_state];
 goto label_17;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(501)
-label_11:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 501} true;
-Mem_T.app_ID_App_Client_State := Mem_T.app_ID_App_Client_State[app_ID_App_Client_State(mal_app_state) := 1];
-goto label_12;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(502)
-label_12:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 502} true;
-Mem_T.current_state_WWAHost_State := Mem_T.current_state_WWAHost_State[current_state_WWAHost_State(wwahost_state) := mal_app_state];
-goto label_13;
-
-
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(503)
-label_13:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 503} true;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(419)
+label_17:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 419} true;
 call mal_client_app_calls ();
-goto label_16;
+goto label_20;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(509)
-label_16:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 509} true;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(425)
+label_20:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 425} true;
 actionNumber := PLUS(actionNumber, 1, 1) ;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(496)
-label_17:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 496} true;
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(409)
+label_21:
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 409} true;
 call foo_client_app_calls ();
-goto label_16;
+goto label_20;
 
 }
 
 
 
-procedure  update_dev_guide_status($caller$1$161.36$update_dev_guide_status_.1:int, $callee_id$2$161.48$update_dev_guide_status_.1:int, $API_id$3$161.62$update_dev_guide_status_.1:int)
+procedure  update_dev_guide_status($caller$1$116.36$update_dev_guide_status_.1:int, $callee_id$2$116.48$update_dev_guide_status_.1:int, $API_id$3$116.62$update_dev_guide_status_.1:int)
 
 
 modifies Res_KERNEL_SOURCE;
@@ -12547,6 +11632,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;
@@ -12559,9 +11645,9 @@ modifies wwahost_state;
 {
 var havoc_stringTemp:int;
 var condVal:int;
-var $API_id$3$161.62$update_dev_guide_status : int;
-var $callee_id$2$161.48$update_dev_guide_status : int;
-var $caller$1$161.36$update_dev_guide_status : int;
+var $API_id$3$116.62$update_dev_guide_status : int;
+var $callee_id$2$116.48$update_dev_guide_status : int;
+var $caller$1$116.36$update_dev_guide_status : int;
 var tempBoogie0:int;
 var tempBoogie1:int;
 var tempBoogie2:int;
@@ -12587,21 +11673,21 @@ var __havoc_dummy_return: int;
 
 start:
 
-$caller$1$161.36$update_dev_guide_status := $caller$1$161.36$update_dev_guide_status_.1;
-$callee_id$2$161.48$update_dev_guide_status := $callee_id$2$161.48$update_dev_guide_status_.1;
-$API_id$3$161.62$update_dev_guide_status := $API_id$3$161.62$update_dev_guide_status_.1;
+$caller$1$116.36$update_dev_guide_status := $caller$1$116.36$update_dev_guide_status_.1;
+$callee_id$2$116.48$update_dev_guide_status := $callee_id$2$116.48$update_dev_guide_status_.1;
+$API_id$3$116.62$update_dev_guide_status := $API_id$3$116.62$update_dev_guide_status_.1;
 goto label_1;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(162)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(117)
 label_1:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 162} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 117} true;
 return;
 
 
-// c$$devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c(162)
+// c$$devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c(117)
 label_2:
-assert {:sourcefile "c:\devguidestudy\symbolic_attacker_5\symbolic_attacker\symbolic_attacker.c"} {:sourceline 162} true;
+assert {:sourcefile "c:\devguidestudy\fb_c_model\symbolic_attacker_c\symbolic_attacker\symbolic_attacker.c"} {:sourceline 117} true;
 assume false;
 return;
 
@@ -12684,6 +11770,7 @@ modifies Mem_T.user_ID_Access_Token;
 modifies Mem_T.user_ID_Code;
 modifies Mem_T.user_ID_Cookie;
 modifies Mem_T.user_ID_RP_Session;
+modifies MAX_STEPS;
 modifies access_token_k_base_length;
 modifies actionNumber;
 modifies app_secret_k_base_length;

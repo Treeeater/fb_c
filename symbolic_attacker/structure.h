@@ -4,6 +4,7 @@
 #include "poirot.h"
 
 typedef enum Redirect_Domain
+//Redirect domain of the app
 {
 	_no_domain = 0,
 	_foo_domain,
@@ -12,47 +13,61 @@ typedef enum Redirect_Domain
 } Redirect_Domain;
 
 typedef enum App_Owner
+//who owns this app? Used when deciding whether to add knowledge to bob's pool
 {
 	_foo_own,
 	_bob_own
 } App_Owner;
 
-typedef struct{
+typedef struct
+//some app local information
+{
 	enum App_Owner app_owner;
 	enum App_ID app_ID;
 	int access_token;
 	int code;
 } App_Client_State;
 
-typedef struct{
+typedef struct
+//wwahost (runtime) state.
+{
 	App_Client_State *current_state;
 	int cookie;
 } WWAHost_State;
 
-typedef enum Caller{
+typedef enum Caller
+//caller ids in symbolic_attacker.c
+{
 	_caller_foo,
 	_caller_mal,
 	_caller_bob
 } Caller;
 
-typedef enum User{
+typedef enum User
+//userid
+{
 	_nobody = 0,
 	_alice,
 	_bob
 } User;
 
-typedef enum User_Credentials{
+typedef enum 
+//user credentials to log in, currently just a placeholder.
+{
 	_alice_credentials,
 	_bob_credentials
 } User_Credentials;
 
-typedef enum User_Email{
+typedef enum User_Email
+//user emails, used when deciding if bob has gotten Alice's email address without permission.
+{
 	_no_email,
 	_alice_email,
 	_bob_email
 } User_Email;
 
-typedef enum Scope            /* Defines an enumeration type    */
+typedef enum Scope
+//scopes of the app
 {
 	_no_permission,
     _basic,
@@ -72,6 +87,7 @@ typedef enum App_ID
 } App_ID;
 
 typedef enum App_Secret
+//used when translate code to token.
 {
 	_foo_secret,
 	_bob_secret
@@ -97,7 +113,9 @@ typedef struct {
 	//int Expires_In
 } Code;
 
-typedef struct {
+typedef struct 
+//app state stored in the IdP (FB)'s server.
+{
 	App_ID app_ID;
 	App_Secret app_secret;
 	Redirect_Domain redirect_domain;			//In addition to redirect_domain, fb also takes login_success as a possible param.
@@ -105,7 +123,8 @@ typedef struct {
 	int scope_length;
 } Registered_App;
 
-typedef struct {
+typedef struct 
+{
 	Cookie *cookies;
 	Access_Token *tokens;
 	Code *codes;
@@ -117,12 +136,16 @@ typedef struct {
 	int code_length;
 } FB_Server_State;
 
-typedef struct{
+typedef struct
+//RP's session structure
+{
 	int session_ID;
 	User user_ID;
 } RP_Session;
 
-typedef struct{
+typedef struct
+//how many sessions has RP issued.
+{
 	RP_Session *rp_sessions;
 	int session_length;
 } RP_State;
@@ -136,45 +159,10 @@ typedef enum Location_Knowledge{
 	_redirect_domain,			//original redirect domain specified, means oauth auth is done.
 } Location_Knowledge;
 
-typedef enum Knowledge_Type{
-	//_nothing_K,
-	_access_token_K,
-	_cookie_K,
-	_code_K,
-	//_redirect_K,
-	//_user_ID_K,
-	_app_secret_K,
-	//_permission_K,
-	//_user_credentials_K,
-	_user_email_K
-} Knowledge_Type;
-
-typedef struct{
-	int value;
-	enum Knowledge_Type type;
-} Knowledge;
-
 typedef struct{
 	int actionNumber;
 } Dev_Guide_State;
-/*
-typedef struct{
-	Knowledge* knowledge;
-	int knowledge_length;
-} Knowledge_Base;
-*/
 
-//======================APIs
-/*
-void Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(WWAHost_State *wwahost_state, Redirect_Domain redirect_domain, Scope scope, User user);
-
-
-int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, Scope scope, User login_user, Response_Type response_type, Location_Knowledge *location, int *access_token, int *code);
-int login_php(User login_user, Location_Knowledge *location, int *cookie);
-int dialog_permissions_request(App_ID app_id, int cookie, Scope scope, Response_Type response_type, Location_Knowledge *location, int *access_token, int *code);
-int graph_facebook_com_me(int access_token, int *user_ID);
-int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code, int *access_token);
-*/
 //global var
 extern FB_Server_State server_state;
 extern int cookie_k_base[];

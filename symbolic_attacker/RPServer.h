@@ -2,12 +2,12 @@
 #include "bob.h"
 #include "FBConnectSDK.h"
 #include "FBConnectServer.h"
-#include "FBPHPSDK.h"
 
 extern RP_State foo_rp_state;
 
 RP_Session authenticate_user(int access_token)
 {
+	//exchange the token for uid, and then use the uid for auth
 	RP_Session rps;
 	User user_ID = _nobody;
 	rps.session_ID = -1;
@@ -23,6 +23,7 @@ RP_Session authenticate_user(int access_token)
 
 RP_Session authenticate_user2(int code)
 {
+	//exchange the code for token, and then exchange the token for uid.
 	RP_Session rps;
 	int access_token = -1;
 	User user_ID = _nobody;

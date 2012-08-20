@@ -65,14 +65,11 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 
 	//Test user's permission
 	user_scope = app.scope[logged_in_user];
-	//if (temp == 0 && user_scope != _no_permission) __hv_assert(1!=1);
-	//__hv_assert(scope == _email);
 	if (app.scope[logged_in_user] < scope)
 	{
 		//permission is not enuf, we need to ask 4 more.
 		*location = _permissions_request;
 		return 302;
-		//if (dialog_permissions_request(server_state, client_state->machine_ID, app.app_ID, logged_in_user, scope)) return ret;
 	}
 
 	//everything is checked, let's generate and save the access_token/code
@@ -83,7 +80,6 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 		at.scope = scope;
 		server_state.tokens[server_state.token_length] = at;
 		server_state.token_length++;
-		//__hv_assert(1 != 1);
 		//issue this token to the client
 		*access_token = at.token_value;
 	}
@@ -132,9 +128,6 @@ int login_php(User login_user, Location_Knowledge *location, int *cookie, User_C
 	Cookie c;
 	//need to log in.
 	//We can apply restrictions here
-	
-	//simple restriction: bob cannot log into alice's account on bob's machine.
-	//if (login_user == _bob) return 400;
 
 	//successfully logged in, now let's set the cookie
 	if (login_user == _alice && uc != _alice_credentials) return 400;
@@ -219,7 +212,6 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 		at.scope = scope;
 		server_state.tokens[server_state.token_length] = at;
 		server_state.token_length++;
-		//if (server_state.token_length>=1) __hv_assert(1 != 1);
 		//issue this token to the client
 		*access_token = at.token_value;
 	}
@@ -250,37 +242,18 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 
 int graph_facebook_com_me(int access_token, User *user_ID)
 {
-	int i = 0;
-	for (; i < server_state.token_length; i++)
-	{
-		if (access_token == server_state.tokens[i].token_value)
-		{
-			*user_ID = server_state.tokens[i].user_ID;
-			//if (access_token != -1) __hv_assert(1 != 1);
-			return 200;
-		}
-	}
-	return 400;
+	int i = poirot_nondet();
+    __hv_assume(i >= 0 && i < server_state.token_length && access_token == server_state.tokens[i].token_value);
+    *user_ID = server_state.tokens[i].user_ID;
+	return 200;
 }
 
 int graph_facebook_com_email(int access_token, User_Email *user_email)
 {
-	User user_ID;
-	int i = 0;
-	int found = 0;
-	for (; i < server_state.token_length; i++)
-	{
-		if (access_token == server_state.tokens[i].token_value)
-		{
-			if (server_state.tokens[i].scope < _advanced) return 400;
-			user_ID = server_state.tokens[i].user_ID;
-			found = 1;
-			break;
-		}
-	}
-	if (found == 0) return 400;
-	if (user_ID == _alice) *user_email = _alice_email;
-	if (user_ID == _bob) *user_email = _bob_email;
+	int i = poirot_nondet();
+    __hv_assume(i >= 0 && i < server_state.token_length && access_token == server_state.tokens[i].token_value);
+    if (server_state.tokens[i].user_ID == _alice) *user_email = _alice_email;
+	if (server_state.tokens[i].user_ID == _bob) *user_email = _bob_email;
 	return 200;
 }
 /*
@@ -326,14 +299,9 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 	}
 
 	//Checking done, now fetch user id.
-	for (i=0; i<server_state.code_length; i++)
-	{
-		if (server_state.codes[i].code_value == code)
-		{
-			user_ID = server_state.codes[i].user_ID;
-			break;
-		}
-	}
+	i = poirot_nondet();
+    __hv_assume(i >= 0 && i < server_state.code_length && code == server_state.codes[i].code_value);
+    user_ID = server_state.codes[i].user_ID;
 
 	if (user_ID == _nobody) return 400;		//cannot find user
 
@@ -348,10 +316,5 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 	*access_token = at.token_value;
 
 	return 200;
-}
-
-void registerApp()
-{
-	//stub
 }
 #endif
