@@ -16,7 +16,8 @@
 */
 
 int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, Scope scope, User login_user, Response_Type response_type, Location_Knowledge *location, int *access_token, int *code)
-//response_type temporary not present
+//there is a default response_type in this API, so it may not be present in the actual URL
+//User login_user is abstracted from real login process. This parameter indicates whose username is used to login to the system, i.e. alice or bob.
 {
 	//Fetch the app
 	User logged_in_user = _nobody;
@@ -184,7 +185,7 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 		*location = _login_php;
 		return 302;
 	}
-	//restrictions can be applied here
+	//[common sense]
 	//simple restriction:
 	//alice cannot change bob's account's permission on alice's machine.
 	//if (logged_in_user == _bob) return 400;

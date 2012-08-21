@@ -20,6 +20,7 @@ void Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsy
 	if (returnValue == 302 && location == _login_php)
 	{
 		//user haven't logged in.
+		//[common sense]
 		returnValue = login_php(user, &location, &cookie, _alice_credentials);		//assuming alice (client) never want to input bob's credentials.
 		if (returnValue==400) return;
 		wwahost_state.cookie = cookie;		//set client's cookie value locally

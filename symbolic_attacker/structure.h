@@ -82,6 +82,7 @@ typedef enum Response_Type
 
 typedef enum App_ID
 {
+	//the app_id is facebook's 'clientID'.
 	_foo_app_ID,
 	_mal_app_ID
 } App_ID;
