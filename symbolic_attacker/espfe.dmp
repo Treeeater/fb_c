@@ -1,4 +1,0 @@
-	cl /analyze:plugin C:\ConcurrencySleuth\Poirot4C\havoc\EspFe.dll /I. /IC:\ConcurrencySleuth\Poirot4C\include -c -nologo symbolic_attacker.c
-symbolic_attacker.c
-obj_FileName symbolic_attacker.obj
-obj_FileName symbolic_attacker.obj

@@ -119,7 +119,7 @@ void update_dev_guide_status(Caller caller, int callee_id,int API_id) {
 
 
 //================Foo service app behavior=============
-RP_Session foo_service_API_authenticate(int access_token) {
+RP_Session foo_service_API_authenticate() {
 	/*int callee_id, API_id;
 	callee_id=poirot_nondet();
 	API_id=poirot_nondet();
@@ -128,7 +128,20 @@ RP_Session foo_service_API_authenticate(int access_token) {
 	}*/
 
 	//a little bit cheating here. This function is not supposed to be concrete. 
-	return authenticate_user(access_token);
+	int API_id = poirot_nondet();
+	int arg1 = -1;
+	//already checked for dev guide, don't need to check again.
+	switch (API_id){
+		case 1:
+			arg1=draw_access_token_from_knowledge_pool();
+			return authenticate_user_by_access_token(arg1);
+		case 2:
+			arg1=draw_code_from_knowledge_pool();
+			return authenticate_user_by_code(arg1);
+		default:
+			arg1=draw_email_from_knowledge_pool();
+			return authenticate_user_by_email(arg1);
+	}
 }
 
 void call_an_API_on_IdP_From_Bob(int API_id) {
@@ -213,12 +226,8 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 //================Bob's behavior=============
 void call_an_API_on_foo_service_app_From_Bob(int API_id) {
     RP_Session testRPS;
-	int access_token = draw_access_token_from_knowledge_pool();
 
-	//shuo
-	if (access_token==-1) return;
-
-	testRPS = foo_service_API_authenticate(access_token);
+	testRPS = foo_service_API_authenticate();
 	if (testRPS.user_ID==_alice)
 	{
 		printf("Unexpected: Foo app signed in as Alice from Bob's server\n" );
@@ -243,7 +252,7 @@ void call_an_API_on_client_SDK(int API_id) {
 
 void call_an_API_on_foo_service_app_From_Client(int API_id) {
     RP_Session testRPS;
-	testRPS = foo_service_API_authenticate(wwahost_state.current_state->access_token);
+	testRPS = foo_service_API_authenticate();
 	if (testRPS.user_ID==_bob && wwahost_state.current_state->app_ID == _foo_app_ID)				//session fixation
 	{
 		printf("Unexpected: Foo app signs in as Bob\n" );
@@ -300,7 +309,7 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			__hv_assume(user == _alice || user == _bob);
 			returnValue = login_php(user, &location, &cookie, _bob_credentials);				
 			if (returnValue==400) return;
-			if (cookie != -1) wwahost_state.cookie = cookie;		//set client's cookie value locally. Note that cookies are cleared once you call authAsync func again.
+			//if (cookie != -1) wwahost_state.cookie = cookie;		//We shouldn't change cookie value. This cookie we are talking about is the cookie in the mini-browser, only calling authenticateAsync function may change the cookie value, although that cookie actually doesn't persist at all.
 			break;		
 		case API_id_FBConnectServer_dialog_permissions_request:
 			scope = poirot_nondet();
