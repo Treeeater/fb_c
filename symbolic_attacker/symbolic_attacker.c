@@ -27,6 +27,7 @@
 #define API_id_FBConnectServer_graph_facebook_com_me 4
 #define API_id_FBConnectServer_graph_facebook_com_email 5
 #define API_id_FBConnectServer_graph_facebook_com_oauth_access_token 6
+#define API_id_FBConnectServer_AuthenticateAsync 7
 
 #define API_id_RP_authenticate_user 6
 #define API_id_Bob_authenticate_user 7
@@ -168,11 +169,11 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			user = (poirot_nondet()==0)?_alice:_bob;
 			response_type = (poirot_nondet()==0) ?_token:_code;
 			redirect_domain = (poirot_nondet()==0)?_bob_domain:_foo_domain;
-
+			app_ID = (poirot_nondet()==0)?_foo_app_ID:_mal_app_ID;
 			//shuo
 			arg1=draw_cookie_from_knowledge_pool();
 			
-			returnValue = dialog_oauth(arg1, wwahost_state.current_state->app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
+			returnValue = dialog_oauth(arg1, app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
 			if (returnValue==400) return;
 			
 			//Add knowledge to bob
@@ -190,7 +191,7 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 
 		case API_id_FBConnectServer_login_php:
 			user = (poirot_nondet()==0)?_alice:_bob;
-			returnValue = login_php(user, &location, &cookie, -1);			//assuming bob cannot get alice's credentials.
+			returnValue = login_php(user, &location, &cookie, _bob_credentials);			//assuming bob cannot get alice's credentials.
 			if (returnValue==400) return;
 			add_cookie_knowledge_to_bob(cookie);				//bob gains extra info.
 			break;
@@ -307,7 +308,7 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 		case API_id_FBConnectServer_login_php:
 			user = poirot_nondet();
 			__hv_assume(user == _alice || user == _bob);
-			returnValue = login_php(user, &location, &cookie, _bob_credentials);				
+			returnValue = login_php(user, &location, &cookie, _alice_credentials);				
 			if (returnValue==400) return;
 			//if (cookie != -1) wwahost_state.cookie = cookie;		//We shouldn't change cookie value. This cookie we are talking about is the cookie in the mini-browser, only calling authenticateAsync function may change the cookie value, although that cookie actually doesn't persist at all.
 			break;		
@@ -342,6 +343,14 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			//exchange token for email
 			arg1=draw_access_token_from_knowledge_pool();
 			returnValue = graph_facebook_com_email_bob(arg1, &user_email);
+			break;
+		case API_id_FBConnectServer_AuthenticateAsync:
+			//we should not forget this, as malicious app can also call this.
+			redirect_domain = poirot_nondet();
+			__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
+			scope = poirot_nondet();
+			__hv_assume(scope == _basic || scope == _advanced);
+			Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(redirect_domain, scope, _alice);		//on client's device, alice should only input alice's credentials.
 			break;
 		default:
 			//exchange code for token
