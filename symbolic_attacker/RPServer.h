@@ -60,3 +60,12 @@ RP_Session authenticate_user_by_code(int code)
 	}
 	return rps;
 }
+
+RP_Session authenticate_user_by_signed_request(Signed_Request sr)
+{
+	RP_Session rps;
+	rps.user_ID = sr.user_ID;
+	rps.session_ID = foo_rp_state.session_length;
+	foo_rp_state.session_length++;
+	return rps;
+}

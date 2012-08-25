@@ -24,8 +24,8 @@ typedef struct
 {
 	enum App_Owner app_owner;
 	enum App_ID app_ID;
-	int access_token;
-	int code;
+	//int access_token;					//these only make sense for benign app, which we don't care its behavior.
+	//int code;
 } App_Client_State;
 
 typedef struct
@@ -77,7 +77,8 @@ typedef enum Scope
 typedef enum Response_Type
 {
 	_token,
-	_code
+	_code,
+	_signed_request
 } Response_Type;
 
 typedef enum App_ID
@@ -153,16 +154,20 @@ typedef struct
 
 
 //=============bob============
-typedef enum Location_Knowledge{
+typedef enum Next_Location{
 	_no_where,
 	_login_php,
 	_permissions_request,
 	_redirect_domain,			//original redirect domain specified, means oauth auth is done.
-} Location_Knowledge;
+} Next_Location;
 
 typedef struct{
 	int actionNumber;
 } Dev_Guide_State;
+
+typedef struct{
+	User user_ID;
+} Signed_Request;
 
 //global var
 extern FB_Server_State server_state;
@@ -176,4 +181,6 @@ extern int email_k_base[];
 extern int email_k_base_length;
 extern int app_secret_k_base[];
 extern int app_secret_k_base_length;
+extern Signed_Request signed_request_k_base[];
+extern int signed_request_k_base_length;
 #endif

@@ -15,8 +15,9 @@
 	302 to redirect_uri with access_token as param(if everything checks)
 */
 
-int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, Scope scope, User login_user, Response_Type response_type, Location_Knowledge *location, int *access_token, int *code)
+int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, Scope scope, User login_user, Response_Type response_type, Next_Location *location, int *access_token, int *code, Signed_Request *sr)
 //there is a default response_type in this API, so it may not be present in the actual URL
+//although in reality client may call response_type = token,signed_request (separated by comma), it is in fact the same as calling them sequentially. We do not model this 'comma' behavior.
 //User login_user is abstracted from real login process. This parameter indicates whose username is used to login to the system, i.e. alice or bob.
 {
 	//Fetch the app
@@ -96,6 +97,10 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 		//issue this code to the client
 		*code = c.code_value;
 	}
+	else if (response_type == _signed_request)
+	{
+		sr->user_ID = logged_in_user;			//for a signed request, the server actually doesn't need to remember what it has signed.
+	}
 	//redirect to specified redirect_domain, oauth is done.
 	*location = _redirect_domain;
 	return 302;
@@ -124,7 +129,7 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 	Create session cookie 4 logged in user. (cookie name = c_user)
 */
 
-int login_php(User login_user, Location_Knowledge *location, int *cookie, User_Credentials uc)
+int login_php(User login_user, Next_Location *location, int *cookie, User_Credentials uc)
 {
 	Cookie c;
 	//need to log in.
@@ -156,7 +161,7 @@ int login_php(User login_user, Location_Knowledge *location, int *cookie, User_C
 	302 https://www.soluto.com/pcgenome/account/facebooklogin?code=AQBotE3ZFBj8nIhPnh0a6RZ8frPlv_VyS7DYtmFMOxIgoHktKrVlajVlwJ4CwKrR0PrTwenq-rmCIl_54elDZ0PKorU1EVJ-xhZ102fgC82Dhgfd_vqPf1K9XS-zzWRXfPpLQLpI51KKI4a2vUp9P0QNlymXmiAjej_rkG5Q7pg2Wv8fx90Z1aqe_ZNMBgQE3dr0LwpgFFfxP2WbS7K-B-R7#_=_
 
 */
-int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Response_Type response_type, Location_Knowledge *location, int *access_token, int *code)
+int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Response_Type response_type, Next_Location *location, int *access_token, int *code, Signed_Request *sr)
 {
 	Registered_App app;
 	Access_Token at;
@@ -227,6 +232,10 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 
 		//issue this code to the client
 		*code = c.code_value;
+	}
+	else if (response_type == _signed_request)
+	{
+		sr->user_ID = logged_in_user;			//for a signed request, the server actually doesn't need to remember what it has signed.
 	}
 	//redirect to specified redirect_domain, oauth is done.
 	*location = _redirect_domain;

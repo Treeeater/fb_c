@@ -39,6 +39,13 @@ int draw_app_secret_from_knowledge_pool()
 	return app_secret_k_base[index];
 }
 
+Signed_Request draw_signed_request_from_knowledge_pool()
+{
+	int index = poirot_nondet();
+	__hv_assume(index >= 0 && index < signed_request_k_base_length);
+	return signed_request_k_base[index];
+}
+
 void add_cookie_knowledge_to_bob(int value)
 {
 	cookie_k_base[cookie_k_base_length] = value;
@@ -68,6 +75,12 @@ void add_app_secret_knowledge_to_bob(int value)
 {
 	app_secret_k_base[app_secret_k_base_length] = value;
 	app_secret_k_base_length++;
+}
+
+void add_signed_request_knowledge_to_bob(Signed_Request sr)
+{
+	signed_request_k_base[signed_request_k_base_length] = sr;
+	signed_request_k_base_length++;
 }
 
 int graph_facebook_com_oauth_access_token_bob(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code, int *access_token)

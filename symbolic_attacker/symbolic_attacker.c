@@ -46,6 +46,7 @@ int access_token_k_base[100];
 int code_k_base[100];
 int email_k_base[100];
 int app_secret_k_base[100];
+Signed_Request signed_request_k_base[100];
 
 int cookie_k_base_length;
 int access_token_k_base_length;
@@ -131,6 +132,7 @@ RP_Session foo_service_API_authenticate() {
 	//a little bit cheating here. This function is not supposed to be concrete. 
 	int API_id = poirot_nondet();
 	int arg1 = -1;
+	Signed_Request arg2;
 	//already checked for dev guide, don't need to check again.
 	switch (API_id){
 		case 1:
@@ -139,6 +141,9 @@ RP_Session foo_service_API_authenticate() {
 		case 2:
 			arg1=draw_code_from_knowledge_pool();
 			return authenticate_user_by_code(arg1);
+		case 3:
+			arg2 = draw_signed_request_from_knowledge_pool();
+			return authenticate_user_by_signed_request(arg2);
 		default:
 			arg1=draw_email_from_knowledge_pool();
 			return authenticate_user_by_email(arg1);
@@ -152,28 +157,30 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 	int returnValue = 400;
 	//Knowledge k;
 	User user = _nobody;
-	Location_Knowledge location = _no_where;
+	Next_Location location = _no_where;
 	Redirect_Domain redirect_domain = _no_domain;
 	Scope scope = _no_permission;
 	Response_Type response_type = _token; 
 	App_ID app_ID;
-
+	Signed_Request sr;
 	//shuo
 	int arg1;
-
+	sr.user_ID = -1;
+	
 	switch (API_id) {
 		
 		case API_id_FBConnectServer_dialog_oauth:    
 			//shuo
 			scope = (poirot_nondet()==0)?_basic:_advanced;
 			user = (poirot_nondet()==0)?_alice:_bob;
-			response_type = (poirot_nondet()==0) ?_token:_code;
+			response_type = poirot_nondet();
+			__hv_assume(response_type == _token || response_type == _code || response_type == _signed_request);
 			redirect_domain = (poirot_nondet()==0)?_bob_domain:_foo_domain;
 			app_ID = (poirot_nondet()==0)?_foo_app_ID:_mal_app_ID;
 			//shuo
 			arg1=draw_cookie_from_knowledge_pool();
 			
-			returnValue = dialog_oauth(arg1, app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
+			returnValue = dialog_oauth(arg1, app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code, &sr);
 			if (returnValue==400) return;
 			
 			//Add knowledge to bob
@@ -186,6 +193,10 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			{
 				add_code_knowledge_to_bob(code);
 			}
+			if (sr.user_ID != -1)
+			{
+				add_signed_request_knowledge_to_bob(sr);
+			}	
 			break;
 
 
@@ -197,12 +208,13 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			break;
 		case API_id_FBConnectServer_dialog_permissions_request:
 			scope = (poirot_nondet()==0)?_basic:_advanced;
-			response_type = (poirot_nondet()==0) ?_token:_code;
+			response_type = poirot_nondet();
+			__hv_assume(response_type == _token || response_type == _code || response_type == _signed_request);
 			app_ID = (poirot_nondet()==0) ? _foo_app_ID:_mal_app_ID;
 
 			//shuo
 			arg1=draw_cookie_from_knowledge_pool();
-			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code);
+			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code, &sr);
 			if (returnValue==400) return;
 			//Add knowledge to bob
 			if (access_token != -1) 
@@ -212,6 +224,10 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			if (code != -1) 
 			{
 				add_code_knowledge_to_bob(code);
+			}
+			if (sr.user_ID != -1)
+			{
+				add_signed_request_knowledge_to_bob(sr);
 			}
 			break;
 		//case API_id_FBConnectServer_graph_facebook_com_me:			//this is essentially the same as calling from client mal app
@@ -240,14 +256,34 @@ void call_an_API_on_foo_service_app_From_Bob(int API_id) {
 void call_an_API_on_client_SDK(int API_id) {
 	Redirect_Domain redirect_domain;
 	Scope scope;
+	Response_Type response_type;
+	int access_token = -1;
+	int code = -1;
+	Signed_Request sr;
+	sr.user_ID = -1;
+	
 	switch (API_id) {
 	default:
 		redirect_domain = poirot_nondet();
 		__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
 		scope = poirot_nondet();
 		__hv_assume(scope == _basic || scope == _advanced);
-		Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(redirect_domain, scope, _alice);		//on client's device, alice should only input alice's credentials.
-			break;
+		response_type = poirot_nondet();
+		__hv_assume(response_type == _token || response_type == _code || response_type == _signed_request);
+		Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(response_type, redirect_domain, scope, _alice, &access_token, &code, &sr);		//on client's device, alice should only input alice's credentials.
+		if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (access_token != -1))
+		{
+			add_access_token_knowledge_to_bob(access_token);
+		}
+		else if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (code != -1))
+		{
+			add_code_knowledge_to_bob(code);
+		}
+		else if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (sr.user_ID != -1))
+		{
+			add_signed_request_knowledge_to_bob(sr);
+		}
+		break;
 	}
 }
 
@@ -272,12 +308,15 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 	int returnValue = 400;
 	App_ID app_ID;
 	User user = _nobody;
-	Location_Knowledge location = _no_where;
+	Next_Location location = _no_where;
 	Redirect_Domain redirect_domain = _no_domain;
 	Scope scope = _no_permission;
 	Response_Type response_type = _token; 
+	Signed_Request sr;
+	
 	int arg1,arg2;
 
+	sr.user_ID = -1;
 	switch (API_id) {
 		case API_id_FBConnectServer_dialog_oauth:
 			redirect_domain = poirot_nondet();
@@ -287,11 +326,11 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			user = poirot_nondet();
 			__hv_assume(user == _alice || user == _bob);
 			response_type = poirot_nondet();
-			__hv_assume(response_type == _token || response_type == _code);
+			__hv_assume(response_type == _token || response_type == _code || response_type == _signed_request);
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
 			arg1=draw_cookie_from_knowledge_pool();
-			returnValue = dialog_oauth(arg1, app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code);
+			returnValue = dialog_oauth(arg1, app_ID, redirect_domain, scope, user, response_type, &location, &access_token, &code, &sr);
 			if (returnValue==400) return;
 			if (returnValue == 302 && location == _redirect_domain)
 			{
@@ -302,6 +341,10 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 				if (code != -1)
 				{
 					add_code_knowledge_to_bob(code);
+				}
+				if (sr.user_ID != -1)
+				{
+					add_signed_request_knowledge_to_bob(sr);
 				}
 			}
 			break;
@@ -316,11 +359,11 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			scope = poirot_nondet();
 			__hv_assume(scope == _basic || scope == _advanced);
 			response_type = poirot_nondet();
-			__hv_assume(response_type == _token || response_type == _code);
+			__hv_assume(response_type == _token || response_type == _code || response_type == _signed_request);
 			app_ID = poirot_nondet();
 			__hv_assume(app_ID == _foo_app_ID || app_ID == _mal_app_ID);
 			arg1=draw_cookie_from_knowledge_pool();
-			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code);
+			returnValue = dialog_permissions_request(app_ID, arg1, scope, response_type, &location, &access_token, &code, &sr);
 			if (returnValue==400) return;
 			if (returnValue == 302 && location == _redirect_domain)
 			{
@@ -331,6 +374,10 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 				if (code!=-1)
 				{
 					add_code_knowledge_to_bob(code);
+				}
+				if (sr.user_ID != -1)
+				{
+					add_signed_request_knowledge_to_bob(sr);
 				}
 			}
 			break;
@@ -343,14 +390,6 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			//exchange token for email
 			arg1=draw_access_token_from_knowledge_pool();
 			returnValue = graph_facebook_com_email_bob(arg1, &user_email);
-			break;
-		case API_id_FBConnectServer_AuthenticateAsync:
-			//we should not forget this, as malicious app can also call this.
-			redirect_domain = poirot_nondet();
-			__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
-			scope = poirot_nondet();
-			__hv_assume(scope == _basic || scope == _advanced);
-			Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(redirect_domain, scope, _alice);		//on client's device, alice should only input alice's credentials.
 			break;
 		default:
 			//exchange code for token
@@ -451,6 +490,7 @@ void initiate_knowledge()
 	code_k_base_length = 0;
 	email_k_base_length = 0;
 	app_secret_k_base_length = 0;
+	signed_request_k_base_length = 0;
 	//attacker should know attacker's App secret
 	add_app_secret_knowledge_to_bob(_bob_secret);
 	//add_knowledge_to_bob(_user_credentials_K,_bob_credentials);			//user credentials are not used right now. Assume Alice always enters Alice's credentials on Alice's devices and Bob vice versa.
@@ -509,12 +549,9 @@ int main()
 	//client state init:
 	foo_app_state.app_owner = _foo_own;
 	foo_app_state.app_ID = _foo_app_ID;
-	foo_app_state.access_token = -1;
-	foo_app_state.code = -1;
 	
 	mal_app_state.app_owner = _bob_own;
-	mal_app_state.access_token = -1;
-	mal_app_state.code = -1;
+	//we don't assign mal's app_ID as it may spoof it later.
 
 	//wwahost state init:
 	wwahost_state.cookie = -1;
