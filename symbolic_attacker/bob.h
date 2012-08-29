@@ -66,7 +66,7 @@ void add_code_knowledge_to_bob(int value)
 
 void add_email_knowledge_to_bob(int value)
 {
-	__hv_assert(value != _alice_email);
+	//__hv_assert(value != _alice_email);
 	email_k_base[email_k_base_length] = value;
 	email_k_base_length++;
 }

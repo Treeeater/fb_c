@@ -167,6 +167,7 @@ typedef struct{
 
 typedef struct{
 	User user_ID;
+	App_ID app_ID;
 } Signed_Request;
 
 //global var

@@ -100,6 +100,7 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 	else if (response_type == _signed_request)
 	{
 		sr->user_ID = logged_in_user;			//for a signed request, the server actually doesn't need to remember what it has signed.
+		sr->app_ID = client_id;					//signature tied to app id
 	}
 	//redirect to specified redirect_domain, oauth is done.
 	*location = _redirect_domain;
@@ -236,6 +237,7 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 	else if (response_type == _signed_request)
 	{
 		sr->user_ID = logged_in_user;			//for a signed request, the server actually doesn't need to remember what it has signed.
+		sr->app_ID = client_id;					//signature tied to app id
 	}
 	//redirect to specified redirect_domain, oauth is done.
 	*location = _redirect_domain;
@@ -304,13 +306,19 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 
 	//Check app secret
 	if (app.app_secret != app_secret){
-		//secret doesn't match
+		//secret doesn't match as declared app.
 		return 400;
 	}
 
 	//Checking done, now fetch user id.
 	i = poirot_nondet();
     __hv_assume(i >= 0 && i < server_state.code_length && code == server_state.codes[i].code_value);
+	
+	if (server_state.codes[i].app_secret != app_secret){
+		//secret doesn't match as code
+		return 400;
+	}
+	
     user_ID = server_state.codes[i].user_ID;
 
 	if (user_ID == _nobody) return 400;		//cannot find user

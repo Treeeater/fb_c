@@ -43,7 +43,7 @@ RP_Session authenticate_user_by_access_token(int access_token)
 	return rps;
 }
 
-RP_Session authenticate_user_by_code(int code)
+RP_Session authenticate_user_by_code(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code)
 {
 	//exchange the code for token, and then exchange the token for uid.
 	RP_Session rps;
@@ -51,7 +51,7 @@ RP_Session authenticate_user_by_code(int code)
 	User user_ID = _nobody;
 	rps.session_ID = -1;
 	rps.user_ID = _nobody;
-	if (graph_facebook_com_oauth_access_token(_foo_domain, _foo_app_ID, _foo_secret, code, &access_token) == 400) return rps;
+	if (graph_facebook_com_oauth_access_token(redirect_domain, client_id, app_secret, code, &access_token) == 400) return rps;
 	if (graph_facebook_com_me(access_token, &user_ID) == 200)
 	{
 		rps.session_ID = foo_rp_state.session_length;
@@ -64,6 +64,10 @@ RP_Session authenticate_user_by_code(int code)
 RP_Session authenticate_user_by_signed_request(Signed_Request sr)
 {
 	RP_Session rps;
+	rps.session_ID = -1;
+	rps.user_ID = _nobody;
+	if (sr.app_ID != _foo_app_ID) return rps;			//check signature
+	
 	rps.user_ID = sr.user_ID;
 	rps.session_ID = foo_rp_state.session_length;
 	foo_rp_state.session_length++;

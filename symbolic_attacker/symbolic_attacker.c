@@ -6,6 +6,7 @@
 #include "FBConnectServer.h"
 #include "FBConnectSDK.h"
 #include "RPServer.h"
+#include "FBDevGuide.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -111,15 +112,6 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 	return 1;
 }
 
-int not_violating_client_dev_guide(Caller caller, int callee_id,int API_id) {
-	return 1;
-}
-
-void update_dev_guide_status(Caller caller, int callee_id,int API_id) {
-}
-//==================
-
-
 //================Foo service app behavior=============
 RP_Session foo_service_API_authenticate() {
 	/*int callee_id, API_id;
@@ -132,21 +124,32 @@ RP_Session foo_service_API_authenticate() {
 	//a little bit cheating here. This function is not supposed to be concrete. 
 	int API_id = poirot_nondet();
 	int arg1 = -1;
-	Signed_Request arg2;
+	int arg2 = -1;
+	int arg3 = -1;
+	int arg4 = -1;
+	Signed_Request sr;
+	RP_Session nothing;
+	nothing.user_ID = -1;
+	nothing.session_ID = -1;
 	//already checked for dev guide, don't need to check again.
 	switch (API_id){
 		case 1:
-			arg1=draw_access_token_from_knowledge_pool();
-			return authenticate_user_by_access_token(arg1);
+			//arg1=draw_access_token_from_knowledge_pool();
+			//return authenticate_user_by_access_token(arg1);
 		case 2:
-			arg1=draw_code_from_knowledge_pool();
-			return authenticate_user_by_code(arg1);
+			arg1 = (poirot_nondet()==0)? _bob_domain:_foo_domain;		//bob doesn't need to have this type of knowledge, it is all public (therefore simply modeled)
+			arg2 = (poirot_nondet()==0)? _mal_app_ID:_foo_app_ID;		//bob doesn't need to have this type of knowledge, it is all public (therefore simply modeled)
+			arg3 = draw_app_secret_from_knowledge_pool();
+			arg4 = draw_code_from_knowledge_pool();
+			return authenticate_user_by_code(arg1,arg2,arg3,arg4);
 		case 3:
-			arg2 = draw_signed_request_from_knowledge_pool();
-			return authenticate_user_by_signed_request(arg2);
+			//sr = draw_signed_request_from_knowledge_pool();
+			//return authenticate_user_by_signed_request(sr);
+		case 4:
+			//arg1=draw_email_from_knowledge_pool();
+			//return authenticate_user_by_email(arg1);
 		default:
-			arg1=draw_email_from_knowledge_pool();
-			return authenticate_user_by_email(arg1);
+			return nothing;
 	}
 }
 
