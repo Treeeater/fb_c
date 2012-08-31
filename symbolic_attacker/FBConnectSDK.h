@@ -7,7 +7,7 @@
 extern WWAHost_State wwahost_state;
 
 /*http://msdn.microsoft.com/en-us/library/windows/apps/br212067.aspx */
-void Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(Response_Type response_type, Redirect_Domain redirect_domain, Scope scope, User user, int *access_token, int *code, Signed_Request *sr)
+void Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(Response_Type response_type, Redirect_Domain redirect_domain, Scope scope, User user, Access_Token *access_token, Code *code, Signed_Request *sr)
 {
 	int cookie = -1;
 	Next_Location location;

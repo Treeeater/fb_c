@@ -112,6 +112,7 @@ typedef struct {
 	User user_ID;
 	App_Secret app_secret;
 	App_ID app_ID;
+	Scope scope;			//code should also be tied with some privileges.
 	//int Expires_In
 } Code;
 

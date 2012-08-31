@@ -15,15 +15,13 @@
 	302 to redirect_uri with access_token as param(if everything checks)
 */
 
-int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, Scope scope, User login_user, Response_Type response_type, Next_Location *location, int *access_token, int *code, Signed_Request *sr)
+int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, Scope scope, User login_user, Response_Type response_type, Next_Location *location, Access_Token *access_token, Code *code, Signed_Request *sr)
 //there is a default response_type in this API, so it may not be present in the actual URL
 //although in reality client may call response_type = token,signed_request (separated by comma), it is in fact the same as calling them sequentially. We do not model this 'comma' behavior.
 //User login_user is abstracted from real login process. This parameter indicates whose username is used to login to the system, i.e. alice or bob.
 {
 	//Fetch the app
 	User logged_in_user = _nobody;
-	Access_Token at;
-	Code c;
 	Scope user_scope;
 	int i = 0;
 	int found = 0;
@@ -77,25 +75,23 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 	//everything is checked, let's generate and save the access_token/code
 	if (response_type == _token)
 	{
-		at.token_value = server_state.token_length;
-		at.user_ID = logged_in_user;
-		at.scope = scope;
-		server_state.tokens[server_state.token_length] = at;
+		access_token->token_value = server_state.token_length;
+		access_token->user_ID = logged_in_user;
+		access_token->scope = scope;
+		server_state.tokens[server_state.token_length] = *access_token;
 		server_state.token_length++;
-		//issue this token to the client
-		*access_token = at.token_value;
 	}
 	else if (response_type == _code)
 	{
-		c.code_value = server_state.code_length;
-		c.user_ID = logged_in_user;
-		c.app_secret = app.app_secret;
-		c.app_ID = app.app_ID;
-		server_state.codes[server_state.code_length] = c;
+		code->code_value = server_state.code_length;
+		code->user_ID = logged_in_user;
+		code->app_secret = app.app_secret;
+		code->app_ID = app.app_ID;
+		code->scope = scope;
+		server_state.codes[server_state.code_length] = *code;
 		server_state.code_length++;
 
 		//issue this code to the client
-		*code = c.code_value;
 	}
 	else if (response_type == _signed_request)
 	{
@@ -130,19 +126,17 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 	Create session cookie 4 logged in user. (cookie name = c_user)
 */
 
-int login_php(User login_user, Next_Location *location, int *cookie, User_Credentials uc)
+int login_php(User login_user, Next_Location *location, Cookie *cookie, User_Credentials uc)
 {
-	Cookie c;
 	//need to log in.
 	//We can apply restrictions here
 
 	//successfully logged in, now let's set the cookie
 	if (login_user == _alice && uc != _alice_credentials) return 400;
 	if (login_user == _bob && uc != _bob_credentials) return 400;
-	c.cookie_value = server_state.cookie_length;
-	c.user_ID = login_user;
-	server_state.cookies[server_state.cookie_length] = c;
-	*cookie = c.cookie_value;
+	cookie->cookie_value = server_state.cookie_length;
+	cookie->user_ID = login_user;
+	server_state.cookies[server_state.cookie_length] = *cookie;
 	server_state.cookie_length++;
 	//set next location
 	*location = _permissions_request;
@@ -162,11 +156,9 @@ int login_php(User login_user, Next_Location *location, int *cookie, User_Creden
 	302 https://www.soluto.com/pcgenome/account/facebooklogin?code=AQBotE3ZFBj8nIhPnh0a6RZ8frPlv_VyS7DYtmFMOxIgoHktKrVlajVlwJ4CwKrR0PrTwenq-rmCIl_54elDZ0PKorU1EVJ-xhZ102fgC82Dhgfd_vqPf1K9XS-zzWRXfPpLQLpI51KKI4a2vUp9P0QNlymXmiAjej_rkG5Q7pg2Wv8fx90Z1aqe_ZNMBgQE3dr0LwpgFFfxP2WbS7K-B-R7#_=_
 
 */
-int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Response_Type response_type, Next_Location *location, int *access_token, int *code, Signed_Request *sr)
+int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Response_Type response_type, Next_Location *location, Access_Token *access_token, Code *code, Signed_Request *sr)
 {
 	Registered_App app;
-	Access_Token at;
-	Code c;
 	int i = 0;
 	int found = 0;
 	User logged_in_user = _nobody;
@@ -198,7 +190,7 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 	//alice doesn't want to give bob any permission?
 	if (logged_in_user == _alice){
 			if (client_id == _mal_app_ID) {
-				return 400;
+				//return 400;
 			}
 	}
 	//grant permission
@@ -214,25 +206,23 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 	//everything is checked, let's generate and save the access_token/code
 	if (response_type == _token)
 	{
-		at.token_value = server_state.token_length;
-		at.user_ID = logged_in_user;
-		at.scope = scope;
-		server_state.tokens[server_state.token_length] = at;
+		access_token->token_value = server_state.token_length;
+		access_token->user_ID = logged_in_user;
+		access_token->scope = scope;
+		server_state.tokens[server_state.token_length] = *access_token;
 		server_state.token_length++;
-		//issue this token to the client
-		*access_token = at.token_value;
 	}
 	else if (response_type == _code)
 	{
-		c.code_value = server_state.code_length;
-		c.user_ID = logged_in_user;
-		c.app_secret = app.app_secret;
-		c.app_ID = app.app_ID;
-		server_state.codes[server_state.code_length] = c;
+		code->code_value = server_state.code_length;
+		code->user_ID = logged_in_user;
+		code->app_secret = app.app_secret;
+		code->app_ID = app.app_ID;
+		code->scope = scope;
+		server_state.codes[server_state.code_length] = *code;
 		server_state.code_length++;
 
 		//issue this code to the client
-		*code = c.code_value;
 	}
 	else if (response_type == _signed_request)
 	{
@@ -277,12 +267,11 @@ traffic:
 	200 access_token given in the response body
 */
 
-int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code, int *access_token)
+int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code, Access_Token *access_token)
 //exchange code 4 token
 {
 	//Fetch the app
 	User logged_in_user = _nobody;
-	Access_Token at;
 	int i = 0;
 	int found = 0;
 	Registered_App app;
@@ -325,13 +314,11 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 
 	//Generate access token 4 this user
 
-	at.token_value = server_state.token_length;
-	at.user_ID = user_ID;
-	at.scope = app.scope[user_ID];
-	server_state.tokens[server_state.token_length] = at;
+	access_token->token_value = server_state.token_length;
+	access_token->user_ID = logged_in_user;
+	access_token->scope = server_state.codes[i].scope;
+	server_state.tokens[server_state.token_length] = *access_token;
 	server_state.token_length++;
-	//issue this token to the client
-	*access_token = at.token_value;
 
 	return 200;
 }

@@ -46,44 +46,49 @@ Signed_Request draw_signed_request_from_knowledge_pool()
 	return signed_request_k_base[index];
 }
 
-void add_cookie_knowledge_to_bob(int value)
+void add_cookie_knowledge_to_bob(Cookie c)
 {
-	cookie_k_base[cookie_k_base_length] = value;
+	//POIROT_ASSERT(c.user_ID != _alice);
+	cookie_k_base[cookie_k_base_length] = c.cookie_value;
 	cookie_k_base_length++;
 }
 
-void add_access_token_knowledge_to_bob(int value)
+void add_access_token_knowledge_to_bob(Access_Token at)
 {
-	access_token_k_base[access_token_k_base_length] = value;
+	//POIROT_ASSERT(at.user_ID != _alice);
+	access_token_k_base[access_token_k_base_length] = at.token_value;
 	access_token_k_base_length++;
 }
 
-void add_code_knowledge_to_bob(int value)
+void add_code_knowledge_to_bob(Code c)
 {
-	code_k_base[code_k_base_length] = value;
+	POIROT_ASSERT(!(c.user_ID == _alice && c.app_ID == _foo_app_ID));
+	code_k_base[code_k_base_length] = c.code_value;
 	code_k_base_length++;
 }
 
 void add_email_knowledge_to_bob(int value)
 {
-	//__hv_assert(value != _alice_email);
+	//POIROT_ASSERT(value != _alice_email);
 	email_k_base[email_k_base_length] = value;
 	email_k_base_length++;
 }
 
 void add_app_secret_knowledge_to_bob(int value)
 {
+	//POIROT_ASSERT(value != _foo_secret);
 	app_secret_k_base[app_secret_k_base_length] = value;
 	app_secret_k_base_length++;
 }
 
 void add_signed_request_knowledge_to_bob(Signed_Request sr)
 {
+	//POIROT_ASSERT(sr.user_ID != _alice || sr.app_ID != _foo_app_ID);
 	signed_request_k_base[signed_request_k_base_length] = sr;
 	signed_request_k_base_length++;
 }
 
-int graph_facebook_com_oauth_access_token_bob(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code, int *access_token)
+int graph_facebook_com_oauth_access_token_bob(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code, Access_Token *access_token)
 {
 	int http_response = graph_facebook_com_oauth_access_token(redirect_domain, client_id, app_secret, code, access_token);
 	if (http_response!=400)
