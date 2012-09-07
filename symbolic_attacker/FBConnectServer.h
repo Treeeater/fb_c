@@ -246,6 +246,7 @@ int graph_facebook_com_me(int access_token, User *user_ID)
 {
 	int i = poirot_nondet();
     __hv_assume(i >= 0 && i < server_state.token_length && access_token == server_state.tokens[i].token_value);
+	if (server_state.tokens[i].scope < _basic) return 400;		//permission not enuf.
     *user_ID = server_state.tokens[i].user_ID;
 	return 200;
 }
@@ -254,6 +255,7 @@ int graph_facebook_com_email(int access_token, User_Email *user_email)
 {
 	int i = poirot_nondet();
     __hv_assume(i >= 0 && i < server_state.token_length && access_token == server_state.tokens[i].token_value);
+	if (server_state.tokens[i].scope < _advanced) return 400;		//permission not enuf.
     if (server_state.tokens[i].user_ID == _alice) *user_email = _alice_email;
 	if (server_state.tokens[i].user_ID == _bob) *user_email = _bob_email;
 	return 200;

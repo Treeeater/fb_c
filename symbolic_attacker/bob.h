@@ -55,14 +55,14 @@ void add_cookie_knowledge_to_bob(Cookie c)
 
 void add_access_token_knowledge_to_bob(Access_Token at)
 {
-	//POIROT_ASSERT(at.user_ID != _alice);
+	POIROT_ASSERT(at.user_ID != _alice);
 	access_token_k_base[access_token_k_base_length] = at.token_value;
 	access_token_k_base_length++;
 }
 
 void add_code_knowledge_to_bob(Code c)
 {
-	POIROT_ASSERT(!(c.user_ID == _alice && c.app_ID == _foo_app_ID));
+	//POIROT_ASSERT(!(c.user_ID == _alice && c.app_ID == _foo_app_ID));
 	code_k_base[code_k_base_length] = c.code_value;
 	code_k_base_length++;
 }

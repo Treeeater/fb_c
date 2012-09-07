@@ -161,3 +161,15 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+###############
+## Boogie
+###############
+*.bpl
+*.dmp
+*.smt2
+*.files
+*.out
+*.blob
+*.rawcfgf
+symbolic_attacker/corral_out_trace.txt
