@@ -6,6 +6,7 @@
 #include "FBConnectServer.h"
 #include "FBConnectSDK.h"
 //#include "RPServer.h"
+#include "bob.h"
 #include "FBDevGuide.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -112,47 +113,6 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 	return 1;
 }
 
-//================Foo service app behavior=============
-/*
-RP_Session foo_service_API_authenticate() {
-	int API_id = poirot_nondet();
-	int arg1 = -1;
-	int arg2 = -1;
-	int arg3 = -1;
-	int arg4 = -1;
-	Signed_Request sr;
-	RP_Session nothing;
-	nothing.user_ID = -1;
-	nothing.session_ID = -1;
-	//already checked for dev guide, don't need to check again.
-	switch (API_id){
-		case 1:
-			//arg1=draw_access_token_from_knowledge_pool();
-			//return authenticate_user_by_access_token(arg1);
-		case 2:
-			//arg1 = (poirot_nondet()==0)? _bob_domain:_foo_domain;		//bob doesn't need to have this type of knowledge, it is all public (therefore simply modeled)
-			//arg2 = (poirot_nondet()==0)? _mal_app_ID:_foo_app_ID;		//bob doesn't need to have this type of knowledge, it is all public (therefore simply modeled)
-			arg1 = _bob_domain;
-			arg2 = _mal_app_ID;
-			//arg1 = poirot_nondet();
-			//arg2 = piorot_nondet();
-			//__hv_assume(arg1 == _bob_domain || arg1 == _foo_domain);
-			//__hv_assume(arg2 == _mal_app_ID || arg1 == _foo_app_ID);
-			//arg3 = draw_app_secret_from_knowledge_pool();
-			arg3 = _bob_secret;
-			arg4 = draw_code_from_knowledge_pool();
-			return authenticate_user_by_code(arg1,arg2,arg3,arg4);
-		case 3:
-			//sr = draw_signed_request_from_knowledge_pool();
-			//return authenticate_user_by_signed_request(sr);
-		case 4:
-			//arg1=draw_email_from_knowledge_pool();
-			//return authenticate_user_by_email(arg1);
-		default:
-			return nothing;
-	}
-}
-*/
 void call_an_API_on_IdP_From_Bob(int API_id) {
 	Access_Token access_token;
 	Code code;
@@ -210,7 +170,6 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			}	
 			break;
 
-
 		case API_id_FBConnectServer_login_php:
 			user = (poirot_nondet()==0)?_alice:_bob;
 			returnValue = login_php(user, &location, &cookie, _bob_credentials);			//assuming bob cannot get alice's credentials.
@@ -250,19 +209,6 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			break;
 	}
 }
-
-//================Bob's behavior=============
-/*
-void call_an_API_on_foo_service_app_From_Bob(int API_id) {
-    RP_Session testRPS;
-
-	testRPS = foo_service_API_authenticate();
-	if (testRPS.user_ID==_alice)
-	{
-		printf("Unexpected: Foo app signed in as Alice from Bob's server\n" );
-		POIROT_ASSERT(1!=1);
-	}   
-}*/
 
 
 void call_an_API_on_client_SDK(int API_id) {
@@ -304,17 +250,6 @@ void call_an_API_on_client_SDK(int API_id) {
 		break;
 	}
 }
-/*
-void call_an_API_on_foo_service_app_From_Client(int API_id) {
-    RP_Session testRPS;
-	testRPS = foo_service_API_authenticate();
-	if (testRPS.user_ID==_bob && wwahost_state.current_state->app_ID == _foo_app_ID)				//session fixation
-	{
-		printf("Unexpected: Foo app signs in as Bob\n" );
-		//POIROT_ASSERT(1 != 1);																		//we currently don't detect this vulnerabilility
-	}   
-}*/
-
 
 
 void call_an_API_on_IdP_From_Client(int API_id) {
