@@ -2,69 +2,30 @@
 // symbolic_attacker.cpp : Defines the entry point for the console application.
 //
 
-#include "Structure.h" 
+#include "structure.h" 
 #include "FBConnectServer.h"
 #include "FBConnectSDK.h"
-//#include "RPServer.h"
+#include "RPServer.h"
 #include "bob.h"
 #include "FBDevGuide.h"
+#include "RPServer_API.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "poirot.h"
 
-#define module_id_foo_client_app 0
-#define module_id_mal_client_app 1
-#define module_id_Bob 2
-#define module_id_Foo_service_app 3
-#define module_id_client_SDK 4
-#define module_id_client_runtime 5
-#define module_id_Foo_cloud_runtime 6
-#define module_id_IdP 7
-
-#define API_id_FBConnectSDK_Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync 0
-#define API_id_FBConnectServer_dialog_oauth 1
-#define API_id_FBConnectServer_login_php 2
-#define API_id_FBConnectServer_dialog_permissions_request 3
-#define API_id_FBConnectServer_graph_facebook_com_me 4
-#define API_id_FBConnectServer_graph_facebook_com_email 5
-#define API_id_FBConnectServer_graph_facebook_com_oauth_access_token 6
-#define API_id_FBConnectServer_AuthenticateAsync 7
-
-#define API_id_RP_authenticate_user 6
-#define API_id_Bob_authenticate_user 7
-
-//global vars
-
-FB_Server_State server_state;
-RP_State foo_rp_state;
-WWAHost_State wwahost_state;
-App_Client_State foo_app_state, mal_app_state;
-int actionNumber;
-
-int MAX_STEPS = 0;
-int cookie_k_base[100];
-int access_token_k_base[100];
-int code_k_base[100];
-int email_k_base[100];
-int app_secret_k_base[100];
-Signed_Request signed_request_k_base[100];
-
-int cookie_k_base_length;
-int access_token_k_base_length;
-int code_k_base_length;
-int email_k_base_length;
-int app_secret_k_base_length;
 //Utility functions
 //==================
 
 int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 	
 	//everything, first action case:
+
+/*
 	if (actionNumber==0){			//first action
 		switch(caller){
 			case _caller_foo:
-				__hv_assume(callee_id == module_id_client_SDK);
+				__hv_assume(callee_id == module_id_client_runtime);
 				break;
 			case _caller_mal:
 				//don't assume anything for mal app
@@ -73,15 +34,23 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 				return 0;
 				break;
 		}
+	}*/
+
+
+	if (callee_id == module_id_foo_service)
+	{
+		if (wwahost_state.current_state->rp_cookie == -1)
+		{	
+			if (API_id != generate_loginurl) __hv_assume(1!=1);			//if session is not established, go to establish session.
+		}
 	}
-	
 	//authorization, last action case: last action should be made to IdP to get private data.
 	
 	/*if (actionNumber==MAX_STEPS-1){			//last action
 		switch(caller){
 			case _caller_mal:
 				//the last action shouldn't be made to foo.
-				__hv_assume(callee_id == module_id_client_SDK || callee_id == module_id_IdP);
+				__hv_assume(callee_id == module_id_client_runtime || callee_id == module_id_IdP);
 				break;
 			case _caller_bob:
 				//the last action should be made to idp.
@@ -100,7 +69,7 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 				return 0;		//the last action shouldn't be called by foo app
 				break;
 			case _caller_mal:
-				if (callee_id == module_id_client_SDK || callee_id == module_id_IdP) return 0;			//the last action shouldn't be made to idp.
+				if (callee_id == module_id_client_runtime || callee_id == module_id_IdP) return 0;			//the last action shouldn't be made to idp.
 				break;
 			case _caller_bob:
 				if (callee_id == module_id_IdP) return 0;			//the last action shouldn't be made to idp.
@@ -113,12 +82,80 @@ int not_violating_common_sense(Caller caller, int callee_id,int API_id) {
 	return 1;
 }
 
+void call_an_API_on_foo_service_app_From_Bob(int API_id) {
+    //as for bob, it actually doesn't gain anything from being able to manipulate the cookie and csrf token field. 
+	//during the entire process, rp_cookie is never revealed to bob (unless bob logs in with his account into RP, then he can gain his cookie). 
+	//gaining CSRF token means nothing, it is merely a defense in depth to prevent csrf attacks.
+	//For now, we simplify the model by putting nothing here.
+}
+
+void call_an_API_on_foo_service_app_From_Client(int API_id){
+
+	HTTPURL url;
+	User user = _nobody;
+	Signed_Request sr = {-1, -1, -1, _nobody, _invalid_app_ID};
+	int arg1 = -1;
+	Access_Token invalid_token = {-1, _nobody, _no_permission};
+	switch(API_id)
+	{	
+		case generate_loginurl:
+			//in wwahost runtime, even if app is malicious, it cannot set cookie for another domain. CSRF_Token is also a cookie. Therefore both parameters cannot be tempered with.
+			url = foo_service_generate_loginurl(wwahost_state.current_state->rp_cookie, wwahost_state.current_state->CSRF_Token);
+			//set current state for the current app. Note that only generate login url modifies these state, because all other operations are done after calling this.
+			//there should be a not_violating common sense associated with this rule.
+			wwahost_state.current_state->CSRF_Token = url.params.state;
+			wwahost_state.current_state->rp_cookie = url.rp_cookie;
+			break;
+		
+		case generate_logouturl:
+			url = foo_service_generate_logouturl(wwahost_state.current_state->rp_cookie, wwahost_state.current_state->CSRF_Token);
+			if (wwahost_state.current_state->app_owner == _bob_own)
+			{
+				if (url.params.access_token >= 100) 
+				{
+					//add_app_secret_knowledge_to_bob(url.params.access_token % 100);
+					add_app_secret_knowledge_to_bob(_foo_secret);
+					user = poirot_nondet();
+					__hv_assume(user == _alice || user == _bob);
+					arg1=draw_app_secret_from_knowledge_pool();
+					sr = create_signed_request_knowledge(user, arg1);
+					add_signed_request_knowledge_to_bob(sr);
+				}
+				else if (url.params.access_token >= 0) {add_access_token_knowledge_to_bob(invalid_token,url.params.access_token);}
+			}
+			break;
+		
+		/*case rpauthenticateuser_code:
+			if (wwahost_state.current_state->app_owner == _foo_own){
+				user = RPAuthenticateUser_code(wwahost_state.current_state->rp_cookie, wwahost_state.current_state->code, wwahost_state.current_state->CSRF_Token);
+			}
+			else{
+				//code and sreq is posted to the RP, therefore it can be altered by the malicious app, subject to its knowledge pool.
+				//user = RPAuthenticateUser_code(wwahost_state.current_state->rp_cookie, draw_code_from_knowledge_pool(), wwahost_state.current_state->CSRF_Token);
+				user = RPAuthenticateUser_code(mal_app_state.rp_cookie, draw_code_from_knowledge_pool(), mal_app_state.CSRF_Token);
+				POIROT_ASSERT(user!=_alice);
+			}
+			break;
+		*/
+		case rpauthenticateuser_sreq:
+			if (wwahost_state.current_state->app_owner == _foo_own){
+				user = RPAuthenticateUser_sreq(wwahost_state.current_state->rp_cookie, wwahost_state.current_state->sreq, wwahost_state.current_state->CSRF_Token);
+			}
+			else{
+				//code and sreq is posted to the RP, therefore it can be altered by the malicious app, subject to its knowledge pool.
+				//user = RPAuthenticateUser_sreq(wwahost_state.current_state->rp_cookie, draw_signed_request_from_knowledge_pool(), wwahost_state.current_state->CSRF_Token);
+				user = RPAuthenticateUser_sreq(mal_app_state.rp_cookie, draw_signed_request_from_knowledge_pool(), mal_app_state.CSRF_Token);
+				POIROT_ASSERT(user!=_alice);
+			}
+			break;
+	}
+}
+
 void call_an_API_on_IdP_From_Bob(int API_id) {
 	Access_Token access_token;
 	Code code;
 	Cookie cookie;
 	int returnValue = 400;
-	//Knowledge k;
 	User user = _nobody;
 	Next_Location location = _no_where;
 	Redirect_Domain redirect_domain = _no_domain;
@@ -158,7 +195,7 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			
 			if (access_token.token_value != -1) 
 			{
-				add_access_token_knowledge_to_bob(access_token);
+				add_access_token_knowledge_to_bob(access_token,-1);
 			}
 			if (code.code_value != -1) 
 			{
@@ -189,7 +226,7 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 			//Add knowledge to bob
 			if (access_token.token_value != -1) 
 			{
-				add_access_token_knowledge_to_bob(access_token);
+				add_access_token_knowledge_to_bob(access_token,-1);
 			}
 			if (code.code_value != -1) 
 			{
@@ -200,9 +237,6 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 				add_signed_request_knowledge_to_bob(sr);
 			}
 			break;
-		//case API_id_FBConnectServer_graph_facebook_com_me:			//this is essentially the same as calling from client mal app
-			//returnValue = graph_facebook_com_me_bob(draw_from_knowledge_pool(_access_token_K), &user);
-			//break;
 		default: //API_id_FBConnectServer_graph_facebook_com_oauth_access_token
 			//returnValue = graph_facebook_com_oauth_access_token_bob(poirot_nondet(), poirot_nondet(), draw_from_knowledge_pool(_app_secret_K), draw_from_knowledge_pool(_code_K), &access_token); 
 			//this is essentially the same as calling from client mal app
@@ -211,7 +245,7 @@ void call_an_API_on_IdP_From_Bob(int API_id) {
 }
 
 
-void call_an_API_on_client_SDK(int API_id) {
+void run_foo_app() {
 	Redirect_Domain redirect_domain;
 	Scope scope;
 	Response_Type response_type;
@@ -225,34 +259,28 @@ void call_an_API_on_client_SDK(int API_id) {
 	access_token.user_ID = _nobody;
 	access_token.scope = _no_permission;
 	access_token.token_value = -1;
-	
-	switch (API_id) {
-	default:
-		redirect_domain = poirot_nondet();
-		__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
-		scope = poirot_nondet();
-		__hv_assume(scope == _basic || scope == _advanced);
-		response_type = poirot_nondet();
-		__hv_assume(response_type == _token || response_type == _code || response_type == _signed_request);
-		Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(response_type, redirect_domain, scope, _alice, &access_token, &code, &sr);		//on client's device, alice should only input alice's credentials.
-		if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (access_token.token_value != -1))
-		{
-			add_access_token_knowledge_to_bob(access_token);
-		}
-		else if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (code.code_value != -1))
-		{
-			add_code_knowledge_to_bob(code);
-		}
-		else if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (sr.user_ID != -1))
-		{
-			add_signed_request_knowledge_to_bob(sr);
-		}
-		break;
+	redirect_domain = _foo_domain;
+	scope = poirot_nondet();
+	__hv_assume(scope == _basic || scope == _advanced);
+	response_type = poirot_nondet();
+	__hv_assume(response_type == _token || response_type == _code || response_type == _signed_request);
+	Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(response_type, redirect_domain, scope, _alice, &access_token, &code, &sr);		//on client's device, alice should only input alice's credentials.
+	if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (access_token.token_value != -1))
+	{
+		add_access_token_knowledge_to_bob(access_token, -1);
+	}
+	else if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (code.code_value != -1))
+	{
+		add_code_knowledge_to_bob(code);
+	}
+	else if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (sr.user_ID != -1))
+	{
+		add_signed_request_knowledge_to_bob(sr);
 	}
 }
 
 
-void call_an_API_on_IdP_From_Client(int API_id) {
+void call_an_API_on_IdP_From_Mal_App(int API_id) {
 	//This is actually bob's behavior, because foo app will never call this function. It will always follow dev guide and call functions provided by the SDK.
 	Access_Token access_token;
 	User_Email user_email;
@@ -297,7 +325,7 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			{
 				if (access_token.token_value != -1)
 				{
-					add_access_token_knowledge_to_bob(access_token);
+					add_access_token_knowledge_to_bob(access_token,-1);
 				}
 				if (code.code_value != -1)
 				{
@@ -330,7 +358,7 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 			{
 				if (access_token.token_value != -1)
 				{
-					add_access_token_knowledge_to_bob(access_token);
+					add_access_token_knowledge_to_bob(access_token,-1);
 				}
 				if (code.code_value!=-1)
 				{
@@ -342,11 +370,14 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 				}
 			}
 			break;
-		case API_id_FBConnectServer_graph_facebook_com_me:
-			//exchange token for UID
-			arg1=draw_access_token_from_knowledge_pool();
-			returnValue = graph_facebook_com_me_bob(arg1, &user);
-			break;
+		/*case API_id_FBConnectServer_create_signed_request:
+			//use app secret to create signed request knowledge
+			user = poirot_nondet();
+			__hv_assume(user == _alice || user == _bob);
+			arg1=draw_app_secret_from_knowledge_pool();
+			sr = create_signed_request_knowledge(user, arg1);
+			add_signed_request_knowledge_to_bob(sr);
+			break;*/
 		case API_id_FBConnectServer_graph_facebook_com_email:
 			//exchange token for email
 			arg1=draw_access_token_from_knowledge_pool();
@@ -364,6 +395,41 @@ void call_an_API_on_IdP_From_Client(int API_id) {
 	}
 }
 
+void call_an_API_on_client_SDK_From_Mal_App() {
+	Redirect_Domain redirect_domain;
+	Scope scope;
+	Response_Type response_type;
+	Access_Token access_token;
+	Code code;
+	Signed_Request sr;
+	sr.user_ID = -1;
+	code.code_value = -1;
+	code.user_ID = _nobody;
+	code.scope = _no_permission;
+	access_token.user_ID = _nobody;
+	access_token.scope = _no_permission;
+	access_token.token_value = -1;
+	redirect_domain = poirot_nondet();
+	__hv_assume(redirect_domain == _foo_domain || redirect_domain == _bob_domain);
+	scope = poirot_nondet();
+	__hv_assume(scope == _basic || scope == _advanced);
+	response_type = poirot_nondet();
+	__hv_assume(response_type == _token || response_type == _code || response_type == _signed_request);
+	Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsync(response_type, redirect_domain, scope, _alice, &access_token, &code, &sr);		//on client's device, alice should only input alice's credentials.
+	if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (access_token.token_value != -1))
+	{
+		add_access_token_knowledge_to_bob(access_token,-1);
+	}
+	else if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (code.code_value != -1))
+	{
+		add_code_knowledge_to_bob(code);
+	}
+	else if ((wwahost_state.current_state->app_owner == _bob_own || redirect_domain == _bob_domain) && (sr.user_ID != -1))
+	{
+		add_signed_request_knowledge_to_bob(sr);
+	}
+}
+
 void foo_client_app_calls() 
 {
 	int callee_id, API_id;
@@ -372,11 +438,12 @@ void foo_client_app_calls()
 	if (not_violating_client_dev_guide(_caller_foo,callee_id,API_id)&&not_violating_common_sense(_caller_foo,callee_id,API_id)) {
 		update_dev_guide_status(_caller_foo,callee_id,API_id);	
 		switch (callee_id) {
-		case module_id_client_SDK:
-			call_an_API_on_client_SDK(API_id);						//call authasync
+		case module_id_foo_app:
+			run_foo_app();						//call authasync
 			break;
+		case module_id_foo_service:
+			call_an_API_on_foo_service_app_From_Client(API_id);		//call RP's service API
 		default:
-			//call_an_API_on_foo_service_app_From_Client(API_id);		//call RP's service API
 			break;
 		}
 	}
@@ -389,14 +456,16 @@ void mal_client_app_calls(){
 	if (not_violating_client_dev_guide(_caller_mal,callee_id,API_id)&&not_violating_common_sense(_caller_mal,callee_id,API_id)) { //[shuo] MalApp's behavior shouldn't be constrained by anything.
 		update_dev_guide_status(_caller_mal,callee_id,API_id);	
 		switch (callee_id) {
-		case module_id_client_SDK:
-			call_an_API_on_client_SDK(API_id);
-			break;
 		case module_id_IdP:
-			call_an_API_on_IdP_From_Client(API_id);
+			call_an_API_on_IdP_From_Mal_App(API_id);
+			break;
+		case module_id_client_runtime:
+			call_an_API_on_client_SDK_From_Mal_App();
+			break;
+		case module_id_foo_service:
+			call_an_API_on_foo_service_app_From_Client(API_id);
 			break;
 		default:
-			//call_an_API_on_foo_service_app_From_Client(API_id);
 			break;
 		}
 	}
@@ -412,8 +481,10 @@ void Bob_calls() {
 		case module_id_IdP:
 			call_an_API_on_IdP_From_Bob(API_id);
 			break;
+		case module_id_foo_service:
+			call_an_API_on_foo_service_app_From_Bob(API_id); 
+			break;
 		default:
-			//call_an_API_on_foo_service_app_From_Bob(API_id); 
 			break;
 		}
 	}
@@ -429,9 +500,7 @@ void takeAction()
 	case module_id_mal_client_app:
 	
 		//mal_app_state.app_ID = poirot_nondet();	 //bob can spoof this id.
-		//__hv_assume(mal_app_state.app_ID == _mal_app_ID || mal_app_state.app_ID == _foo_app_ID);
-		
-		mal_app_state.app_ID = _mal_app_ID;			//bob cannot spoof this id.
+		//__hv_assume(mal_app_state.app_ID == _mal_app_ID || mal_app_state.app_ID == _foo_app_ID);			//[final assumption: app shouldn't be able to spoof as other app, this probably means big display of app name and vendor].
 		
 		wwahost_state.current_state = &mal_app_state;
    		mal_client_app_calls();
@@ -443,8 +512,7 @@ void takeAction()
 	actionNumber++;
 }
 
-//initiate_knowledge()
-void initiate_knowledge()
+void initiatize_knowledge()
 {
 	cookie_k_base_length = 0;
 	access_token_k_base_length = 0;
@@ -453,8 +521,7 @@ void initiate_knowledge()
 	app_secret_k_base_length = 0;
 	signed_request_k_base_length = 0;
 	//attacker should know attacker's App secret
-	add_app_secret_knowledge_to_bob(_bob_secret);
-	//add_knowledge_to_bob(_user_credentials_K,_bob_credentials);			//user credentials are not used right now. Assume Alice always enters Alice's credentials on Alice's devices and Bob vice versa.
+	add_app_secret_knowledge_to_bob(_bob_secret);		//user credentials are not used right now. Assume Alice always enters Alice's credentials on Alice's devices and Bob vice versa.
 }
 
 //================main=============
@@ -462,24 +529,19 @@ void initiate_knowledge()
 
 int main()
 {
+	User user = _nobody;
+	//initialize SESSION
+			
+	_SESSION.kSupportedKeys.state = -1;
+	_SESSION.kSupportedKeys.code = -1;
+	_SESSION.kSupportedKeys.access_token = -1;
+	_SESSION.kSupportedKeys.user_id = _nobody;
  //first, Foo's service app (i.e., developer of Foo's service app) needs to configure IdP
  //config_call_1;
  //	2,3
-	User_Email user_email = _no_email;
-	Access_Token ats[100];
-	RP_Session rps[100];
-	Cookie cookies[100];
-	Code codes[100];
-	Scope FScope[100];
-	Scope BScope[100];
 
 	//devGuideState init:
 	actionNumber = 0;
-
-	//RP state init:
-	
-	foo_rp_state.session_length = 0;
-	foo_rp_state.rp_sessions = rps;
 
 	//server state init:
 	server_state.cookies = cookies;
@@ -503,30 +565,45 @@ int main()
 	server_state.app_B.scope = BScope;
 	server_state.app_B.scope[_alice] = _no_permission;
 	server_state.app_B.scope[_bob] = _no_permission;
-	server_state.app_F.scope_length = 0;		//scope length not in use right now.
-	server_state.app_B.scope_length = 0;
-	server_state.app_length = 2;
 
-	//client state init:
+	//foo client state init:
 	foo_app_state.app_owner = _foo_own;
 	foo_app_state.app_ID = _foo_app_ID;
+	foo_app_state.access_token = -1;
+	foo_app_state.code = -1;
+	foo_app_state.rp_cookie = -1;
+	foo_app_state.CSRF_Token = -1;
 	
+	//mal client state init:
+	//it only needs to init the app_owner and the cookies, other parameters we don't care.
 	mal_app_state.app_owner = _bob_own;
-	//we don't assign mal's app_ID as it may spoof it later.
+	mal_app_state.rp_cookie = -1;
+	mal_app_state.CSRF_Token = -1;
+	mal_app_state.app_ID = _mal_app_ID;			//bob cannot spoof this id.
+	
 
 	//wwahost state init:
 	wwahost_state.cookie = -1;
 	wwahost_state.current_state = &mal_app_state;
 	
+	//rp server state init.
+	RP_SESSION_LENGTH = 0;
+	RP_CSRF_TOKEN_LENGTH = 0;
+	setAppId(_foo_app_ID);
+	setAppSecret(_foo_secret);
 	//attacker should know some basic knowledge:
-	initiate_knowledge();
+	initiatize_knowledge();
 	//symbolic execution
 	 //second, non-deterministically call APIs
 	MAX_STEPS = 4;
 	takeAction();
 	takeAction();
 	takeAction();   
-	takeAction();   
+	takeAction();
+	
+	//user = RPAuthenticateUser_code(mal_app_state.rp_cookie, draw_code_from_knowledge_pool(), mal_app_state.CSRF_Token);
+	//POIROT_ASSERT(user!=_alice);
+	
 	//takeAction();   
 	//takeAction();    
 	//user_email = draw_email_from_knowledge_pool();

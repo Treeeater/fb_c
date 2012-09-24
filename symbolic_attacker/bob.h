@@ -3,6 +3,27 @@
 #include "structure.h"  
 #include "FBConnectServer.h"
 
+User tokenOwner(int token)
+{
+	int i = poirot_nondet();
+	__hv_assume(server_state.tokens[i].token_value == token && i < server_state.token_length && i>=0);
+	return server_state.tokens[i].user_ID;
+}
+/*
+User codeOwner(int code)
+{
+	int i = poirot_nondet();
+	__hv_assume(server_state.codes[i].code_value == code && i < server_state.code_length && i>=0);
+	return server_state.codes[i].user_ID;
+}
+
+App_ID codeOwnerAppID(int code)
+{
+	int i = poirot_nondet();
+	__hv_assume(server_state.codes[i].code_value == code && i < server_state.code_length && i>=0);
+	return server_state.codes[i].app_ID;
+}*/
+
 int draw_cookie_from_knowledge_pool()
 {
 	int index = poirot_nondet();
@@ -53,11 +74,21 @@ void add_cookie_knowledge_to_bob(Cookie c)
 	cookie_k_base_length++;
 }
 
-void add_access_token_knowledge_to_bob(Access_Token at)
+void add_access_token_knowledge_to_bob(Access_Token at, int at_value)
 {
-	POIROT_ASSERT(at.user_ID != _alice);
-	access_token_k_base[access_token_k_base_length] = at.token_value;
-	access_token_k_base_length++;
+	_hv_assume(access_token_k_base_length<100);
+	if (at_value==-1)
+	{
+		//POIROT_ASSERT(at.user_ID != _alice);
+		access_token_k_base[access_token_k_base_length] = at.token_value;
+		access_token_k_base_length++;
+	}
+	else
+	{
+		//POIROT_ASSERT(tokenOwner(at_value)!=_alice);
+		access_token_k_base[access_token_k_base_length] = at_value;
+		access_token_k_base_length++;
+	}
 }
 
 void add_code_knowledge_to_bob(Code c)
@@ -88,12 +119,28 @@ void add_signed_request_knowledge_to_bob(Signed_Request sr)
 	signed_request_k_base_length++;
 }
 
+Signed_Request create_signed_request_knowledge(User user, App_Secret app_secret)
+{
+	Signed_Request sr = {-1, -1, -1, _nobody, _invalid_app_ID};
+	sr.user_ID = user;
+	sr.signature = 1;
+	if (app_secret == _foo_secret)
+	{
+		sr.app_ID = _foo_app_ID;
+	}
+	else if (app_secret == _bob_secret)
+	{
+		sr.app_ID = _mal_app_ID;
+	}
+	return sr;
+}
+
 int graph_facebook_com_oauth_access_token_bob(Redirect_Domain redirect_domain, App_ID client_id, App_Secret app_secret, int code, Access_Token *access_token)
 {
 	int http_response = graph_facebook_com_oauth_access_token(redirect_domain, client_id, app_secret, code, access_token);
 	if (http_response!=400)
 	{
-		add_access_token_knowledge_to_bob(*access_token);
+		add_access_token_knowledge_to_bob(*access_token, -1);
 	}
 	return http_response;
 }

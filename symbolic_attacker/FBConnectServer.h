@@ -190,7 +190,7 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 	//alice doesn't want to give bob any permission?
 	if (logged_in_user == _alice){
 			if (client_id == _mal_app_ID) {
-				//return 400;
+				return 400;
 			}
 	}
 	//grant permission
@@ -273,7 +273,7 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 //exchange code 4 token
 {
 	//Fetch the app
-	User logged_in_user = _nobody;
+
 	int i = 0;
 	int found = 0;
 	Registered_App app;
@@ -307,6 +307,7 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 	
 	if (server_state.codes[i].app_secret != app_secret){
 		//secret doesn't match as code
+		//this is observed behavior, as if I simply replace the client_id with another one, it will not go through.
 		return 400;
 	}
 	
@@ -317,7 +318,7 @@ int graph_facebook_com_oauth_access_token(Redirect_Domain redirect_domain, App_I
 	//Generate access token 4 this user
 
 	access_token->token_value = server_state.token_length;
-	access_token->user_ID = logged_in_user;
+	access_token->user_ID = user_ID;
 	access_token->scope = server_state.codes[i].scope;
 	server_state.tokens[server_state.token_length] = *access_token;
 	server_state.token_length++;
