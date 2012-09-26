@@ -500,7 +500,7 @@ void takeAction()
 	case module_id_mal_client_app:
 	
 		//mal_app_state.app_ID = poirot_nondet();	 //bob can spoof this id.
-		//__hv_assume(mal_app_state.app_ID == _mal_app_ID || mal_app_state.app_ID == _foo_app_ID);			//[final assumption: app shouldn't be able to spoof as other app, this probably means big display of app name and vendor].
+		//__hv_assume(mal_app_state.app_ID == _mal_app_ID || mal_app_state.app_ID == _foo_app_ID);			//[final assumption: app shouldn't be able to spoof as other app, this probably means big and ALWAYS display of app name and vendor upon login, even if the user has already granted the app].
 		
 		wwahost_state.current_state = &mal_app_state;
    		mal_client_app_calls();

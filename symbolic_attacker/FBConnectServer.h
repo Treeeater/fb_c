@@ -73,11 +73,12 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 	}
 
 	//everything is checked, let's generate and save the access_token/code
+	//note: the model is not accurate: in reality, as long as the last token hasn't expired, user's request to get a new token, even if permissions have changed, would result in the original token being updated to the new permissions, but the token value won't change. Also, if the user has already granted the app permission A, even if in one specific request he only request for permission B, the token returned will have the capability to perform action related to permission A.  In other words, token issuing is orthogonal to permission granting. My guess as of 9/26 would be, the access_token perhaps shouldn't have scope in its attribute. Scope is only tied to the user/app, but not token. FB retrieves the user info from the token and looks up the granted permission(s) from its DB.
 	if (response_type == _token)
 	{
 		access_token->token_value = server_state.token_length;
 		access_token->user_ID = logged_in_user;
-		access_token->scope = scope;
+		access_token->scope = app.scope[logged_in_user];
 		server_state.tokens[server_state.token_length] = *access_token;
 		server_state.token_length++;
 	}
@@ -87,7 +88,7 @@ int dialog_oauth(int cookie, App_ID client_id, Redirect_Domain redirect_domain, 
 		code->user_ID = logged_in_user;
 		code->app_secret = app.app_secret;
 		code->app_ID = app.app_ID;
-		code->scope = scope;
+		code->scope = app.scope[logged_in_user];
 		server_state.codes[server_state.code_length] = *code;
 		server_state.code_length++;
 
@@ -208,7 +209,7 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 	{
 		access_token->token_value = server_state.token_length;
 		access_token->user_ID = logged_in_user;
-		access_token->scope = scope;
+		access_token->scope = app.scope[logged_in_user];
 		server_state.tokens[server_state.token_length] = *access_token;
 		server_state.token_length++;
 	}
@@ -218,7 +219,7 @@ int dialog_permissions_request(App_ID client_id, int cookie, Scope scope, Respon
 		code->user_ID = logged_in_user;
 		code->app_secret = app.app_secret;
 		code->app_ID = app.app_ID;
-		code->scope = scope;
+		code->scope = app.scope[logged_in_user];
 		server_state.codes[server_state.code_length] = *code;
 		server_state.code_length++;
 
