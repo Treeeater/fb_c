@@ -27,11 +27,12 @@ void Windows_Security_Authentication_Web_WebAuthenticationBroker_authenticateAsy
 	{
 		//user logged in, but hasn't granted enuf permissions.
 		returnValue = dialog_permissions_request(client_id, wwahost_state.cookie, scope, response_type, &location, access_token, code, sr);
-		if (returnValue==400) return;
+		//if (returnValue==400) return;
 	}
+	/*
 	if (returnValue == 302 && location == _redirect_domain)
 	{
 		return;				//AuthenticateAsync done, tackle all the knowledge pool stuff outside of this function.
-	}
+	}*/
 }
 #endif
