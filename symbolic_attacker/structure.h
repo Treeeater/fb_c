@@ -57,7 +57,7 @@ typedef enum Caller
 typedef enum User
 //userid
 {
-	_nobody = -1,
+	_nobody = 0,			//this cannot be negative value! will be used as array index!
 	_alice,
 	_bob
 } User;
