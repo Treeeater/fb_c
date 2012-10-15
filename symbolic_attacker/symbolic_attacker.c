@@ -530,6 +530,8 @@ void initiatize_knowledge()
 int main()
 {
 	User user = _nobody;
+	Registered_App app_F;
+	Registered_App app_B;
 	//initialize SESSION
 			
 	_SESSION.kSupportedKeys.state = -1;
@@ -553,19 +555,22 @@ int main()
 	server_state.codes = codes;
 	server_state.code_length = 0;
 
-	server_state.app_F.app_ID = _foo_app_ID;
-	server_state.app_B.app_ID = _mal_app_ID;
-	server_state.app_F.app_secret = _foo_secret;
-	server_state.app_B.app_secret = _bob_secret;
-	server_state.app_F.redirect_domain = _foo_domain;
-	server_state.app_B.redirect_domain = _bob_domain;
-	server_state.app_F.scope = FScope;
-	server_state.app_F.scope[_alice] = _no_permission;
-	server_state.app_F.scope[_bob] = _no_permission;
-	server_state.app_B.scope = BScope;
-	server_state.app_B.scope[_alice] = _no_permission;
-	server_state.app_B.scope[_bob] = _no_permission;
+	app_F.app_ID = _foo_app_ID;
+	app_B.app_ID = _mal_app_ID;
+	app_F.app_secret = _foo_secret;
+	app_B.app_secret = _bob_secret;
+	app_F.redirect_domain = _foo_domain;
+	app_B.redirect_domain = _bob_domain;
+	app_F.scope = FScope;
+	app_F.scope[_alice] = _no_permission;
+	app_F.scope[_bob] = _no_permission;
+	app_B.scope = BScope;
+	app_B.scope[_alice] = _no_permission;
+	app_B.scope[_bob] = _no_permission;
 
+	server_state.app_F = app_F;
+	server_state.app_B = app_B;
+	
 	//foo client state init:
 	foo_app_state.app_owner = _foo_own;
 	foo_app_state.app_ID = _foo_app_ID;
