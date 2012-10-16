@@ -125,7 +125,7 @@ void call_an_API_on_foo_service_app_From_Client(int API_id){
 			}
 			break;
 		
-		/*case rpauthenticateuser_code:
+		case rpauthenticateuser_code:
 			if (wwahost_state.current_state->app_owner == _foo_own){
 				user = RPAuthenticateUser_code(wwahost_state.current_state->rp_cookie, wwahost_state.current_state->code, wwahost_state.current_state->CSRF_Token);
 			}
@@ -136,8 +136,8 @@ void call_an_API_on_foo_service_app_From_Client(int API_id){
 				POIROT_ASSERT(user!=_alice);
 			}
 			break;
-		*/
-		case rpauthenticateuser_sreq:
+		
+		/*case rpauthenticateuser_sreq:
 			if (wwahost_state.current_state->app_owner == _foo_own){
 				user = RPAuthenticateUser_sreq(wwahost_state.current_state->rp_cookie, wwahost_state.current_state->sreq, wwahost_state.current_state->CSRF_Token);
 			}
@@ -147,7 +147,7 @@ void call_an_API_on_foo_service_app_From_Client(int API_id){
 				user = RPAuthenticateUser_sreq(mal_app_state.rp_cookie, draw_signed_request_from_knowledge_pool(), mal_app_state.CSRF_Token);
 				POIROT_ASSERT(user!=_alice);
 			}
-			break;
+			break;*/
 	}
 }
 

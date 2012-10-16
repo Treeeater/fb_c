@@ -84,6 +84,8 @@ HTTPURL foo_service_generate_logouturl(int rc, int CSRF_Token) {
 	RP_ALL_SESSIONS[i] = _SESSION;
 	return url;
 }
+//[final assumption]
+//never use token to auth.
 
 User RPAuthenticateUser_code(int rc, int code, int CSRF_Token)
 //According to examples at: https://github.com/facebook/facebook-php-sdk/blob/master/examples/example.php, we implement this login function here.
@@ -124,20 +126,19 @@ User RPAuthenticateUser_sreq(int rc, Signed_Request sreq, int CSRF_Token)
 	return u;		//if access_token is invalid, u would be _nobody. If access_token is valid, return the real user.
 }
 
-//[final assumption]
-//never use token to auth.
 
+/*
 void VirtualAuth()
 //This is ultimately the function we want to check to ensure the security properties of the system
 //This function is written subjectively using our understanding, not according to some spec.
+//Now this function is not in use. The performance is too bad if we add this function at the end.
 {
 	int approach = poirot_nondet();
 	User user = _nobody;
 	switch (approach)
 	{
 		case rpauthenticateuser_code:
-			//[Final Assumption]
-			//__hv_assume(1!=1);		//you should not accept code to authenticate user.
+			//__hv_assume(1!=1);		
 			user = RPAuthenticateUser_code(mal_app_state.rp_cookie, draw_code_from_knowledge_pool(), mal_app_state.CSRF_Token);
 			break;
 		case rpauthenticateuser_sreq:
@@ -150,4 +151,5 @@ void VirtualAuth()
 	}
 	POIROT_ASSERT(user!=_alice);
 }
+*/
 #endif
